@@ -1,0 +1,25 @@
+﻿2026-04-09T06:58:23.7743540Z ##[group]Run actions/setup-node@v4
+2026-04-09T06:58:23.7743800Z with:
+2026-04-09T06:58:23.7743970Z   node-version: 20
+2026-04-09T06:58:23.7744100Z   cache: npm
+2026-04-09T06:58:23.7744250Z   always-auth: false
+2026-04-09T06:58:23.7744450Z   check-latest: false
+2026-04-09T06:58:23.7744820Z   token: ***
+2026-04-09T06:58:23.7745000Z env:
+2026-04-09T06:58:23.7745130Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:58:23.7745340Z   NODE_VERSION: 20
+2026-04-09T06:58:23.7745590Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:58:23.7745860Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:58:23.7746120Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:58:23.7746320Z ##[endgroup]
+2026-04-09T06:58:23.8919360Z Found in cache @ /Users/runner/hostedtoolcache/node/20.20.2/arm64
+2026-04-09T06:58:23.8922950Z (node:2555) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-04-09T06:58:23.8923560Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-09T06:58:23.8924240Z ##[group]Environment details
+2026-04-09T06:58:24.4139970Z node: v20.20.2
+2026-04-09T06:58:24.4140950Z npm: 10.8.2
+2026-04-09T06:58:24.4141340Z yarn: 1.22.22
+2026-04-09T06:58:24.4142540Z ##[endgroup]
+2026-04-09T06:58:24.4183900Z [command]/Users/runner/hostedtoolcache/node/20.20.2/arm64/bin/npm config get cache
+2026-04-09T06:58:24.6263090Z /Users/runner/.npm
+2026-04-09T06:58:24.7107490Z npm cache is not found
