@@ -1,0 +1,31 @@
+﻿2026-04-09T07:13:45.4667310Z ##[group]Run npm ci
+2026-04-09T07:13:45.4667590Z [36;1mnpm ci[0m
+2026-04-09T07:13:45.4721800Z shell: /bin/bash -e {0}
+2026-04-09T07:13:45.4722070Z env:
+2026-04-09T07:13:45.4722240Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:45.4722440Z   NODE_VERSION: 20
+2026-04-09T07:13:45.4722570Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:45.4722770Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:45.4723010Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:45.4723230Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:45.4723410Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:13:45.4723570Z   CARGO_TERM_COLOR: always
+2026-04-09T07:13:45.4723750Z   CACHE_ON_FAILURE: false
+2026-04-09T07:13:45.4723900Z ##[endgroup]
+2026-04-09T07:13:47.8106050Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-04-09T07:13:47.8208600Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-04-09T07:13:50.1991150Z 
+2026-04-09T07:13:50.1991670Z added 216 packages, and audited 217 packages in 5s
+2026-04-09T07:13:50.1991920Z 
+2026-04-09T07:13:50.1992070Z 14 packages are looking for funding
+2026-04-09T07:13:50.1992280Z   run `npm fund` for details
+2026-04-09T07:13:50.2264390Z 
+2026-04-09T07:13:50.2264880Z 8 vulnerabilities (5 moderate, 3 high)
+2026-04-09T07:13:50.2265200Z 
+2026-04-09T07:13:50.2265430Z To address issues that do not require attention, run:
+2026-04-09T07:13:50.2265680Z   npm audit fix
+2026-04-09T07:13:50.2265870Z 
+2026-04-09T07:13:50.2266060Z To address all issues (including breaking changes), run:
+2026-04-09T07:13:50.2266330Z   npm audit fix --force
+2026-04-09T07:13:50.2266430Z 
+2026-04-09T07:13:50.2266530Z Run `npm audit` for details.

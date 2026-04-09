@@ -1,0 +1,33 @@
+﻿2026-04-09T07:18:11.8751290Z ##[group]Run actions/upload-artifact@v4
+2026-04-09T07:18:11.8751630Z with:
+2026-04-09T07:18:11.8751810Z   name: goread-ios-build-logs
+2026-04-09T07:18:11.8752150Z   path: build/ios/xcode-build.log
+2026-04-09T07:18:11.8752380Z   if-no-files-found: warn
+2026-04-09T07:18:11.8752590Z   compression-level: 6
+2026-04-09T07:18:11.8752790Z   overwrite: false
+2026-04-09T07:18:11.8753050Z   include-hidden-files: false
+2026-04-09T07:18:11.8753260Z env:
+2026-04-09T07:18:11.8753450Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:18:11.8753710Z   NODE_VERSION: 20
+2026-04-09T07:18:11.8753850Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:18:11.8754120Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:18:11.8754430Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:18:11.8754750Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:18:11.8754990Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:18:11.8755180Z   CARGO_TERM_COLOR: always
+2026-04-09T07:18:11.8755400Z   CACHE_ON_FAILURE: false
+2026-04-09T07:18:11.8756290Z ##[endgroup]
+2026-04-09T07:18:12.2027950Z (node:29034) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-04-09T07:18:12.2028750Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-09T07:18:12.2057460Z With the provided path, there will be 1 file uploaded
+2026-04-09T07:18:12.2059890Z Artifact name is valid!
+2026-04-09T07:18:12.2060570Z Root directory input is valid!
+2026-04-09T07:18:12.2755680Z Beginning upload of artifact content to blob storage
+2026-04-09T07:18:12.2880870Z (node:29034) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-09T07:18:12.3233410Z Uploaded bytes 552
+2026-04-09T07:18:12.3394980Z Finished uploading artifact content to blob storage!
+2026-04-09T07:18:12.3395920Z SHA256 digest of uploaded artifact zip is a7ae84aab1a4cff6ed23fa4239e834eef728b0fcf4a2d92fa483cfc3bea29c25
+2026-04-09T07:18:12.3396540Z Finalizing artifact upload
+2026-04-09T07:18:12.4475180Z Artifact goread-ios-build-logs.zip successfully finalized. Artifact ID 6344215022
+2026-04-09T07:18:12.4476230Z Artifact goread-ios-build-logs has been successfully uploaded! Final size is 552 bytes. Artifact ID is 6344215022
+2026-04-09T07:18:12.4483010Z Artifact download URL: https://github.com/entyr233/goread/actions/runs/24177546086/artifacts/6344215022

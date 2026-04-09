@@ -66,7 +66,8 @@ jobs:
       - name: Disable Tauri Xcode Rust build script
         run: |
           set -euo pipefail
-          sed -i '' 's#npm run -- tauri ios xcode-script[^"]*#echo Using prebuilt libapp.a for CI#' src-tauri/gen/apple/GoRead.xcodeproj/project.pbxproj
+          PBXPROJ="src-tauri/gen/apple/GoRead.xcodeproj/project.pbxproj"
+          sed -i '' -E 's#shellScript = ".*tauri ios xcode-script.*";#shellScript = "echo Using prebuilt libapp.a for CI";#' "$PBXPROJ"
 
       - name: Build unsigned .app
         run: |

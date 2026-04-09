@@ -1,0 +1,1638 @@
+﻿2026-04-09T07:13:33.2430810Z Current runner version: '2.333.1'
+2026-04-09T07:13:33.2444080Z ##[group]Runner Image Provisioner
+2026-04-09T07:13:33.2444520Z Hosted Compute Agent
+2026-04-09T07:13:33.2444860Z Version: 20260213.493
+2026-04-09T07:13:33.2445240Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-04-09T07:13:33.2445670Z Build Date: 2026-02-13T00:28:41Z
+2026-04-09T07:13:33.2446070Z Worker ID: {b6d33282-4897-49c5-ae40-ae996d5b28f3}
+2026-04-09T07:13:33.2446490Z Azure Region: westus
+2026-04-09T07:13:33.2446830Z ##[endgroup]
+2026-04-09T07:13:33.2447640Z ##[group]Operating System
+2026-04-09T07:13:33.2447990Z macOS
+2026-04-09T07:13:33.2448250Z 14.8.5
+2026-04-09T07:13:33.2448520Z 23J423
+2026-04-09T07:13:33.2448800Z ##[endgroup]
+2026-04-09T07:13:33.2449090Z ##[group]Runner Image
+2026-04-09T07:13:33.2449420Z Image: macos-14-arm64
+2026-04-09T07:13:33.2449720Z Version: 20260407.0213.1
+2026-04-09T07:13:33.2450460Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20260407.0213/images/macos/macos-14-arm64-Readme.md
+2026-04-09T07:13:33.2451690Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20260407.0213
+2026-04-09T07:13:33.2452340Z ##[endgroup]
+2026-04-09T07:13:33.2452980Z ##[group]GITHUB_TOKEN Permissions
+2026-04-09T07:13:33.2453880Z Contents: read
+2026-04-09T07:13:33.2454190Z Metadata: read
+2026-04-09T07:13:33.2454510Z ##[endgroup]
+2026-04-09T07:13:33.2455720Z Secret source: Actions
+2026-04-09T07:13:33.2456120Z Prepare workflow directory
+2026-04-09T07:13:33.2685480Z Prepare all required actions
+2026-04-09T07:13:33.2712150Z Getting action download info
+2026-04-09T07:13:33.5984920Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-04-09T07:13:33.9908190Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-04-09T07:13:34.0856530Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:29eef336d9b2848a0b548edc03f92a220660cdb8)
+2026-04-09T07:13:34.9784890Z Download action repository 'Swatinem/rust-cache@v2' (SHA:e18b497796c12c097a38f9edb9d0641fb99eee32)
+2026-04-09T07:13:36.4211370Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-04-09T07:13:36.6816400Z Complete job name: build-ios
+2026-04-09T07:13:36.7297540Z ##[group]Run actions/checkout@v4
+2026-04-09T07:13:36.7298340Z with:
+2026-04-09T07:13:36.7298790Z   lfs: true
+2026-04-09T07:13:36.7299250Z   repository: entyr233/goread
+2026-04-09T07:13:36.7300040Z   token: ***
+2026-04-09T07:13:36.7300500Z   ssh-strict: true
+2026-04-09T07:13:36.7300990Z   ssh-user: git
+2026-04-09T07:13:36.7301480Z   persist-credentials: true
+2026-04-09T07:13:36.7302030Z   clean: true
+2026-04-09T07:13:36.7302530Z   sparse-checkout-cone-mode: true
+2026-04-09T07:13:36.7303120Z   fetch-depth: 1
+2026-04-09T07:13:36.7303590Z   fetch-tags: false
+2026-04-09T07:13:36.7304080Z   show-progress: true
+2026-04-09T07:13:36.7304570Z   submodules: false
+2026-04-09T07:13:36.7305060Z   set-safe-directory: true
+2026-04-09T07:13:36.7305740Z env:
+2026-04-09T07:13:36.7306210Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:36.7306820Z   NODE_VERSION: 20
+2026-04-09T07:13:36.7307290Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:36.7308060Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:36.7308790Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:36.7309390Z ##[endgroup]
+2026-04-09T07:13:37.0639530Z Syncing repository: entyr233/goread
+2026-04-09T07:13:37.0640650Z ##[group]Getting Git version info
+2026-04-09T07:13:37.0640920Z Working directory is '/Users/runner/work/goread/goread'
+2026-04-09T07:13:37.0641310Z [command]/opt/homebrew/bin/git version
+2026-04-09T07:13:37.1158000Z git version 2.53.0
+2026-04-09T07:13:37.1253380Z [command]/opt/homebrew/bin/git lfs version
+2026-04-09T07:13:37.1991370Z git-lfs/3.7.1 (GitHub; darwin arm64; go 1.25.3)
+2026-04-09T07:13:37.1997400Z ##[endgroup]
+2026-04-09T07:13:37.2004250Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/f25fe6d3-0c3f-4feb-9c47-44e764f42146/.gitconfig'
+2026-04-09T07:13:37.2009920Z Temporarily overriding HOME='/Users/runner/work/_temp/f25fe6d3-0c3f-4feb-9c47-44e764f42146' before making global git config changes
+2026-04-09T07:13:37.2010620Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-09T07:13:37.2014060Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/goread/goread
+2026-04-09T07:13:37.2075400Z Deleting the contents of '/Users/runner/work/goread/goread'
+2026-04-09T07:13:37.2077860Z ##[group]Initializing the repository
+2026-04-09T07:13:37.2080700Z [command]/opt/homebrew/bin/git init /Users/runner/work/goread/goread
+2026-04-09T07:13:37.2267000Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-04-09T07:13:37.2269620Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-04-09T07:13:37.2270220Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-04-09T07:13:37.2270720Z hint: call:
+2026-04-09T07:13:37.2270950Z hint:
+2026-04-09T07:13:37.2271300Z hint: 	git config --global init.defaultBranch <name>
+2026-04-09T07:13:37.2271650Z hint:
+2026-04-09T07:13:37.2271970Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-04-09T07:13:37.2273320Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-04-09T07:13:37.2273750Z hint:
+2026-04-09T07:13:37.2273970Z hint: 	git branch -m <name>
+2026-04-09T07:13:37.2274280Z hint:
+2026-04-09T07:13:37.2291080Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-04-09T07:13:37.2291700Z Initialized empty Git repository in /Users/runner/work/goread/goread/.git/
+2026-04-09T07:13:37.2299270Z [command]/opt/homebrew/bin/git remote add origin https://github.com/entyr233/goread
+2026-04-09T07:13:37.2329490Z ##[endgroup]
+2026-04-09T07:13:37.2329880Z ##[group]Disabling automatic garbage collection
+2026-04-09T07:13:37.2331250Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-04-09T07:13:37.2374060Z ##[endgroup]
+2026-04-09T07:13:37.2374350Z ##[group]Setting up auth
+2026-04-09T07:13:37.2378890Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-09T07:13:37.2415760Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-09T07:13:37.2974800Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-09T07:13:37.3017290Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-09T07:13:37.3609340Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-09T07:13:37.3632120Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-09T07:13:37.4122050Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-09T07:13:37.4364170Z ##[endgroup]
+2026-04-09T07:13:37.4367800Z [command]/opt/homebrew/bin/git lfs install --local
+2026-04-09T07:13:37.5624260Z Updated Git hooks.
+2026-04-09T07:13:37.5624770Z Git LFS initialized.
+2026-04-09T07:13:37.5636960Z ##[group]Fetching the repository
+2026-04-09T07:13:37.5642220Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5573d573b94fed32c5d36ed531ec683b888fe3c0:refs/remotes/origin/master
+2026-04-09T07:13:38.9444770Z From https://github.com/entyr233/goread
+2026-04-09T07:13:38.9445770Z  * [new ref]         5573d573b94fed32c5d36ed531ec683b888fe3c0 -> origin/master
+2026-04-09T07:13:38.9505540Z ##[endgroup]
+2026-04-09T07:13:38.9505940Z ##[group]Determining the checkout info
+2026-04-09T07:13:38.9506770Z ##[endgroup]
+2026-04-09T07:13:38.9507220Z ##[group]Fetching LFS objects
+2026-04-09T07:13:38.9514250Z [command]/opt/homebrew/bin/git lfs fetch origin refs/remotes/origin/master
+2026-04-09T07:13:38.9968360Z Fetching reference refs/remotes/origin/master
+2026-04-09T07:13:40.7764650Z ##[endgroup]
+2026-04-09T07:13:40.7773100Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-04-09T07:13:40.7950600Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-09T07:13:40.8052050Z ##[group]Checking out the ref
+2026-04-09T07:13:40.8058550Z [command]/opt/homebrew/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-04-09T07:13:41.0140280Z Reset branch 'master'
+2026-04-09T07:13:41.0144490Z branch 'master' set up to track 'origin/master'.
+2026-04-09T07:13:41.0675020Z Encountered 1 file that should have been a pointer, but wasn't:
+2026-04-09T07:13:41.0675520Z 	src-tauri/src/pdfium/android/libpdfium.so
+2026-04-09T07:13:41.0685880Z ##[endgroup]
+2026-04-09T07:13:41.0735930Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-04-09T07:13:41.0772010Z 5573d573b94fed32c5d36ed531ec683b888fe3c0
+2026-04-09T07:13:41.0923520Z ##[group]Run actions/setup-node@v4
+2026-04-09T07:13:41.0923700Z with:
+2026-04-09T07:13:41.0923810Z   node-version: 20
+2026-04-09T07:13:41.0923930Z   cache: npm
+2026-04-09T07:13:41.0924050Z   always-auth: false
+2026-04-09T07:13:41.0924230Z   check-latest: false
+2026-04-09T07:13:41.0924460Z   token: ***
+2026-04-09T07:13:41.0924590Z env:
+2026-04-09T07:13:41.0924710Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:41.0924910Z   NODE_VERSION: 20
+2026-04-09T07:13:41.0925050Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:41.0925250Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:41.0925490Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:41.0925650Z ##[endgroup]
+2026-04-09T07:13:41.1967390Z Found in cache @ /Users/runner/hostedtoolcache/node/20.20.2/arm64
+2026-04-09T07:13:41.1968740Z (node:15751) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-04-09T07:13:41.1969430Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-09T07:13:41.1970230Z ##[group]Environment details
+2026-04-09T07:13:41.4945490Z node: v20.20.2
+2026-04-09T07:13:41.4945840Z npm: 10.8.2
+2026-04-09T07:13:41.4946090Z yarn: 1.22.22
+2026-04-09T07:13:41.4946650Z ##[endgroup]
+2026-04-09T07:13:41.4968400Z [command]/Users/runner/hostedtoolcache/node/20.20.2/arm64/bin/npm config get cache
+2026-04-09T07:13:41.6989820Z /Users/runner/.npm
+2026-04-09T07:13:41.8185910Z npm cache is not found
+2026-04-09T07:13:41.8353660Z ##[group]Run dtolnay/rust-toolchain@stable
+2026-04-09T07:13:41.8353880Z with:
+2026-04-09T07:13:41.8354010Z   targets: aarch64-apple-ios
+2026-04-09T07:13:41.8354180Z   toolchain: stable
+2026-04-09T07:13:41.8354310Z env:
+2026-04-09T07:13:41.8354440Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:41.8354630Z   NODE_VERSION: 20
+2026-04-09T07:13:41.8354770Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:41.8354960Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:41.8355170Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:41.8355340Z ##[endgroup]
+2026-04-09T07:13:41.8436450Z ##[group]Run : parse toolchain version
+2026-04-09T07:13:41.8436750Z [36;1m: parse toolchain version[0m
+2026-04-09T07:13:41.8436930Z [36;1mif [[ -z $toolchain ]]; then[0m
+2026-04-09T07:13:41.8437370Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+2026-04-09T07:13:41.8437880Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+2026-04-09T07:13:41.8438090Z [36;1m  exit 1[0m
+2026-04-09T07:13:41.8438310Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2026-04-09T07:13:41.8438600Z [36;1m  if [[ macOS == macOS ]]; then[0m
+2026-04-09T07:13:41.8439000Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-04-09T07:13:41.8439580Z [36;1m  else[0m
+2026-04-09T07:13:41.8439870Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-04-09T07:13:41.8440180Z [36;1m  fi[0m
+2026-04-09T07:13:41.8440380Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2026-04-09T07:13:41.8440770Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2026-04-09T07:13:41.8441110Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2026-04-09T07:13:41.8441490Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2026-04-09T07:13:41.8441880Z [36;1melse[0m
+2026-04-09T07:13:41.8442040Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2026-04-09T07:13:41.8442260Z [36;1mfi[0m
+2026-04-09T07:13:41.8503060Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:41.8503320Z env:
+2026-04-09T07:13:41.8503510Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:41.8503730Z   NODE_VERSION: 20
+2026-04-09T07:13:41.8503940Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:41.8504130Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:41.8504360Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:41.8504540Z   toolchain: stable
+2026-04-09T07:13:41.8504670Z ##[endgroup]
+2026-04-09T07:13:41.8828430Z ##[group]Run : construct rustup command line
+2026-04-09T07:13:41.8828730Z [36;1m: construct rustup command line[0m
+2026-04-09T07:13:41.8829050Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2026-04-09T07:13:41.8829500Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2026-04-09T07:13:41.8829860Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2026-04-09T07:13:41.8877640Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:41.8877860Z env:
+2026-04-09T07:13:41.8878010Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:41.8878180Z   NODE_VERSION: 20
+2026-04-09T07:13:41.8878310Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:41.8878510Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:41.8878740Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:41.8878920Z   targets: aarch64-apple-ios
+2026-04-09T07:13:41.8879070Z   components: 
+2026-04-09T07:13:41.8879190Z ##[endgroup]
+2026-04-09T07:13:41.9203520Z ##[group]Run : set $CARGO_HOME
+2026-04-09T07:13:41.9203970Z [36;1m: set $CARGO_HOME[0m
+2026-04-09T07:13:41.9204190Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV[0m
+2026-04-09T07:13:41.9252420Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:41.9252630Z env:
+2026-04-09T07:13:41.9252810Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:41.9252990Z   NODE_VERSION: 20
+2026-04-09T07:13:41.9253150Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:41.9253320Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:41.9253730Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:41.9253910Z ##[endgroup]
+2026-04-09T07:13:41.9544580Z ##[group]Run : install rustup if needed
+2026-04-09T07:13:41.9545180Z [36;1m: install rustup if needed[0m
+2026-04-09T07:13:41.9545410Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2026-04-09T07:13:41.9546290Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y[0m
+2026-04-09T07:13:41.9546860Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+2026-04-09T07:13:41.9547060Z [36;1mfi[0m
+2026-04-09T07:13:41.9596430Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:41.9596640Z env:
+2026-04-09T07:13:41.9596770Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:41.9597150Z   NODE_VERSION: 20
+2026-04-09T07:13:41.9597300Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:41.9597490Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:41.9597710Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:41.9597900Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:41.9598060Z ##[endgroup]
+2026-04-09T07:13:41.9899230Z ##[group]Run rustup toolchain install stable --target aarch64-apple-ios --profile minimal --no-self-update
+2026-04-09T07:13:41.9899800Z [36;1mrustup toolchain install stable --target aarch64-apple-ios --profile minimal --no-self-update[0m
+2026-04-09T07:13:41.9947400Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:41.9947620Z env:
+2026-04-09T07:13:41.9947760Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:41.9947940Z   NODE_VERSION: 20
+2026-04-09T07:13:41.9948070Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:41.9948260Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:41.9948510Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:41.9948700Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:41.9948870Z   RUSTUP_PERMIT_COPY_RENAME: 1
+2026-04-09T07:13:41.9949030Z ##[endgroup]
+2026-04-09T07:13:42.2379890Z info: syncing channel updates for stable-aarch64-apple-darwin
+2026-04-09T07:13:42.3673080Z info: latest update on 2026-03-26 for version 1.94.1 (e408947bf 2026-03-25)
+2026-04-09T07:13:42.3769490Z info: downloading component rust-std
+2026-04-09T07:13:44.5866110Z 
+2026-04-09T07:13:44.5962030Z info: self-update is disabled for this build of rustup
+2026-04-09T07:13:44.5962830Z info: any updates to rustup will need to be fetched with your system package manager
+2026-04-09T07:13:44.5963530Z   stable-aarch64-apple-darwin updated - rustc 1.94.1 (e408947bf 2026-03-25) (from rustc 1.94.1 (e408947bf 2026-03-25))
+2026-04-09T07:13:44.5963980Z 
+2026-04-09T07:13:44.6030270Z ##[group]Run rustup default stable
+2026-04-09T07:13:44.6044980Z [36;1mrustup default stable[0m
+2026-04-09T07:13:44.6123920Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:44.6124170Z env:
+2026-04-09T07:13:44.6124320Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:44.6124530Z   NODE_VERSION: 20
+2026-04-09T07:13:44.6124670Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:44.6124930Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:44.6125170Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:44.6125380Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:44.6125550Z ##[endgroup]
+2026-04-09T07:13:44.6535780Z info: using existing install for stable-aarch64-apple-darwin
+2026-04-09T07:13:44.6548340Z info: default toolchain set to stable-aarch64-apple-darwin
+2026-04-09T07:13:44.6548670Z 
+2026-04-09T07:13:44.6615100Z   stable-aarch64-apple-darwin unchanged - rustc 1.94.1 (e408947bf 2026-03-25)
+2026-04-09T07:13:44.6615440Z 
+2026-04-09T07:13:44.6642860Z ##[group]Run : create cachekey
+2026-04-09T07:13:44.6643060Z [36;1m: create cachekey[0m
+2026-04-09T07:13:44.6643550Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2026-04-09T07:13:44.6644020Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2026-04-09T07:13:44.6644370Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2026-04-09T07:13:44.6692540Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:44.6692750Z env:
+2026-04-09T07:13:44.6692890Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:44.6693060Z   NODE_VERSION: 20
+2026-04-09T07:13:44.6693300Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:44.6693490Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:44.6693720Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:44.6693900Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:44.6694050Z ##[endgroup]
+2026-04-09T07:13:44.7452510Z ##[group]Run : disable incremental compilation
+2026-04-09T07:13:44.7453310Z [36;1m: disable incremental compilation[0m
+2026-04-09T07:13:44.7453620Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2026-04-09T07:13:44.7453930Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2026-04-09T07:13:44.7454190Z [36;1mfi[0m
+2026-04-09T07:13:44.7503920Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:44.7504140Z env:
+2026-04-09T07:13:44.7504280Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:44.7504470Z   NODE_VERSION: 20
+2026-04-09T07:13:44.7504680Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:44.7504910Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:44.7505170Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:44.7505430Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:44.7505630Z ##[endgroup]
+2026-04-09T07:13:44.7802190Z ##[group]Run : enable colors in Cargo output
+2026-04-09T07:13:44.7802560Z [36;1m: enable colors in Cargo output[0m
+2026-04-09T07:13:44.7802810Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2026-04-09T07:13:44.7803080Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2026-04-09T07:13:44.7803300Z [36;1mfi[0m
+2026-04-09T07:13:44.7859280Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:44.7859520Z env:
+2026-04-09T07:13:44.7859680Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:44.7859900Z   NODE_VERSION: 20
+2026-04-09T07:13:44.7860050Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:44.7860260Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:44.7860500Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:44.7860720Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:44.7860920Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:13:44.7861080Z ##[endgroup]
+2026-04-09T07:13:44.8165890Z ##[group]Run : enable Cargo sparse registry
+2026-04-09T07:13:44.8166150Z [36;1m: enable Cargo sparse registry[0m
+2026-04-09T07:13:44.8166490Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2026-04-09T07:13:44.8167000Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/Users/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2026-04-09T07:13:44.8167610Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2026-04-09T07:13:44.8168060Z [36;1m    touch "/Users/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-04-09T07:13:44.8168520Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2026-04-09T07:13:44.8168880Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2026-04-09T07:13:44.8169490Z [36;1m    touch "/Users/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-04-09T07:13:44.8180150Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2026-04-09T07:13:44.8180410Z [36;1m  fi[0m
+2026-04-09T07:13:44.8180520Z [36;1mfi[0m
+2026-04-09T07:13:44.8227910Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:44.8228110Z env:
+2026-04-09T07:13:44.8228240Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:44.8228420Z   NODE_VERSION: 20
+2026-04-09T07:13:44.8228560Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:44.8228750Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:44.8228970Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:44.8229140Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:44.8229300Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:13:44.8229440Z   CARGO_TERM_COLOR: always
+2026-04-09T07:13:44.8229580Z ##[endgroup]
+2026-04-09T07:13:44.8802370Z ##[group]Run : work around spurious network errors in curl 8.0
+2026-04-09T07:13:44.8802750Z [36;1m: work around spurious network errors in curl 8.0[0m
+2026-04-09T07:13:44.8803220Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2026-04-09T07:13:44.8803660Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2026-04-09T07:13:44.8804190Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2026-04-09T07:13:44.8804410Z [36;1mfi[0m
+2026-04-09T07:13:44.8851900Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:44.8852110Z env:
+2026-04-09T07:13:44.8852250Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:44.8852430Z   NODE_VERSION: 20
+2026-04-09T07:13:44.8852560Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:44.8852760Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:44.8852980Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:44.8853160Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:44.8853320Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:13:44.8853470Z   CARGO_TERM_COLOR: always
+2026-04-09T07:13:44.8853610Z ##[endgroup]
+2026-04-09T07:13:44.9284110Z ##[group]Run rustc +stable --version --verbose
+2026-04-09T07:13:44.9284410Z [36;1mrustc +stable --version --verbose[0m
+2026-04-09T07:13:44.9336920Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T07:13:44.9337280Z env:
+2026-04-09T07:13:44.9337430Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:44.9337610Z   NODE_VERSION: 20
+2026-04-09T07:13:44.9337740Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:44.9337940Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:44.9338150Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:44.9338330Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:44.9338490Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:13:44.9338640Z   CARGO_TERM_COLOR: always
+2026-04-09T07:13:44.9338790Z ##[endgroup]
+2026-04-09T07:13:44.9729650Z rustc 1.94.1 (e408947bf 2026-03-25)
+2026-04-09T07:13:44.9730040Z binary: rustc
+2026-04-09T07:13:44.9730380Z commit-hash: e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-04-09T07:13:44.9730660Z commit-date: 2026-03-25
+2026-04-09T07:13:44.9730860Z host: aarch64-apple-darwin
+2026-04-09T07:13:44.9731040Z release: 1.94.1
+2026-04-09T07:13:44.9733740Z LLVM version: 21.1.8
+2026-04-09T07:13:44.9810000Z ##[group]Run Swatinem/rust-cache@v2
+2026-04-09T07:13:44.9810230Z with:
+2026-04-09T07:13:44.9810350Z   workspaces: ./src-tauri -> target
+2026-04-09T07:13:44.9810520Z   prefix-key: v0-rust
+2026-04-09T07:13:44.9810680Z   add-job-id-key: true
+2026-04-09T07:13:44.9810840Z   add-rust-environment-hash-key: true
+2026-04-09T07:13:44.9821360Z   cache-targets: true
+2026-04-09T07:13:44.9821520Z   cache-all-crates: false
+2026-04-09T07:13:44.9821670Z   cache-workspace-crates: false
+2026-04-09T07:13:44.9821820Z   save-if: true
+2026-04-09T07:13:44.9821940Z   cache-provider: github
+2026-04-09T07:13:44.9822080Z   cache-bin: true
+2026-04-09T07:13:44.9822210Z   lookup-only: false
+2026-04-09T07:13:44.9822330Z   cmd-format: {0}
+2026-04-09T07:13:44.9822430Z env:
+2026-04-09T07:13:44.9822560Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:44.9822730Z   NODE_VERSION: 20
+2026-04-09T07:13:44.9822840Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:44.9823060Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:44.9823280Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:44.9823470Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:44.9823630Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:13:44.9823760Z   CARGO_TERM_COLOR: always
+2026-04-09T07:13:44.9823890Z ##[endgroup]
+2026-04-09T07:13:45.1782560Z (node:15853) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-04-09T07:13:45.1783590Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-09T07:13:45.3634260Z ##[group]Cache Configuration
+2026-04-09T07:13:45.3634800Z Cache Provider:
+2026-04-09T07:13:45.3635080Z     github
+2026-04-09T07:13:45.3635380Z Workspaces:
+2026-04-09T07:13:45.3636500Z     /Users/runner/work/goread/goread/src-tauri
+2026-04-09T07:13:45.3644120Z Cache Paths:
+2026-04-09T07:13:45.3644380Z     /Users/runner/.cargo/bin
+2026-04-09T07:13:45.3644690Z     /Users/runner/.cargo/.crates.toml
+2026-04-09T07:13:45.3645230Z     /Users/runner/.cargo/.crates2.json
+2026-04-09T07:13:45.3645630Z     /Users/runner/.cargo/registry
+2026-04-09T07:13:45.3646440Z     /Users/runner/.cargo/git
+2026-04-09T07:13:45.3646790Z     /Users/runner/work/goread/goread/src-tauri/target
+2026-04-09T07:13:45.3649120Z Restore Key:
+2026-04-09T07:13:45.3649430Z     v0-rust-build-ios-Darwin-arm64-920d69ea
+2026-04-09T07:13:45.3649730Z Cache Key:
+2026-04-09T07:13:45.3650130Z     v0-rust-build-ios-Darwin-arm64-920d69ea-0ed2c078
+2026-04-09T07:13:45.3650480Z .. Prefix:
+2026-04-09T07:13:45.3664710Z   - v0-rust-build-ios-Darwin-arm64
+2026-04-09T07:13:45.3666590Z .. Environment considered:
+2026-04-09T07:13:45.3666890Z   - Rust Versions:
+2026-04-09T07:13:45.3667290Z     - 1.94.1 aarch64-apple-darwin e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-04-09T07:13:45.3667830Z     - 1.94.1 aarch64-apple-darwin e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-04-09T07:13:45.3668190Z   - CARGO_HOME
+2026-04-09T07:13:45.3668430Z   - CARGO_INCREMENTAL
+2026-04-09T07:13:45.3668710Z   - CARGO_TERM_COLOR
+2026-04-09T07:13:45.3668990Z .. Lockfiles considered:
+2026-04-09T07:13:45.3669350Z   - /Users/runner/work/goread/goread/src-tauri/Cargo.lock
+2026-04-09T07:13:45.3669790Z   - /Users/runner/work/goread/goread/src-tauri/Cargo.toml
+2026-04-09T07:13:45.3670330Z ##[endgroup]
+2026-04-09T07:13:45.3670520Z 
+2026-04-09T07:13:45.3670640Z ... Restoring cache ...
+2026-04-09T07:13:45.4617620Z No cache found.
+2026-04-09T07:13:45.4667330Z ##[group]Run npm ci
+2026-04-09T07:13:45.4667590Z [36;1mnpm ci[0m
+2026-04-09T07:13:45.4721820Z shell: /bin/bash -e {0}
+2026-04-09T07:13:45.4722080Z env:
+2026-04-09T07:13:45.4722240Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:45.4722440Z   NODE_VERSION: 20
+2026-04-09T07:13:45.4722570Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:45.4722780Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:45.4723010Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:45.4723240Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:45.4723410Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:13:45.4723570Z   CARGO_TERM_COLOR: always
+2026-04-09T07:13:45.4723750Z   CACHE_ON_FAILURE: false
+2026-04-09T07:13:45.4723900Z ##[endgroup]
+2026-04-09T07:13:47.8106220Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-04-09T07:13:47.8208630Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-04-09T07:13:50.1991190Z 
+2026-04-09T07:13:50.1991670Z added 216 packages, and audited 217 packages in 5s
+2026-04-09T07:13:50.1991920Z 
+2026-04-09T07:13:50.1992070Z 14 packages are looking for funding
+2026-04-09T07:13:50.1992280Z   run `npm fund` for details
+2026-04-09T07:13:50.2264430Z 
+2026-04-09T07:13:50.2264880Z 8 vulnerabilities (5 moderate, 3 high)
+2026-04-09T07:13:50.2265210Z 
+2026-04-09T07:13:50.2265440Z To address issues that do not require attention, run:
+2026-04-09T07:13:50.2265690Z   npm audit fix
+2026-04-09T07:13:50.2265870Z 
+2026-04-09T07:13:50.2266060Z To address all issues (including breaking changes), run:
+2026-04-09T07:13:50.2266330Z   npm audit fix --force
+2026-04-09T07:13:50.2266430Z 
+2026-04-09T07:13:50.2266530Z Run `npm audit` for details.
+2026-04-09T07:13:50.2390660Z ##[group]Run npm run build
+2026-04-09T07:13:50.2390960Z [36;1mnpm run build[0m
+2026-04-09T07:13:50.2475570Z shell: /bin/bash -e {0}
+2026-04-09T07:13:50.2476050Z env:
+2026-04-09T07:13:50.2476460Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:50.2477090Z   NODE_VERSION: 20
+2026-04-09T07:13:50.2477500Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:50.2478070Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:50.2478730Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:50.2479700Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:50.2479980Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:13:50.2480140Z   CARGO_TERM_COLOR: always
+2026-04-09T07:13:50.2480390Z   CACHE_ON_FAILURE: false
+2026-04-09T07:13:50.2480560Z ##[endgroup]
+2026-04-09T07:13:50.4255360Z 
+2026-04-09T07:13:50.4314030Z > GoRead@1.5.4 build
+2026-04-09T07:13:50.4442040Z > tsc && vite build
+2026-04-09T07:13:50.4635800Z 
+2026-04-09T07:13:54.2852990Z [36mvite v5.4.21 [32mbuilding for production...[36m[39m
+2026-04-09T07:13:54.3119640Z transforming...
+2026-04-09T07:13:57.1525150Z [32m✓[39m 564 modules transformed.
+2026-04-09T07:13:57.4093810Z rendering chunks...
+2026-04-09T07:13:57.6676350Z [1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+2026-04-09T07:13:57.6807690Z (!) /Users/runner/work/goread/goread/node_modules/react/index.js is dynamically imported by /Users/runner/work/goread/goread/src/services/formats/markdown/MarkdownRenderer.ts but also statically imported by  /Users/runner/work/goread/goread/node_modules/react/index.js?commonjs-proxy, /Users/runner/work/goread/goread/node_modules/@dnd-kit/accessibility/dist/accessibility.esm.js, /Users/runner/work/goread/goread/node_modules/@dnd-kit/core/dist/core.esm.js, /Users/runner/work/goread/goread/node_modules/@dnd-kit/sortable/dist/sortable.esm.js, /Users/runner/work/goread/goread/node_modules/@dnd-kit/utilities/dist/utilities.esm.js, /Users/runner/work/goread/goread/node_modules/md-editor-rt/lib/es/DropdownToolbar.mjs, /Users/runner/work/goread/goread/node_modules/md-editor-rt/lib/es/MdPreview.mjs, /Users/runner/work/goread/goread/node_modules/md-editor-rt/lib/es/chunks/Editor.mjs, /Users/runner/work/goread/goread/node_modules/md-editor-rt/lib/es/chunks/index.mjs, /Users/runner/work/goread/goread/node_modules/react-i18next/dist/es/I18nextProvider.js, /Users/runner/work/goread/goread/node_modules/react-i18next/dist/es/Trans.js, /Users/runner/work/goread/goread/node_modules/react-i18next/dist/es/TransWithoutContext.js, /Users/runner/work/goread/goread/node_modules/react-i18next/dist/es/context.js, /Users/runner/work/goread/goread/node_modules/react-i18next/dist/es/useSSR.js, /Users/runner/work/goread/goread/node_modules/react-i18next/dist/es/useTranslation.js, /Users/runner/work/goread/goread/node_modules/react-i18next/dist/es/withSSR.js, /Users/runner/work/goread/goread/node_modules/react-i18next/dist/es/withTranslation.js, /Users/runner/work/goread/goread/node_modules/react-router/dist/development/chunk-JG3XND5A.mjs, /Users/runner/work/goread/goread/node_modules/react-router/dist/development/chunk-UIGDSWPH.mjs, /Users/runner/work/goread/goread/node_modules/react-router/dist/development/dom-export.mjs, /Users/runner/work/goread/goread/src/components/About.tsx, /Users/runner/work/goread/goread/src/components/BookCard.tsx, /Users/runner/work/goread/goread/src/components/CoverImage.tsx, /Users/runner/work/goread/goread/src/components/CustomSelect.tsx, /Users/runner/work/goread/goread/src/components/ErrorBoundary.tsx, /Users/runner/work/goread/goread/src/components/GroupDetail.tsx, /Users/runner/work/goread/goread/src/components/GroupingDrawer.tsx, /Users/runner/work/goread/goread/src/components/ImportFiles.tsx, /Users/runner/work/goread/goread/src/components/Reader.tsx, /Users/runner/work/goread/goread/src/components/ScanResults.tsx, /Users/runner/work/goread/goread/src/components/Search.tsx, /Users/runner/work/goread/goread/src/components/SearchHeader.tsx, /Users/runner/work/goread/goread/src/components/Settings.tsx, /Users/runner/work/goread/goread/src/components/Statistics.tsx, /Users/runner/work/goread/goread/src/components/Toast.tsx, /Users/runner/work/goread/goread/src/components/bookshelf/ConfirmDeleteDrawer.tsx, /Users/runner/work/goread/goread/src/components/bookshelf/GroupDetailOverlay.tsx, /Users/runner/work/goread/goread/src/components/bookshelf/TopBar.tsx, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useBookActions.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useBooksData.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useBookshelfLifecycle.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useBookshelfState.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useDragSort.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useGroupOverlay.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useGroupsData.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useImportProgress.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useSelectionMode.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useToast.ts, /Users/runner/work/goread/goread/src/components/reader/CropOverlay.tsx, /Users/runner/work/goread/goread/src/components/reader/FontSizeControl.tsx, /Users/runner/work/goread/goread/src/components/reader/TocOverlay.tsx, /Users/runner/work/goread/goread/src/components/reader/hooks/useAutoMark.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useAutoScroll.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookFontSize.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookFormatHelper.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookLoader.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookPageDivider.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookReadingMode.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookmarks.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useCapture.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useContentPinchZoom.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useDividerVisibility.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useDomRenderer.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useExternalVisibility.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useInitReader.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useModeSwitch.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useNavigation.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/usePageRenderer.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/usePageSync.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderClick.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderSettings.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderState.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderTTS.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderTheme.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReadingSession.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useResizeHandler.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useToc.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useTocSort.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useTxtPaging.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useUndoJump.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useVerticalScroll.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useViewport.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useVolumeNavigation.ts, /Users/runner/work/goread/goread/src/components/tts/hooks/useTTS.ts, /Users/runner/work/goread/goread/src/hooks/useAppLifecycle.ts, /Users/runner/work/goread/goread/src/hooks/useBookRenderer.ts, /Users/runner/work/goread/goread/src/hooks/useCover.ts, /Users/runner/work/goread/goread/src/hooks/useExternalFileOpen.ts, /Users/runner/work/goread/goread/src/hooks/useImportGrouping.ts, /Users/runner/work/goread/goread/src/hooks/useImportedBooks.ts, /Users/runner/work/goread/goread/src/hooks/useInlineEdit.ts, /Users/runner/work/goread/goread/src/hooks/useLongPress.ts, /Users/runner/work/goread/goread/src/hooks/useOverlayBackHandler.ts, /Users/runner/work/goread/goread/src/hooks/useScanFormats.ts, /Users/runner/work/goread/goread/src/hooks/useSearchOverlay.ts, /Users/runner/work/goread/goread/src/hooks/useSelectAll.ts, /Users/runner/work/goread/goread/src/hooks/useSystemLanguageSync.ts, /Users/runner/work/goread/goread/src/layouts/MainLayout.tsx, /Users/runner/work/goread/goread/src/main.tsx, /Users/runner/work/goread/goread/src/router/PageTransitionProvider.tsx, /Users/runner/work/goread/goread/src/utils/gesture.ts, dynamic import will not move module into another chunk.
+2026-04-09T07:13:57.6834920Z [39m
+2026-04-09T07:13:57.6835550Z [1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+2026-04-09T07:13:57.6838080Z (!) /Users/runner/work/goread/goread/node_modules/react-dom/client.js is dynamically imported by /Users/runner/work/goread/goread/src/services/formats/markdown/MarkdownRenderer.ts but also statically imported by /Users/runner/work/goread/goread/src/main.tsx, dynamic import will not move module into another chunk.
+2026-04-09T07:13:57.6839420Z [39m
+2026-04-09T07:13:57.6840380Z [1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+2026-04-09T07:13:57.6851350Z (!) /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/core.js is dynamically imported by /Users/runner/work/goread/goread/src/components/Settings.tsx, /Users/runner/work/goread/goread/src/main.tsx, /Users/runner/work/goread/goread/src/services/commonService.ts, /Users/runner/work/goread/goread/src/services/tts/NativeTTSClient.ts, /Users/runner/work/goread/goread/src/utils/coverUtils.ts but also statically imported by /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/app.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/dpi.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/event.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/image.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/index.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/menu/base.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/menu/checkMenuItem.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/menu/iconMenuItem.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/menu/menu.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/menu/menuItem.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/menu/predefinedMenuItem.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/menu/submenu.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/path.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/tray.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/webview.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/webviewWindow.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/api/window.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/plugin-dialog/dist-js/index.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/plugin-fs/dist-js/index.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/plugin-opener/dist-js/index.js, /Users/runner/work/goread/goread/node_modules/@tauri-apps/plugin-os/dist-js/index.js, /Users/runner/work/goread/goread/src/components/reader/CropOverlay.tsx, /Users/runner/work/goread/goread/src/services/formats/epub/epubCacheService.ts, /Users/runner/work/goread/goread/src/services/formats/pdf/PdfRenderer.ts, /Users/runner/work/goread/goread/src/utils/coverUtils.ts, dynamic import will not move module into another chunk.
+2026-04-09T07:13:57.6863140Z [39m
+2026-04-09T07:13:57.6863590Z [1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+2026-04-09T07:13:57.6891130Z (!) /Users/runner/work/goread/goread/src/services/index.ts is dynamically imported by /Users/runner/work/goread/goread/src/main.tsx, /Users/runner/work/goread/goread/src/utils/storagePermission.ts but also statically imported by /Users/runner/work/goread/goread/src/components/CoverImage.tsx, /Users/runner/work/goread/goread/src/components/ErrorBoundary.tsx, /Users/runner/work/goread/goread/src/components/GroupDetail.tsx, /Users/runner/work/goread/goread/src/components/ImportFiles.tsx, /Users/runner/work/goread/goread/src/components/Search.tsx, /Users/runner/work/goread/goread/src/components/Settings.tsx, /Users/runner/work/goread/goread/src/components/Statistics.tsx, /Users/runner/work/goread/goread/src/components/bookshelf/GroupDetailOverlay.tsx, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useBookActions.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useBooksData.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useDragSort.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useGroupsData.ts, /Users/runner/work/goread/goread/src/components/reader/CropOverlay.tsx, /Users/runner/work/goread/goread/src/components/reader/hooks/useAutoMark.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookFontSize.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookLoader.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookReadingMode.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookmarks.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useCapture.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useDomRenderer.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useInitReader.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useNavigation.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/usePageRenderer.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderSettings.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderTTS.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderTheme.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReadingSession.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useResizeHandler.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useToc.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useTxtPaging.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useVerticalScroll.ts, /Users/runner/work/goread/goread/src/components/tts/hooks/useTTS.ts, /Users/runner/work/goread/goread/src/constants/cache.ts, /Users/runner/work/goread/goread/src/hooks/useCover.ts, /Users/runner/work/goread/goread/src/hooks/useImportGrouping.ts, /Users/runner/work/goread/goread/src/hooks/useImportedBooks.ts, /Users/runner/work/goread/goread/src/hooks/useSystemLanguageSync.ts, /Users/runner/work/goread/goread/src/locales/index.ts, /Users/runner/work/goread/goread/src/main.tsx, /Users/runner/work/goread/goread/src/router/useAppNav.ts, /Users/runner/work/goread/goread/src/services/cacheConfigService.ts, /Users/runner/work/goread/goread/src/services/dataBackupService.ts, /Users/runner/work/goread/goread/src/services/fileSystemService.ts, /Users/runner/work/goread/goread/src/services/formats/epub/cache/EpubResourceCacheManager.ts, /Users/runner/work/goread/goread/src/services/formats/epub/cache/EpubSectionCacheManager.ts, /Users/runner/work/goread/goread/src/services/formats/epub/epubCacheService.ts, /Users/runner/work/goread/goread/src/services/formats/epub/epubPreloader.ts, /Users/runner/work/goread/goread/src/services/formats/epub/hooks/tocMapping.ts, /Users/runner/work/goread/goread/src/services/formats/epub/hooks/useEpubLifecycle.ts, /Users/runner/work/goread/goread/src/services/formats/epub/hooks/useEpubResource.ts, /Users/runner/work/goread/goread/src/services/formats/epub/hooks/useEpubTTS.ts, /Users/runner/work/goread/goread/src/services/formats/epub/hooks/useVerticalRender.ts, /Users/runner/work/goread/goread/src/services/formats/html/HtmlRenderer.ts, /Users/runner/work/goread/goread/src/services/formats/markdown/MarkdownRenderer.ts, /Users/runner/work/goread/goread/src/services/formats/mobi/cache/MobiResourceCacheManager.ts, /Users/runner/work/goread/goread/src/services/formats/mobi/cache/MobiSectionCacheManager.ts, /Users/runner/work/goread/goread/src/services/formats/mobi/hooks/useMobiLifecycle.ts, /Users/runner/work/goread/goread/src/services/formats/mobi/hooks/useMobiNavigation.ts, /Users/runner/work/goread/goread/src/services/formats/mobi/hooks/useMobiRender.ts, /Users/runner/work/goread/goread/src/services/formats/mobi/mobiCacheService.ts, /Users/runner/work/goread/goread/src/services/formats/mobi/mobiPreloader.ts, /Users/runner/work/goread/goread/src/services/formats/pdf/PdfRenderer.ts, /Users/runner/work/goread/goread/src/services/formats/txt/TxtRenderer.ts, /Users/runner/work/goread/goread/src/services/formats/txt/hooks/useTxtChapterCache.ts, /Users/runner/work/goread/goread/src/services/formats/txt/hooks/useTxtDocumentLoader.ts, /Users/runner/work/goread/goread/src/services/formats/txt/txtCacheService.ts, /Users/runner/work/goread/goread/src/services/formats/txt/txtPreloader.ts, /Users/runner/work/goread/goread/src/services/importRunner.ts, /Users/runner/work/goread/goread/src/services/resolveLocalPath.ts, /Users/runner/work/goread/goread/src/services/statusBarService.ts, /Users/runner/work/goread/goread/src/services/tts/NativeTTSClient.ts, /Users/runner/work/goread/goread/src/services/tts/TTSController.ts, /Users/runner/work/goread/goread/src/services/tts/WebSpeechClient.ts, /Users/runner/work/goread/goread/src/services/tts/core/rendererAdapter.ts, /Users/runner/work/goread/goread/src/services/volumeKeyService.ts, /Users/runner/work/goread/goread/src/utils/MemoryOptimizer.ts, /Users/runner/work/goread/goread/src/utils/PDFPerformanceMonitor.ts, /Users/runner/work/goread/goread/src/utils/PagePreloader.ts, /Users/runner/work/goread/goread/src/utils/ProgressiveRenderer.ts, /Users/runner/work/goread/goread/src/utils/WorkerPool.ts, /Users/runner/work/goread/goread/src/utils/bookId.ts, /Users/runner/work/goread/goread/src/utils/coverUtils.ts, /Users/runner/work/goread/goread/src/utils/groupImport.ts, /Users/runner/work/goread/goread/src/utils/storagePermission.ts, dynamic import will not move module into another chunk.
+2026-04-09T07:13:57.6909900Z [39m
+2026-04-09T07:13:57.6910430Z [1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+2026-04-09T07:13:57.6922940Z (!) /Users/runner/work/goread/goread/src/services/formats/epub/epubCacheService.ts is dynamically imported by /Users/runner/work/goread/goread/src/services/formats/epub/epubPreloader.ts but also statically imported by /Users/runner/work/goread/goread/src/services/cacheConfigService.ts, /Users/runner/work/goread/goread/src/services/formats/epub/EpubRenderer.ts, /Users/runner/work/goread/goread/src/services/formats/epub/hooks/useEpubLifecycle.ts, /Users/runner/work/goread/goread/src/services/formats/epub/hooks/useHorizontalRender.ts, /Users/runner/work/goread/goread/src/services/formats/epub/hooks/useVerticalRender.ts, dynamic import will not move module into another chunk.
+2026-04-09T07:13:57.6925150Z [39m
+2026-04-09T07:13:57.6925610Z [1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+2026-04-09T07:13:57.6930230Z (!) /Users/runner/work/goread/goread/src/services/formats/epub/EpubRenderer.ts is dynamically imported by /Users/runner/work/goread/goread/src/utils/coverUtils.ts but also statically imported by /Users/runner/work/goread/goread/src/components/reader/hooks/useAutoScroll.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookLoader.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useBookReadingMode.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useDividerVisibility.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useInitReader.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useNavigation.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderSettings.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useReaderTTS.ts, /Users/runner/work/goread/goread/src/services/formats/index.ts, dynamic import will not move module into another chunk.
+2026-04-09T07:13:57.6933100Z [39m
+2026-04-09T07:13:57.6933660Z [1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+2026-04-09T07:13:57.6937230Z (!) /Users/runner/work/goread/goread/src/services/formats/mobi/MobiRenderer.ts is dynamically imported by /Users/runner/work/goread/goread/src/utils/coverUtils.ts but also statically imported by /Users/runner/work/goread/goread/src/components/reader/hooks/useAutoScroll.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useDividerVisibility.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useInitReader.ts, /Users/runner/work/goread/goread/src/components/reader/hooks/useNavigation.ts, /Users/runner/work/goread/goread/src/services/formats/index.ts, dynamic import will not move module into another chunk.
+2026-04-09T07:13:57.6939390Z [39m
+2026-04-09T07:13:57.6939800Z [1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+2026-04-09T07:13:57.6942330Z (!) /Users/runner/work/goread/goread/src/utils/coverUtils.ts is dynamically imported by /Users/runner/work/goread/goread/src/router/useAppNav.ts but also statically imported by /Users/runner/work/goread/goread/src/components/reader/hooks/useBookLoader.ts, /Users/runner/work/goread/goread/src/hooks/useCover.ts, /Users/runner/work/goread/goread/src/services/dataBackupService.ts, /Users/runner/work/goread/goread/src/services/importRunner.ts, dynamic import will not move module into another chunk.
+2026-04-09T07:13:57.6943850Z [39m
+2026-04-09T07:13:57.6944220Z [1m[33m[plugin:vite:reporter][39m[22m [33m[plugin vite:reporter] 
+2026-04-09T07:13:57.6947600Z (!) /Users/runner/work/goread/goread/node_modules/@tauri-apps/plugin-dialog/dist-js/index.js is dynamically imported by /Users/runner/work/goread/goread/src/components/GroupDetail.tsx, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useBookActions.ts, /Users/runner/work/goread/goread/src/components/bookshelf/hooks/useBookActions.ts, /Users/runner/work/goread/goread/src/services/dataBackupService.ts, /Users/runner/work/goread/goread/src/services/dataBackupService.ts, /Users/runner/work/goread/goread/src/services/dataBackupService.ts, /Users/runner/work/goread/goread/src/services/importUtils.ts but also statically imported by /Users/runner/work/goread/goread/src/components/reader/CropOverlay.tsx, dynamic import will not move module into another chunk.
+2026-04-09T07:13:57.6950080Z [39m
+2026-04-09T07:13:57.7148670Z computing gzip size...
+2026-04-09T07:13:57.7857290Z [33m
+2026-04-09T07:13:57.7857950Z [2mdist/[22m[32mindex.html                       [39m[1m[2m    0.50 kB[22m[1m[22m[2m │ gzip:   0.32 kB[22m
+2026-04-09T07:13:57.8018980Z (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-04-09T07:13:57.8020040Z [2mdist/[22m[2massets/[22m[35mindex-BR2kq47W.css        [39m[1m[2m    4.15 kB[22m[1m[22m[2m │ gzip:   1.31 kB[22m
+2026-04-09T07:13:57.8129010Z - Using dynamic import() to code-split the application
+2026-04-09T07:13:57.8129940Z [2mdist/[22m[2massets/[22m[35mpreview-VzJ4Dv78.css      [39m[1m[2m   53.59 kB[22m[1m[22m[2m │ gzip:  10.42 kB[22m
+2026-04-09T07:13:57.8246690Z - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-04-09T07:13:57.8247910Z [2mdist/[22m[2massets/[22m[36mindex-BWmd_dac.js         [39m[1m[2m    0.12 kB[22m[1m[22m[2m │ gzip:   0.12 kB[22m
+2026-04-09T07:13:57.8452460Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+2026-04-09T07:13:57.8453890Z [2mdist/[22m[2massets/[22m[36mdiff-DbItnlRl.js          [39m[1m[2m    0.31 kB[22m[1m[22m[2m │ gzip:   0.24 kB[22m
+2026-04-09T07:13:57.8455320Z [2mdist/[22m[2massets/[22m[36mbrainfuck-C4LP7Hcl.js     [39m[1m[2m    0.61 kB[22m[1m[22m[2m │ gzip:   0.33 kB[22m
+2026-04-09T07:13:57.8568810Z [2mdist/[22m[2massets/[22m[36mproperties-C78fOPTZ.js    [39m[1m[2m    0.67 kB[22m[1m[22m[2m │ gzip:   0.35 kB[22m
+2026-04-09T07:13:57.8671670Z [2mdist/[22m[2massets/[22m[36mcmake-BQqOBYOt.js         [39m[1m[2m    0.78 kB[22m[1m[22m[2m │ gzip:   0.46 kB[22m
+2026-04-09T07:13:57.8773890Z [2mdist/[22m[2massets/[22m[36masciiarmor-Df11BRmG.js    [39m[1m[2m    0.79 kB[22m[1m[22m[2m │ gzip:   0.41 kB[22m
+2026-04-09T07:13:57.8875630Z [2mdist/[22m[2massets/[22m[36mindex-DkjIcOQA.js         [39m[1m[2m    0.81 kB[22m[1m[22m[2m │ gzip:   0.46 kB[22m
+2026-04-09T07:13:57.8978010Z [2mdist/[22m[2massets/[22m[36mhttp-DBlCnlav.js          [39m[1m[2m    0.85 kB[22m[1m[22m[2m │ gzip:   0.41 kB[22m
+2026-04-09T07:13:57.9079900Z [2mdist/[22m[2massets/[22m[36mprotobuf-ChK-085T.js      [39m[1m[2m    0.86 kB[22m[1m[22m[2m │ gzip:   0.52 kB[22m
+2026-04-09T07:13:57.9181960Z [2mdist/[22m[2massets/[22m[36msolr-DehyRSwq.js          [39m[1m[2m    0.87 kB[22m[1m[22m[2m │ gzip:   0.46 kB[22m
+2026-04-09T07:13:57.9282840Z [2mdist/[22m[2massets/[22m[36mtroff-wAsdV37c.js         [39m[1m[2m    0.96 kB[22m[1m[22m[2m │ gzip:   0.44 kB[22m
+2026-04-09T07:13:57.9384390Z [2mdist/[22m[2massets/[22m[36mspreadsheet-BCZA_wO0.js   [39m[1m[2m    1.14 kB[22m[1m[22m[2m │ gzip:   0.54 kB[22m
+2026-04-09T07:13:57.9486000Z [2mdist/[22m[2massets/[22m[36mtoml-Bm5Em-hy.js          [39m[1m[2m    1.14 kB[22m[1m[22m[2m │ gzip:   0.54 kB[22m
+2026-04-09T07:13:57.9586790Z [2mdist/[22m[2massets/[22m[36mmbox-CNhZ1qSd.js          [39m[1m[2m    1.40 kB[22m[1m[22m[2m │ gzip:   0.66 kB[22m
+2026-04-09T07:13:57.9688570Z [2mdist/[22m[2massets/[22m[36mevent-BN8VXkQ0.js         [39m[1m[2m    1.48 kB[22m[1m[22m[2m │ gzip:   0.73 kB[22m
+2026-04-09T07:13:57.9789370Z [2mdist/[22m[2massets/[22m[36msieve-C3Gn_uJK.js         [39m[1m[2m    1.62 kB[22m[1m[22m[2m │ gzip:   0.77 kB[22m
+2026-04-09T07:13:57.9891000Z [2mdist/[22m[2massets/[22m[36mrpm-CTu-6PCP.js           [39m[1m[2m    1.62 kB[22m[1m[22m[2m │ gzip:   0.83 kB[22m
+2026-04-09T07:13:57.9991220Z [2mdist/[22m[2massets/[22m[36mfactor-kuTfRLto.js        [39m[1m[2m    1.67 kB[22m[1m[22m[2m │ gzip:   0.61 kB[22m
+2026-04-09T07:13:58.0093100Z [2mdist/[22m[2massets/[22m[36mz80-Hz9HOZM7.js           [39m[1m[2m    1.75 kB[22m[1m[22m[2m │ gzip:   0.81 kB[22m
+2026-04-09T07:13:58.0193400Z [2mdist/[22m[2massets/[22m[36meiffel-CnydiIhH.js        [39m[1m[2m    1.81 kB[22m[1m[22m[2m │ gzip:   0.92 kB[22m
+2026-04-09T07:13:58.0295170Z [2mdist/[22m[2massets/[22m[36melm-vLlmbW-K.js           [39m[1m[2m    1.89 kB[22m[1m[22m[2m │ gzip:   0.82 kB[22m
+2026-04-09T07:13:58.0396220Z [2mdist/[22m[2massets/[22m[36mmathematica-DTrFuWx2.js   [39m[1m[2m    1.92 kB[22m[1m[22m[2m │ gzip:   0.82 kB[22m
+2026-04-09T07:13:58.0454270Z [2mdist/[22m[2massets/[22m[36mdockerfile-BKs6k2Af.js    [39m[1m[2m    1.95 kB[22m[1m[22m[2m │ gzip:   0.67 kB[22m
+2026-04-09T07:13:58.0482480Z [2mdist/[22m[2massets/[22m[36mturtle-B1tBg_DP.js        [39m[1m[2m    1.98 kB[22m[1m[22m[2m │ gzip:   0.90 kB[22m
+2026-04-09T07:13:58.0495360Z [2mdist/[22m[2massets/[22m[36mebnf-CDyGwa7X.js          [39m[1m[2m    1.99 kB[22m[1m[22m[2m │ gzip:   0.81 kB[22m
+2026-04-09T07:13:58.0496400Z [2mdist/[22m[2massets/[22m[36msmalltalk-CnHTOXQT.js     [39m[1m[2m    2.01 kB[22m[1m[22m[2m │ gzip:   0.85 kB[22m
+2026-04-09T07:13:58.0545320Z [2mdist/[22m[2massets/[22m[36mdtd-DF_7sFjM.js           [39m[1m[2m    2.06 kB[22m[1m[22m[2m │ gzip:   0.87 kB[22m
+2026-04-09T07:13:58.0588840Z [2mdist/[22m[2massets/[22m[36mmumps-BT43cFF4.js         [39m[1m[2m    2.07 kB[22m[1m[22m[2m │ gzip:   0.98 kB[22m
+2026-04-09T07:13:58.0613160Z [2mdist/[22m[2massets/[22m[36mfcl-Kvtd6kyn.js           [39m[1m[2m    2.08 kB[22m[1m[22m[2m │ gzip:   0.95 kB[22m
+2026-04-09T07:13:58.0634360Z [2mdist/[22m[2massets/[22m[36mntriples-BfvgReVJ.js      [39m[1m[2m    2.10 kB[22m[1m[22m[2m │ gzip:   0.75 kB[22m
+2026-04-09T07:13:58.0635910Z [2mdist/[22m[2massets/[22m[36mapl-B4CMkyY2.js           [39m[1m[2m    2.12 kB[22m[1m[22m[2m │ gzip:   1.23 kB[22m
+2026-04-09T07:13:58.0636910Z [2mdist/[22m[2massets/[22m[36myacas-BJ4BC0dw.js         [39m[1m[2m    2.15 kB[22m[1m[22m[2m │ gzip:   1.09 kB[22m
+2026-04-09T07:13:58.0637940Z [2mdist/[22m[2massets/[22m[36msimple-mode-GW_nhZxv.js   [39m[1m[2m    2.28 kB[22m[1m[22m[2m │ gzip:   1.09 kB[22m
+2026-04-09T07:13:58.0639440Z [2mdist/[22m[2massets/[22m[36moctave-Ck1zUtKM.js        [39m[1m[2m    2.30 kB[22m[1m[22m[2m │ gzip:   1.09 kB[22m
+2026-04-09T07:13:58.0640430Z [2mdist/[22m[2massets/[22m[36mpascal--L3eBynH.js        [39m[1m[2m    2.30 kB[22m[1m[22m[2m │ gzip:   1.19 kB[22m
+2026-04-09T07:13:58.0641370Z [2mdist/[22m[2massets/[22m[36mcommonlisp-DBKNyK5s.js    [39m[1m[2m    2.32 kB[22m[1m[22m[2m │ gzip:   1.10 kB[22m
+2026-04-09T07:13:58.0642370Z [2mdist/[22m[2massets/[22m[36mtcl-DVfN8rqt.js           [39m[1m[2m    2.36 kB[22m[1m[22m[2m │ gzip:   1.23 kB[22m
+2026-04-09T07:13:58.0643250Z [2mdist/[22m[2massets/[22m[36mindex-DRBdOyJL.js         [39m[1m[2m    2.42 kB[22m[1m[22m[2m │ gzip:   1.50 kB[22m
+2026-04-09T07:13:58.0644230Z [2mdist/[22m[2massets/[22m[36mwebidl-ZXfAyPTL.js        [39m[1m[2m    2.52 kB[22m[1m[22m[2m │ gzip:   1.26 kB[22m
+2026-04-09T07:13:58.0645150Z [2mdist/[22m[2massets/[22m[36mpig-CevX1Tat.js           [39m[1m[2m    2.53 kB[22m[1m[22m[2m │ gzip:   1.38 kB[22m
+2026-04-09T07:13:58.0646180Z [2mdist/[22m[2massets/[22m[36mpuppet-DMA9R1ak.js        [39m[1m[2m    2.54 kB[22m[1m[22m[2m │ gzip:   1.20 kB[22m
+2026-04-09T07:13:58.0647050Z [2mdist/[22m[2massets/[22m[36mforth-Ffai-XNe.js         [39m[1m[2m    2.54 kB[22m[1m[22m[2m │ gzip:   1.33 kB[22m
+2026-04-09T07:13:58.0647930Z [2mdist/[22m[2massets/[22m[36mshell-CjFT_Tl9.js         [39m[1m[2m    2.57 kB[22m[1m[22m[2m │ gzip:   1.21 kB[22m
+2026-04-09T07:13:58.0648810Z [2mdist/[22m[2massets/[22m[36mindex-SajRCWUB.js         [39m[1m[2m    2.63 kB[22m[1m[22m[2m │ gzip:   1.50 kB[22m
+2026-04-09T07:13:58.0649790Z [2mdist/[22m[2massets/[22m[36mvelocity-D8B20fx6.js      [39m[1m[2m    2.67 kB[22m[1m[22m[2m │ gzip:   1.11 kB[22m
+2026-04-09T07:13:58.0650920Z [2mdist/[22m[2massets/[22m[36mtiddlywiki-DO-Gjzrf.js    [39m[1m[2m    2.78 kB[22m[1m[22m[2m │ gzip:   1.07 kB[22m
+2026-04-09T07:13:58.0651870Z [2mdist/[22m[2massets/[22m[36mmodelica-Dc1JOy9r.js      [39m[1m[2m    2.79 kB[22m[1m[22m[2m │ gzip:   1.29 kB[22m
+2026-04-09T07:13:58.0652810Z [2mdist/[22m[2massets/[22m[36moz-BzwKVEFT.js            [39m[1m[2m    2.90 kB[22m[1m[22m[2m │ gzip:   1.28 kB[22m
+2026-04-09T07:13:58.0653810Z [2mdist/[22m[2massets/[22m[36mr-DUYO_cvP.js             [39m[1m[2m    2.94 kB[22m[1m[22m[2m │ gzip:   1.36 kB[22m
+2026-04-09T07:13:58.0654640Z [2mdist/[22m[2massets/[22m[36mstex-C3f8Ysf7.js          [39m[1m[2m    3.12 kB[22m[1m[22m[2m │ gzip:   1.20 kB[22m
+2026-04-09T07:13:58.0655440Z [2mdist/[22m[2massets/[22m[36mtiki-DGYXhP31.js          [39m[1m[2m    3.25 kB[22m[1m[22m[2m │ gzip:   1.26 kB[22m
+2026-04-09T07:13:58.0656220Z [2mdist/[22m[2massets/[22m[36mindex-DgI23c3l.js         [39m[1m[2m    3.28 kB[22m[1m[22m[2m │ gzip:   1.68 kB[22m
+2026-04-09T07:13:58.0657050Z [2mdist/[22m[2massets/[22m[36mvhdl-lSbBsy5d.js          [39m[1m[2m    3.35 kB[22m[1m[22m[2m │ gzip:   1.51 kB[22m
+2026-04-09T07:13:58.0658080Z [2mdist/[22m[2massets/[22m[36mlua-BgMRiT3U.js           [39m[1m[2m    3.40 kB[22m[1m[22m[2m │ gzip:   1.44 kB[22m
+2026-04-09T07:13:58.0659000Z [2mdist/[22m[2massets/[22m[36mmscgen-BA5vi2Kp.js        [39m[1m[2m    3.51 kB[22m[1m[22m[2m │ gzip:   0.98 kB[22m
+2026-04-09T07:13:58.0659850Z [2mdist/[22m[2massets/[22m[36msparql-DkYu6x3z.js        [39m[1m[2m    3.55 kB[22m[1m[22m[2m │ gzip:   1.63 kB[22m
+2026-04-09T07:13:58.0660730Z [2mdist/[22m[2massets/[22m[36mcypher-C_CwsFkJ.js        [39m[1m[2m    3.56 kB[22m[1m[22m[2m │ gzip:   1.52 kB[22m
+2026-04-09T07:13:58.0661600Z [2mdist/[22m[2massets/[22m[36md-pRatUO7H.js             [39m[1m[2m    3.72 kB[22m[1m[22m[2m │ gzip:   1.68 kB[22m
+2026-04-09T07:13:58.0662490Z [2mdist/[22m[2massets/[22m[36mpath-4FlHzl-_.js          [39m[1m[2m    3.79 kB[22m[1m[22m[2m │ gzip:   0.99 kB[22m
+2026-04-09T07:13:58.0663490Z [2mdist/[22m[2massets/[22m[36mcoffeescript-S37ZYGWr.js  [39m[1m[2m    3.87 kB[22m[1m[22m[2m │ gzip:   1.69 kB[22m
+2026-04-09T07:13:58.0664250Z [2mdist/[22m[2massets/[22m[36mvb-CmGdzxic.js            [39m[1m[2m    3.90 kB[22m[1m[22m[2m │ gzip:   1.79 kB[22m
+2026-04-09T07:13:58.0665110Z [2mdist/[22m[2massets/[22m[36mswift-BzpIVaGY.js         [39m[1m[2m    3.96 kB[22m[1m[22m[2m │ gzip:   1.79 kB[22m
+2026-04-09T07:13:58.0665910Z [2mdist/[22m[2massets/[22m[36masn1-EdZsLKOL.js          [39m[1m[2m    3.98 kB[22m[1m[22m[2m │ gzip:   1.96 kB[22m
+2026-04-09T07:13:58.0666670Z [2mdist/[22m[2massets/[22m[36mq-pXgVlZs6.js             [39m[1m[2m    4.03 kB[22m[1m[22m[2m │ gzip:   1.67 kB[22m
+2026-04-09T07:13:58.0667430Z [2mdist/[22m[2massets/[22m[36mttcn-cfg-B9xdYoR4.js      [39m[1m[2m    4.05 kB[22m[1m[22m[2m │ gzip:   1.71 kB[22m
+2026-04-09T07:13:58.0668210Z [2mdist/[22m[2massets/[22m[36mdylan-DwRh75JA.js         [39m[1m[2m    4.05 kB[22m[1m[22m[2m │ gzip:   1.65 kB[22m
+2026-04-09T07:13:58.0669060Z [2mdist/[22m[2massets/[22m[36mlivescript-BwQOo05w.js    [39m[1m[2m    4.09 kB[22m[1m[22m[2m │ gzip:   1.64 kB[22m
+2026-04-09T07:13:58.0669850Z [2mdist/[22m[2massets/[22m[36mgroovy-D9Dt4D0W.js        [39m[1m[2m    4.14 kB[22m[1m[22m[2m │ gzip:   1.77 kB[22m
+2026-04-09T07:13:58.0670640Z [2mdist/[22m[2massets/[22m[36mhaskell-BWDZoCOh.js       [39m[1m[2m    4.16 kB[22m[1m[22m[2m │ gzip:   1.89 kB[22m
+2026-04-09T07:13:58.0671430Z [2mdist/[22m[2massets/[22m[36masterisk-B-8jnY81.js      [39m[1m[2m    4.48 kB[22m[1m[22m[2m │ gzip:   1.78 kB[22m
+2026-04-09T07:13:58.0672210Z [2mdist/[22m[2massets/[22m[36mgas-Bneqetm1.js           [39m[1m[2m    4.57 kB[22m[1m[22m[2m │ gzip:   1.28 kB[22m
+2026-04-09T07:13:58.0673100Z [2mdist/[22m[2massets/[22m[36mfortran-DYz_wnZ1.js       [39m[1m[2m    4.65 kB[22m[1m[22m[2m │ gzip:   2.01 kB[22m
+2026-04-09T07:13:58.0673890Z [2mdist/[22m[2massets/[22m[36mmllike-CXdrOF99.js        [39m[1m[2m    4.79 kB[22m[1m[22m[2m │ gzip:   1.53 kB[22m
+2026-04-09T07:13:58.0674670Z [2mdist/[22m[2massets/[22m[36mttcn-CfJYG6tj.js          [39m[1m[2m    4.80 kB[22m[1m[22m[2m │ gzip:   2.13 kB[22m
+2026-04-09T07:13:58.0675440Z [2mdist/[22m[2massets/[22m[36mindex-BN4g6ZMm.js         [39m[1m[2m    4.95 kB[22m[1m[22m[2m │ gzip:   2.36 kB[22m
+2026-04-09T07:13:58.0676220Z [2mdist/[22m[2massets/[22m[36mecl-Cabwm37j.js           [39m[1m[2m    5.13 kB[22m[1m[22m[2m │ gzip:   2.31 kB[22m
+2026-04-09T07:13:58.0676990Z [2mdist/[22m[2massets/[22m[36mcrystal-SjHAIU92.js       [39m[1m[2m    5.13 kB[22m[1m[22m[2m │ gzip:   2.07 kB[22m
+2026-04-09T07:13:58.0677760Z [2mdist/[22m[2massets/[22m[36mruby-B2Rjki9n.js          [39m[1m[2m    5.16 kB[22m[1m[22m[2m │ gzip:   2.15 kB[22m
+2026-04-09T07:13:58.0678580Z [2mdist/[22m[2massets/[22m[36mjulia-DuME0IfC.js         [39m[1m[2m    5.39 kB[22m[1m[22m[2m │ gzip:   2.14 kB[22m
+2026-04-09T07:13:58.0679360Z [2mdist/[22m[2massets/[22m[36mvbscript-BuJXcnF6.js      [39m[1m[2m    5.82 kB[22m[1m[22m[2m │ gzip:   2.57 kB[22m
+2026-04-09T07:13:58.0680430Z [2mdist/[22m[2massets/[22m[36mmirc-CjQqDB4T.js          [39m[1m[2m    5.92 kB[22m[1m[22m[2m │ gzip:   2.68 kB[22m
+2026-04-09T07:13:58.0681270Z [2mdist/[22m[2massets/[22m[36mcobol-CWcv1MsR.js         [39m[1m[2m    6.20 kB[22m[1m[22m[2m │ gzip:   2.96 kB[22m
+2026-04-09T07:13:58.0682070Z [2mdist/[22m[2massets/[22m[36mimportRunner-kBffrviF.js  [39m[1m[2m    6.36 kB[22m[1m[22m[2m │ gzip:   2.30 kB[22m
+2026-04-09T07:13:58.0682870Z [2mdist/[22m[2massets/[22m[36mscheme-C41bIUwD.js        [39m[1m[2m    6.37 kB[22m[1m[22m[2m │ gzip:   2.39 kB[22m
+2026-04-09T07:13:58.0683750Z [2mdist/[22m[2massets/[22m[36mpython-BuPzkPfP.js        [39m[1m[2m    6.48 kB[22m[1m[22m[2m │ gzip:   2.73 kB[22m
+2026-04-09T07:13:58.0684810Z [2mdist/[22m[2massets/[22m[36mxquery-CQfU5ijd.js        [39m[1m[2m    6.62 kB[22m[1m[22m[2m │ gzip:   2.56 kB[22m
+2026-04-09T07:13:58.0685610Z [2mdist/[22m[2massets/[22m[36mpug-DukmZTjD.js           [39m[1m[2m    6.67 kB[22m[1m[22m[2m │ gzip:   1.94 kB[22m
+2026-04-09T07:13:58.0686490Z [2mdist/[22m[2massets/[22m[36mtextile-CnDTJFAw.js       [39m[1m[2m    6.80 kB[22m[1m[22m[2m │ gzip:   2.44 kB[22m
+2026-04-09T07:13:58.0687260Z [2mdist/[22m[2massets/[22m[36mnsis-LdVXkNf5.js          [39m[1m[2m    6.81 kB[22m[1m[22m[2m │ gzip:   2.99 kB[22m
+2026-04-09T07:13:58.0688020Z [2mdist/[22m[2massets/[22m[36mnginx-DdIZxoE0.js         [39m[1m[2m    7.34 kB[22m[1m[22m[2m │ gzip:   2.72 kB[22m
+2026-04-09T07:13:58.0688810Z [2mdist/[22m[2massets/[22m[36mpowershell-CFHJl5sT.js    [39m[1m[2m    7.77 kB[22m[1m[22m[2m │ gzip:   3.33 kB[22m
+2026-04-09T07:13:58.0689630Z [2mdist/[22m[2massets/[22m[36mhaxe-H-WmDvRZ.js          [39m[1m[2m    7.89 kB[22m[1m[22m[2m │ gzip:   2.95 kB[22m
+2026-04-09T07:13:58.0690420Z [2mdist/[22m[2massets/[22m[36mgherkin-heZmZLOM.js       [39m[1m[2m    7.96 kB[22m[1m[22m[2m │ gzip:   5.09 kB[22m
+2026-04-09T07:13:58.0691210Z [2mdist/[22m[2massets/[22m[36merlang-BNw1qcRV.js        [39m[1m[2m    8.07 kB[22m[1m[22m[2m │ gzip:   2.89 kB[22m
+2026-04-09T07:13:58.0692070Z [2mdist/[22m[2massets/[22m[36mverilog-C6RDOZhf.js       [39m[1m[2m    8.24 kB[22m[1m[22m[2m │ gzip:   3.52 kB[22m
+2026-04-09T07:13:58.0692910Z [2mdist/[22m[2massets/[22m[36msas-B4kiWyti.js           [39m[1m[2m    9.33 kB[22m[1m[22m[2m │ gzip:   4.11 kB[22m
+2026-04-09T07:13:58.0693720Z [2mdist/[22m[2massets/[22m[36mperl-CdXCOZ3F.js          [39m[1m[2m    9.75 kB[22m[1m[22m[2m │ gzip:   3.46 kB[22m
+2026-04-09T07:13:58.0694500Z [2mdist/[22m[2massets/[22m[36mclojure-BMjYHr_A.js       [39m[1m[2m   10.82 kB[22m[1m[22m[2m │ gzip:   3.99 kB[22m
+2026-04-09T07:13:58.0695270Z [2mdist/[22m[2massets/[22m[36midl-BEugSyMb.js           [39m[1m[2m   11.63 kB[22m[1m[22m[2m │ gzip:   4.52 kB[22m
+2026-04-09T07:13:58.0696040Z [2mdist/[22m[2massets/[22m[36mindex-Dn2wi1LA.js         [39m[1m[2m   12.68 kB[22m[1m[22m[2m │ gzip:   5.59 kB[22m
+2026-04-09T07:13:58.0696790Z [2mdist/[22m[2massets/[22m[36mindex-RydFzOAq.js         [39m[1m[2m   14.78 kB[22m[1m[22m[2m │ gzip:   5.98 kB[22m
+2026-04-09T07:13:58.0697540Z [2mdist/[22m[2massets/[22m[36mindex-Ch2z-EQt.js         [39m[1m[2m   16.25 kB[22m[1m[22m[2m │ gzip:   7.42 kB[22m
+2026-04-09T07:13:58.0698340Z [2mdist/[22m[2massets/[22m[36mjavascript-qCveANmP.js    [39m[1m[2m   17.08 kB[22m[1m[22m[2m │ gzip:   5.75 kB[22m
+2026-04-09T07:13:58.0699110Z [2mdist/[22m[2massets/[22m[36mindex-CXRKK1W2.js         [39m[1m[2m   19.74 kB[22m[1m[22m[2m │ gzip:   9.25 kB[22m
+2026-04-09T07:13:58.0699950Z [2mdist/[22m[2massets/[22m[36mindex-BeMfMw_2.js         [39m[1m[2m   20.83 kB[22m[1m[22m[2m │ gzip:   9.31 kB[22m
+2026-04-09T07:13:58.0700800Z [2mdist/[22m[2massets/[22m[36mclike-B9uivgTg.js         [39m[1m[2m   22.30 kB[22m[1m[22m[2m │ gzip:   7.86 kB[22m
+2026-04-09T07:13:58.0701910Z [2mdist/[22m[2massets/[22m[36mindex-p2C4C1P4.js         [39m[1m[2m   23.00 kB[22m[1m[22m[2m │ gzip:  10.36 kB[22m
+2026-04-09T07:13:58.0702770Z [2mdist/[22m[2massets/[22m[36mstylus-B533Al4x.js        [39m[1m[2m   25.80 kB[22m[1m[22m[2m │ gzip:   8.60 kB[22m
+2026-04-09T07:13:58.0703520Z [2mdist/[22m[2massets/[22m[36mcss-BnMrqG3P.js           [39m[1m[2m   27.13 kB[22m[1m[22m[2m │ gzip:   8.47 kB[22m
+2026-04-09T07:13:58.0704270Z [2mdist/[22m[2massets/[22m[36mindex-CaROiPm8.js         [39m[1m[2m   30.79 kB[22m[1m[22m[2m │ gzip:  12.65 kB[22m
+2026-04-09T07:13:58.0705040Z [2mdist/[22m[2massets/[22m[36mindex-gMayFI_Q.js         [39m[1m[2m   31.55 kB[22m[1m[22m[2m │ gzip:   6.93 kB[22m
+2026-04-09T07:13:58.0705800Z [2mdist/[22m[2massets/[22m[36mindex-CVG74RVP.js         [39m[1m[2m   32.31 kB[22m[1m[22m[2m │ gzip:  13.06 kB[22m
+2026-04-09T07:13:58.0706710Z [2mdist/[22m[2massets/[22m[36msql-D0XecflT.js           [39m[1m[2m   37.05 kB[22m[1m[22m[2m │ gzip:  10.94 kB[22m
+2026-04-09T07:13:58.0707500Z [2mdist/[22m[2massets/[22m[36mindex-DH5w62En.js         [39m[1m[2m   40.73 kB[22m[1m[22m[2m │ gzip:  16.75 kB[22m
+2026-04-09T07:13:58.0708340Z [2mdist/[22m[2massets/[22m[36mindex-V0TwDSQj.js         [39m[1m[2m   45.09 kB[22m[1m[22m[2m │ gzip:  19.16 kB[22m
+2026-04-09T07:13:58.0709260Z [2mdist/[22m[2massets/[22m[36mindex-BCcYw4M4.js         [39m[1m[2m   70.80 kB[22m[1m[22m[2m │ gzip:  25.84 kB[22m
+2026-04-09T07:13:58.0710140Z [2mdist/[22m[2massets/[22m[36mindex-nDNSn-Hq.js         [39m[1m[2m   97.76 kB[22m[1m[22m[2m │ gzip:  28.42 kB[22m
+2026-04-09T07:13:58.0710910Z [2mdist/[22m[2massets/[22m[36mindex-1LSdilaV.js         [39m[1m[2m  101.30 kB[22m[1m[22m[2m │ gzip:  33.69 kB[22m
+2026-04-09T07:13:58.0711690Z [2mdist/[22m[2massets/[22m[36mindex-1iEHdckZ.js         [39m[1m[33m  835.13 kB[39m[22m[2m │ gzip: 295.09 kB[22m
+2026-04-09T07:13:58.0712600Z [2mdist/[22m[2massets/[22m[36mindex-CHY6KlhP.js         [39m[1m[33m1,032.28 kB[39m[22m[2m │ gzip: 302.38 kB[22m
+2026-04-09T07:13:58.0713190Z [32m✓ built in 3.48s[39m
+2026-04-09T07:13:58.0739000Z ##[group]Run set -euo pipefail
+2026-04-09T07:13:58.0739300Z [36;1mset -euo pipefail[0m
+2026-04-09T07:13:58.0739470Z [36;1mcd "$IOS_PROJECT_DIR"[0m
+2026-04-09T07:13:58.0739650Z [36;1mpod install[0m
+2026-04-09T07:13:58.0793610Z shell: /bin/bash -e {0}
+2026-04-09T07:13:58.0793780Z env:
+2026-04-09T07:13:58.0793920Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:13:58.0794110Z   NODE_VERSION: 20
+2026-04-09T07:13:58.0794240Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:13:58.0794420Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:13:58.0794660Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:13:58.0794890Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:13:58.0795060Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:13:58.0795220Z   CARGO_TERM_COLOR: always
+2026-04-09T07:13:58.0795360Z   CACHE_ON_FAILURE: false
+2026-04-09T07:13:58.0795500Z ##[endgroup]
+2026-04-09T07:14:00.3622700Z 
+2026-04-09T07:14:00.3623260Z Analyzing dependencies
+2026-04-09T07:14:00.3624360Z [!] The Podfile does not contain any dependencies.
+2026-04-09T07:14:00.3624780Z Downloading dependencies
+2026-04-09T07:14:00.3633090Z Generating Pods project
+2026-04-09T07:14:00.3633460Z Integrating client project
+2026-04-09T07:14:00.3633670Z 
+2026-04-09T07:14:00.3634140Z [!] Please close any current Xcode sessions and use `GoRead.xcworkspace` for this project from now on.
+2026-04-09T07:14:00.3634980Z Pod installation complete! There are 0 dependencies from the Podfile and 0 total pods installed.
+2026-04-09T07:14:00.3688070Z ##[group]Run set -euo pipefail
+2026-04-09T07:14:00.3688370Z [36;1mset -euo pipefail[0m
+2026-04-09T07:14:00.3688660Z [36;1mmkdir -p src-tauri/gen/apple/Externals/arm64/release[0m
+2026-04-09T07:14:00.3689040Z [36;1mmkdir -p src-tauri/gen/apple/Externals/x86_64/release[0m
+2026-04-09T07:14:00.3689410Z [36;1m# Force iOS CI build to produce staticlib only, so mobile plugin symbols[0m
+2026-04-09T07:14:00.3689770Z [36;1m# resolved by Xcode are not required during a Rust cdylib link step.[0m
+2026-04-09T07:14:00.3690260Z [36;1msed -i '' 's/crate-type = \["staticlib", "cdylib", "rlib"\]/crate-type = ["staticlib"]/g' src-tauri/Cargo.toml[0m
+2026-04-09T07:14:00.3690830Z [36;1mcargo build --manifest-path src-tauri/Cargo.toml --lib --target aarch64-apple-ios --release[0m
+2026-04-09T07:14:00.3691430Z [36;1mcp src-tauri/target/aarch64-apple-ios/release/libgoread_lib.a src-tauri/gen/apple/Externals/arm64/release/libapp.a[0m
+2026-04-09T07:14:00.3692130Z [36;1mcp src-tauri/target/aarch64-apple-ios/release/libgoread_lib.a src-tauri/gen/apple/Externals/x86_64/release/libapp.a[0m
+2026-04-09T07:14:00.3749070Z shell: /bin/bash -e {0}
+2026-04-09T07:14:00.3749440Z env:
+2026-04-09T07:14:00.3749630Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:14:00.3749900Z   NODE_VERSION: 20
+2026-04-09T07:14:00.3750080Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:14:00.3750310Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:14:00.3750550Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:14:00.3750740Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:14:00.3750930Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:14:00.3751070Z   CARGO_TERM_COLOR: always
+2026-04-09T07:14:00.3751230Z   CACHE_ON_FAILURE: false
+2026-04-09T07:14:00.3751460Z ##[endgroup]
+2026-04-09T07:14:00.7577010Z [1m[92m    Updating[0m crates.io index
+2026-04-09T07:14:02.1315670Z [1m[92m Downloading[0m crates ...
+2026-04-09T07:14:02.1781850Z [1m[92m  Downloaded[0m adler2 v2.0.1
+2026-04-09T07:14:02.1824060Z [1m[92m  Downloaded[0m alloc-stdlib v0.2.2
+2026-04-09T07:14:02.1872680Z [1m[92m  Downloaded[0m rustc_version v0.4.1
+2026-04-09T07:14:02.1931080Z [1m[92m  Downloaded[0m rand_chacha v0.2.2
+2026-04-09T07:14:02.1976250Z [1m[92m  Downloaded[0m phf_shared v0.10.0
+2026-04-09T07:14:02.1988780Z [1m[92m  Downloaded[0m objc2-quartz-core v0.3.2
+2026-04-09T07:14:02.2105040Z [1m[92m  Downloaded[0m utf-8 v0.7.6
+2026-04-09T07:14:02.2221520Z [1m[92m  Downloaded[0m serde-untagged v0.1.9
+2026-04-09T07:14:02.2410410Z [1m[92m  Downloaded[0m http-range v0.1.5
+2026-04-09T07:14:02.2648030Z [1m[92m  Downloaded[0m num-iter v0.1.45
+2026-04-09T07:14:02.2864720Z [1m[92m  Downloaded[0m tower-service v0.3.3
+2026-04-09T07:14:02.3091870Z [1m[92m  Downloaded[0m strsim v0.11.1
+2026-04-09T07:14:02.3318570Z [1m[92m  Downloaded[0m swift-rs v1.0.7
+2026-04-09T07:14:02.3499120Z [1m[92m  Downloaded[0m untrusted v0.9.0
+2026-04-09T07:14:02.3694040Z [1m[92m  Downloaded[0m writeable v0.6.2
+2026-04-09T07:14:02.3800800Z [1m[92m  Downloaded[0m futures-core v0.3.31
+2026-04-09T07:14:02.3902470Z [1m[92m  Downloaded[0m heck v0.5.0
+2026-04-09T07:14:02.4015450Z [1m[92m  Downloaded[0m itoa v1.0.15
+2026-04-09T07:14:02.4125250Z [1m[92m  Downloaded[0m infer v0.19.0
+2026-04-09T07:14:02.4198560Z [1m[92m  Downloaded[0m json-patch v3.0.1
+2026-04-09T07:14:02.4283100Z [1m[92m  Downloaded[0m icu_properties_data v2.1.1
+2026-04-09T07:14:02.5160790Z [1m[92m  Downloaded[0m jsonptr v0.6.3
+2026-04-09T07:14:02.5788430Z [1m[92m  Downloaded[0m match_token v0.1.0
+2026-04-09T07:14:02.5824750Z [1m[92m  Downloaded[0m mac v0.1.1
+2026-04-09T07:14:02.5864690Z [1m[92m  Downloaded[0m lebe v0.5.3
+2026-04-09T07:14:02.6410820Z [1m[92m  Downloaded[0m markup5ever v0.14.1
+2026-04-09T07:14:02.6450300Z [1m[92m  Downloaded[0m log v0.4.28
+2026-04-09T07:14:02.6496250Z [1m[92m  Downloaded[0m lock_api v0.4.14
+2026-04-09T07:14:02.6582120Z [1m[92m  Downloaded[0m libloading v0.7.4
+2026-04-09T07:14:02.6590050Z [1m[92m  Downloaded[0m regex-automata v0.4.13
+2026-04-09T07:14:02.6835350Z [1m[92m  Downloaded[0m libm v0.2.15
+2026-04-09T07:14:02.7599250Z [1m[92m  Downloaded[0m itertools v0.14.0
+2026-04-09T07:14:02.7778530Z [1m[92m  Downloaded[0m image v0.25.9
+2026-04-09T07:14:02.7891170Z [1m[92m  Downloaded[0m iri-string v0.7.8
+2026-04-09T07:14:02.8019390Z [1m[92m  Downloaded[0m idna v1.1.0
+2026-04-09T07:14:02.8078800Z [1m[92m  Downloaded[0m objc2-ui-kit v0.3.2
+2026-04-09T07:14:02.8792500Z [1m[92m  Downloaded[0m lazy_static v1.5.0
+2026-04-09T07:14:02.8828300Z [1m[92m  Downloaded[0m kuchikiki v0.8.8-speedreader
+2026-04-09T07:14:02.8892580Z [1m[92m  Downloaded[0m keyboard-types v0.7.0
+2026-04-09T07:14:02.9001550Z [1m[92m  Downloaded[0m indexmap v2.12.0
+2026-04-09T07:14:02.9103050Z [1m[92m  Downloaded[0m futures-util v0.3.31
+2026-04-09T07:14:02.9305180Z [1m[92m  Downloaded[0m tiff v0.9.1
+2026-04-09T07:14:02.9505830Z [1m[92m  Downloaded[0m webp v0.3.1
+2026-04-09T07:14:02.9708290Z [1m[92m  Downloaded[0m pxfm v0.1.25
+2026-04-09T07:14:03.0111640Z [1m[92m  Downloaded[0m indexmap v1.9.3
+2026-04-09T07:14:03.0223650Z [1m[92m  Downloaded[0m hashbrown v0.16.0
+2026-04-09T07:14:03.0291580Z [1m[92m  Downloaded[0m hashbrown v0.15.5
+2026-04-09T07:14:03.0356820Z [1m[92m  Downloaded[0m icu_collections v2.1.1
+2026-04-09T07:14:03.0521160Z [1m[92m  Downloaded[0m libc v0.2.177
+2026-04-09T07:14:03.0989190Z [1m[92m  Downloaded[0m ico v0.4.0
+2026-04-09T07:14:03.1090480Z [1m[92m  Downloaded[0m hyper-util v0.1.17
+2026-04-09T07:14:03.1162690Z [1m[92m  Downloaded[0m jobserver v0.1.34
+2026-04-09T07:14:03.1192920Z [1m[92m  Downloaded[0m ipnet v2.11.0
+2026-04-09T07:14:03.1223230Z [1m[92m  Downloaded[0m icu_provider v2.1.1
+2026-04-09T07:14:03.1294250Z [1m[92m  Downloaded[0m icu_properties v2.1.1
+2026-04-09T07:14:03.1338820Z [1m[92m  Downloaded[0m icu_normalizer_data v2.1.1
+2026-04-09T07:14:03.1375240Z [1m[92m  Downloaded[0m icu_normalizer v2.1.1
+2026-04-09T07:14:03.1440010Z [1m[92m  Downloaded[0m icu_locale_core v2.1.1
+2026-04-09T07:14:03.1567510Z [1m[92m  Downloaded[0m jpeg-decoder v0.3.2
+2026-04-09T07:14:03.1674980Z [1m[92m  Downloaded[0m iana-time-zone v0.1.64
+2026-04-09T07:14:03.1721630Z [1m[92m  Downloaded[0m hashbrown v0.12.3
+2026-04-09T07:14:03.1776650Z [1m[92m  Downloaded[0m wry v0.53.5
+2026-04-09T07:14:03.1893220Z [1m[92m  Downloaded[0m idna_adapter v1.2.1
+2026-04-09T07:14:03.1915100Z [1m[92m  Downloaded[0m ident_case v1.0.1
+2026-04-09T07:14:03.1937710Z [1m[92m  Downloaded[0m half v2.7.1
+2026-04-09T07:14:03.1988200Z [1m[92m  Downloaded[0m futures-intrusive v0.5.0
+2026-04-09T07:14:03.2055950Z [1m[92m  Downloaded[0m winnow v0.7.13
+2026-04-09T07:14:03.2200830Z [1m[92m  Downloaded[0m syn v2.0.108
+2026-04-09T07:14:03.2363490Z [1m[92m  Downloaded[0m tokio v1.48.0
+2026-04-09T07:14:03.3019150Z [1m[92m  Downloaded[0m rustix v1.1.2
+2026-04-09T07:14:03.3428550Z [1m[92m  Downloaded[0m encoding_rs v0.8.35
+2026-04-09T07:14:03.3732470Z [1m[92m  Downloaded[0m hashlink v0.10.0
+2026-04-09T07:14:03.3763560Z [1m[92m  Downloaded[0m gif v0.13.3
+2026-04-09T07:14:03.3791750Z [1m[92m  Downloaded[0m getrandom v0.3.4
+2026-04-09T07:14:03.3848120Z [1m[92m  Downloaded[0m getrandom v0.2.16
+2026-04-09T07:14:03.3903410Z [1m[92m  Downloaded[0m getrandom v0.1.16
+2026-04-09T07:14:03.3953430Z [1m[92m  Downloaded[0m ring v0.17.14
+2026-04-09T07:14:03.4613380Z [1m[92m  Downloaded[0m generic-array v0.14.9
+2026-04-09T07:14:03.4640660Z [1m[92m  Downloaded[0m tauri v2.9.2
+2026-04-09T07:14:03.5054720Z [1m[92m  Downloaded[0m tao v0.34.5
+2026-04-09T07:14:03.5250560Z [1m[92m  Downloaded[0m nix v0.30.1
+2026-04-09T07:14:03.5432990Z [1m[92m  Downloaded[0m glob v0.3.3
+2026-04-09T07:14:03.5457440Z [1m[92m  Downloaded[0m gethostname v1.1.0
+2026-04-09T07:14:03.5475520Z [1m[92m  Downloaded[0m fxhash v0.2.1
+2026-04-09T07:14:03.5488010Z [1m[92m  Downloaded[0m window-vibrancy v0.6.0
+2026-04-09T07:14:03.5627070Z [1m[92m  Downloaded[0m futures-task v0.3.31
+2026-04-09T07:14:03.5647040Z [1m[92m  Downloaded[0m futures-sink v0.3.31
+2026-04-09T07:14:03.5660580Z [1m[92m  Downloaded[0m futures-macro v0.3.31
+2026-04-09T07:14:03.5680280Z [1m[92m  Downloaded[0m futures-io v0.3.31
+2026-04-09T07:14:03.5693990Z [1m[92m  Downloaded[0m futures-executor v0.3.31
+2026-04-09T07:14:03.5715650Z [1m[92m  Downloaded[0m futures-channel v0.3.31
+2026-04-09T07:14:03.5755600Z [1m[92m  Downloaded[0m futures v0.3.31
+2026-04-09T07:14:03.5840740Z [1m[92m  Downloaded[0m zune-inflate v0.2.54
+2026-04-09T07:14:03.5869880Z [1m[92m  Downloaded[0m zune-core v0.5.0
+2026-04-09T07:14:03.5907430Z [1m[92m  Downloaded[0m zopfli v0.8.3
+2026-04-09T07:14:03.5947320Z [1m[92m  Downloaded[0m yoke v0.8.1
+2026-04-09T07:14:03.5975730Z [1m[92m  Downloaded[0m xml v1.2.1
+2026-04-09T07:14:03.6030380Z [1m[92m  Downloaded[0m tauri-plugin-fs v2.4.4
+2026-04-09T07:14:03.6166350Z [1m[92m  Downloaded[0m syn v1.0.109
+2026-04-09T07:14:03.6321410Z [1m[92m  Downloaded[0m regex-syntax v0.8.8
+2026-04-09T07:14:03.6420930Z [1m[92m  Downloaded[0m objc2-foundation v0.3.2
+2026-04-09T07:14:03.6733340Z [1m[92m  Downloaded[0m futf v0.1.5
+2026-04-09T07:14:03.6749740Z [1m[92m  Downloaded[0m form_urlencoded v1.2.2
+2026-04-09T07:14:03.6764050Z [1m[92m  Downloaded[0m foreign-types-shared v0.3.1
+2026-04-09T07:14:03.6776230Z [1m[92m  Downloaded[0m yoke-derive v0.8.1
+2026-04-09T07:14:03.6790620Z [1m[92m  Downloaded[0m xml-rs v1.0.0
+2026-04-09T07:14:03.6804940Z [1m[92m  Downloaded[0m weezl v0.1.12
+2026-04-09T07:14:03.6850770Z [1m[92m  Downloaded[0m uuid v1.18.1
+2026-04-09T07:14:03.6897060Z [1m[92m  Downloaded[0m url v2.5.7
+2026-04-09T07:14:03.6939800Z [1m[92m  Downloaded[0m unicode-segmentation v1.12.0
+2026-04-09T07:14:03.6982440Z [1m[92m  Downloaded[0m unicode-normalization v0.1.25
+2026-04-09T07:14:03.7035230Z [1m[92m  Downloaded[0m typenum v1.19.0
+2026-04-09T07:14:03.7079250Z [1m[92m  Downloaded[0m tauri-plugin-dialog v2.4.2
+2026-04-09T07:14:03.7153340Z [1m[92m  Downloaded[0m tauri-codegen v2.5.0
+2026-04-09T07:14:03.7181120Z [1m[92m  Downloaded[0m sqlx-postgres v0.8.6
+2026-04-09T07:14:03.7328430Z [1m[92m  Downloaded[0m objc2 v0.6.3
+2026-04-09T07:14:03.7504810Z [1m[92m  Downloaded[0m moka v0.12.11
+2026-04-09T07:14:03.7662210Z [1m[92m  Downloaded[0m rustls v0.23.34
+2026-04-09T07:14:03.7848940Z [1m[92m  Downloaded[0m objc2-security v0.3.2
+2026-04-09T07:14:03.8011130Z [1m[92m  Downloaded[0m epub v2.1.5
+2026-04-09T07:14:03.8092380Z [1m[92m  Downloaded[0m whoami v1.6.1
+2026-04-09T07:14:03.8124050Z [1m[92m  Downloaded[0m want v0.3.1
+2026-04-09T07:14:03.8140500Z [1m[92m  Downloaded[0m walkdir v2.5.0
+2026-04-09T07:14:03.8175270Z [1m[92m  Downloaded[0m version_check v0.9.5
+2026-04-09T07:14:03.8200600Z [1m[92m  Downloaded[0m vecmath v1.0.0
+2026-04-09T07:14:03.8218990Z [1m[92m  Downloaded[0m utf8_iter v1.0.4
+2026-04-09T07:14:03.8239140Z [1m[92m  Downloaded[0m utf16string v0.2.0
+2026-04-09T07:14:03.8263890Z [1m[92m  Downloaded[0m urlpattern v0.3.0
+2026-04-09T07:14:03.8292830Z [1m[92m  Downloaded[0m unicode-properties v0.1.4
+2026-04-09T07:14:03.8320300Z [1m[92m  Downloaded[0m unicode-ident v1.0.22
+2026-04-09T07:14:03.8367950Z [1m[92m  Downloaded[0m unicode-bidi v0.3.18
+2026-04-09T07:14:03.8403420Z [1m[92m  Downloaded[0m unic-ucd-version v0.9.0
+2026-04-09T07:14:03.8417400Z [1m[92m  Downloaded[0m unic-ucd-ident v0.9.0
+2026-04-09T07:14:03.8441140Z [1m[92m  Downloaded[0m unic-common v0.9.0
+2026-04-09T07:14:03.8452350Z [1m[92m  Downloaded[0m unic-char-range v0.9.0
+2026-04-09T07:14:03.8477320Z [1m[92m  Downloaded[0m unic-char-property v0.9.0
+2026-04-09T07:14:03.8498770Z [1m[92m  Downloaded[0m typeid v1.0.3
+2026-04-09T07:14:03.8525580Z [1m[92m  Downloaded[0m try-lock v0.2.5
+2026-04-09T07:14:03.8540270Z [1m[92m  Downloaded[0m tauri-plugin-opener v2.5.2
+2026-04-09T07:14:03.8596730Z [1m[92m  Downloaded[0m tauri-plugin v2.5.1
+2026-04-09T07:14:03.8614270Z [1m[92m  Downloaded[0m tauri-macros v2.5.0
+2026-04-09T07:14:03.8643610Z [1m[92m  Downloaded[0m tauri-build v2.5.1
+2026-04-09T07:14:03.8676830Z [1m[92m  Downloaded[0m tagptr v0.2.0
+2026-04-09T07:14:03.8703760Z [1m[92m  Downloaded[0m sys-locale v0.3.2
+2026-04-09T07:14:03.8725860Z [1m[92m  Downloaded[0m synstructure v0.13.2
+2026-04-09T07:14:03.8745620Z [1m[92m  Downloaded[0m sync_wrapper v1.0.2
+2026-04-09T07:14:03.8759190Z [1m[92m  Downloaded[0m sqlx-sqlite v0.8.6
+2026-04-09T07:14:03.8835180Z [1m[92m  Downloaded[0m sqlx v0.8.6
+2026-04-09T07:14:03.9052830Z [1m[92m  Downloaded[0m serde_with v3.15.1
+2026-04-09T07:14:03.9243760Z [1m[92m  Downloaded[0m zlib-rs v0.5.5
+2026-04-09T07:14:03.9327330Z [1m[92m  Downloaded[0m webpki-roots v1.0.4
+2026-04-09T07:14:03.9372480Z [1m[92m  Downloaded[0m stringprep v0.1.5
+2026-04-09T07:14:03.9396440Z [1m[92m  Downloaded[0m string_cache v0.8.9
+2026-04-09T07:14:03.9421160Z [1m[92m  Downloaded[0m sqlx-mysql v0.8.6
+2026-04-09T07:14:03.9512290Z [1m[92m  Downloaded[0m sqlx-macros-core v0.8.6
+2026-04-09T07:14:03.9547560Z [1m[92m  Downloaded[0m sqlx-macros v0.8.6
+2026-04-09T07:14:03.9560100Z [1m[92m  Downloaded[0m sqlx-core v0.8.6
+2026-04-09T07:14:03.9693060Z [1m[92m  Downloaded[0m spki v0.7.3
+2026-04-09T07:14:03.9723700Z [1m[92m  Downloaded[0m spin v0.9.8
+2026-04-09T07:14:03.9759310Z [1m[92m  Downloaded[0m socket2 v0.6.1
+2026-04-09T07:14:03.9796270Z [1m[92m  Downloaded[0m smallvec v1.15.1
+2026-04-09T07:14:03.9833180Z [1m[92m  Downloaded[0m slab v0.4.11
+2026-04-09T07:14:03.9853050Z [1m[92m  Downloaded[0m siphasher v1.0.1
+2026-04-09T07:14:03.9872670Z [1m[92m  Downloaded[0m siphasher v0.3.11
+2026-04-09T07:14:03.9894050Z [1m[92m  Downloaded[0m simd-adler32 v0.3.7
+2026-04-09T07:14:03.9922410Z [1m[92m  Downloaded[0m signature v2.2.0
+2026-04-09T07:14:03.9946010Z [1m[92m  Downloaded[0m signal-hook-registry v1.4.6
+2026-04-09T07:14:03.9963740Z [1m[92m  Downloaded[0m shlex v1.3.0
+2026-04-09T07:14:03.9983500Z [1m[92m  Downloaded[0m sha2 v0.10.9
+2026-04-09T07:14:04.0026780Z [1m[92m  Downloaded[0m sha1 v0.10.6
+2026-04-09T07:14:04.0055170Z [1m[92m  Downloaded[0m servo_arc v0.2.0
+2026-04-09T07:14:04.0071070Z [1m[92m  Downloaded[0m serialize-to-javascript-impl v0.1.2
+2026-04-09T07:14:04.0082930Z [1m[92m  Downloaded[0m pdfium-render v0.8.36
+2026-04-09T07:14:04.1301580Z [1m[92m  Downloaded[0m serialize-to-javascript v0.1.2
+2026-04-09T07:14:04.1321790Z [1m[92m  Downloaded[0m serde_with_macros v3.15.1
+2026-04-09T07:14:04.1355290Z [1m[92m  Downloaded[0m serde_urlencoded v0.7.1
+2026-04-09T07:14:04.1380870Z [1m[92m  Downloaded[0m serde_spanned v1.0.3
+2026-04-09T07:14:04.1399290Z [1m[92m  Downloaded[0m serde_json v1.0.145
+2026-04-09T07:14:04.1516520Z [1m[92m  Downloaded[0m serde_derive_internals v0.29.1
+2026-04-09T07:14:04.1541490Z [1m[92m  Downloaded[0m libsqlite3-sys v0.30.1
+2026-04-09T07:14:04.2255090Z [1m[92m  Downloaded[0m zune-jpeg v0.5.5
+2026-04-09T07:14:04.2314370Z [1m[92m  Downloaded[0m memmap2 v0.9.9
+2026-04-09T07:14:04.2339110Z [1m[92m  Downloaded[0m memchr v2.7.6
+2026-04-09T07:14:04.2431380Z [1m[92m  Downloaded[0m maybe-owned v0.3.4
+2026-04-09T07:14:04.2533130Z [1m[92m  Downloaded[0m tower-http v0.6.6
+2026-04-09T07:14:04.2634930Z [1m[92m  Downloaded[0m tokio-util v0.7.16
+2026-04-09T07:14:04.2736140Z [1m[92m  Downloaded[0m moxcms v0.7.9
+2026-04-09T07:14:04.2909280Z [1m[92m  Downloaded[0m hyper v1.7.0
+2026-04-09T07:14:04.3008250Z [1m[92m  Downloaded[0m reqwest v0.12.24
+2026-04-09T07:14:04.3091740Z [1m[92m  Downloaded[0m rayon v1.11.0
+2026-04-09T07:14:04.3243360Z [1m[92m  Downloaded[0m quick-xml v0.38.3
+2026-04-09T07:14:04.3329220Z [1m[92m  Downloaded[0m portable-atomic v1.11.1
+2026-04-09T07:14:04.3450530Z [1m[92m  Downloaded[0m objc2-web-kit v0.3.2
+2026-04-09T07:14:04.3700890Z [1m[92m  Downloaded[0m objc2-core-foundation v0.3.2
+2026-04-09T07:14:04.3814540Z [1m[92m  Downloaded[0m subtle v2.6.1
+2026-04-09T07:14:04.3830090Z [1m[92m  Downloaded[0m string_cache_codegen v0.5.4
+2026-04-09T07:14:04.3841100Z [1m[92m  Downloaded[0m stable_deref_trait v1.2.1
+2026-04-09T07:14:04.3855650Z [1m[92m  Downloaded[0m serde_repr v0.1.20
+2026-04-09T07:14:04.3888180Z [1m[92m  Downloaded[0m md-5 v0.10.6
+2026-04-09T07:14:04.3914700Z [1m[92m  Downloaded[0m matches v0.1.10
+2026-04-09T07:14:04.3928730Z [1m[92m  Downloaded[0m tray-icon v0.21.2
+2026-04-09T07:14:04.3966350Z [1m[92m  Downloaded[0m tracing-core v0.1.34
+2026-04-09T07:14:04.4004380Z [1m[92m  Downloaded[0m tracing v0.1.41
+2026-04-09T07:14:04.4064430Z [1m[92m  Downloaded[0m tower v0.5.2
+2026-04-09T07:14:04.4227540Z [1m[92m  Downloaded[0m toml v0.9.8
+2026-04-09T07:14:04.4288080Z [1m[92m  Downloaded[0m tinyvec v1.10.0
+2026-04-09T07:14:04.4327010Z [1m[92m  Downloaded[0m time-macros v0.2.24
+2026-04-09T07:14:04.4357340Z [1m[92m  Downloaded[0m time v0.3.44
+2026-04-09T07:14:04.4490830Z [1m[92m  Downloaded[0m thiserror-impl v2.0.17
+2026-04-09T07:14:04.4514220Z [1m[92m  Downloaded[0m tauri-utils v2.8.0
+2026-04-09T07:14:04.4571780Z [1m[92m  Downloaded[0m tauri-runtime-wry v2.9.1
+2026-04-09T07:14:04.4607710Z [1m[92m  Downloaded[0m tauri-runtime v2.9.1
+2026-04-09T07:14:04.4629410Z [1m[92m  Downloaded[0m tauri-plugin-sql v2.3.1
+2026-04-09T07:14:04.4678700Z [1m[92m  Downloaded[0m tauri-plugin-os v2.3.2
+2026-04-09T07:14:04.4730480Z [1m[92m  Downloaded[0m num-bigint-dig v0.8.5
+2026-04-09T07:14:04.4806100Z [1m[92m  Downloaded[0m muda v0.17.1
+2026-04-09T07:14:04.4886040Z [1m[92m  Downloaded[0m mio v1.1.0
+2026-04-09T07:14:04.4976110Z [1m[92m  Downloaded[0m zip v3.0.0
+2026-04-09T07:14:04.5049300Z [1m[92m  Downloaded[0m zerovec v0.11.5
+2026-04-09T07:14:04.5136550Z [1m[92m  Downloaded[0m regex v1.12.2
+2026-04-09T07:14:04.5229330Z [1m[92m  Downloaded[0m rand v0.7.3
+2026-04-09T07:14:04.5315120Z [1m[92m  Downloaded[0m png v0.17.16
+2026-04-09T07:14:04.5369690Z [1m[92m  Downloaded[0m brotli v8.0.2
+2026-04-09T07:14:04.5556500Z [1m[92m  Downloaded[0m tracing-attributes v0.1.30
+2026-04-09T07:14:04.5598270Z [1m[92m  Downloaded[0m tower-layer v0.3.3
+2026-04-09T07:14:04.5622690Z [1m[92m  Downloaded[0m toml_writer v1.0.4
+2026-04-09T07:14:04.5639770Z [1m[92m  Downloaded[0m toml_parser v1.0.4
+2026-04-09T07:14:04.5680440Z [1m[92m  Downloaded[0m toml_datetime v0.7.3
+2026-04-09T07:14:04.5698250Z [1m[92m  Downloaded[0m tokio-stream v0.1.17
+2026-04-09T07:14:04.5776210Z [1m[92m  Downloaded[0m tokio-macros v2.6.0
+2026-04-09T07:14:04.5792240Z [1m[92m  Downloaded[0m tinyvec_macros v0.1.1
+2026-04-09T07:14:04.5803730Z [1m[92m  Downloaded[0m tinystr v0.8.2
+2026-04-09T07:14:04.5831430Z [1m[92m  Downloaded[0m time-core v0.1.6
+2026-04-09T07:14:04.5847480Z [1m[92m  Downloaded[0m thiserror-impl v1.0.69
+2026-04-09T07:14:04.5871240Z [1m[92m  Downloaded[0m thiserror v2.0.17
+2026-04-09T07:14:04.5983960Z [1m[92m  Downloaded[0m thiserror v1.0.69
+2026-04-09T07:14:04.6069270Z [1m[92m  Downloaded[0m tendril v0.4.3
+2026-04-09T07:14:04.6100680Z [1m[92m  Downloaded[0m tauri-winres v0.3.3
+2026-04-09T07:14:04.6129370Z [1m[92m  Downloaded[0m num-integer v0.1.46
+2026-04-09T07:14:04.6153100Z [1m[92m  Downloaded[0m zerotrie v0.2.3
+2026-04-09T07:14:04.6203110Z [1m[92m  Downloaded[0m serde v1.0.228
+2026-04-09T07:14:04.6252770Z [1m[92m  Downloaded[0m schemars v1.0.4
+2026-04-09T07:14:04.6549900Z [1m[92m  Downloaded[0m schemars v0.9.0
+2026-04-09T07:14:04.7067800Z [1m[92m  Downloaded[0m schemars v0.8.22
+2026-04-09T07:14:04.7522250Z [1m[92m  Downloaded[0m rayon-core v1.13.0
+2026-04-09T07:14:04.7584450Z [1m[92m  Downloaded[0m rand v0.8.5
+2026-04-09T07:14:04.7646920Z [1m[92m  Downloaded[0m objc2-core-graphics v0.3.2
+2026-04-09T07:14:04.7736390Z [1m[92m  Downloaded[0m chrono v0.4.42
+2026-04-09T07:14:04.7876570Z [1m[92m  Downloaded[0m num-traits v0.2.19
+2026-04-09T07:14:04.7932190Z [1m[92m  Downloaded[0m num-conv v0.1.0
+2026-04-09T07:14:04.7948780Z [1m[92m  Downloaded[0m mobi v0.4.3
+2026-04-09T07:14:04.7979230Z [1m[92m  Downloaded[0m miniz_oxide v0.8.9
+2026-04-09T07:14:04.8022510Z [1m[92m  Downloaded[0m litemap v0.8.1
+2026-04-09T07:14:04.8058170Z [1m[92m  Downloaded[0m libz-rs-sys v0.5.5
+2026-04-09T07:14:04.8077560Z [1m[92m  Downloaded[0m httparse v1.10.1
+2026-04-09T07:14:04.8114060Z [1m[92m  Downloaded[0m http v1.3.1
+2026-04-09T07:14:04.8166290Z [1m[92m  Downloaded[0m hkdf v0.12.4
+2026-04-09T07:14:04.8205650Z [1m[92m  Downloaded[0m zerocopy v0.8.27
+2026-04-09T07:14:04.8633050Z [1m[92m  Downloaded[0m vcpkg v0.2.15
+2026-04-09T07:14:04.9474670Z [1m[92m  Downloaded[0m serde_derive v1.0.228
+2026-04-09T07:14:04.9526600Z [1m[92m  Downloaded[0m serde_core v1.0.228
+2026-04-09T07:14:04.9573050Z [1m[92m  Downloaded[0m schemars_derive v0.8.22
+2026-04-09T07:14:04.9596080Z [1m[92m  Downloaded[0m rustls-webpki v0.103.8
+2026-04-09T07:14:04.9649970Z [1m[92m  Downloaded[0m rustls-pki-types v1.13.0
+2026-04-09T07:14:04.9732890Z [1m[92m  Downloaded[0m rand_core v0.5.1
+2026-04-09T07:14:04.9755010Z [1m[92m  Downloaded[0m plist v1.8.0
+2026-04-09T07:14:04.9796730Z [1m[92m  Downloaded[0m pkcs1 v0.7.5
+2026-04-09T07:14:04.9831200Z [1m[92m  Downloaded[0m pin-project-lite v0.2.16
+2026-04-09T07:14:04.9933000Z [1m[92m  Downloaded[0m parking_lot_core v0.9.12
+2026-04-09T07:14:04.9963850Z [1m[92m  Downloaded[0m parking_lot v0.12.5
+2026-04-09T07:14:05.0000480Z [1m[92m  Downloaded[0m objc2-core-video v0.3.2
+2026-04-09T07:14:05.0048070Z [1m[92m  Downloaded[0m objc2-core-location v0.3.2
+2026-04-09T07:14:05.0108030Z [1m[92m  Downloaded[0m exr v1.74.0
+2026-04-09T07:14:05.0236530Z [1m[92m  Downloaded[0m encoding-index-tradchinese v1.20141219.5
+2026-04-09T07:14:05.0259810Z [1m[92m  Downloaded[0m encoding-index-simpchinese v1.20141219.5
+2026-04-09T07:14:05.0282810Z [1m[92m  Downloaded[0m encoding-index-korean v1.20141219.5
+2026-04-09T07:14:05.0302720Z [1m[92m  Downloaded[0m encoding-index-japanese v1.20141219.5
+2026-04-09T07:14:05.0323580Z [1m[92m  Downloaded[0m encoding v0.2.33
+2026-04-09T07:14:05.0369660Z [1m[92m  Downloaded[0m der v0.7.10
+2026-04-09T07:14:05.0455320Z [1m[92m  Downloaded[0m crossbeam-channel v0.5.15
+2026-04-09T07:14:05.0521630Z [1m[92m  Downloaded[0m cc v1.2.44
+2026-04-09T07:14:05.0566590Z [1m[92m  Downloaded[0m aho-corasick v1.1.4
+2026-04-09T07:14:05.0640750Z [1m[92m  Downloaded[0m libwebp-sys v0.9.6
+2026-04-09T07:14:05.1385290Z [1m[92m  Downloaded[0m nodrop v0.1.14
+2026-04-09T07:14:05.1401000Z [1m[92m  Downloaded[0m new_debug_unreachable v1.0.6
+2026-04-09T07:14:05.1418600Z [1m[92m  Downloaded[0m mime v0.3.17
+2026-04-09T07:14:05.1436780Z [1m[92m  Downloaded[0m memoffset v0.9.1
+2026-04-09T07:14:05.1452990Z [1m[92m  Downloaded[0m html5ever v0.29.1
+2026-04-09T07:14:05.1499980Z [1m[92m  Downloaded[0m hmac v0.12.1
+2026-04-09T07:14:05.1527880Z [1m[92m  Downloaded[0m zerovec-derive v0.11.2
+2026-04-09T07:14:05.1546900Z [1m[92m  Downloaded[0m zeroize v1.8.2
+2026-04-09T07:14:05.1564970Z [1m[92m  Downloaded[0m zerocopy-derive v0.8.27
+2026-04-09T07:14:05.1683190Z [1m[92m  Downloaded[0m selectors v0.24.0
+2026-04-09T07:14:05.1708430Z [1m[92m  Downloaded[0m rsa v0.9.8
+2026-04-09T07:14:05.1793830Z [1m[92m  Downloaded[0m proc-macro2 v1.0.103
+2026-04-09T07:14:05.1836970Z [1m[92m  Downloaded[0m pkg-config v0.3.32
+2026-04-09T07:14:05.1863990Z [1m[92m  Downloaded[0m pkcs8 v0.10.2
+2026-04-09T07:14:05.1914940Z [1m[92m  Downloaded[0m phf_macros v0.11.3
+2026-04-09T07:14:05.1930720Z [1m[92m  Downloaded[0m pem-rfc7468 v0.7.0
+2026-04-09T07:14:05.1962220Z [1m[92m  Downloaded[0m parking v2.2.1
+2026-04-09T07:14:05.1977660Z [1m[92m  Downloaded[0m os_info v3.14.0
+2026-04-09T07:14:05.2021100Z [1m[92m  Downloaded[0m objc2-io-surface v0.3.2
+2026-04-09T07:14:05.2042540Z [1m[92m  Downloaded[0m flume v0.11.1
+2026-04-09T07:14:05.2100440Z [1m[92m  Downloaded[0m flate2 v1.1.5
+2026-04-09T07:14:05.2180960Z [1m[92m  Downloaded[0m dispatch2 v0.3.0
+2026-04-09T07:14:05.2222020Z [1m[92m  Downloaded[0m derive_more v0.99.20
+2026-04-09T07:14:05.2298000Z [1m[92m  Downloaded[0m darling_core v0.21.3
+2026-04-09T07:14:05.2389240Z [1m[92m  Downloaded[0m darling v0.21.3
+2026-04-09T07:14:05.2476790Z [1m[92m  Downloaded[0m cssparser v0.29.6
+2026-04-09T07:14:05.2515010Z [1m[92m  Downloaded[0m crossbeam-utils v0.8.21
+2026-04-09T07:14:05.2553680Z [1m[92m  Downloaded[0m crossbeam-epoch v0.9.18
+2026-04-09T07:14:05.2591450Z [1m[92m  Downloaded[0m crc32fast v1.5.0
+2026-04-09T07:14:05.3040850Z [1m[92m  Downloaded[0m core-graphics v0.24.0
+2026-04-09T07:14:05.3076880Z [1m[92m  Downloaded[0m core-foundation-sys v0.8.7
+2026-04-09T07:14:05.3124880Z [1m[92m  Downloaded[0m cookie v0.18.1
+2026-04-09T07:14:05.3156710Z [1m[92m  Downloaded[0m const-oid v0.9.6
+2026-04-09T07:14:05.3181590Z [1m[92m  Downloaded[0m chardetng v0.1.17
+2026-04-09T07:14:05.3203210Z [1m[92m  Downloaded[0m cfb v0.7.3
+2026-04-09T07:14:05.3261100Z [1m[92m  Downloaded[0m cargo_toml v0.22.3
+2026-04-09T07:14:05.3280490Z [1m[92m  Downloaded[0m camino v1.2.1
+2026-04-09T07:14:05.3310470Z [1m[92m  Downloaded[0m bytes v1.10.1
+2026-04-09T07:14:05.3370820Z [1m[92m  Downloaded[0m byteorder v1.5.0
+2026-04-09T07:14:05.3392900Z [1m[92m  Downloaded[0m bytemuck v1.24.0
+2026-04-09T07:14:05.3439740Z [1m[92m  Downloaded[0m async-lock v3.4.1
+2026-04-09T07:14:05.3472640Z [1m[92m  Downloaded[0m http-body-util v0.1.3
+2026-04-09T07:14:05.3506480Z [1m[92m  Downloaded[0m http-body v1.0.1
+2026-04-09T07:14:05.3516320Z [1m[92m  Downloaded[0m home v0.5.12
+2026-04-09T07:14:05.3529900Z [1m[92m  Downloaded[0m hex v0.4.3
+2026-04-09T07:14:05.3553600Z [1m[92m  Downloaded[0m zerofrom-derive v0.1.6
+2026-04-09T07:14:05.3565370Z [1m[92m  Downloaded[0m zerofrom v0.1.6
+2026-04-09T07:14:05.3577520Z [1m[92m  Downloaded[0m webpki-roots v0.26.11
+2026-04-09T07:14:05.3592960Z [1m[92m  Downloaded[0m semver v1.0.27
+2026-04-09T07:14:05.3624690Z [1m[92m  Downloaded[0m scopeguard v1.2.0
+2026-04-09T07:14:05.3641220Z [1m[92m  Downloaded[0m same-file v1.0.6
+2026-04-09T07:14:05.3660800Z [1m[92m  Downloaded[0m ref-cast-impl v1.0.25
+2026-04-09T07:14:05.3671780Z [1m[92m  Downloaded[0m ppv-lite86 v0.2.21
+2026-04-09T07:14:05.3691770Z [1m[92m  Downloaded[0m powerfmt v0.2.0
+2026-04-09T07:14:05.3710780Z [1m[92m  Downloaded[0m phf_generator v0.11.3
+2026-04-09T07:14:05.3751060Z [1m[92m  Downloaded[0m phf_generator v0.10.0
+2026-04-09T07:14:05.3756610Z [1m[92m  Downloaded[0m percent-encoding v2.3.2
+2026-04-09T07:14:05.3771610Z [1m[92m  Downloaded[0m objc2-exception-helper v0.1.1
+2026-04-09T07:14:05.3794530Z [1m[92m  Downloaded[0m objc2-core-image v0.3.2
+2026-04-09T07:14:05.3862670Z [1m[92m  Downloaded[0m foldhash v0.1.5
+2026-04-09T07:14:05.3881470Z [1m[92m  Downloaded[0m find-msvc-tools v0.1.4
+2026-04-09T07:14:05.3908000Z [1m[92m  Downloaded[0m fdeflate v0.3.7
+2026-04-09T07:14:05.3933260Z [1m[92m  Downloaded[0m event-listener-strategy v0.5.4
+2026-04-09T07:14:05.3950510Z [1m[92m  Downloaded[0m event-listener v5.4.1
+2026-04-09T07:14:05.4051830Z [1m[92m  Downloaded[0m errno v0.3.14
+2026-04-09T07:14:05.4100270Z [1m[92m  Downloaded[0m erased-serde v0.4.8
+2026-04-09T07:14:05.4105640Z [1m[92m  Downloaded[0m encoding-index-singlebyte v1.20141219.5
+2026-04-09T07:14:05.4106110Z [1m[92m  Downloaded[0m embed-resource v3.0.6
+2026-04-09T07:14:05.4106490Z [1m[92m  Downloaded[0m either v1.15.0
+2026-04-09T07:14:05.4125440Z [1m[92m  Downloaded[0m dtoa v1.0.10
+2026-04-09T07:14:05.4146300Z [1m[92m  Downloaded[0m dotenvy v0.15.7
+2026-04-09T07:14:05.4189900Z [1m[92m  Downloaded[0m displaydoc v0.2.5
+2026-04-09T07:14:05.4234540Z [1m[92m  Downloaded[0m dirs-sys v0.5.0
+2026-04-09T07:14:05.4249160Z [1m[92m  Downloaded[0m dirs v6.0.0
+2026-04-09T07:14:05.4269910Z [1m[92m  Downloaded[0m digest v0.10.7
+2026-04-09T07:14:05.4299450Z [1m[92m  Downloaded[0m deranged v0.5.5
+2026-04-09T07:14:05.4319650Z [1m[92m  Downloaded[0m crossbeam-deque v0.8.6
+2026-04-09T07:14:05.4474850Z [1m[92m  Downloaded[0m core-foundation v0.10.1
+2026-04-09T07:14:05.4508090Z [1m[92m  Downloaded[0m concurrent-queue v2.5.0
+2026-04-09T07:14:05.4534160Z [1m[92m  Downloaded[0m cfg_aliases v0.2.1
+2026-04-09T07:14:05.4548230Z [1m[92m  Downloaded[0m cargo_metadata v0.19.2
+2026-04-09T07:14:05.4574850Z [1m[92m  Downloaded[0m cargo-platform v0.1.9
+2026-04-09T07:14:05.4591840Z [1m[92m  Downloaded[0m byteorder-lite v0.1.0
+2026-04-09T07:14:05.4605360Z [1m[92m  Downloaded[0m atoi v2.0.0
+2026-04-09T07:14:05.4623310Z [1m[92m  Downloaded[0m rfd v0.15.4
+2026-04-09T07:14:05.4702250Z [1m[92m  Downloaded[0m ref-cast v1.0.25
+2026-04-09T07:14:05.4746410Z [1m[92m  Downloaded[0m rand_chacha v0.3.1
+2026-04-09T07:14:05.4761130Z [1m[92m  Downloaded[0m qoi v0.4.1
+2026-04-09T07:14:05.4800620Z [1m[92m  Downloaded[0m proc-macro-hack v0.5.20+deprecated
+2026-04-09T07:14:05.4832030Z [1m[92m  Downloaded[0m precomputed-hash v0.1.1
+2026-04-09T07:14:05.4840660Z [1m[92m  Downloaded[0m potential_utf v0.1.4
+2026-04-09T07:14:05.4855080Z [1m[92m  Downloaded[0m phf_codegen v0.11.3
+2026-04-09T07:14:05.4870720Z [1m[92m  Downloaded[0m phf_codegen v0.8.0
+2026-04-09T07:14:05.4883390Z [1m[92m  Downloaded[0m pathdiff v0.2.3
+2026-04-09T07:14:05.4895420Z [1m[92m  Downloaded[0m option-ext v0.2.0
+2026-04-09T07:14:05.4909470Z [1m[92m  Downloaded[0m objc2-user-notifications v0.3.2
+2026-04-09T07:14:05.4940600Z [1m[92m  Downloaded[0m foreign-types v0.5.0
+2026-04-09T07:14:05.4952810Z [1m[92m  Downloaded[0m fnv v1.0.7
+2026-04-09T07:14:05.4964860Z [1m[92m  Downloaded[0m equivalent v1.0.2
+2026-04-09T07:14:05.4977990Z [1m[92m  Downloaded[0m encoding_index_tests v0.1.4
+2026-04-09T07:14:05.4982510Z [1m[92m  Downloaded[0m embed_plist v1.2.2
+2026-04-09T07:14:05.4999540Z [1m[92m  Downloaded[0m dyn-clone v1.0.20
+2026-04-09T07:14:05.5023230Z [1m[92m  Downloaded[0m dunce v1.0.5
+2026-04-09T07:14:05.5037810Z [1m[92m  Downloaded[0m dtoa-short v0.3.5
+2026-04-09T07:14:05.5047540Z [1m[92m  Downloaded[0m dpi v0.1.2
+2026-04-09T07:14:05.5064850Z [1m[92m  Downloaded[0m dispatch v0.2.0
+2026-04-09T07:14:05.5081450Z [1m[92m  Downloaded[0m darling_macro v0.21.3
+2026-04-09T07:14:05.5091550Z [1m[92m  Downloaded[0m ctor v0.2.9
+2026-04-09T07:14:05.5110460Z [1m[92m  Downloaded[0m cssparser-macros v0.6.1
+2026-04-09T07:14:05.5120830Z [1m[92m  Downloaded[0m crossbeam-queue v0.3.12
+2026-04-09T07:14:05.5136440Z [1m[92m  Downloaded[0m crc-catalog v2.4.0
+2026-04-09T07:14:05.5154550Z [1m[92m  Downloaded[0m crc v3.3.0
+2026-04-09T07:14:05.5177250Z [1m[92m  Downloaded[0m cpufeatures v0.2.17
+2026-04-09T07:14:05.5196690Z [1m[92m  Downloaded[0m convert_case v0.4.0
+2026-04-09T07:14:05.5209390Z [1m[92m  Downloaded[0m color_quant v1.1.0
+2026-04-09T07:14:05.5223680Z [1m[92m  Downloaded[0m cfg-if v1.0.4
+2026-04-09T07:14:05.5241100Z [1m[92m  Downloaded[0m bit_field v0.10.3
+2026-04-09T07:14:05.5257820Z [1m[92m  Downloaded[0m ryu v1.0.20
+2026-04-09T07:14:05.5300280Z [1m[92m  Downloaded[0m raw-window-handle v0.6.2
+2026-04-09T07:14:05.5331130Z [1m[92m  Downloaded[0m rand_pcg v0.2.1
+2026-04-09T07:14:05.5353430Z [1m[92m  Downloaded[0m rand_core v0.6.4
+2026-04-09T07:14:05.5376300Z [1m[92m  Downloaded[0m quote v1.0.41
+2026-04-09T07:14:05.5418210Z [1m[92m  Downloaded[0m piston-float v1.0.1
+2026-04-09T07:14:05.5428680Z [1m[92m  Downloaded[0m pin-utils v0.1.0
+2026-04-09T07:14:05.5445080Z [1m[92m  Downloaded[0m phf_shared v0.11.3
+2026-04-09T07:14:05.5458330Z [1m[92m  Downloaded[0m phf_shared v0.8.0
+2026-04-09T07:14:05.5466070Z [1m[92m  Downloaded[0m phf_generator v0.8.0
+2026-04-09T07:14:05.5480700Z [1m[92m  Downloaded[0m phf v0.11.3
+2026-04-09T07:14:05.5506450Z [1m[92m  Downloaded[0m phf v0.10.1
+2026-04-09T07:14:05.5513060Z [1m[92m  Downloaded[0m phf v0.8.0
+2026-04-09T07:14:05.5521970Z [1m[92m  Downloaded[0m open v5.3.2
+2026-04-09T07:14:05.5542630Z [1m[92m  Downloaded[0m crypto-common v0.1.6
+2026-04-09T07:14:05.5555020Z [1m[92m  Downloaded[0m core-graphics-types v0.2.0
+2026-04-09T07:14:05.5572230Z [1m[92m  Downloaded[0m objc2-core-data v0.3.2
+2026-04-09T07:14:05.5647310Z [1m[92m  Downloaded[0m objc2-app-kit v0.3.2
+2026-04-09T07:14:05.6066000Z [1m[92m  Downloaded[0m objc2-cloud-kit v0.3.2
+2026-04-09T07:14:05.6141550Z [1m[92m  Downloaded[0m foreign-types-macros v0.2.3
+2026-04-09T07:14:05.6158350Z [1m[92m  Downloaded[0m bumpalo v3.19.0
+2026-04-09T07:14:05.6196940Z [1m[92m  Downloaded[0m block2 v0.6.2
+2026-04-09T07:14:05.6223430Z [1m[92m  Downloaded[0m bitflags v1.3.2
+2026-04-09T07:14:05.6269720Z [1m[92m  Downloaded[0m base64 v0.21.7
+2026-04-09T07:14:05.6324160Z [1m[92m  Downloaded[0m autocfg v1.5.0
+2026-04-09T07:14:05.6355060Z [1m[92m  Downloaded[0m anyhow v1.0.100
+2026-04-09T07:14:05.6423890Z [1m[92m  Downloaded[0m allocator-api2 v0.2.21
+2026-04-09T07:14:05.6464280Z [1m[92m  Downloaded[0m alloc-no-stdlib v2.0.4
+2026-04-09T07:14:05.6489060Z [1m[92m  Downloaded[0m phf_macros v0.10.0
+2026-04-09T07:14:05.6497520Z [1m[92m  Downloaded[0m once_cell v1.21.3
+2026-04-09T07:14:05.6536150Z [1m[92m  Downloaded[0m objc2-javascript-core v0.3.2
+2026-04-09T07:14:05.6568340Z [1m[92m  Downloaded[0m objc2-encode v4.1.0
+2026-04-09T07:14:05.6586660Z [1m[92m  Downloaded[0m objc2-core-text v0.3.2
+2026-04-09T07:14:05.6636750Z [1m[92m  Downloaded[0m brotli-decompressor v5.0.0
+2026-04-09T07:14:05.6715490Z [1m[92m  Downloaded[0m block-buffer v0.10.4
+2026-04-09T07:14:05.6730520Z [1m[92m  Downloaded[0m base64ct v1.8.0
+2026-04-09T07:14:05.6769800Z [1m[92m  Downloaded[0m atomic-waker v1.1.2
+2026-04-09T07:14:05.6786380Z [1m[92m  Downloaded[0m bitflags v2.10.0
+2026-04-09T07:14:05.6850120Z [1m[92m  Downloaded[0m base64 v0.22.1
+2026-04-09T07:14:05.6957290Z [1m[92m  Downloaded[0m image v0.24.9
+2026-04-09T07:14:06.1128120Z [1m[92m   Compiling[0m proc-macro2 v1.0.103
+2026-04-09T07:14:06.1130520Z [1m[92m   Compiling[0m quote v1.0.41
+2026-04-09T07:14:06.1130830Z [1m[92m   Compiling[0m unicode-ident v1.0.22
+2026-04-09T07:14:06.7307440Z [1m[92m   Compiling[0m libc v0.2.177
+2026-04-09T07:14:08.3251400Z [1m[92m   Compiling[0m serde v1.0.228
+2026-04-09T07:14:08.4736180Z [1m[92m   Compiling[0m cfg-if v1.0.4
+2026-04-09T07:14:08.4982350Z [1m[92m   Compiling[0m serde_core v1.0.228
+2026-04-09T07:14:08.6626320Z [1m[92m   Compiling[0m jobserver v0.1.34
+2026-04-09T07:14:08.9677300Z [1m[92m   Compiling[0m shlex v1.3.0
+2026-04-09T07:14:09.0325570Z [1m[92m   Compiling[0m syn v2.0.108
+2026-04-09T07:14:09.0474420Z [1m[92m   Compiling[0m find-msvc-tools v0.1.4
+2026-04-09T07:14:09.1387110Z [1m[92m   Compiling[0m cc v1.2.44
+2026-04-09T07:14:10.1989190Z [1m[92m   Compiling[0m getrandom v0.2.16
+2026-04-09T07:14:10.2844750Z [1m[92m   Compiling[0m zerocopy v0.8.27
+2026-04-09T07:14:11.9424270Z [1m[92m   Compiling[0m synstructure v0.13.2
+2026-04-09T07:14:12.2568710Z [1m[92m   Compiling[0m icu_properties_data v2.1.1
+2026-04-09T07:14:12.2703580Z [1m[92m   Compiling[0m icu_normalizer_data v2.1.1
+2026-04-09T07:14:12.3537550Z [1m[92m   Compiling[0m parking_lot_core v0.9.12
+2026-04-09T07:14:12.3710750Z [1m[92m   Compiling[0m ppv-lite86 v0.2.21
+2026-04-09T07:14:12.4438850Z [1m[92m   Compiling[0m memchr v2.7.6
+2026-04-09T07:14:12.5013000Z [1m[92m   Compiling[0m autocfg v1.5.0
+2026-04-09T07:14:12.5928770Z [1m[92m   Compiling[0m serde_derive v1.0.228
+2026-04-09T07:14:12.6872020Z [1m[92m   Compiling[0m zerofrom-derive v0.1.6
+2026-04-09T07:14:12.7009980Z [1m[92m   Compiling[0m yoke-derive v0.8.1
+2026-04-09T07:14:13.2140890Z [1m[92m   Compiling[0m zerovec-derive v0.11.2
+2026-04-09T07:14:13.3669340Z [1m[92m   Compiling[0m displaydoc v0.2.5
+2026-04-09T07:14:13.6845470Z [1m[92m   Compiling[0m stable_deref_trait v1.2.1
+2026-04-09T07:14:13.7087630Z [1m[92m   Compiling[0m itoa v1.0.15
+2026-04-09T07:14:13.7772930Z [1m[92m   Compiling[0m rand_core v0.6.4
+2026-04-09T07:14:13.8087840Z [1m[92m   Compiling[0m zerofrom v0.1.6
+2026-04-09T07:14:13.8592330Z [1m[92m   Compiling[0m rand_chacha v0.3.1
+2026-04-09T07:14:13.8820540Z [1m[92m   Compiling[0m smallvec v1.15.1
+2026-04-09T07:14:13.9685990Z [1m[92m   Compiling[0m rand v0.8.5
+2026-04-09T07:14:14.0241910Z [1m[92m   Compiling[0m yoke v0.8.1
+2026-04-09T07:14:14.1151470Z [1m[92m   Compiling[0m zerovec v0.11.5
+2026-04-09T07:14:14.4150330Z [1m[92m   Compiling[0m ryu v1.0.20
+2026-04-09T07:14:14.4811700Z [1m[92m   Compiling[0m thiserror v2.0.17
+2026-04-09T07:14:14.5828030Z [1m[92m   Compiling[0m serde_json v1.0.145
+2026-04-09T07:14:14.6263140Z [1m[92m   Compiling[0m siphasher v1.0.1
+2026-04-09T07:14:14.7106410Z [1m[92m   Compiling[0m phf_shared v0.11.3
+2026-04-09T07:14:14.7620090Z [1m[92m   Compiling[0m thiserror-impl v2.0.17
+2026-04-09T07:14:14.7854430Z [1m[92m   Compiling[0m getrandom v0.3.4
+2026-04-09T07:14:14.9167270Z [1m[92m   Compiling[0m tinystr v0.8.2
+2026-04-09T07:14:14.9982480Z [1m[92m   Compiling[0m litemap v0.8.1
+2026-04-09T07:14:15.0772250Z [1m[92m   Compiling[0m writeable v0.6.2
+2026-04-09T07:14:15.1517950Z [1m[92m   Compiling[0m scopeguard v1.2.0
+2026-04-09T07:14:15.1828940Z [1m[92m   Compiling[0m lock_api v0.4.14
+2026-04-09T07:14:15.2798180Z [1m[92m   Compiling[0m icu_locale_core v2.1.1
+2026-04-09T07:14:15.3458210Z [1m[92m   Compiling[0m phf_generator v0.11.3
+2026-04-09T07:14:15.4337370Z [1m[92m   Compiling[0m potential_utf v0.1.4
+2026-04-09T07:14:15.4401400Z [1m[92m   Compiling[0m zerotrie v0.2.3
+2026-04-09T07:14:15.4905370Z [1m[92m   Compiling[0m siphasher v0.3.11
+2026-04-09T07:14:15.5738390Z [1m[92m   Compiling[0m icu_collections v2.1.1
+2026-04-09T07:14:15.5984110Z [1m[92m   Compiling[0m fnv v1.0.7
+2026-04-09T07:14:15.6352720Z [1m[92m   Compiling[0m getrandom v0.1.16
+2026-04-09T07:14:15.7427880Z [1m[92m   Compiling[0m icu_provider v2.1.1
+2026-04-09T07:14:15.8833520Z [1m[92m   Compiling[0m typeid v1.0.3
+2026-04-09T07:14:15.9159750Z [1m[92m   Compiling[0m icu_properties v2.1.1
+2026-04-09T07:14:16.0009460Z [1m[92m   Compiling[0m parking_lot v0.12.5
+2026-04-09T07:14:16.0359280Z [1m[92m   Compiling[0m icu_normalizer v2.1.1
+2026-04-09T07:14:16.2829710Z [1m[92m   Compiling[0m time-core v0.1.6
+2026-04-09T07:14:16.3348510Z [1m[92m   Compiling[0m equivalent v1.0.2
+2026-04-09T07:14:16.3761330Z [1m[92m   Compiling[0m log v0.4.28
+2026-04-09T07:14:16.3863300Z [1m[92m   Compiling[0m percent-encoding v2.3.2
+2026-04-09T07:14:16.4529390Z [1m[92m   Compiling[0m num-conv v0.1.0
+2026-04-09T07:14:16.4631220Z [1m[92m   Compiling[0m form_urlencoded v1.2.2
+2026-04-09T07:14:16.5273080Z [1m[92m   Compiling[0m time-macros v0.2.24
+2026-04-09T07:14:16.5406020Z [1m[92m   Compiling[0m idna_adapter v1.2.1
+2026-04-09T07:14:16.5947500Z [1m[92m   Compiling[0m rand_core v0.5.1
+2026-04-09T07:14:16.6565000Z [1m[92m   Compiling[0m syn v1.0.109
+2026-04-09T07:14:16.7088350Z [1m[92m   Compiling[0m utf8_iter v1.0.4
+2026-04-09T07:14:16.7785050Z [1m[92m   Compiling[0m ident_case v1.0.1
+2026-04-09T07:14:16.7987910Z [1m[92m   Compiling[0m thiserror v1.0.69
+2026-04-09T07:14:16.8289200Z [1m[92m   Compiling[0m strsim v0.11.1
+2026-04-09T07:14:16.9363850Z [1m[92m   Compiling[0m erased-serde v0.4.8
+2026-04-09T07:14:16.9979130Z [1m[92m   Compiling[0m darling_core v0.21.3
+2026-04-09T07:14:17.0687640Z [1m[92m   Compiling[0m idna v1.1.0
+2026-04-09T07:14:17.1922220Z [1m[92m   Compiling[0m phf_macros v0.11.3
+2026-04-09T07:14:17.4095520Z [1m[92m   Compiling[0m hashbrown v0.16.0
+2026-04-09T07:14:17.5025310Z [1m[92m   Compiling[0m bytes v1.10.1
+2026-04-09T07:14:17.6999940Z [1m[92m   Compiling[0m indexmap v2.12.0
+2026-04-09T07:14:17.8104690Z [1m[92m   Compiling[0m url v2.5.7
+2026-04-09T07:14:18.2158350Z [1m[92m   Compiling[0m rand_chacha v0.2.2
+2026-04-09T07:14:18.2854930Z [1m[92m   Compiling[0m rand_pcg v0.2.1
+2026-04-09T07:14:18.3283450Z [1m[92m   Compiling[0m phf_shared v0.8.0
+2026-04-09T07:14:18.4200790Z [1m[92m   Compiling[0m thiserror-impl v1.0.69
+2026-04-09T07:14:18.4730760Z [1m[92m   Compiling[0m darling_macro v0.21.3
+2026-04-09T07:14:18.6385380Z [1m[92m   Compiling[0m anyhow v1.0.100
+2026-04-09T07:14:18.7693880Z [1m[92m   Compiling[0m version_check v0.9.5
+2026-04-09T07:14:18.9040270Z [1m[92m   Compiling[0m proc-macro-hack v0.5.20+deprecated
+2026-04-09T07:14:19.0611230Z [1m[92m   Compiling[0m darling v0.21.3
+2026-04-09T07:14:19.0869120Z [1m[92m   Compiling[0m rand v0.7.3
+2026-04-09T07:14:19.0973750Z [1m[92m   Compiling[0m phf_shared v0.10.0
+2026-04-09T07:14:19.1639160Z [1m[92m   Compiling[0m byteorder v1.5.0
+2026-04-09T07:14:19.2617980Z [1m[92m   Compiling[0m new_debug_unreachable v1.0.6
+2026-04-09T07:14:19.3691560Z [1m[92m   Compiling[0m phf_generator v0.10.0
+2026-04-09T07:14:19.4049760Z [1m[92m   Compiling[0m serde_with_macros v3.15.1
+2026-04-09T07:14:19.5187160Z [1m[92m   Compiling[0m phf_generator v0.8.0
+2026-04-09T07:14:19.8806800Z [1m[92m   Compiling[0m string_cache_codegen v0.5.4
+2026-04-09T07:14:19.9480250Z [1m[92m   Compiling[0m phf_codegen v0.11.3
+2026-04-09T07:14:19.9953290Z [1m[92m   Compiling[0m mac v0.1.1
+2026-04-09T07:14:20.0169310Z [1m[92m   Compiling[0m winnow v0.7.13
+2026-04-09T07:14:20.0824880Z [1m[92m   Compiling[0m precomputed-hash v0.1.1
+2026-04-09T07:14:20.1143340Z [1m[92m   Compiling[0m markup5ever v0.14.1
+2026-04-09T07:14:20.3408670Z [1m[92m   Compiling[0m futf v0.1.5
+2026-04-09T07:14:20.4329980Z [1m[92m   Compiling[0m phf_codegen v0.8.0
+2026-04-09T07:14:20.4693150Z [1m[92m   Compiling[0m toml_datetime v0.7.3
+2026-04-09T07:14:20.5964340Z [1m[92m   Compiling[0m semver v1.0.27
+2026-04-09T07:14:20.6917360Z [1m[92m   Compiling[0m phf_macros v0.10.0
+2026-04-09T07:14:20.7454010Z [1m[92m   Compiling[0m cssparser v0.29.6
+2026-04-09T07:14:20.8614760Z [1m[92m   Compiling[0m toml_parser v1.0.4
+2026-04-09T07:14:21.0659620Z [1m[92m   Compiling[0m serde_spanned v1.0.3
+2026-04-09T07:14:21.1184080Z [1m[92m   Compiling[0m dtoa v1.0.10
+2026-04-09T07:14:21.1842580Z [1m[92m   Compiling[0m utf-8 v0.7.6
+2026-04-09T07:14:21.2483660Z [1m[92m   Compiling[0m toml_writer v1.0.4
+2026-04-09T07:14:21.2633040Z [1m[92m   Compiling[0m glob v0.3.3
+2026-04-09T07:14:21.3569210Z [1m[92m   Compiling[0m bitflags v1.3.2
+2026-04-09T07:14:21.5206870Z [1m[92m   Compiling[0m toml v0.9.8
+2026-04-09T07:14:21.6754580Z [1m[92m   Compiling[0m tendril v0.4.3
+2026-04-09T07:14:21.7981950Z [1m[92m   Compiling[0m dtoa-short v0.3.5
+2026-04-09T07:14:21.8410760Z [1m[92m   Compiling[0m phf v0.10.1
+2026-04-09T07:14:21.9119020Z [1m[92m   Compiling[0m selectors v0.24.0
+2026-04-09T07:14:21.9504740Z [1m[92m   Compiling[0m uuid v1.18.1
+2026-04-09T07:14:22.1492770Z [1m[92m   Compiling[0m string_cache v0.8.9
+2026-04-09T07:14:22.2277890Z [1m[92m   Compiling[0m phf v0.11.3
+2026-04-09T07:14:22.3070840Z [1m[92m   Compiling[0m indexmap v1.9.3
+2026-04-09T07:14:22.3193990Z [1m[92m   Compiling[0m aho-corasick v1.1.4
+2026-04-09T07:14:22.3974180Z [1m[92m   Compiling[0m cssparser-macros v0.6.1
+2026-04-09T07:14:22.4460810Z [1m[92m   Compiling[0m ctor v0.2.9
+2026-04-09T07:14:22.5944360Z [1m[92m   Compiling[0m unic-char-range v0.9.0
+2026-04-09T07:14:22.6582280Z [1m[92m   Compiling[0m regex-syntax v0.8.8
+2026-04-09T07:14:22.6937070Z [1m[92m   Compiling[0m powerfmt v0.2.0
+2026-04-09T07:14:22.7854800Z [1m[92m   Compiling[0m camino v1.2.1
+2026-04-09T07:14:22.9385680Z [1m[92m   Compiling[0m unic-common v0.9.0
+2026-04-09T07:14:22.9720030Z [1m[92m   Compiling[0m convert_case v0.4.0
+2026-04-09T07:14:23.1220160Z [1m[92m   Compiling[0m nodrop v0.1.14
+2026-04-09T07:14:23.1497020Z [1m[92m   Compiling[0m matches v0.1.10
+2026-04-09T07:14:23.1674630Z [1m[92m   Compiling[0m alloc-no-stdlib v2.0.4
+2026-04-09T07:14:23.2065020Z [1m[92m   Compiling[0m alloc-stdlib v0.2.2
+2026-04-09T07:14:23.2509580Z [1m[92m   Compiling[0m servo_arc v0.2.0
+2026-04-09T07:14:23.3212470Z [1m[92m   Compiling[0m derive_more v0.99.20
+2026-04-09T07:14:23.6022650Z [1m[92m   Compiling[0m unic-ucd-version v0.9.0
+2026-04-09T07:14:23.6234510Z [1m[92m   Compiling[0m regex-automata v0.4.13
+2026-04-09T07:14:24.0496350Z [1m[92m   Compiling[0m deranged v0.5.5
+2026-04-09T07:14:24.5781370Z [1m[92m   Compiling[0m unic-char-property v0.9.0
+2026-04-09T07:14:24.7199700Z [1m[92m   Compiling[0m fxhash v0.2.1
+2026-04-09T07:14:24.7686150Z [1m[92m   Compiling[0m phf v0.8.0
+2026-04-09T07:14:24.8517110Z [1m[92m   Compiling[0m swift-rs v1.0.7
+2026-04-09T07:14:25.1331380Z [1m[92m   Compiling[0m match_token v0.1.0
+2026-04-09T07:14:25.1472600Z [1m[92m   Compiling[0m serde_derive_internals v0.29.1
+2026-04-09T07:14:25.3483450Z [1m[92m   Compiling[0m typenum v1.19.0
+2026-04-09T07:14:25.4797520Z [1m[92m   Compiling[0m schemars v0.8.22
+2026-04-09T07:14:25.5034520Z [1m[92m   Compiling[0m hashbrown v0.12.3
+2026-04-09T07:14:25.6678540Z [1m[92m   Compiling[0m schemars_derive v0.8.22
+2026-04-09T07:14:25.6797190Z [1m[92m   Compiling[0m html5ever v0.29.1
+2026-04-09T07:14:26.2603660Z [1m[92m   Compiling[0m regex v1.12.2
+2026-04-09T07:14:26.2738670Z [1m[92m   Compiling[0m unic-ucd-ident v0.9.0
+2026-04-09T07:14:26.3952920Z [1m[92m   Compiling[0m time v0.3.44
+2026-04-09T07:14:26.4739300Z [1m[92m   Compiling[0m brotli-decompressor v5.0.0
+2026-04-09T07:14:26.6461560Z [1m[92m   Compiling[0m cfb v0.7.3
+2026-04-09T07:14:27.0037610Z [1m[92m   Compiling[0m jsonptr v0.6.3
+2026-04-09T07:14:27.0492000Z [1m[92m   Compiling[0m cargo-platform v0.1.9
+2026-04-09T07:14:27.1547940Z [1m[92m   Compiling[0m objc2-exception-helper v0.1.1
+2026-04-09T07:14:27.2273630Z [1m[92m   Compiling[0m base64 v0.22.1
+2026-04-09T07:14:27.2784620Z [1m[92m   Compiling[0m same-file v1.0.6
+2026-04-09T07:14:27.3095450Z [1m[92m   Compiling[0m bitflags v2.10.0
+2026-04-09T07:14:27.3315010Z [1m[92m   Compiling[0m crossbeam-utils v0.8.21
+2026-04-09T07:14:27.3892200Z [1m[92m   Compiling[0m base64 v0.21.7
+2026-04-09T07:14:27.4513870Z [1m[92m   Compiling[0m dyn-clone v1.0.20
+2026-04-09T07:14:27.5480690Z [1m[92m   Compiling[0m walkdir v2.5.0
+2026-04-09T07:14:27.7148400Z [1m[92m   Compiling[0m json-patch v3.0.1
+2026-04-09T07:14:27.9583970Z [1m[92m   Compiling[0m cargo_metadata v0.19.2
+2026-04-09T07:14:28.4609750Z [1m[92m   Compiling[0m infer v0.19.0
+2026-04-09T07:14:28.6900510Z [1m[92m   Compiling[0m brotli v8.0.2
+2026-04-09T07:14:28.8085530Z [1m[92m   Compiling[0m urlpattern v0.3.0
+2026-04-09T07:14:29.3522030Z [1m[92m   Compiling[0m kuchikiki v0.8.8-speedreader
+2026-04-09T07:14:29.6233390Z [1m[92m   Compiling[0m serde-untagged v0.1.9
+2026-04-09T07:14:29.7354600Z [1m[92m   Compiling[0m serde_with v3.15.1
+2026-04-09T07:14:30.0467800Z [1m[92m   Compiling[0m generic-array v0.14.9
+2026-04-09T07:14:30.1532790Z [1m[92m   Compiling[0m http v1.3.1
+2026-04-09T07:14:30.4132910Z [1m[92m   Compiling[0m dunce v1.0.5
+2026-04-09T07:14:30.7088490Z [1m[92m   Compiling[0m tauri-utils v2.8.0
+2026-04-09T07:14:30.8158840Z [1m[92m   Compiling[0m objc2 v0.6.3
+2026-04-09T07:14:30.9300860Z [1m[92m   Compiling[0m pin-project-lite v0.2.16
+2026-04-09T07:14:30.9894520Z [1m[92m   Compiling[0m futures-core v0.3.31
+2026-04-09T07:14:31.0443980Z [1m[92m   Compiling[0m objc2-encode v4.1.0
+2026-04-09T07:14:31.5950400Z [1m[92m   Compiling[0m quick-xml v0.38.3
+2026-04-09T07:14:32.3107350Z [1m[92m   Compiling[0m plist v1.8.0
+2026-04-09T07:14:33.1125300Z [1m[92m   Compiling[0m crc32fast v1.5.0
+2026-04-09T07:14:33.4286100Z [1m[92m   Compiling[0m objc2-core-foundation v0.3.2
+2026-04-09T07:14:33.7444860Z [1m[92m   Compiling[0m heck v0.5.0
+2026-04-09T07:14:33.8402950Z [1m[92m   Compiling[0m futures-sink v0.3.31
+2026-04-09T07:14:34.2048900Z [1m[92m   Compiling[0m block2 v0.6.2
+2026-04-09T07:14:34.8180160Z [1m[92m   Compiling[0m rustc_version v0.4.1
+2026-04-09T07:14:34.9665090Z [1m[92m   Compiling[0m option-ext v0.2.0
+2026-04-09T07:14:35.0285110Z [1m[92m   Compiling[0m dirs-sys v0.5.0
+2026-04-09T07:14:35.0703440Z [1m[92m   Compiling[0m embed-resource v3.0.6
+2026-04-09T07:14:35.4808400Z [1m[92m   Compiling[0m tauri-plugin v2.5.1
+2026-04-09T07:14:35.6470270Z [1m[92m   Compiling[0m objc2-foundation v0.3.2
+2026-04-09T07:14:35.7184860Z [1m[92m   Compiling[0m futures-channel v0.3.31
+2026-04-09T07:14:36.0886260Z [1m[92m   Compiling[0m pin-utils v0.1.0
+2026-04-09T07:14:37.5558380Z [1m[92m   Compiling[0m tauri-winres v0.3.3
+2026-04-09T07:14:37.7660680Z [1m[92m   Compiling[0m dirs v6.0.0
+2026-04-09T07:14:37.8020840Z [1m[92m   Compiling[0m cargo_toml v0.22.3
+2026-04-09T07:14:39.8877070Z [1m[92m   Compiling[0m tokio-macros v2.6.0
+2026-04-09T07:14:40.2631690Z [1m[92m   Compiling[0m futures-macro v0.3.31
+2026-04-09T07:14:40.5388850Z [1m[92m   Compiling[0m tracing-attributes v0.1.30
+2026-04-09T07:14:40.6588050Z [1m[92m   Compiling[0m signal-hook-registry v1.4.6
+2026-04-09T07:14:40.8796440Z [1m[92m   Compiling[0m mio v1.1.0
+2026-04-09T07:14:41.3029020Z [1m[92m   Compiling[0m socket2 v0.6.1
+2026-04-09T07:14:41.3063250Z [1m[92m   Compiling[0m ring v0.17.14
+2026-04-09T07:14:41.5649830Z [1m[92m   Compiling[0m futures-io v0.3.31
+2026-04-09T07:14:41.6118290Z [1m[92m   Compiling[0m once_cell v1.21.3
+2026-04-09T07:14:41.6206510Z [1m[92m   Compiling[0m slab v0.4.11
+2026-04-09T07:14:41.6876250Z [1m[92m   Compiling[0m futures-task v0.3.31
+2026-04-09T07:14:41.7048670Z [1m[92m   Compiling[0m tokio v1.48.0
+2026-04-09T07:14:41.7566950Z [1m[92m   Compiling[0m futures-util v0.3.31
+2026-04-09T07:14:43.3502350Z [1m[92m   Compiling[0m tauri-build v2.5.1
+2026-04-09T07:14:46.9486520Z [1m[92m   Compiling[0m block-buffer v0.10.4
+2026-04-09T07:14:46.9789580Z [1m[92m   Compiling[0m crypto-common v0.1.6
+2026-04-09T07:14:47.1876290Z [1m[92m   Compiling[0m digest v0.10.7
+2026-04-09T07:14:47.2746260Z [1m[92m   Compiling[0m tauri v2.9.2
+2026-04-09T07:14:47.7936750Z [1m[92m   Compiling[0m cpufeatures v0.2.17
+2026-04-09T07:14:49.1913430Z [1m[92m   Compiling[0m sha2 v0.10.9
+2026-04-09T07:14:51.1284960Z [1m[92m   Compiling[0m simd-adler32 v0.3.7
+2026-04-09T07:14:52.6373870Z [1m[92m   Compiling[0m tracing-core v0.1.34
+2026-04-09T07:14:53.1902770Z [1m[92m   Compiling[0m num-traits v0.2.19
+2026-04-09T07:14:53.4181040Z [1m[92m   Compiling[0m adler2 v2.0.1
+2026-04-09T07:14:53.4588240Z [1m[92m   Compiling[0m miniz_oxide v0.8.9
+2026-04-09T07:14:54.0935630Z [1m[92m   Compiling[0m tracing v0.1.41
+2026-04-09T07:14:54.6804900Z [1m[92m   Compiling[0m http-body v1.0.1
+2026-04-09T07:14:54.7729790Z [1m[92m   Compiling[0m objc2-core-image v0.3.2
+2026-04-09T07:14:54.9613610Z [1m[92m   Compiling[0m objc2-quartz-core v0.3.2
+2026-04-09T07:14:55.2409510Z [1m[92m   Compiling[0m objc2-core-location v0.3.2
+2026-04-09T07:14:55.3198070Z [1m[92m   Compiling[0m objc2-cloud-kit v0.3.2
+2026-04-09T07:14:55.3584050Z [1m[92m   Compiling[0m objc2-core-data v0.3.2
+2026-04-09T07:14:55.5281040Z [1m[92m   Compiling[0m objc2-user-notifications v0.3.2
+2026-04-09T07:14:55.5365010Z [1m[92m   Compiling[0m objc2-core-text v0.3.2
+2026-04-09T07:14:55.5948130Z [1m[92m   Compiling[0m objc2-core-graphics v0.3.2
+2026-04-09T07:14:55.6606710Z [1m[92m   Compiling[0m cookie v0.18.1
+2026-04-09T07:14:56.0469630Z [1m[92m   Compiling[0m httparse v1.10.1
+2026-04-09T07:14:56.3862370Z [1m[92m   Compiling[0m rustls v0.23.34
+2026-04-09T07:14:56.6053380Z [1m[92m   Compiling[0m objc2-ui-kit v0.3.2
+2026-04-09T07:14:57.7469970Z [1m[92m   Compiling[0m flate2 v1.1.5
+2026-04-09T07:15:00.4412160Z [1m[92m   Compiling[0m fdeflate v0.3.7
+2026-04-09T07:15:00.7649500Z [1m[92m   Compiling[0m dpi v0.1.2
+2026-04-09T07:15:01.0975040Z [1m[92m   Compiling[0m vcpkg v0.2.15
+2026-04-09T07:15:01.2142830Z [1m[92m   Compiling[0m raw-window-handle v0.6.2
+2026-04-09T07:15:01.5771430Z [1m[92m   Compiling[0m tower-service v0.3.3
+2026-04-09T07:15:01.6397520Z [1m[92m   Compiling[0m zeroize v1.8.2
+2026-04-09T07:15:01.7109880Z [1m[92m   Compiling[0m try-lock v0.2.5
+2026-04-09T07:15:01.7356780Z [1m[92m   Compiling[0m pkg-config v0.3.32
+2026-04-09T07:15:01.7482440Z [1m[92m   Compiling[0m want v0.3.1
+2026-04-09T07:15:01.8199790Z [1m[92m   Compiling[0m rustls-pki-types v1.13.0
+2026-04-09T07:15:02.0768490Z [1m[92m   Compiling[0m libsqlite3-sys v0.30.1
+2026-04-09T07:15:03.4979300Z [1m[92m   Compiling[0m png v0.17.16
+2026-04-09T07:15:07.1254560Z [1m[92m   Compiling[0m serde_urlencoded v0.7.1
+2026-04-09T07:15:07.2740750Z [1m[92m   Compiling[0m sync_wrapper v1.0.2
+2026-04-09T07:15:07.3192720Z [1m[92m   Compiling[0m crossbeam-channel v0.5.15
+2026-04-09T07:15:08.8144970Z [1m[92m   Compiling[0m either v1.15.0
+2026-04-09T07:15:08.9410520Z [1m[92m   Compiling[0m tower-layer v0.3.3
+2026-04-09T07:15:09.0438690Z [1m[92m   Compiling[0m tauri-runtime v2.9.1
+2026-04-09T07:15:09.1541930Z [1m[92m   Compiling[0m wry v0.53.5
+2026-04-09T07:15:09.6260690Z [1m[92m   Compiling[0m atomic-waker v1.1.2
+2026-04-09T07:15:11.6451900Z [1m[92m   Compiling[0m hyper v1.7.0
+2026-04-09T07:15:13.1574470Z [1m[92m   Compiling[0m tower v0.5.2
+2026-04-09T07:15:14.5315390Z [1m[92m   Compiling[0m ico v0.4.0
+2026-04-09T07:15:15.3103770Z [1m[92m   Compiling[0m objc2-web-kit v0.3.2
+2026-04-09T07:15:16.1173980Z [1m[92m   Compiling[0m iri-string v0.7.8
+2026-04-09T07:15:17.4544820Z [1m[92m   Compiling[0m untrusted v0.9.0
+2026-04-09T07:15:17.6156490Z [1m[92m   Compiling[0m ipnet v2.11.0
+2026-04-09T07:15:18.0930430Z [1m[92m   Compiling[0m tauri-runtime-wry v2.9.1
+2026-04-09T07:15:18.2423300Z [1m[92m   Compiling[0m lazy_static v1.5.0
+2026-04-09T07:15:18.2767830Z [1m[92m   Compiling[0m tao v0.34.5
+2026-04-09T07:15:19.7732770Z [1m[92m   Compiling[0m hyper-util v0.1.17
+2026-04-09T07:15:20.9655310Z [1m[92m   Compiling[0m tower-http v0.6.6
+2026-04-09T07:15:21.5985950Z [1m[92m   Compiling[0m tauri-codegen v2.5.0
+2026-04-09T07:15:23.1961800Z [1m[92m   Compiling[0m http-body-util v0.1.3
+2026-04-09T07:15:23.3497080Z [1m[92m   Compiling[0m tokio-util v0.7.16
+2026-04-09T07:15:23.6555520Z [1m[92m   Compiling[0m crossbeam-epoch v0.9.18
+2026-04-09T07:15:23.8444080Z [1m[92m   Compiling[0m concurrent-queue v2.5.0
+2026-04-09T07:15:23.9661360Z [1m[92m   Compiling[0m serialize-to-javascript-impl v0.1.2
+2026-04-09T07:15:24.2797830Z [1m[92m   Compiling[0m allocator-api2 v0.2.21
+2026-04-09T07:15:24.5712150Z [1m[92m   Compiling[0m foldhash v0.1.5
+2026-04-09T07:15:24.6263140Z [1m[92m   Compiling[0m parking v2.2.1
+2026-04-09T07:15:25.0035330Z [1m[92m   Compiling[0m event-listener v5.4.1
+2026-04-09T07:15:25.1525790Z [1m[92m   Compiling[0m hashbrown v0.15.5
+2026-04-09T07:15:26.4043560Z [1m[92m   Compiling[0m serialize-to-javascript v0.1.2
+2026-04-09T07:15:26.5755120Z [1m[92m   Compiling[0m reqwest v0.12.24
+2026-04-09T07:15:28.6124440Z [1m[92m   Compiling[0m tauri-macros v2.5.0
+2026-04-09T07:15:29.1346450Z [1m[92m   Compiling[0m rustls-webpki v0.103.8
+2026-04-09T07:15:29.8086820Z [1m[92m   Compiling[0m webpki-roots v1.0.4
+2026-04-09T07:15:29.8355350Z [1m[92m   Compiling[0m serde_repr v0.1.20
+2026-04-09T07:15:29.8671460Z [1m[92m   Compiling[0m crc-catalog v2.4.0
+2026-04-09T07:15:29.9027600Z [1m[92m   Compiling[0m mime v0.3.17
+2026-04-09T07:15:30.1055940Z [1m[92m   Compiling[0m zlib-rs v0.5.5
+2026-04-09T07:15:30.2823850Z [1m[92m   Compiling[0m subtle v2.6.1
+2026-04-09T07:15:30.3381120Z [1m[92m   Compiling[0m encoding_index_tests v0.1.4
+2026-04-09T07:15:30.3612760Z [1m[92m   Compiling[0m http-range v0.1.5
+2026-04-09T07:15:30.4507520Z [1m[92m   Compiling[0m rayon-core v1.13.0
+2026-04-09T07:15:32.5269300Z [1m[92m   Compiling[0m libz-rs-sys v0.5.5
+2026-04-09T07:15:33.4594140Z [1m[92m   Compiling[0m crc v3.3.0
+2026-04-09T07:15:33.5620430Z [1m[92m   Compiling[0m webpki-roots v0.26.11
+2026-04-09T07:15:33.7242550Z [1m[92m   Compiling[0m tokio-stream v0.1.17
+2026-04-09T07:15:34.1917410Z [1m[92m   Compiling[0m hashlink v0.10.0
+2026-04-09T07:15:34.3597270Z [1m[92m   Compiling[0m crossbeam-deque v0.8.6
+2026-04-09T07:15:34.4808450Z [1m[92m   Compiling[0m crossbeam-queue v0.3.12
+2026-04-09T07:15:34.5721620Z [1m[92m   Compiling[0m futures-intrusive v0.5.0
+2026-04-09T07:15:34.8857120Z [1m[92m   Compiling[0m spin v0.9.8
+2026-04-09T07:15:35.1938110Z [1m[92m   Compiling[0m sqlx-core v0.8.6
+2026-04-09T07:15:35.5441730Z [1m[92m   Compiling[0m flume v0.11.1
+2026-04-09T07:15:36.2616840Z [1m[92m   Compiling[0m atoi v2.0.0
+2026-04-09T07:15:36.5975360Z [1m[92m   Compiling[0m futures-executor v0.3.31
+2026-04-09T07:15:36.8681420Z [1m[92m   Compiling[0m tauri-plugin-fs v2.4.4
+2026-04-09T07:15:37.4610990Z [1m[92m   Compiling[0m bytemuck v1.24.0
+2026-04-09T07:15:37.7256990Z [1m[92m   Compiling[0m sqlx-sqlite v0.8.6
+2026-04-09T07:15:40.2029220Z [1m[92m   Compiling[0m pxfm v0.1.25
+2026-04-09T07:15:43.9384470Z [1m[92m   Compiling[0m zerocopy-derive v0.8.27
+2026-04-09T07:15:44.5357240Z [1m[92m   Compiling[0m hex v0.4.3
+2026-04-09T07:15:44.6219840Z [1m[92m   Compiling[0m zune-core v0.5.0
+2026-04-09T07:15:44.6685640Z [1m[92m   Compiling[0m dotenvy v0.15.7
+2026-04-09T07:15:44.7525070Z [1m[92m   Compiling[0m rustix v1.1.2
+2026-04-09T07:15:44.8264520Z [1m[92m   Compiling[0m sqlx-macros-core v0.8.6
+2026-04-09T07:15:45.0546960Z [1m[92m   Compiling[0m zune-jpeg v0.5.5
+2026-04-09T07:15:46.7551390Z [1m[92m   Compiling[0m moxcms v0.7.9
+2026-04-09T07:15:48.0824890Z [1m[92m   Compiling[0m rayon v1.11.0
+2026-04-09T07:15:49.0283810Z [1m[92m   Compiling[0m tauri-plugin-dialog v2.4.2
+2026-04-09T07:15:49.3597400Z [1m[92m   Compiling[0m tauri-plugin-opener v2.5.2
+2026-04-09T07:15:49.6516260Z [1m[92m   Compiling[0m tauri-plugin-sql v2.3.1
+2026-04-09T07:15:49.7571050Z [1m[92m   Compiling[0m tauri-plugin-os v2.3.2
+2026-04-09T07:15:50.0402650Z [1m[92m   Compiling[0m tauri-plugin-native-tts v0.1.0 (/Users/runner/work/goread/goread/src-tauri/plugins/tauri-plugin-native-tts)
+2026-04-09T07:15:50.0823880Z [1m[92m   Compiling[0m libwebp-sys v0.9.6
+2026-04-09T07:15:50.2956280Z [1m[92m   Compiling[0m errno v0.3.14
+2026-04-09T07:15:50.3057800Z [1m[92m   Compiling[0m bumpalo v3.19.0
+2026-04-09T07:15:50.3491540Z [1m[92m   Compiling[0m weezl v0.1.12
+2026-04-09T07:15:50.4261900Z [1m[92m   Compiling[0m portable-atomic v1.11.1
+2026-04-09T07:15:50.7086180Z [1m[92m   Compiling[0m core-foundation-sys v0.8.7
+2026-04-09T07:15:50.7303950Z [1m[92m   Compiling[0m byteorder-lite v0.1.0
+2026-04-09T07:15:50.7999760Z [1m[92m   Compiling[0m iana-time-zone v0.1.64
+2026-04-09T07:15:50.8656000Z [1m[92m   Compiling[0m image v0.25.9
+2026-04-09T07:15:50.8831030Z [1m[92m   Compiling[0m zopfli v0.8.3
+2026-04-09T07:16:00.1543500Z [1m[92m   Compiling[0m jpeg-decoder v0.3.2
+2026-04-09T07:16:09.0359710Z [1m[92m   Compiling[0m half v2.7.1
+2026-04-09T07:16:09.2653750Z [1m[92m   Compiling[0m sqlx-macros v0.8.6
+2026-04-09T07:16:09.8223900Z [1m[92m   Compiling[0m encoding-index-tradchinese v1.20141219.5
+2026-04-09T07:16:09.9367030Z [1m[92m   Compiling[0m encoding-index-japanese v1.20141219.5
+2026-04-09T07:16:10.0304730Z [1m[92m   Compiling[0m encoding-index-korean v1.20141219.5
+2026-04-09T07:16:10.1211690Z [1m[92m   Compiling[0m encoding-index-singlebyte v1.20141219.5
+2026-04-09T07:16:10.1874510Z [1m[92m   Compiling[0m encoding-index-simpchinese v1.20141219.5
+2026-04-09T07:16:10.2708300Z [1m[92m   Compiling[0m event-listener-strategy v0.5.4
+2026-04-09T07:16:10.3185380Z [1m[92m   Compiling[0m zune-inflate v0.2.54
+2026-04-09T07:16:10.5075000Z [1m[92m   Compiling[0m pathdiff v0.2.3
+2026-04-09T07:16:10.5334970Z [1m[92m   Compiling[0m xml v1.2.1
+2026-04-09T07:16:10.6103980Z [1m[92m   Compiling[0m color_quant v1.1.0
+2026-04-09T07:16:10.7501450Z [1m[92m   Compiling[0m moka v0.12.11
+2026-04-09T07:16:10.8353130Z [1m[92m   Compiling[0m bit_field v0.10.3
+2026-04-09T07:16:10.9086720Z [1m[92m   Compiling[0m lebe v0.5.3
+2026-04-09T07:16:10.9941790Z [1m[92m   Compiling[0m pdfium-render v0.8.36
+2026-04-09T07:16:11.0982690Z [1m[92m   Compiling[0m piston-float v1.0.1
+2026-04-09T07:16:11.1288600Z [1m[92m   Compiling[0m vecmath v1.0.0
+2026-04-09T07:16:11.2634950Z [1m[92m   Compiling[0m exr v1.74.0
+2026-04-09T07:16:11.7577150Z [1m[92m   Compiling[0m xml-rs v1.0.0
+2026-04-09T07:16:12.1784690Z [1m[92m   Compiling[0m gif v0.13.3
+2026-04-09T07:16:12.6219470Z [1m[92m   Compiling[0m open v5.3.2
+2026-04-09T07:16:12.6830850Z [1m[92m   Compiling[0m async-lock v3.4.1
+2026-04-09T07:16:12.6939720Z [1m[92m   Compiling[0m encoding v0.2.33
+2026-04-09T07:16:13.0045420Z [1m[92m   Compiling[0m sqlx v0.8.6
+2026-04-09T07:16:13.1026140Z [1m[92m   Compiling[0m tiff v0.9.1
+2026-04-09T07:16:13.2998410Z [1m[92m   Compiling[0m gethostname v1.1.0
+2026-04-09T07:16:13.3354510Z [1m[92m   Compiling[0m zip v3.0.0
+2026-04-09T07:16:13.9008380Z [1m[92m   Compiling[0m chrono v0.4.42
+2026-04-09T07:16:14.0360980Z [1m[92m   Compiling[0m qoi v0.4.1
+2026-04-09T07:16:14.1447310Z [1m[92m   Compiling[0m os_info v3.14.0
+2026-04-09T07:16:14.3972540Z [1m[92m   Compiling[0m itertools v0.14.0
+2026-04-09T07:16:14.5536560Z [1m[92m   Compiling[0m utf16string v0.2.0
+2026-04-09T07:16:14.6680500Z [1m[92m   Compiling[0m GoRead v1.5.4 (/Users/runner/work/goread/goread/src-tauri)
+2026-04-09T07:16:15.0066140Z [1m[92m   Compiling[0m libloading v0.7.4
+2026-04-09T07:16:15.1026330Z [1m[92m   Compiling[0m encoding_rs v0.8.35
+2026-04-09T07:16:15.3479210Z [1m[92m   Compiling[0m maybe-owned v0.3.4
+2026-04-09T07:16:15.4231440Z [1m[92m   Compiling[0m tagptr v0.2.0
+2026-04-09T07:16:15.4785810Z [1m[92m   Compiling[0m sys-locale v0.3.2
+2026-04-09T07:16:16.3734730Z [1m[92m   Compiling[0m chardetng v0.1.17
+2026-04-09T07:16:16.8981360Z [1m[92m   Compiling[0m image v0.24.9
+2026-04-09T07:16:17.2258430Z [1m[92m   Compiling[0m epub v2.1.5
+2026-04-09T07:16:17.9494940Z [1m[92m   Compiling[0m mobi v0.4.3
+2026-04-09T07:16:18.4925170Z [1m[92m   Compiling[0m webp v0.3.1
+2026-04-09T07:16:18.9294750Z [1m[92m   Compiling[0m futures v0.3.31
+2026-04-09T07:16:18.9547160Z [1m[92m   Compiling[0m memmap2 v0.9.9
+2026-04-09T07:18:01.4892320Z [1m[92m    Finished[0m `release` profile [optimized] target(s) in 4m 00s
+2026-04-09T07:18:01.7317530Z ##[group]Run set -euo pipefail
+2026-04-09T07:18:01.7318060Z [36;1mset -euo pipefail[0m
+2026-04-09T07:18:01.7318730Z [36;1msed -i '' 's#npm run -- tauri ios xcode-script[^"]*#echo Using prebuilt libapp.a for CI#' src-tauri/gen/apple/GoRead.xcodeproj/project.pbxproj[0m
+2026-04-09T07:18:01.7693130Z shell: /bin/bash -e {0}
+2026-04-09T07:18:01.7693390Z env:
+2026-04-09T07:18:01.7693580Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:18:01.7693890Z   NODE_VERSION: 20
+2026-04-09T07:18:01.7694240Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:18:01.7694500Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:18:01.7694800Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:18:01.7695060Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:18:01.7695370Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:18:01.7695590Z   CARGO_TERM_COLOR: always
+2026-04-09T07:18:01.7695830Z   CACHE_ON_FAILURE: false
+2026-04-09T07:18:01.7696130Z ##[endgroup]
+2026-04-09T07:18:01.8457370Z ##[group]Run set -euo pipefail
+2026-04-09T07:18:01.8457940Z [36;1mset -euo pipefail[0m
+2026-04-09T07:18:01.8458250Z [36;1mIOS_DERIVED_DATA="$RUNNER_TEMP/DerivedData"[0m
+2026-04-09T07:18:01.8458550Z [36;1mIOS_EXPORT_DIR="$GITHUB_WORKSPACE/build/ios"[0m
+2026-04-09T07:18:01.8459030Z [36;1mIOS_LOG_PATH="$IOS_EXPORT_DIR/xcode-build.log"[0m
+2026-04-09T07:18:01.8459380Z [36;1mmkdir -p "$IOS_EXPORT_DIR"[0m
+2026-04-09T07:18:01.8459680Z [36;1m[0m
+2026-04-09T07:18:01.8459870Z [36;1mxcodebuild \[0m
+2026-04-09T07:18:01.8460260Z [36;1m  -workspace "$IOS_WORKSPACE" \[0m
+2026-04-09T07:18:01.8460520Z [36;1m  -scheme "$IOS_SCHEME" \[0m
+2026-04-09T07:18:01.8460810Z [36;1m  -configuration release \[0m
+2026-04-09T07:18:01.8461220Z [36;1m  -sdk iphoneos \[0m
+2026-04-09T07:18:01.8461530Z [36;1m  -destination generic/platform=iOS \[0m
+2026-04-09T07:18:01.8461860Z [36;1m  -derivedDataPath "$IOS_DERIVED_DATA" \[0m
+2026-04-09T07:18:01.8462480Z [36;1m  CODE_SIGNING_ALLOWED=NO \[0m
+2026-04-09T07:18:01.8462740Z [36;1m  CODE_SIGNING_REQUIRED=NO \[0m
+2026-04-09T07:18:01.8463010Z [36;1m  CODE_SIGN_IDENTITY="" \[0m
+2026-04-09T07:18:01.8463250Z [36;1m  DEVELOPMENT_TEAM="" \[0m
+2026-04-09T07:18:01.8463620Z [36;1m  PROVISIONING_PROFILE_SPECIFIER="" \[0m
+2026-04-09T07:18:01.8463900Z [36;1m  clean build \[0m
+2026-04-09T07:18:01.8464130Z [36;1m  | tee "$IOS_LOG_PATH"[0m
+2026-04-09T07:18:01.8677310Z shell: /bin/bash -e {0}
+2026-04-09T07:18:01.8677580Z env:
+2026-04-09T07:18:01.8677840Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:18:01.8678180Z   NODE_VERSION: 20
+2026-04-09T07:18:01.8678490Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:18:01.8678800Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:18:01.8679240Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:18:01.8679570Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:18:01.8679940Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:18:01.8680210Z   CARGO_TERM_COLOR: always
+2026-04-09T07:18:01.8680510Z   CACHE_ON_FAILURE: false
+2026-04-09T07:18:01.8680900Z ##[endgroup]
+2026-04-09T07:18:03.5129530Z Command line invocation:
+2026-04-09T07:18:03.5131550Z     /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild -workspace src-tauri/gen/apple/GoRead.xcworkspace -scheme GoRead_iOS -configuration release -sdk iphoneos -destination generic/platform=iOS -derivedDataPath /Users/runner/work/_temp/DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= DEVELOPMENT_TEAM= PROVISIONING_PROFILE_SPECIFIER= clean build
+2026-04-09T07:18:03.5797750Z 
+2026-04-09T07:18:03.5798090Z User defaults from command line:
+2026-04-09T07:18:03.5798480Z     IDEDerivedDataPathOverride = /Users/runner/work/_temp/DerivedData
+2026-04-09T07:18:03.5798930Z     IDEPackageSupportUseBuiltinSCM = YES
+2026-04-09T07:18:03.5799070Z 
+2026-04-09T07:18:03.5799290Z Build settings from command line:
+2026-04-09T07:18:03.5799530Z     CODE_SIGN_IDENTITY = 
+2026-04-09T07:18:03.5799860Z     CODE_SIGNING_ALLOWED = NO
+2026-04-09T07:18:03.5800220Z     CODE_SIGNING_REQUIRED = NO
+2026-04-09T07:18:03.5800450Z     DEVELOPMENT_TEAM = 
+2026-04-09T07:18:03.5800810Z     PROVISIONING_PROFILE_SPECIFIER = 
+2026-04-09T07:18:03.5801040Z     SDKROOT = iphoneos17.5
+2026-04-09T07:18:03.5801250Z 
+2026-04-09T07:18:04.9121440Z 2026-04-09 07:18:04.911 xcodebuild[28519:74281] CFPropertyListCreateFromXMLData(): Old-style plist parser: missing semicolon in dictionary on line 470. Parsing will be abandoned. Break on _CFPropertyListMissingSemicolon to debug.
+2026-04-09T07:18:04.9124190Z 2026-04-09 07:18:04.912 xcodebuild[28519:74281] Error Domain=NSCocoaErrorDomain Code=3840 "JSON text did not start with array or object and option to allow fragments not set. around line 1, column 0." UserInfo={NSDebugDescription=JSON text did not start with array or object and option to allow fragments not set. around line 1, column 0., NSJSONSerializationErrorIndex=0}
+2026-04-09T07:18:04.9136860Z 2026-04-09 07:18:04.912 xcodebuild[28519:74281] [MT] IDEFileReferenceDebug: [Load] <IDEFileReference, 0x600000b81600: name:GoRead path:group:GoRead.xcodeproj> Failed to load container at path: /Users/runner/work/goread/goread/src-tauri/gen/apple/GoRead.xcodeproj, Error: Error Domain=Xcode3ProjectErrorDomain Code=2 "The project ‘GoRead’ is damaged and cannot be opened due to a parse error. Examine the project file for invalid edits or unresolved source control conflicts.
+2026-04-09T07:18:04.9142230Z 
+2026-04-09T07:18:04.9143610Z Path: /Users/runner/work/goread/goread/src-tauri/gen/apple/GoRead.xcodeproj" UserInfo={NSLocalizedDescription=The project ‘GoRead’ is damaged and cannot be opened due to a parse error. Examine the project file for invalid edits or unresolved source control conflicts.
+2026-04-09T07:18:04.9145180Z 
+2026-04-09T07:18:04.9145480Z Path: /Users/runner/work/goread/goread/src-tauri/gen/apple/GoRead.xcodeproj}
+2026-04-09T07:18:04.9146570Z --- xcodebuild: WARNING: Unable to open project file '/Users/runner/work/goread/goread/src-tauri/gen/apple/GoRead.xcodeproj' in workspace 'src-tauri/gen/apple/GoRead.xcworkspace'.
+2026-04-09T07:18:10.6952070Z 2026-04-09 07:18:10.694 xcodebuild[28519:74281] Writing error result bundle to /var/folders/qm/fcgtnjr57d7bvztxwhtddp7m0000gn/T/ResultBundle_2026-09-04_07-18-0010.xcresult
+2026-04-09T07:18:11.8304790Z xcodebuild: error: The workspace named "GoRead" does not contain a scheme named "GoRead_iOS". The "-list" option can be used to find the names of the schemes in the workspace.
+2026-04-09T07:18:11.8582720Z ##[error]Process completed with exit code 65.
+2026-04-09T07:18:11.8751310Z ##[group]Run actions/upload-artifact@v4
+2026-04-09T07:18:11.8751630Z with:
+2026-04-09T07:18:11.8751810Z   name: goread-ios-build-logs
+2026-04-09T07:18:11.8752150Z   path: build/ios/xcode-build.log
+2026-04-09T07:18:11.8752380Z   if-no-files-found: warn
+2026-04-09T07:18:11.8752590Z   compression-level: 6
+2026-04-09T07:18:11.8752790Z   overwrite: false
+2026-04-09T07:18:11.8753050Z   include-hidden-files: false
+2026-04-09T07:18:11.8753260Z env:
+2026-04-09T07:18:11.8753460Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:18:11.8753720Z   NODE_VERSION: 20
+2026-04-09T07:18:11.8753850Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:18:11.8754120Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:18:11.8754430Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:18:11.8754750Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:18:11.8754990Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:18:11.8755190Z   CARGO_TERM_COLOR: always
+2026-04-09T07:18:11.8755550Z   CACHE_ON_FAILURE: false
+2026-04-09T07:18:11.8756300Z ##[endgroup]
+2026-04-09T07:18:12.2028000Z (node:29034) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-04-09T07:18:12.2028750Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-09T07:18:12.2057480Z With the provided path, there will be 1 file uploaded
+2026-04-09T07:18:12.2059900Z Artifact name is valid!
+2026-04-09T07:18:12.2060580Z Root directory input is valid!
+2026-04-09T07:18:12.2755700Z Beginning upload of artifact content to blob storage
+2026-04-09T07:18:12.2880890Z (node:29034) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-09T07:18:12.3233430Z Uploaded bytes 552
+2026-04-09T07:18:12.3394990Z Finished uploading artifact content to blob storage!
+2026-04-09T07:18:12.3395980Z SHA256 digest of uploaded artifact zip is a7ae84aab1a4cff6ed23fa4239e834eef728b0fcf4a2d92fa483cfc3bea29c25
+2026-04-09T07:18:12.3396540Z Finalizing artifact upload
+2026-04-09T07:18:12.4475210Z Artifact goread-ios-build-logs.zip successfully finalized. Artifact ID 6344215022
+2026-04-09T07:18:12.4476240Z Artifact goread-ios-build-logs has been successfully uploaded! Final size is 552 bytes. Artifact ID is 6344215022
+2026-04-09T07:18:12.4483020Z Artifact download URL: https://github.com/entyr233/goread/actions/runs/24177546086/artifacts/6344215022
+2026-04-09T07:18:12.4610560Z Post job cleanup.
+2026-04-09T07:18:12.5406160Z [command]/opt/homebrew/bin/git version
+2026-04-09T07:18:12.5591110Z git version 2.53.0
+2026-04-09T07:18:12.5607780Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/e00da455-4c49-4f96-a15c-be68a9d71aaa/.gitconfig'
+2026-04-09T07:18:12.5613570Z Temporarily overriding HOME='/Users/runner/work/_temp/e00da455-4c49-4f96-a15c-be68a9d71aaa' before making global git config changes
+2026-04-09T07:18:12.5614430Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-09T07:18:12.5616910Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/goread/goread
+2026-04-09T07:18:12.5693950Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-09T07:18:12.5731810Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-09T07:18:12.6377100Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-09T07:18:12.6407820Z http.https://github.com/.extraheader
+2026-04-09T07:18:12.6413890Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-04-09T07:18:12.6458570Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-09T07:18:12.6904190Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-09T07:18:12.6938500Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-09T07:18:12.7440290Z Cleaning up orphan processes
+2026-04-09T07:18:13.2346690Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
