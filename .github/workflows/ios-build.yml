@@ -51,17 +51,12 @@ jobs:
           cd "$IOS_PROJECT_DIR"
           pod install
 
-      - name: Build iOS Rust static library
+      - name: Prepare Tauri iOS build runtime files
         run: |
           set -euo pipefail
-          mkdir -p src-tauri/gen/apple/Externals/arm64/release
-          cargo build --manifest-path src-tauri/Cargo.toml --target aarch64-apple-ios --release
-          cp src-tauri/target/aarch64-apple-ios/release/libgoread_lib.a src-tauri/gen/apple/Externals/arm64/release/libapp.a
-
-      - name: Disable Tauri Xcode Rust build script
-        run: |
-          set -euo pipefail
-          sed -i '' 's#npm run -- tauri ios xcode-script[^"]*#echo Skipping tauri ios xcode-script in CI#' src-tauri/gen/apple/GoRead.xcodeproj/project.pbxproj
+          TAURI_SERVER_ADDR_FILE="${TMPDIR}com.tauri-app.goread-server-addr"
+          # xcode-script checks this temp file even for CI release builds.
+          echo "http://127.0.0.1:1420" > "$TAURI_SERVER_ADDR_FILE"
 
       - name: Build unsigned .app
         run: |

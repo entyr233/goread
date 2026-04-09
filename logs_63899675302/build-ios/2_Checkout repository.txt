@@ -1,0 +1,90 @@
+﻿2026-04-09T06:46:27.3449370Z ##[group]Run actions/checkout@v4
+2026-04-09T06:46:27.3450180Z with:
+2026-04-09T06:46:27.3450610Z   lfs: true
+2026-04-09T06:46:27.3451070Z   repository: entyr233/goread
+2026-04-09T06:46:27.3451780Z   token: ***
+2026-04-09T06:46:27.3452230Z   ssh-strict: true
+2026-04-09T06:46:27.3452700Z   ssh-user: git
+2026-04-09T06:46:27.3453170Z   persist-credentials: true
+2026-04-09T06:46:27.3453700Z   clean: true
+2026-04-09T06:46:27.3454180Z   sparse-checkout-cone-mode: true
+2026-04-09T06:46:27.3454750Z   fetch-depth: 1
+2026-04-09T06:46:27.3455220Z   fetch-tags: false
+2026-04-09T06:46:27.3455720Z   show-progress: true
+2026-04-09T06:46:27.3456220Z   submodules: false
+2026-04-09T06:46:27.3456700Z   set-safe-directory: true
+2026-04-09T06:46:27.3457330Z env:
+2026-04-09T06:46:27.3457810Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:46:27.3458430Z   NODE_VERSION: 20
+2026-04-09T06:46:27.3458900Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:46:27.3459500Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:46:27.3460250Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:46:27.3460830Z ##[endgroup]
+2026-04-09T06:46:27.6849850Z Syncing repository: entyr233/goread
+2026-04-09T06:46:27.6851640Z ##[group]Getting Git version info
+2026-04-09T06:46:27.6852400Z Working directory is '/Users/runner/work/goread/goread'
+2026-04-09T06:46:27.6853560Z [command]/opt/homebrew/bin/git version
+2026-04-09T06:46:27.7349090Z git version 2.53.0
+2026-04-09T06:46:27.7372930Z [command]/opt/homebrew/bin/git lfs version
+2026-04-09T06:46:27.8430750Z git-lfs/3.7.1 (GitHub; darwin arm64; go 1.25.3)
+2026-04-09T06:46:27.8437680Z ##[endgroup]
+2026-04-09T06:46:27.8445110Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/1c8d2831-d948-42e4-8072-06187208244d/.gitconfig'
+2026-04-09T06:46:27.8450070Z Temporarily overriding HOME='/Users/runner/work/_temp/1c8d2831-d948-42e4-8072-06187208244d' before making global git config changes
+2026-04-09T06:46:27.8451750Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-09T06:46:27.8453430Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/goread/goread
+2026-04-09T06:46:27.8520280Z Deleting the contents of '/Users/runner/work/goread/goread'
+2026-04-09T06:46:27.8523180Z ##[group]Initializing the repository
+2026-04-09T06:46:27.8525800Z [command]/opt/homebrew/bin/git init /Users/runner/work/goread/goread
+2026-04-09T06:46:27.8716980Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-04-09T06:46:27.8718420Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-04-09T06:46:27.8719580Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-04-09T06:46:27.8720540Z hint: call:
+2026-04-09T06:46:27.8721000Z hint:
+2026-04-09T06:46:27.8721620Z hint: 	git config --global init.defaultBranch <name>
+2026-04-09T06:46:27.8722380Z hint:
+2026-04-09T06:46:27.8723110Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-04-09T06:46:27.8724300Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-04-09T06:46:27.8725270Z hint:
+2026-04-09T06:46:27.8726000Z hint: 	git branch -m <name>
+2026-04-09T06:46:27.8726550Z hint:
+2026-04-09T06:46:27.8727300Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-04-09T06:46:27.8742740Z Initialized empty Git repository in /Users/runner/work/goread/goread/.git/
+2026-04-09T06:46:27.8744940Z [command]/opt/homebrew/bin/git remote add origin https://github.com/entyr233/goread
+2026-04-09T06:46:27.8785190Z ##[endgroup]
+2026-04-09T06:46:27.8786310Z ##[group]Disabling automatic garbage collection
+2026-04-09T06:46:27.8787180Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-04-09T06:46:27.8835510Z ##[endgroup]
+2026-04-09T06:46:27.8837520Z ##[group]Setting up auth
+2026-04-09T06:46:27.8839760Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-09T06:46:27.8896340Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-09T06:46:27.9630350Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-09T06:46:27.9667900Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-09T06:46:28.0128180Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-09T06:46:28.0162220Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-09T06:46:28.0609830Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-09T06:46:28.0648530Z ##[endgroup]
+2026-04-09T06:46:28.0650710Z [command]/opt/homebrew/bin/git lfs install --local
+2026-04-09T06:46:28.1403510Z Updated Git hooks.
+2026-04-09T06:46:28.1404140Z Git LFS initialized.
+2026-04-09T06:46:28.1426470Z ##[group]Fetching the repository
+2026-04-09T06:46:28.1431580Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bf6de354304b32ad172fc39e707da0053bb1e3e5:refs/remotes/origin/master
+2026-04-09T06:46:29.4540950Z From https://github.com/entyr233/goread
+2026-04-09T06:46:29.4541560Z  * [new ref]         bf6de354304b32ad172fc39e707da0053bb1e3e5 -> origin/master
+2026-04-09T06:46:29.4607110Z ##[endgroup]
+2026-04-09T06:46:29.4607600Z ##[group]Determining the checkout info
+2026-04-09T06:46:29.4608540Z ##[endgroup]
+2026-04-09T06:46:29.4608900Z ##[group]Fetching LFS objects
+2026-04-09T06:46:29.4615100Z [command]/opt/homebrew/bin/git lfs fetch origin refs/remotes/origin/master
+2026-04-09T06:46:29.5083440Z Fetching reference refs/remotes/origin/master
+2026-04-09T06:46:30.4737970Z ##[endgroup]
+2026-04-09T06:46:30.4763960Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-04-09T06:46:30.4868470Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-09T06:46:30.4943240Z ##[group]Checking out the ref
+2026-04-09T06:46:30.4948850Z [command]/opt/homebrew/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2026-04-09T06:46:30.7006550Z Reset branch 'master'
+2026-04-09T06:46:30.7018850Z branch 'master' set up to track 'origin/master'.
+2026-04-09T06:46:30.7722850Z Encountered 1 file that should have been a pointer, but wasn't:
+2026-04-09T06:46:30.7723270Z 	src-tauri/src/pdfium/android/libpdfium.so
+2026-04-09T06:46:30.7734240Z ##[endgroup]
+2026-04-09T06:46:30.7800930Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-04-09T06:46:30.7851330Z bf6de354304b32ad172fc39e707da0053bb1e3e5
