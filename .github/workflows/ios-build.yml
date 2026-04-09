@@ -1,85 +1,109 @@
-name: iOS Build IPA
+name: Build Unsigned iOS IPA
 
-on: [push, workflow_dispatch]
+on:
+  push:
+  workflow_dispatch:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  NODE_VERSION: "20"
+  IOS_SCHEME: GoRead_iOS
+  IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+  IOS_PROJECT_DIR: src-tauri/gen/apple
+  IOS_DERIVED_DATA: ${{ runner.temp }}/DerivedData
+  IOS_EXPORT_DIR: ${{ github.workspace }}/build/ios
 
 jobs:
   build-ios:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          lfs: true 
+    runs-on: macos-14
+    permissions:
+      contents: read
 
-      - name: Setup Node
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
-          cache: 'npm'
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
 
-      - name: Install Rust
+      - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: aarch64-apple-ios
 
-      - name: Rust Cache
+      - name: Restore Rust cache
         uses: Swatinem/rust-cache@v2
         with:
-          workspaces: './src-tauri -> target'
+          workspaces: ./src-tauri -> target
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Install frontend dependencies
+        run: npm ci
 
-      # 1. 生成 iOS 原生工程
-      - name: Init iOS Project
-        run: npx tauri ios init
-
-      # 2. 注入免签补丁
-      - name: Patch Xcode Project for Unsigned Build
+      - name: Install CocoaPods dependencies
         run: |
-          PROJECT_FILE=$(find src-tauri/gen/apple -name "project.pbxproj" | head -n 1)
-          
-          if [ -n "$PROJECT_FILE" ] && [ -f "$PROJECT_FILE" ]; then
-            echo "正在给 $PROJECT_FILE 打补丁以禁用自动签名..."
-            sed -i '' -E 's/DEVELOPMENT_TEAM = [^;]+;/DEVELOPMENT_TEAM = "";/g' "$PROJECT_FILE"
-            sed -i '' -E 's/ProvisioningStyle = Automatic;/ProvisioningStyle = Manual;/g' "$PROJECT_FILE"
-            sed -i '' -E 's/CODE_SIGN_STYLE = Automatic;/CODE_SIGN_STYLE = Manual;/g' "$PROJECT_FILE"
-            sed -i '' -E 's/CODE_SIGN_IDENTITY = "[^"]+";/CODE_SIGN_IDENTITY = "";/g' "$PROJECT_FILE"
-            echo "补丁打入完毕！"
-          else
-            echo "错误：未找到 project.pbxproj 文件"
-            exit 1
-          fi
+          set -euo pipefail
+          cd "$IOS_PROJECT_DIR"
+          pod install
 
-      # 3. 核心修改：弃用 tauri ios build，直接使用底层 xcodebuild 进行纯编译
-      - name: Build iOS using pure xcodebuild
+      - name: Build unsigned .app
         run: |
-          cd src-tauri/gen/apple
-          # 指定 SYMROOT 将编译产物强制输出到当前 build 目录下，并彻底关闭签名
-          xcodebuild -workspace GoRead.xcworkspace \
-            -scheme GoRead_iOS \
-            -configuration release \
+          set -euo pipefail
+          mkdir -p "$IOS_EXPORT_DIR"
+
+          xcodebuild \
+            -workspace "$IOS_WORKSPACE" \
+            -scheme "$IOS_SCHEME" \
+            -configuration Release \
             -sdk iphoneos \
-            SYMROOT="$(PWD)/build" \
+            -destination generic/platform=iOS \
+            -derivedDataPath "$IOS_DERIVED_DATA" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
             DEVELOPMENT_TEAM="" \
-            build
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            clean build \
+            | tee "$RUNNER_TEMP/xcode-build.log"
 
-      # 4. 手动抓取生成的 .app 并打包为 .ipa
-      - name: Package IPA
+      - name: Package unsigned IPA
         run: |
-          mkdir -p Payload
-          # 从 xcodebuild 指定的 build 目录中寻找生成的 .app 文件
-          find src-tauri/gen/apple/build -name "*.app" -exec cp -r {} Payload/ \;
-          zip -r unsigned_project.ipa Payload
-        
-      # 5. 上传供下载
-      - name: Upload IPA Artifact
+          set -euo pipefail
+
+          APP_PATH=$(find "$IOS_DERIVED_DATA/Build/Products/Release-iphoneos" -maxdepth 1 -name "*.app" -print -quit)
+          if [ -z "${APP_PATH:-}" ]; then
+            echo "::error::No .app bundle was produced by xcodebuild."
+            exit 1
+          fi
+
+          PAYLOAD_DIR="$RUNNER_TEMP/Payload"
+          rm -rf "$PAYLOAD_DIR"
+          mkdir -p "$PAYLOAD_DIR"
+          cp -R "$APP_PATH" "$PAYLOAD_DIR/"
+
+          APP_NAME=$(basename "$APP_PATH" .app)
+          IPA_PATH="$IOS_EXPORT_DIR/${APP_NAME}-unsigned.ipa"
+
+          cd "$RUNNER_TEMP"
+          ditto -c -k --sequesterRsrc --keepParent Payload "$IPA_PATH"
+
+          echo "UNSIGNED_IPA_PATH=$IPA_PATH" >> "$GITHUB_ENV"
+
+      - name: Upload unsigned IPA artifact
         uses: actions/upload-artifact@v4
         with:
-          name: my-app-ipa
-          path: unsigned_project.ipa
+          name: goread-ios-unsigned-ipa
+          path: ${{ env.UNSIGNED_IPA_PATH }}
+          if-no-files-found: error
+
+      - name: Upload Xcode logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: goread-ios-build-logs
+          path: ${{ runner.temp }}/xcode-build.log
+          if-no-files-found: warn
