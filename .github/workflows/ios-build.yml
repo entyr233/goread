@@ -1,9 +1,12 @@
-name: iOS Build
-on: [push, workflow_dispatch] # 允许手动触发或推送代码时触发
+name: iOS Build IPA
+on: [push, workflow_dispatch]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build-ios:
-    runs-on: macos-latest # 关键：必须使用 macOS 环境才能编译 iOS
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -20,11 +23,23 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build iOS (Unsigned)
-        run: npx tauri ios build --no-bundle # 生成未签名的编译产物
+      - name: Build iOS (Force Unsigned)
+        # 核心逻辑：通过参数强制跳过签名校验
+        run: |
+          npx tauri ios init
+          npx tauri ios build -- -- -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+
+      - name: Package IPA
+        # 核心逻辑：iOS 的 .ipa 其实就是放进 Payload 文件夹后的压缩包
+        run: |
+          mkdir -p Payload
+          # 寻找编译生成的 .app 文件并移动到 Payload 目录
+          # 路径通常在 src-tauri/gen/apple/build 下，使用通配符匹配
+          find src-tauri/gen/apple/build -name "*.app" -exec cp -r {} Payload/ \;
+          zip -r unsigned_project.ipa Payload
         
-      - name: Upload Artifact
+      - name: Upload IPA Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ios-build-output
-          path: src-tauri/gen/apple/build/arm64 # 根据你的配置调整路径
+          name: my-app-ipa
+          path: unsigned_project.ipa
