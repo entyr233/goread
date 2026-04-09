@@ -1,0 +1,16 @@
+﻿2026-04-09T08:30:04.9201370Z ##[group]Run set -euo pipefail
+2026-04-09T08:30:04.9201970Z [36;1mset -euo pipefail[0m
+2026-04-09T08:30:04.9202460Z [36;1mPBXPROJ="src-tauri/gen/apple/GoRead.xcodeproj/project.pbxproj"[0m
+2026-04-09T08:30:04.9203090Z [36;1msed -i '' -E 's#shellScript = ".*tauri ios xcode-script.*";#shellScript = "echo Using prebuilt libapp.a for CI";#' "$PBXPROJ"[0m
+2026-04-09T08:30:04.9633430Z shell: /bin/bash -e {0}
+2026-04-09T08:30:04.9633720Z env:
+2026-04-09T08:30:04.9633930Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T08:30:04.9634180Z   NODE_VERSION: 20
+2026-04-09T08:30:04.9634460Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T08:30:04.9634730Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T08:30:04.9635060Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T08:30:04.9635290Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T08:30:04.9635510Z   CARGO_INCREMENTAL: 0
+2026-04-09T08:30:04.9635750Z   CARGO_TERM_COLOR: always
+2026-04-09T08:30:04.9635990Z   CACHE_ON_FAILURE: false
+2026-04-09T08:30:04.9636570Z ##[endgroup]

@@ -1,0 +1,132 @@
+﻿2026-04-09T08:30:25.3257900Z ##[group]Run set -euo pipefail
+2026-04-09T08:30:25.3258400Z [36;1mset -euo pipefail[0m
+2026-04-09T08:30:25.3258620Z [36;1mIOS_DERIVED_DATA="$RUNNER_TEMP/DerivedData"[0m
+2026-04-09T08:30:25.3258890Z [36;1mIOS_EXPORT_DIR="$GITHUB_WORKSPACE/build/ios"[0m
+2026-04-09T08:30:25.3259150Z [36;1m[0m
+2026-04-09T08:30:25.3259570Z [36;1mAPP_PATH=$(find "$IOS_DERIVED_DATA/Build/Products/release-iphoneos" -maxdepth 1 -name "*.app" -print -quit)[0m
+2026-04-09T08:30:25.3260010Z [36;1mif [ -z "${APP_PATH:-}" ]; then[0m
+2026-04-09T08:30:25.3260360Z [36;1m  echo "::error::No .app bundle was produced by xcodebuild."[0m
+2026-04-09T08:30:25.3260620Z [36;1m  exit 1[0m
+2026-04-09T08:30:25.3260760Z [36;1mfi[0m
+2026-04-09T08:30:25.3260880Z [36;1m[0m
+2026-04-09T08:30:25.3261030Z [36;1mPAYLOAD_DIR="$RUNNER_TEMP/Payload"[0m
+2026-04-09T08:30:25.3261240Z [36;1mrm -rf "$PAYLOAD_DIR"[0m
+2026-04-09T08:30:25.3261420Z [36;1mmkdir -p "$PAYLOAD_DIR"[0m
+2026-04-09T08:30:25.3261620Z [36;1mcp -R "$APP_PATH" "$PAYLOAD_DIR/"[0m
+2026-04-09T08:30:25.3261860Z [36;1m[0m
+2026-04-09T08:30:25.3262090Z [36;1mAPP_IN_PAYLOAD=$(find "$PAYLOAD_DIR" -maxdepth 1 -name "*.app" -print -quit)[0m
+2026-04-09T08:30:25.3262410Z [36;1mif [ -z "${APP_IN_PAYLOAD:-}" ]; then[0m
+2026-04-09T08:30:25.3262670Z [36;1m  echo "::error::Packaged app not found under Payload."[0m
+2026-04-09T08:30:25.3262900Z [36;1m  exit 1[0m
+2026-04-09T08:30:25.3263020Z [36;1mfi[0m
+2026-04-09T08:30:25.3263140Z [36;1m[0m
+2026-04-09T08:30:25.3263280Z [36;1mmkdir -p "$APP_IN_PAYLOAD/Frameworks"[0m
+2026-04-09T08:30:25.3263600Z [36;1mif [ -f "$APP_IN_PAYLOAD/Frameworks/libpdfium.dylib" ]; then[0m
+2026-04-09T08:30:25.3263840Z [36;1m  :[0m
+2026-04-09T08:30:25.3264040Z [36;1melif [ -f "src-tauri/src/pdfium/ios/libpdfium.dylib" ]; then[0m
+2026-04-09T08:30:25.3264460Z [36;1m  cp "src-tauri/src/pdfium/ios/libpdfium.dylib" "$APP_IN_PAYLOAD/Frameworks/libpdfium.dylib"[0m
+2026-04-09T08:30:25.3264800Z [36;1melse[0m
+2026-04-09T08:30:25.3265030Z [36;1m  echo "::error::libpdfium.dylib not found in Frameworks or source path."[0m
+2026-04-09T08:30:25.3265310Z [36;1m  exit 1[0m
+2026-04-09T08:30:25.3265430Z [36;1mfi[0m
+2026-04-09T08:30:25.3265550Z [36;1m[0m
+2026-04-09T08:30:25.3265830Z [36;1m# Keep a root-level copy for compatibility with loaders that still resolve ./libpdfium.dylib.[0m
+2026-04-09T08:30:25.3266300Z [36;1mcp "$APP_IN_PAYLOAD/Frameworks/libpdfium.dylib" "$APP_IN_PAYLOAD/libpdfium.dylib"[0m
+2026-04-09T08:30:25.3266600Z [36;1m[0m
+2026-04-09T08:30:25.3266900Z [36;1mAPP_EXECUTABLE=$(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APP_IN_PAYLOAD/Info.plist")[0m
+2026-04-09T08:30:25.3267310Z [36;1mAPP_BIN="$APP_IN_PAYLOAD/$APP_EXECUTABLE"[0m
+2026-04-09T08:30:25.3267520Z [36;1mif [ ! -f "$APP_BIN" ]; then[0m
+2026-04-09T08:30:25.3267760Z [36;1m  echo "::error::App executable not found: $APP_BIN"[0m
+2026-04-09T08:30:25.3267980Z [36;1m  exit 1[0m
+2026-04-09T08:30:25.3268100Z [36;1mfi[0m
+2026-04-09T08:30:25.3268210Z [36;1m[0m
+2026-04-09T08:30:25.3268420Z [36;1m# Rewrite loader path to a stable location under Frameworks.[0m
+2026-04-09T08:30:25.3268870Z [36;1minstall_name_tool -change ./libpdfium.dylib @executable_path/Frameworks/libpdfium.dylib "$APP_BIN" || true[0m
+2026-04-09T08:30:25.3269470Z [36;1minstall_name_tool -change @loader_path/libpdfium.dylib @executable_path/Frameworks/libpdfium.dylib "$APP_BIN" || true[0m
+2026-04-09T08:30:25.3269870Z [36;1m[0m
+2026-04-09T08:30:25.3270020Z [36;1mecho "Linked dylibs for $APP_EXECUTABLE:"[0m
+2026-04-09T08:30:25.3270250Z [36;1motool -L "$APP_BIN" | sed 's/^/  /'[0m
+2026-04-09T08:30:25.3270470Z [36;1mls -la "$APP_IN_PAYLOAD" | sed 's/^/  /'[0m
+2026-04-09T08:30:25.3270720Z [36;1mls -la "$APP_IN_PAYLOAD/Frameworks" | sed 's/^/  /'[0m
+2026-04-09T08:30:25.3271110Z [36;1m[0m
+2026-04-09T08:30:25.3271250Z [36;1mAPP_NAME=$(basename "$APP_PATH" .app)[0m
+2026-04-09T08:30:25.3271500Z [36;1mIPA_PATH="$IOS_EXPORT_DIR/${APP_NAME}-unsigned.ipa"[0m
+2026-04-09T08:30:25.3271720Z [36;1m[0m
+2026-04-09T08:30:25.3272140Z [36;1mcd "$RUNNER_TEMP"[0m
+2026-04-09T08:30:25.3272380Z [36;1mditto -c -k --sequesterRsrc --keepParent Payload "$IPA_PATH"[0m
+2026-04-09T08:30:25.3461660Z shell: /bin/bash -e {0}
+2026-04-09T08:30:25.3461850Z env:
+2026-04-09T08:30:25.3462010Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T08:30:25.3462200Z   NODE_VERSION: 20
+2026-04-09T08:30:25.3462350Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T08:30:25.3462560Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T08:30:25.3462800Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T08:30:25.3463000Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T08:30:25.3463170Z   CARGO_INCREMENTAL: 0
+2026-04-09T08:30:25.3463320Z   CARGO_TERM_COLOR: always
+2026-04-09T08:30:25.3463470Z   CACHE_ON_FAILURE: false
+2026-04-09T08:30:25.3463630Z ##[endgroup]
+2026-04-09T08:30:26.0314310Z Linked dylibs for GoRead:
+2026-04-09T08:30:26.4345540Z   /Users/runner/work/_temp/Payload/GoRead.app/GoRead:
+2026-04-09T08:30:26.4346390Z   	@executable_path/Frameworks/libpdfium.dylib (compatibility version 0.0.0, current version 0.0.0)
+2026-04-09T08:30:26.4347210Z   	/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics (compatibility version 64.0.0, current version 1774.5.3)
+2026-04-09T08:30:26.4347960Z   	/System/Library/Frameworks/Metal.framework/Metal (compatibility version 1.0.0, current version 343.19.0)
+2026-04-09T08:30:26.4348640Z   	/System/Library/Frameworks/MetalKit.framework/MetalKit (compatibility version 1.0.0, current version 165.2.0)
+2026-04-09T08:30:26.4349370Z   	/System/Library/Frameworks/QuartzCore.framework/QuartzCore (compatibility version 1.2.0, current version 1.11.0)
+2026-04-09T08:30:26.4350080Z   	/System/Library/Frameworks/Security.framework/Security (compatibility version 1.0.0, current version 61123.120.34)
+2026-04-09T08:30:26.4350780Z   	/System/Library/Frameworks/UIKit.framework/UIKit (compatibility version 1.0.0, current version 7511.1.104)
+2026-04-09T08:30:26.4351490Z   	/System/Library/Frameworks/WebKit.framework/WebKit (compatibility version 1.0.0, current version 618.2.12)
+2026-04-09T08:30:26.4352210Z   	/System/Library/Frameworks/Foundation.framework/Foundation (compatibility version 300.0.0, current version 2503.1.0)
+2026-04-09T08:30:26.4352830Z   	/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)
+2026-04-09T08:30:26.4353320Z   	/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 1700.255.0)
+2026-04-09T08:30:26.4353830Z   	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1345.120.2)
+2026-04-09T08:30:26.4354470Z   	/System/Library/Frameworks/AVFoundation.framework/AVFoundation (compatibility version 1.0.0, current version 2.0.0)
+2026-04-09T08:30:26.4355240Z   	/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation (compatibility version 150.0.0, current version 2503.1.0)
+2026-04-09T08:30:26.4356190Z   	/System/Library/Frameworks/CoreMedia.framework/CoreMedia (compatibility version 1.0.0, current version 1.0.0)
+2026-04-09T08:30:26.4356950Z   	/System/Library/Frameworks/CoreServices.framework/CoreServices (compatibility version 1.0.0, current version 1226.0.0)
+2026-04-09T08:30:26.4357680Z   	/System/Library/Frameworks/ImageIO.framework/ImageIO (compatibility version 1.0.0, current version 1.0.0)
+2026-04-09T08:30:26.4358390Z   	/System/Library/Frameworks/Photos.framework/Photos (compatibility version 1.0.0, current version 652.0.100)
+2026-04-09T08:30:26.4359090Z   	/System/Library/Frameworks/PhotosUI.framework/PhotosUI (compatibility version 1.0.0, current version 652.0.100, weak)
+2026-04-09T08:30:26.4359890Z   	/System/Library/Frameworks/SafariServices.framework/SafariServices (compatibility version 1.0.0, current version 1.0.0)
+2026-04-09T08:30:26.4360640Z   	/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2240.7.2, weak)
+2026-04-09T08:30:26.4361510Z   	/usr/lib/swift/libswiftCore.dylib (compatibility version 1.0.0, current version 0.0.0)
+2026-04-09T08:30:26.4362080Z   	/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 6.0.0, weak)
+2026-04-09T08:30:26.4362970Z   	/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0, weak)
+2026-04-09T08:30:26.4363610Z   	/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 2.0.0, weak)
+2026-04-09T08:30:26.4364280Z   	/usr/lib/swift/libswiftCoreLocation.dylib (compatibility version 1.0.0, current version 36.0.0, weak)
+2026-04-09T08:30:26.4364920Z   	/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)
+2026-04-09T08:30:26.4365520Z   	/usr/lib/swift/libswiftCoreMedia.dylib (compatibility version 1.0.0, current version 3110.8.2, weak)
+2026-04-09T08:30:26.4366130Z   	/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 0.0.0, weak)
+2026-04-09T08:30:26.4366760Z   	/usr/lib/swift/libswiftDataDetection.dylib (compatibility version 1.0.0, current version 758.7.0, weak)
+2026-04-09T08:30:26.4367360Z   	/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 41.0.0)
+2026-04-09T08:30:26.4368010Z   	/usr/lib/swift/libswiftFileProvider.dylib (compatibility version 1.0.0, current version 1835.120.53, weak)
+2026-04-09T08:30:26.4368630Z   	/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 343.19.0, weak)
+2026-04-09T08:30:26.4369210Z   	/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 4.0.0, weak)
+2026-04-09T08:30:26.4369780Z   	/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 8.0.0)
+2026-04-09T08:30:26.4370390Z   	/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 3.0.0, weak)
+2026-04-09T08:30:26.4371060Z   	/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 794.2.3, weak)
+2026-04-09T08:30:26.4371730Z   	/usr/lib/swift/libswiftWebKit.dylib (compatibility version 1.0.0, current version 0.0.0, weak)
+2026-04-09T08:30:26.4372300Z   	/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 36.100.8, weak)
+2026-04-09T08:30:26.4372840Z   	/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1049.100.4)
+2026-04-09T08:30:26.4373380Z   	/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 18.0.0, weak)
+2026-04-09T08:30:26.4373940Z   	/usr/lib/swift/libswiftFoundation.dylib (compatibility version 1.0.0, current version 1.0.0)
+2026-04-09T08:30:26.4374480Z   	/usr/lib/swift/libswiftUIKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)
+2026-04-09T08:30:26.4375070Z   	/usr/lib/swift/libswiftCoreGraphics.dylib (compatibility version 1.0.0, current version 120.100.0, weak)
+2026-04-09T08:30:26.4375710Z   	/usr/lib/swift/libswiftPhotosUI.dylib (compatibility version 1.0.0, current version 652.0.100, weak)
+2026-04-09T08:30:26.4390670Z   total 34648
+2026-04-09T08:30:26.4391050Z   drwxr-xr-x  12 runner  staff       384 Apr  9 08:30 .
+2026-04-09T08:30:26.4391460Z   drwxr-xr-x   3 runner  staff        96 Apr  9 08:30 ..
+2026-04-09T08:30:26.4391850Z   -rw-r--r--   1 runner  staff       808 Apr  9 08:30 AppIcon60x60@2x.png
+2026-04-09T08:30:26.4392290Z   -rw-r--r--   1 runner  staff      1032 Apr  9 08:30 AppIcon76x76@2x~ipad.png
+2026-04-09T08:30:26.4392690Z   -rw-r--r--   1 runner  staff     39000 Apr  9 08:30 Assets.car
+2026-04-09T08:30:26.4393070Z   drwxr-xr-x   3 runner  staff        96 Apr  9 08:30 Frameworks
+2026-04-09T08:30:26.4393500Z   -rwxr-xr-x   1 runner  staff  12208416 Apr  9 08:30 GoRead
+2026-04-09T08:30:26.4393940Z   -rw-r--r--   1 runner  staff      2237 Apr  9 08:30 Info.plist
+2026-04-09T08:30:26.4394350Z   drwxr-xr-x   5 runner  staff       160 Apr  9 08:30 LaunchScreen.storyboardc
+2026-04-09T08:30:26.4394970Z   -rw-r--r--   1 runner  staff         8 Apr  9 08:30 PkgInfo
+2026-04-09T08:30:26.4395310Z   drwxr-xr-x   6 runner  staff       192 Apr  9 08:30 assets
+2026-04-09T08:30:26.4395710Z   -rw-r--r--   1 runner  staff   5471768 Apr  9 08:30 libpdfium.dylib
+2026-04-09T08:30:26.4417490Z   total 10688
+2026-04-09T08:30:26.4417810Z   drwxr-xr-x   3 runner  staff       96 Apr  9 08:30 .
+2026-04-09T08:30:26.4418150Z   drwxr-xr-x  12 runner  staff      384 Apr  9 08:30 ..
+2026-04-09T08:30:26.4418530Z   -rw-r--r--   1 runner  staff  5471768 Apr  9 08:30 libpdfium.dylib

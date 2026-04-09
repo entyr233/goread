@@ -1,0 +1,72 @@
+﻿2026-04-09T08:27:52.3891720Z ##[group]Run Swatinem/rust-cache@v2
+2026-04-09T08:27:52.3891920Z with:
+2026-04-09T08:27:52.3892060Z   workspaces: ./src-tauri -> target
+2026-04-09T08:27:52.3892250Z   prefix-key: v0-rust
+2026-04-09T08:27:52.3892390Z   add-job-id-key: true
+2026-04-09T08:27:52.3892550Z   add-rust-environment-hash-key: true
+2026-04-09T08:27:52.3892720Z   cache-targets: true
+2026-04-09T08:27:52.3892870Z   cache-all-crates: false
+2026-04-09T08:27:52.3893030Z   cache-workspace-crates: false
+2026-04-09T08:27:52.3893200Z   save-if: true
+2026-04-09T08:27:52.3893330Z   cache-provider: github
+2026-04-09T08:27:52.3893460Z   cache-bin: true
+2026-04-09T08:27:52.3893590Z   lookup-only: false
+2026-04-09T08:27:52.3893740Z   cmd-format: {0}
+2026-04-09T08:27:52.3893860Z env:
+2026-04-09T08:27:52.3893990Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T08:27:52.3894180Z   NODE_VERSION: 20
+2026-04-09T08:27:52.3894310Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T08:27:52.3894510Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T08:27:52.3894770Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T08:27:52.3894950Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T08:27:52.3895300Z   CARGO_INCREMENTAL: 0
+2026-04-09T08:27:52.3895440Z   CARGO_TERM_COLOR: always
+2026-04-09T08:27:52.3895590Z ##[endgroup]
+2026-04-09T08:27:52.5626550Z (node:17126) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-04-09T08:27:52.5627300Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-09T08:27:52.8393470Z ##[group]Cache Configuration
+2026-04-09T08:27:52.8393950Z Cache Provider:
+2026-04-09T08:27:52.8394290Z     github
+2026-04-09T08:27:52.8400890Z Workspaces:
+2026-04-09T08:27:52.8401490Z     /Users/runner/work/goread/goread/src-tauri
+2026-04-09T08:27:52.8401970Z Cache Paths:
+2026-04-09T08:27:52.8402310Z     /Users/runner/.cargo/bin
+2026-04-09T08:27:52.8402630Z     /Users/runner/.cargo/.crates.toml
+2026-04-09T08:27:52.8403700Z     /Users/runner/.cargo/.crates2.json
+2026-04-09T08:27:52.8404080Z     /Users/runner/.cargo/registry
+2026-04-09T08:27:52.8404350Z     /Users/runner/.cargo/git
+2026-04-09T08:27:52.8404800Z     /Users/runner/work/goread/goread/src-tauri/target
+2026-04-09T08:27:52.8405140Z Restore Key:
+2026-04-09T08:27:52.8406910Z     v0-rust-build-ios-Darwin-arm64-920d69ea
+2026-04-09T08:27:52.8413500Z Cache Key:
+2026-04-09T08:27:52.8413900Z     v0-rust-build-ios-Darwin-arm64-920d69ea-0ed2c078
+2026-04-09T08:27:52.8414260Z .. Prefix:
+2026-04-09T08:27:52.8423100Z   - v0-rust-build-ios-Darwin-arm64
+2026-04-09T08:27:52.8423760Z .. Environment considered:
+2026-04-09T08:27:52.8424040Z   - Rust Versions:
+2026-04-09T08:27:52.8424450Z     - 1.94.1 aarch64-apple-darwin e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-04-09T08:27:52.8424990Z     - 1.94.1 aarch64-apple-darwin e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-04-09T08:27:52.8425360Z   - CARGO_HOME
+2026-04-09T08:27:52.8425640Z   - CARGO_INCREMENTAL
+2026-04-09T08:27:52.8425970Z   - CARGO_TERM_COLOR
+2026-04-09T08:27:52.8427510Z .. Lockfiles considered:
+2026-04-09T08:27:52.8427830Z   - /Users/runner/work/goread/goread/src-tauri/Cargo.lock
+2026-04-09T08:27:52.8428300Z   - /Users/runner/work/goread/goread/src-tauri/Cargo.toml
+2026-04-09T08:27:52.8428850Z ##[endgroup]
+2026-04-09T08:27:52.8429150Z 
+2026-04-09T08:27:52.8429320Z ... Restoring cache ...
+2026-04-09T08:27:53.0039610Z Cache hit for: v0-rust-build-ios-Darwin-arm64-920d69ea-0ed2c078
+2026-04-09T08:27:54.1843930Z Received 58720256 of 645897310 (9.1%), 55.5 MBs/sec
+2026-04-09T08:27:55.1957370Z Received 134217728 of 645897310 (20.8%), 63.4 MBs/sec
+2026-04-09T08:27:56.1957100Z Received 255852544 of 645897310 (39.6%), 80.8 MBs/sec
+2026-04-09T08:27:57.1972170Z Received 264241152 of 645897310 (40.9%), 62.7 MBs/sec
+2026-04-09T08:27:58.1984540Z Received 268435456 of 645897310 (41.6%), 51.0 MBs/sec
+2026-04-09T08:27:59.2132710Z Received 398458880 of 645897310 (61.7%), 63.0 MBs/sec
+2026-04-09T08:28:00.2052730Z Received 427819008 of 645897310 (66.2%), 58.0 MBs/sec
+2026-04-09T08:28:01.2496380Z Received 536870912 of 645897310 (83.1%), 63.4 MBs/sec
+2026-04-09T08:28:02.2499460Z Received 629145600 of 645897310 (97.4%), 66.1 MBs/sec
+2026-04-09T08:28:02.4236490Z Received 645897310 of 645897310 (100.0%), 66.6 MBs/sec
+2026-04-09T08:28:02.4244910Z Cache Size: ~616 MB (645897310 B)
+2026-04-09T08:28:02.4387880Z [command]/opt/homebrew/bin/gtar -xf /Users/runner/work/_temp/a503fb0a-de9d-497f-a416-a19d7ead07dc/cache.tzst -P -C /Users/runner/work/goread/goread --delay-directory-restore --use-compress-program unzstd
+2026-04-09T08:28:06.7192820Z Cache restored successfully
+2026-04-09T08:28:06.7311630Z Restored from cache key "v0-rust-build-ios-Darwin-arm64-920d69ea-0ed2c078" full match: true.

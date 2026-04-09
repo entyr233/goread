@@ -100,9 +100,14 @@ use std::str::FromStr;
 use std::sync::atomic::AtomicBool;
 use std::sync::Arc;
 use tauri::{AppHandle, Manager, Runtime};
+#[cfg(target_os = "ios")]
+use tauri::{webview::WebviewWindowBuilder, WebviewUrl};
 #[cfg(not(target_os = "ios"))]
 use tauri_plugin_native_tts::NativeTtsExt;
 use tokio::sync::Mutex;
+
+#[cfg(target_os = "ios")]
+const IOS_LOCALHOST_PORT: u16 = 9527;
 
 #[tauri::command]
 fn exit_app() {
@@ -239,11 +244,25 @@ pub fn run() {
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_opener::init());
 
+    #[cfg(target_os = "ios")]
+    let builder = builder.plugin(tauri_plugin_localhost::Builder::new(IOS_LOCALHOST_PORT).build());
+
     #[cfg(not(target_os = "ios"))]
     let builder = builder.plugin(tauri_plugin_native_tts::init());
 
     builder
         .setup(|app| {
+            #[cfg(target_os = "ios")]
+            if app.get_webview_window("main").is_none() {
+                let url = format!("http://localhost:{IOS_LOCALHOST_PORT}/")
+                    .parse()
+                    .expect("invalid iOS localhost URL");
+
+                WebviewWindowBuilder::new(app, "main", WebviewUrl::External(url))
+                    .title("GoRead")
+                    .build()?;
+            }
+
             // 设置数据库连接
             tauri::async_runtime::block_on(async {
                 let app_data_dir = app.path().app_data_dir().unwrap();

@@ -89,6 +89,9 @@ targets:
               public.mime-type: application/epub+zip
         UIFileSharingEnabled: true
         LSSupportsOpeningDocumentsInPlace: true
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        NSLocalNetworkUsageDescription: GoRead uses a local web server to load the app interface on iOS.
         UIBackgroundModes:
           - audio
     entitlements:

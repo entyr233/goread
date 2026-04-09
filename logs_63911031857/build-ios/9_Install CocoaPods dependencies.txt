@@ -1,0 +1,25 @@
+﻿2026-04-09T08:28:16.8058220Z ##[group]Run set -euo pipefail
+2026-04-09T08:28:16.8058490Z [36;1mset -euo pipefail[0m
+2026-04-09T08:28:16.8058700Z [36;1mcd "$IOS_PROJECT_DIR"[0m
+2026-04-09T08:28:16.8058870Z [36;1mpod install[0m
+2026-04-09T08:28:16.8108740Z shell: /bin/bash -e {0}
+2026-04-09T08:28:16.8108900Z env:
+2026-04-09T08:28:16.8109040Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T08:28:16.8109250Z   NODE_VERSION: 20
+2026-04-09T08:28:16.8109390Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T08:28:16.8109600Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T08:28:16.8109840Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T08:28:16.8110030Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T08:28:16.8110220Z   CARGO_INCREMENTAL: 0
+2026-04-09T08:28:16.8110380Z   CARGO_TERM_COLOR: always
+2026-04-09T08:28:16.8110540Z   CACHE_ON_FAILURE: false
+2026-04-09T08:28:16.8110700Z ##[endgroup]
+2026-04-09T08:28:19.2818280Z 
+2026-04-09T08:28:19.2818900Z Analyzing dependencies
+2026-04-09T08:28:19.2819720Z [!] The Podfile does not contain any dependencies.
+2026-04-09T08:28:19.2828690Z Downloading dependencies
+2026-04-09T08:28:19.2829630Z Generating Pods project
+2026-04-09T08:28:19.2829990Z Integrating client project
+2026-04-09T08:28:19.2830220Z 
+2026-04-09T08:28:19.2830710Z [!] Please close any current Xcode sessions and use `GoRead.xcworkspace` for this project from now on.
+2026-04-09T08:28:19.2832460Z Pod installation complete! There are 0 dependencies from the Podfile and 0 total pods installed.

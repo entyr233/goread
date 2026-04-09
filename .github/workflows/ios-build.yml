@@ -68,7 +68,8 @@ jobs:
           set -euo pipefail
           mkdir -p src-tauri/gen/apple/Externals/arm64/release
           mkdir -p src-tauri/gen/apple/Externals/x86_64/release
-          node -e "const fs=require('fs');const p='src-tauri/tauri.conf.json';const c=JSON.parse(fs.readFileSync(p,'utf8'));c.build=c.build||{};delete c.build.devUrl;c.build.frontendDist='../dist';fs.writeFileSync(p,JSON.stringify(c,null,2));"
+          node -e "const fs=require('fs');const p='src-tauri/tauri.conf.json';const c=JSON.parse(fs.readFileSync(p,'utf8'));c.build=c.build||{};delete c.build.devUrl;c.build.frontendDist='../dist';c.app=c.app||{};c.app.windows=[];fs.writeFileSync(p,JSON.stringify(c,null,2));"
+          cat src-tauri/tauri.conf.json
           # Force iOS CI build to produce staticlib only, so mobile plugin symbols
           # resolved by Xcode are not required during a Rust cdylib link step.
           sed -i '' 's/crate-type = \["staticlib", "cdylib", "rlib"\]/crate-type = ["staticlib"]/g' src-tauri/Cargo.toml
@@ -155,6 +156,7 @@ jobs:
           echo "Linked dylibs for $APP_EXECUTABLE:"
           otool -L "$APP_BIN" | sed 's/^/  /'
           ls -la "$APP_IN_PAYLOAD" | sed 's/^/  /'
+          ls -la "$APP_IN_PAYLOAD/assets" | sed 's/^/  /' || true
           ls -la "$APP_IN_PAYLOAD/Frameworks" | sed 's/^/  /'
 
           APP_NAME=$(basename "$APP_PATH" .app)
