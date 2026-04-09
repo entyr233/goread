@@ -1,0 +1,30 @@
+name: iOS Build
+on: [push, workflow_dispatch] # 允许手动触发或推送代码时触发
+
+jobs:
+  build-ios:
+    runs-on: macos-latest # 关键：必须使用 macOS 环境才能编译 iOS
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-ios
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build iOS (Unsigned)
+        run: npx tauri ios build --no-bundle # 生成未签名的编译产物
+        
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-build-output
+          path: src-tauri/gen/apple/build/arm64 # 根据你的配置调整路径
