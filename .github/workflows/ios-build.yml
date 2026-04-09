@@ -115,15 +115,34 @@ jobs:
             exit 1
           fi
 
-          # LiveContainer loads GoRead with a relative loader path (./libpdfium.dylib),
-          # so ensure the dylib exists at app root in addition to any embedded copy.
+          mkdir -p "$APP_IN_PAYLOAD/Frameworks"
           if [ -f "$APP_IN_PAYLOAD/Frameworks/libpdfium.dylib" ]; then
-            cp "$APP_IN_PAYLOAD/Frameworks/libpdfium.dylib" "$APP_IN_PAYLOAD/libpdfium.dylib"
+            :
           elif [ -f "src-tauri/src/pdfium/ios/libpdfium.dylib" ]; then
-            cp "src-tauri/src/pdfium/ios/libpdfium.dylib" "$APP_IN_PAYLOAD/libpdfium.dylib"
+            cp "src-tauri/src/pdfium/ios/libpdfium.dylib" "$APP_IN_PAYLOAD/Frameworks/libpdfium.dylib"
           else
-            echo "::warning::libpdfium.dylib not found in Frameworks or source path."
+            echo "::error::libpdfium.dylib not found in Frameworks or source path."
+            exit 1
           fi
+
+          # Keep a root-level copy for compatibility with loaders that still resolve ./libpdfium.dylib.
+          cp "$APP_IN_PAYLOAD/Frameworks/libpdfium.dylib" "$APP_IN_PAYLOAD/libpdfium.dylib"
+
+          APP_EXECUTABLE=$(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APP_IN_PAYLOAD/Info.plist")
+          APP_BIN="$APP_IN_PAYLOAD/$APP_EXECUTABLE"
+          if [ ! -f "$APP_BIN" ]; then
+            echo "::error::App executable not found: $APP_BIN"
+            exit 1
+          fi
+
+          # Rewrite loader path to a stable location under Frameworks.
+          install_name_tool -change ./libpdfium.dylib @executable_path/Frameworks/libpdfium.dylib "$APP_BIN" || true
+          install_name_tool -change @loader_path/libpdfium.dylib @executable_path/Frameworks/libpdfium.dylib "$APP_BIN" || true
+
+          echo "Linked dylibs for $APP_EXECUTABLE:"
+          otool -L "$APP_BIN" | sed 's/^/  /'
+          ls -la "$APP_IN_PAYLOAD" | sed 's/^/  /'
+          ls -la "$APP_IN_PAYLOAD/Frameworks" | sed 's/^/  /'
 
           APP_NAME=$(basename "$APP_PATH" .app)
           IPA_PATH="$IOS_EXPORT_DIR/${APP_NAME}-unsigned.ipa"
