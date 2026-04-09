@@ -100,6 +100,7 @@ use std::str::FromStr;
 use std::sync::atomic::AtomicBool;
 use std::sync::Arc;
 use tauri::{AppHandle, Manager, Runtime};
+#[cfg(not(target_os = "ios"))]
 use tauri_plugin_native_tts::NativeTtsExt;
 use tokio::sync::Mutex;
 
@@ -124,6 +125,7 @@ async fn hide_status_bar() -> Result<(), String> {
 }
 
 #[tauri::command]
+#[cfg(not(target_os = "ios"))]
 async fn native_tts_init<R: Runtime>(
     app: AppHandle<R>,
     payload: tauri_plugin_native_tts::InitArgs,
@@ -132,6 +134,16 @@ async fn native_tts_init<R: Runtime>(
 }
 
 #[tauri::command]
+#[cfg(target_os = "ios")]
+async fn native_tts_init<R: Runtime>(
+    _app: AppHandle<R>,
+    _payload: serde_json::Value,
+) -> Result<serde_json::Value, String> {
+    Err("native tts is disabled on iOS CI unsigned build".to_string())
+}
+
+#[tauri::command]
+#[cfg(not(target_os = "ios"))]
 async fn native_tts_speak<R: Runtime>(
     app: AppHandle<R>,
     payload: tauri_plugin_native_tts::SpeakArgs,
@@ -140,16 +152,40 @@ async fn native_tts_speak<R: Runtime>(
 }
 
 #[tauri::command]
+#[cfg(target_os = "ios")]
+async fn native_tts_speak<R: Runtime>(
+    _app: AppHandle<R>,
+    _payload: serde_json::Value,
+) -> Result<serde_json::Value, String> {
+    Err("native tts is disabled on iOS CI unsigned build".to_string())
+}
+
+#[tauri::command]
+#[cfg(not(target_os = "ios"))]
 async fn native_tts_pause<R: Runtime>(app: AppHandle<R>) -> Result<(), String> {
     app.native_tts().pause().map_err(|e| e.to_string())
 }
 
 #[tauri::command]
+#[cfg(target_os = "ios")]
+async fn native_tts_pause<R: Runtime>(_app: AppHandle<R>) -> Result<(), String> {
+    Err("native tts is disabled on iOS CI unsigned build".to_string())
+}
+
+#[tauri::command]
+#[cfg(not(target_os = "ios"))]
 async fn native_tts_stop<R: Runtime>(app: AppHandle<R>) -> Result<(), String> {
     app.native_tts().stop().map_err(|e| e.to_string())
 }
 
 #[tauri::command]
+#[cfg(target_os = "ios")]
+async fn native_tts_stop<R: Runtime>(_app: AppHandle<R>) -> Result<(), String> {
+    Err("native tts is disabled on iOS CI unsigned build".to_string())
+}
+
+#[tauri::command]
+#[cfg(not(target_os = "ios"))]
 async fn native_tts_set_rate<R: Runtime>(
     app: AppHandle<R>,
     payload: tauri_plugin_native_tts::SetRateArgs,
@@ -158,6 +194,16 @@ async fn native_tts_set_rate<R: Runtime>(
 }
 
 #[tauri::command]
+#[cfg(target_os = "ios")]
+async fn native_tts_set_rate<R: Runtime>(
+    _app: AppHandle<R>,
+    _payload: serde_json::Value,
+) -> Result<(), String> {
+    Err("native tts is disabled on iOS CI unsigned build".to_string())
+}
+
+#[tauri::command]
+#[cfg(not(target_os = "ios"))]
 async fn native_tts_set_voice<R: Runtime>(
     app: AppHandle<R>,
     payload: tauri_plugin_native_tts::SetVoiceArgs,
@@ -166,17 +212,37 @@ async fn native_tts_set_voice<R: Runtime>(
 }
 
 #[tauri::command]
+#[cfg(target_os = "ios")]
+async fn native_tts_set_voice<R: Runtime>(
+    _app: AppHandle<R>,
+    _payload: serde_json::Value,
+) -> Result<(), String> {
+    Err("native tts is disabled on iOS CI unsigned build".to_string())
+}
+
+#[tauri::command]
+#[cfg(not(target_os = "ios"))]
 async fn native_tts_shutdown<R: Runtime>(app: AppHandle<R>) -> Result<(), String> {
     app.native_tts().shutdown().map_err(|e| e.to_string())
 }
 
+#[tauri::command]
+#[cfg(target_os = "ios")]
+async fn native_tts_shutdown<R: Runtime>(_app: AppHandle<R>) -> Result<(), String> {
+    Err("native tts is disabled on iOS CI unsigned build".to_string())
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    tauri::Builder::default()
+    let builder = tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_fs::init())
-        .plugin(tauri_plugin_opener::init())
-        .plugin(tauri_plugin_native_tts::init())
+        .plugin(tauri_plugin_opener::init());
+
+    #[cfg(not(target_os = "ios"))]
+    let builder = builder.plugin(tauri_plugin_native_tts::init());
+
+    builder
         .setup(|app| {
             // 设置数据库连接
             tauri::async_runtime::block_on(async {

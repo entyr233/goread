@@ -1,0 +1,58 @@
+﻿2026-04-09T07:22:58.2418910Z ##[group]Run Swatinem/rust-cache@v2
+2026-04-09T07:22:58.2419200Z with:
+2026-04-09T07:22:58.2419350Z   workspaces: ./src-tauri -> target
+2026-04-09T07:22:58.2419530Z   prefix-key: v0-rust
+2026-04-09T07:22:58.2419680Z   add-job-id-key: true
+2026-04-09T07:22:58.2419860Z   add-rust-environment-hash-key: true
+2026-04-09T07:22:58.2420050Z   cache-targets: true
+2026-04-09T07:22:58.2420210Z   cache-all-crates: false
+2026-04-09T07:22:58.2420390Z   cache-workspace-crates: false
+2026-04-09T07:22:58.2420560Z   save-if: true
+2026-04-09T07:22:58.2434660Z   cache-provider: github
+2026-04-09T07:22:58.2434880Z   cache-bin: true
+2026-04-09T07:22:58.2435030Z   lookup-only: false
+2026-04-09T07:22:58.2435190Z   cmd-format: {0}
+2026-04-09T07:22:58.2435310Z env:
+2026-04-09T07:22:58.2435460Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:22:58.2435650Z   NODE_VERSION: 20
+2026-04-09T07:22:58.2435780Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:22:58.2436000Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:22:58.2436290Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:22:58.2436480Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:22:58.2436650Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:22:58.2436790Z   CARGO_TERM_COLOR: always
+2026-04-09T07:22:58.2436930Z ##[endgroup]
+2026-04-09T07:22:58.4536170Z (node:20927) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-04-09T07:22:58.4536990Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-09T07:22:58.6823550Z ##[group]Cache Configuration
+2026-04-09T07:22:58.6825900Z Cache Provider:
+2026-04-09T07:22:58.6826210Z     github
+2026-04-09T07:22:58.6826780Z Workspaces:
+2026-04-09T07:22:58.6827120Z     /Users/runner/work/goread/goread/src-tauri
+2026-04-09T07:22:58.6827500Z Cache Paths:
+2026-04-09T07:22:58.6827810Z     /Users/runner/.cargo/bin
+2026-04-09T07:22:58.6837220Z     /Users/runner/.cargo/.crates.toml
+2026-04-09T07:22:58.6837940Z     /Users/runner/.cargo/.crates2.json
+2026-04-09T07:22:58.6838470Z     /Users/runner/.cargo/registry
+2026-04-09T07:22:58.6839370Z     /Users/runner/.cargo/git
+2026-04-09T07:22:58.6839970Z     /Users/runner/work/goread/goread/src-tauri/target
+2026-04-09T07:22:58.6840400Z Restore Key:
+2026-04-09T07:22:58.6840790Z     v0-rust-build-ios-Darwin-arm64-920d69ea
+2026-04-09T07:22:58.6841150Z Cache Key:
+2026-04-09T07:22:58.6841830Z     v0-rust-build-ios-Darwin-arm64-920d69ea-0ed2c078
+2026-04-09T07:22:58.6847900Z .. Prefix:
+2026-04-09T07:22:58.6863160Z   - v0-rust-build-ios-Darwin-arm64
+2026-04-09T07:22:58.6863710Z .. Environment considered:
+2026-04-09T07:22:58.6864010Z   - Rust Versions:
+2026-04-09T07:22:58.6864420Z     - 1.94.1 aarch64-apple-darwin e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-04-09T07:22:58.6864960Z     - 1.94.1 aarch64-apple-darwin e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-04-09T07:22:58.6865410Z   - CARGO_HOME
+2026-04-09T07:22:58.6865690Z   - CARGO_INCREMENTAL
+2026-04-09T07:22:58.6865950Z   - CARGO_TERM_COLOR
+2026-04-09T07:22:58.6866260Z .. Lockfiles considered:
+2026-04-09T07:22:58.6866650Z   - /Users/runner/work/goread/goread/src-tauri/Cargo.lock
+2026-04-09T07:22:58.6867090Z   - /Users/runner/work/goread/goread/src-tauri/Cargo.toml
+2026-04-09T07:22:58.6868990Z ##[endgroup]
+2026-04-09T07:22:58.6869830Z 
+2026-04-09T07:22:58.6870370Z ... Restoring cache ...
+2026-04-09T07:22:58.7453360Z No cache found.
