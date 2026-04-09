@@ -109,6 +109,22 @@ jobs:
           mkdir -p "$PAYLOAD_DIR"
           cp -R "$APP_PATH" "$PAYLOAD_DIR/"
 
+          APP_IN_PAYLOAD=$(find "$PAYLOAD_DIR" -maxdepth 1 -name "*.app" -print -quit)
+          if [ -z "${APP_IN_PAYLOAD:-}" ]; then
+            echo "::error::Packaged app not found under Payload."
+            exit 1
+          fi
+
+          # LiveContainer loads GoRead with a relative loader path (./libpdfium.dylib),
+          # so ensure the dylib exists at app root in addition to any embedded copy.
+          if [ -f "$APP_IN_PAYLOAD/Frameworks/libpdfium.dylib" ]; then
+            cp "$APP_IN_PAYLOAD/Frameworks/libpdfium.dylib" "$APP_IN_PAYLOAD/libpdfium.dylib"
+          elif [ -f "src-tauri/src/pdfium/ios/libpdfium.dylib" ]; then
+            cp "src-tauri/src/pdfium/ios/libpdfium.dylib" "$APP_IN_PAYLOAD/libpdfium.dylib"
+          else
+            echo "::warning::libpdfium.dylib not found in Frameworks or source path."
+          fi
+
           APP_NAME=$(basename "$APP_PATH" .app)
           IPA_PATH="$IOS_EXPORT_DIR/${APP_NAME}-unsigned.ipa"
 
