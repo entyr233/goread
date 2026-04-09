@@ -59,7 +59,7 @@ jobs:
           xcodebuild \
             -workspace "$IOS_WORKSPACE" \
             -scheme "$IOS_SCHEME" \
-            -configuration Release \
+            -configuration release \
             -sdk iphoneos \
             -destination generic/platform=iOS \
             -derivedDataPath "$IOS_DERIVED_DATA" \
@@ -77,7 +77,7 @@ jobs:
           IOS_DERIVED_DATA="$RUNNER_TEMP/DerivedData"
           IOS_EXPORT_DIR="$GITHUB_WORKSPACE/build/ios"
 
-          APP_PATH=$(find "$IOS_DERIVED_DATA/Build/Products/Release-iphoneos" -maxdepth 1 -name "*.app" -print -quit)
+          APP_PATH=$(find "$IOS_DERIVED_DATA/Build/Products/release-iphoneos" -maxdepth 1 -name "*.app" -print -quit)
           if [ -z "${APP_PATH:-}" ]; then
             echo "::error::No .app bundle was produced by xcodebuild."
             exit 1
