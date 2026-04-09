@@ -258,9 +258,7 @@ pub fn run() {
                     .parse()
                     .expect("invalid iOS localhost URL");
 
-                WebviewWindowBuilder::new(app, "main", WebviewUrl::External(url))
-                    .title("GoRead")
-                    .build()?;
+                WebviewWindowBuilder::new(app, "main", WebviewUrl::External(url)).build()?;
             }
 
             // 设置数据库连接

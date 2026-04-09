@@ -1,0 +1,31 @@
+﻿2026-04-09T08:58:30.2698040Z ##[group]Run actions/setup-node@v4
+2026-04-09T08:58:30.2698280Z with:
+2026-04-09T08:58:30.2698400Z   node-version: 20
+2026-04-09T08:58:30.2698520Z   cache: npm
+2026-04-09T08:58:30.2698660Z   always-auth: false
+2026-04-09T08:58:30.2698830Z   check-latest: false
+2026-04-09T08:58:30.2699070Z   token: ***
+2026-04-09T08:58:30.2699200Z env:
+2026-04-09T08:58:30.2699340Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T08:58:30.2699540Z   NODE_VERSION: 20
+2026-04-09T08:58:30.2699680Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T08:58:30.2699880Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T08:58:30.2700110Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T08:58:30.2700280Z ##[endgroup]
+2026-04-09T08:58:30.3670580Z Found in cache @ /Users/runner/hostedtoolcache/node/20.20.2/arm64
+2026-04-09T08:58:30.3673190Z (node:18315) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-04-09T08:58:30.3673710Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-09T08:58:30.3674550Z ##[group]Environment details
+2026-04-09T08:58:30.7267020Z node: v20.20.2
+2026-04-09T08:58:30.7306390Z npm: 10.8.2
+2026-04-09T08:58:30.7363660Z yarn: 1.22.22
+2026-04-09T08:58:30.7364490Z ##[endgroup]
+2026-04-09T08:58:30.7364830Z [command]/Users/runner/hostedtoolcache/node/20.20.2/arm64/bin/npm config get cache
+2026-04-09T08:58:30.8605820Z /Users/runner/.npm
+2026-04-09T08:58:30.9655790Z Cache hit for: node-cache-macOS-arm64-npm-eef18aa6cb579a89fa0d673c387b93ac59340bbfd2fe72629489ae2a6cf9116e
+2026-04-09T08:58:30.9725490Z (node:18315) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-09T08:58:31.2895540Z Received 33103674 of 33103674 (100.0%), 119.6 MBs/sec
+2026-04-09T08:58:31.2997020Z Cache Size: ~32 MB (33103674 B)
+2026-04-09T08:58:31.3098840Z [command]/opt/homebrew/bin/gtar -xf /Users/runner/work/_temp/efd99ceb-c106-4ca4-a309-aaf7ee95b0b5/cache.tzst -P -C /Users/runner/work/goread/goread --delay-directory-restore --use-compress-program unzstd
+2026-04-09T08:58:31.5073980Z Cache restored successfully
+2026-04-09T08:58:31.5107320Z Cache restored from key: node-cache-macOS-arm64-npm-eef18aa6cb579a89fa0d673c387b93ac59340bbfd2fe72629489ae2a6cf9116e

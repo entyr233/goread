@@ -1,0 +1,22 @@
+﻿2026-04-09T08:59:39.3406090Z ##[group]Run actions/upload-artifact@v4
+2026-04-09T08:59:39.3406330Z with:
+2026-04-09T08:59:39.3406610Z   name: goread-ios-build-logs
+2026-04-09T08:59:39.3406860Z   path: build/ios/xcode-build.log
+2026-04-09T08:59:39.3407100Z   if-no-files-found: warn
+2026-04-09T08:59:39.3407390Z   compression-level: 6
+2026-04-09T08:59:39.3407590Z   overwrite: false
+2026-04-09T08:59:39.3407850Z   include-hidden-files: false
+2026-04-09T08:59:39.3408100Z env:
+2026-04-09T08:59:39.3408290Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T08:59:39.3408580Z   NODE_VERSION: 20
+2026-04-09T08:59:39.3408790Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T08:59:39.3409100Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T08:59:39.3409430Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T08:59:39.3409730Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T08:59:39.3409970Z   CARGO_INCREMENTAL: 0
+2026-04-09T08:59:39.3410190Z   CARGO_TERM_COLOR: always
+2026-04-09T08:59:39.3410450Z   CACHE_ON_FAILURE: false
+2026-04-09T08:59:39.3410820Z ##[endgroup]
+2026-04-09T08:59:39.8243280Z (node:20857) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-04-09T08:59:39.8246700Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-09T08:59:39.8265420Z ##[warning]No files were found with the provided path: build/ios/xcode-build.log. No artifacts will be uploaded.
