@@ -1,0 +1,759 @@
+﻿2026-04-09T06:41:48.8340800Z ##[group]Run set -euo pipefail
+2026-04-09T06:41:48.8341110Z [36;1mset -euo pipefail[0m
+2026-04-09T06:41:48.8341390Z [36;1mIOS_DERIVED_DATA="$RUNNER_TEMP/DerivedData"[0m
+2026-04-09T06:41:48.8341650Z [36;1mIOS_EXPORT_DIR="$GITHUB_WORKSPACE/build/ios"[0m
+2026-04-09T06:41:48.8341960Z [36;1mIOS_LOG_PATH="$IOS_EXPORT_DIR/xcode-build.log"[0m
+2026-04-09T06:41:48.8342200Z [36;1mmkdir -p "$IOS_EXPORT_DIR"[0m
+2026-04-09T06:41:48.8342380Z [36;1m[0m
+2026-04-09T06:41:48.8342510Z [36;1mxcodebuild \[0m
+2026-04-09T06:41:48.8342700Z [36;1m  -workspace "$IOS_WORKSPACE" \[0m
+2026-04-09T06:41:48.8342900Z [36;1m  -scheme "$IOS_SCHEME" \[0m
+2026-04-09T06:41:48.8343090Z [36;1m  -configuration release \[0m
+2026-04-09T06:41:48.8343290Z [36;1m  -sdk iphoneos \[0m
+2026-04-09T06:41:48.8343470Z [36;1m  -destination generic/platform=iOS \[0m
+2026-04-09T06:41:48.8343720Z [36;1m  -derivedDataPath "$IOS_DERIVED_DATA" \[0m
+2026-04-09T06:41:48.8343960Z [36;1m  CODE_SIGNING_ALLOWED=NO \[0m
+2026-04-09T06:41:48.8344180Z [36;1m  CODE_SIGNING_REQUIRED=NO \[0m
+2026-04-09T06:41:48.8344370Z [36;1m  CODE_SIGN_IDENTITY="" \[0m
+2026-04-09T06:41:48.8344540Z [36;1m  DEVELOPMENT_TEAM="" \[0m
+2026-04-09T06:41:48.8344740Z [36;1m  PROVISIONING_PROFILE_SPECIFIER="" \[0m
+2026-04-09T06:41:48.8344940Z [36;1m  clean build \[0m
+2026-04-09T06:41:48.8345100Z [36;1m  | tee "$IOS_LOG_PATH"[0m
+2026-04-09T06:41:48.8408480Z shell: /bin/bash -e {0}
+2026-04-09T06:41:48.8408650Z env:
+2026-04-09T06:41:48.8408870Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:48.8409070Z   NODE_VERSION: 20
+2026-04-09T06:41:48.8409230Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:48.8409440Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:48.8409700Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:48.8409900Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:48.8410080Z   CARGO_INCREMENTAL: 0
+2026-04-09T06:41:48.8410230Z   CARGO_TERM_COLOR: always
+2026-04-09T06:41:48.8410410Z   CACHE_ON_FAILURE: false
+2026-04-09T06:41:48.8410610Z ##[endgroup]
+2026-04-09T06:41:49.7258240Z Command line invocation:
+2026-04-09T06:41:49.7262110Z     /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/xcodebuild -workspace src-tauri/gen/apple/GoRead.xcworkspace -scheme GoRead_iOS -configuration release -sdk iphoneos -destination generic/platform=iOS -derivedDataPath /Users/runner/work/_temp/DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= DEVELOPMENT_TEAM= PROVISIONING_PROFILE_SPECIFIER= clean build
+2026-04-09T06:41:49.7265930Z 
+2026-04-09T06:41:49.7266320Z User defaults from command line:
+2026-04-09T06:41:49.7266910Z     IDEDerivedDataPathOverride = /Users/runner/work/_temp/DerivedData
+2026-04-09T06:41:49.7268500Z     IDEPackageSupportUseBuiltinSCM = YES
+2026-04-09T06:41:49.7269490Z 
+2026-04-09T06:41:49.7269720Z Build settings from command line:
+2026-04-09T06:41:49.7270100Z     CODE_SIGN_IDENTITY = 
+2026-04-09T06:41:49.7270390Z     CODE_SIGNING_ALLOWED = NO
+2026-04-09T06:41:49.7270710Z     CODE_SIGNING_REQUIRED = NO
+2026-04-09T06:41:49.7271750Z     DEVELOPMENT_TEAM = 
+2026-04-09T06:41:49.7272780Z     PROVISIONING_PROFILE_SPECIFIER = 
+2026-04-09T06:41:49.7273410Z     SDKROOT = iphoneos17.5
+2026-04-09T06:41:49.7273690Z 
+2026-04-09T06:42:00.2994360Z note: Using codesigning identity override: 
+2026-04-09T06:42:00.9246680Z 
+2026-04-09T06:42:00.9369730Z ** CLEAN SUCCEEDED **
+2026-04-09T06:42:00.9471000Z 
+2026-04-09T06:42:00.9548570Z Prepare packages
+2026-04-09T06:42:00.9588830Z 
+2026-04-09T06:42:00.9601360Z note: Using codesigning identity override: 
+2026-04-09T06:42:00.9712550Z ComputeTargetDependencyGraph
+2026-04-09T06:42:01.0249590Z note: Building targets in dependency order
+2026-04-09T06:42:01.0295040Z note: Target dependency graph (2 targets)
+2026-04-09T06:42:01.0302850Z     Target 'GoRead_iOS' in project 'GoRead'
+2026-04-09T06:42:01.0305010Z         ➜ Implicit dependency on target 'Pods-GoRead_iOS' in project 'Pods' via file 'libPods-GoRead_iOS.a' in build phase 'Link Binary'
+2026-04-09T06:42:01.0305740Z     Target 'Pods-GoRead_iOS' in project 'Pods' (no dependencies)
+2026-04-09T06:42:01.0307330Z 
+2026-04-09T06:42:01.0307560Z GatherProvisioningInputs
+2026-04-09T06:42:01.0307920Z 
+2026-04-09T06:42:01.0308040Z CreateBuildDescription
+2026-04-09T06:42:01.0705600Z 
+2026-04-09T06:42:01.0708480Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -x objective-c -c /dev/null
+2026-04-09T06:42:01.2141910Z 
+2026-04-09T06:42:01.2174810Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -x objective-c++ -c /dev/null
+2026-04-09T06:42:01.2744600Z 
+2026-04-09T06:42:01.2751190Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/ibtool --version --output-format xml1
+2026-04-09T06:42:03.7121490Z 
+2026-04-09T06:42:03.7224420Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -x c -c /dev/null
+2026-04-09T06:42:03.7909790Z 
+2026-04-09T06:42:03.7980970Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/runner/work/goread/goread/src-tauri/gen/apple/Assets.xcassets
+2026-04-09T06:42:03.8231830Z 
+2026-04-09T06:42:03.8236630Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -V
+2026-04-09T06:42:03.8237340Z 
+2026-04-09T06:42:03.8237880Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+2026-04-09T06:42:03.8336660Z 
+2026-04-09T06:42:03.8338980Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -v
+2026-04-09T06:42:04.7700090Z 
+2026-04-09T06:42:04.7907320Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -x c -c /dev/null
+2026-04-09T06:42:04.8557680Z 
+2026-04-09T06:42:04.8574620Z ExecuteExternalTool /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+2026-04-09T06:42:05.0589050Z 
+2026-04-09T06:42:05.0885040Z Build description signature: 5c8625c7d019714257562409d88743c8
+2026-04-09T06:42:05.0939140Z Build description path: /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/XCBuildData/5c8625c7d019714257562409d88743c8.xcbuilddata
+2026-04-09T06:42:05.1042630Z ClangStatCache /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk /Users/runner/work/_temp/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache
+2026-04-09T06:42:05.1141780Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:05.1244860Z     /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -o /Users/runner/work/_temp/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache
+2026-04-09T06:42:08.1307920Z 
+2026-04-09T06:42:08.1395610Z CreateBuildDirectory /Users/runner/work/_temp/DerivedData/Build/Products
+2026-04-09T06:42:08.1462360Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1479600Z     builtin-create-build-directory /Users/runner/work/_temp/DerivedData/Build/Products
+2026-04-09T06:42:08.1486440Z 
+2026-04-09T06:42:08.1497700Z CreateBuildDirectory /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex
+2026-04-09T06:42:08.1506840Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1534960Z     builtin-create-build-directory /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex
+2026-04-09T06:42:08.1565360Z 
+2026-04-09T06:42:08.1586450Z CreateBuildDirectory /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos
+2026-04-09T06:42:08.1611730Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1642980Z     builtin-create-build-directory /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos
+2026-04-09T06:42:08.1671980Z 
+2026-04-09T06:42:08.1675500Z CreateBuildDirectory /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/release-iphoneos
+2026-04-09T06:42:08.1678870Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1682140Z     builtin-create-build-directory /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/release-iphoneos
+2026-04-09T06:42:08.1684870Z 
+2026-04-09T06:42:08.1685510Z MkDir /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/GoRead.app (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:08.1686320Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1687130Z     /bin/mkdir -p /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/GoRead.app
+2026-04-09T06:42:08.1692910Z 
+2026-04-09T06:42:08.1694780Z MkDir /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/GoRead.app/Frameworks (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:08.1698070Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1701980Z     /bin/mkdir -p /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/GoRead.app/Frameworks
+2026-04-09T06:42:08.1706230Z 
+2026-04-09T06:42:08.1708760Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS.hmap (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1712320Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1714880Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS.hmap
+2026-04-09T06:42:08.1715550Z 
+2026-04-09T06:42:08.1716520Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/all-product-headers.yaml (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1718870Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1723640Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/all-product-headers.yaml
+2026-04-09T06:42:08.1726710Z 
+2026-04-09T06:42:08.1727910Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-project-headers.hmap (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1751120Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1764870Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-project-headers.hmap
+2026-04-09T06:42:08.1767410Z 
+2026-04-09T06:42:08.1768580Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-own-target-headers.hmap (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1769640Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1771330Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-own-target-headers.hmap
+2026-04-09T06:42:08.1771940Z 
+2026-04-09T06:42:08.1773110Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-generated-files.hmap (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1776750Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1777720Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-generated-files.hmap
+2026-04-09T06:42:08.1778340Z 
+2026-04-09T06:42:08.1779260Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-all-target-headers.hmap (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1785020Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1787360Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-all-target-headers.hmap
+2026-04-09T06:42:08.1794100Z 
+2026-04-09T06:42:08.1798160Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-all-non-framework-target-headers.hmap (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1801490Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1803520Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-all-non-framework-target-headers.hmap
+2026-04-09T06:42:08.1807960Z 
+2026-04-09T06:42:08.1813300Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead.hmap (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:08.1817620Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1818510Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead.hmap
+2026-04-09T06:42:08.1819260Z 
+2026-04-09T06:42:08.1820200Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/all-product-headers.yaml (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:08.1821260Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1825020Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/all-product-headers.yaml
+2026-04-09T06:42:08.1827690Z 
+2026-04-09T06:42:08.1830180Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-project-headers.hmap (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:08.1837360Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1849610Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-project-headers.hmap
+2026-04-09T06:42:08.1854250Z 
+2026-04-09T06:42:08.1857080Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-own-target-headers.hmap (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:08.1859630Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1861750Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-own-target-headers.hmap
+2026-04-09T06:42:08.1867040Z 
+2026-04-09T06:42:08.1868160Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-generated-files.hmap (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:08.1869150Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1870020Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-generated-files.hmap
+2026-04-09T06:42:08.1870530Z 
+2026-04-09T06:42:08.1871610Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-all-target-headers.hmap (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:08.1873340Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1875360Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-all-target-headers.hmap
+2026-04-09T06:42:08.1876150Z 
+2026-04-09T06:42:08.1877110Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-all-non-framework-target-headers.hmap (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:08.1878140Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:08.1878990Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-all-non-framework-target-headers.hmap
+2026-04-09T06:42:08.1881530Z 
+2026-04-09T06:42:08.1885450Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1890810Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1897680Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+2026-04-09T06:42:08.1906200Z -target arm64-apple-ios14.0 '-std=gnu11' -fobjc-arc -fmodules '-fmodules-cache-path=/Users/runner/work/_temp/DerivedData/ModuleCache.noindex' -fpascal-strings -Os -fno-common '-DPOD_CONFIGURATION_RELEASE=1' '-DCOCOAPODS=1' '-DNS_BLOCK_ASSERTIONS=1' '-DOBJC_OLD_DISPATCH_PROTOTYPES=0' -isysroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -g -iquote /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-generated-files.hmap -I/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-own-target-headers.hmap -I/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-all-target-headers.hmap -iquote /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Pods-GoRead_iOS-project-headers.hmap -I/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/include -I/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/DerivedSources-normal/arm64 -I/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/DerivedSources/arm64 -I/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/DerivedSources -F/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos
+2026-04-09T06:42:08.1912370Z 
+2026-04-09T06:42:08.1919740Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/Pods-GoRead_iOS.LinkFileList (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1929130Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1930180Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/Pods-GoRead_iOS.LinkFileList
+2026-04-09T06:42:08.1930790Z 
+2026-04-09T06:42:08.1933030Z CompileC /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/Pods-GoRead_iOS-dummy.o /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods/Target\ Support\ Files/Pods-GoRead_iOS/Pods-GoRead_iOS-dummy.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:08.1934630Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:08.1946510Z     /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/work/_temp/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/_temp/DerivedData/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wdocumentation -Wunreachable-code -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body -Wunguarded-availability @/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/Pods-GoRead_iOS-dummy.d --serialize-diagnostics /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/Pods-GoRead_iOS-dummy.dia -c /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods/Target\ Support\ Files/Pods-GoRead_iOS/Pods-GoRead_iOS-dummy.m -o /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/Pods-GoRead_iOS-dummy.o
+2026-04-09T06:42:10.2594780Z 
+2026-04-09T06:42:10.2597630Z Libtool /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/libPods-GoRead_iOS.a normal (in target 'Pods-GoRead_iOS' from project 'Pods')
+2026-04-09T06:42:10.2598510Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:10.2601720Z     /Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only arm64 -D -syslibroot /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk -L/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos -filelist /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/Pods-GoRead_iOS.LinkFileList -dependency_info /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/Pods.build/release-iphoneos/Pods-GoRead_iOS.build/Objects-normal/arm64/Pods-GoRead_iOS_libtool_dependency_info.dat -o /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/libPods-GoRead_iOS.a
+2026-04-09T06:42:10.2677290Z 
+2026-04-09T06:42:10.2694160Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-7B910441E596B1174361E68F.sh (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:10.2695080Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:10.2696640Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-7B910441E596B1174361E68F.sh
+2026-04-09T06:42:10.2705000Z 
+2026-04-09T06:42:10.2707860Z PhaseScriptExecution [CP]\ Check\ Pods\ Manifest.lock /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-7B910441E596B1174361E68F.sh (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:10.2709380Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:10.2711310Z     /bin/sh -c /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-7B910441E596B1174361E68F.sh
+2026-04-09T06:42:10.3084210Z 
+2026-04-09T06:42:10.3086770Z WriteAuxiliaryFile /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-B98FC53D18C5C8150C41E6F7.sh (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:10.3087890Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:10.3088940Z     write-file /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-B98FC53D18C5C8150C41E6F7.sh
+2026-04-09T06:42:10.3089660Z 
+2026-04-09T06:42:10.3127440Z PhaseScriptExecution Build\ Rust\ Code /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-B98FC53D18C5C8150C41E6F7.sh (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:10.3129220Z     cd /Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:10.3129550Z     export ACTION\=build
+2026-04-09T06:42:10.3129780Z     export AD_HOC_CODE_SIGNING_ALLOWED\=NO
+2026-04-09T06:42:10.3130030Z     export AGGREGATE_TRACKED_DOMAINS\=YES
+2026-04-09T06:42:10.3130320Z     export ALLOW_TARGET_PLATFORM_SPECIALIZATION\=NO
+2026-04-09T06:42:10.3182300Z     export ALTERNATE_GROUP\=staff
+2026-04-09T06:42:10.3183640Z     export ALTERNATE_MODE\=u+w,go-w,a+rX
+2026-04-09T06:42:10.3184210Z     export ALTERNATE_OWNER\=runner
+2026-04-09T06:42:10.3184720Z     export ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES\=YES
+2026-04-09T06:42:10.3187630Z     export ALWAYS_SEARCH_USER_PATHS\=NO
+2026-04-09T06:42:10.3188200Z     export ALWAYS_USE_SEPARATE_HEADERMAPS\=NO
+2026-04-09T06:42:10.3188930Z     export APPLE_INTERNAL_DEVELOPER_DIR\=/AppleInternal/Developer
+2026-04-09T06:42:10.3189610Z     export APPLE_INTERNAL_DIR\=/AppleInternal
+2026-04-09T06:42:10.3190090Z     export APPLE_INTERNAL_DOCUMENTATION_DIR\=/AppleInternal/Documentation
+2026-04-09T06:42:10.3191260Z     export APPLE_INTERNAL_LIBRARY_DIR\=/AppleInternal/Library
+2026-04-09T06:42:10.3191770Z     export APPLE_INTERNAL_TOOLS\=/AppleInternal/Developer/Tools
+2026-04-09T06:42:10.3195120Z     export APPLICATION_EXTENSION_API_ONLY\=NO
+2026-04-09T06:42:10.3195700Z     export APPLY_RULES_IN_COPY_FILES\=NO
+2026-04-09T06:42:10.3196520Z     export APPLY_RULES_IN_COPY_HEADERS\=NO
+2026-04-09T06:42:10.3197240Z     export APP_SHORTCUTS_ENABLE_FLEXIBLE_MATCHING\=YES
+2026-04-09T06:42:10.3197580Z     export ARCHS\=arm64
+2026-04-09T06:42:10.3198230Z     export ARCHS_STANDARD\=arm64
+2026-04-09T06:42:10.3199100Z     export ARCHS_STANDARD_32_64_BIT\=armv7\ arm64
+2026-04-09T06:42:10.3199500Z     export ARCHS_STANDARD_32_BIT\=armv7
+2026-04-09T06:42:10.3199750Z     export ARCHS_STANDARD_64_BIT\=arm64
+2026-04-09T06:42:10.3200220Z     export ARCHS_STANDARD_INCLUDING_64_BIT\=arm64
+2026-04-09T06:42:10.3200580Z     export ARCHS_UNIVERSAL_IPHONE_OS\=armv7\ arm64
+2026-04-09T06:42:10.3201280Z     export ASSETCATALOG_COMPILER_APPICON_NAME\=AppIcon
+2026-04-09T06:42:10.3202750Z     export ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS\=YES
+2026-04-09T06:42:10.3204210Z     export AUTOMATICALLY_MERGE_DEPENDENCIES\=NO
+2026-04-09T06:42:10.3204830Z     export AVAILABLE_PLATFORMS\=appletvos\ appletvsimulator\ driverkit\ iphoneos\ iphonesimulator\ macosx\ watchos\ watchsimulator\ xros\ xrsimulator
+2026-04-09T06:42:10.3205480Z     export BITCODE_GENERATION_MODE\=marker
+2026-04-09T06:42:10.3205880Z     export BUILD_ACTIVE_RESOURCES_ONLY\=NO
+2026-04-09T06:42:10.3206200Z     export BUILD_COMPONENTS\=headers\ build
+2026-04-09T06:42:10.3206640Z     export BUILD_DIR\=/Users/runner/work/_temp/DerivedData/Build/Products
+2026-04-09T06:42:10.3207930Z     export BUILD_LIBRARY_FOR_DISTRIBUTION\=NO
+2026-04-09T06:42:10.3208720Z     export BUILD_ROOT\=/Users/runner/work/_temp/DerivedData/Build/Products
+2026-04-09T06:42:10.3209000Z     export BUILD_STYLE\=
+2026-04-09T06:42:10.3209270Z     export BUILD_VARIANTS\=normal
+2026-04-09T06:42:10.3209750Z     export BUILT_PRODUCTS_DIR\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos
+2026-04-09T06:42:10.3210180Z     export BUNDLE_CONTENTS_FOLDER_PATH_deep\=Contents/
+2026-04-09T06:42:10.3210580Z     export BUNDLE_EXECUTABLE_FOLDER_NAME_deep\=MacOS
+2026-04-09T06:42:10.3210880Z     export BUNDLE_EXTENSIONS_FOLDER_PATH\=Extensions
+2026-04-09T06:42:10.3211130Z     export BUNDLE_FORMAT\=shallow
+2026-04-09T06:42:10.3211380Z     export BUNDLE_FRAMEWORKS_FOLDER_PATH\=Frameworks
+2026-04-09T06:42:10.3213600Z     export BUNDLE_PLUGINS_FOLDER_PATH\=PlugIns
+2026-04-09T06:42:10.3215070Z     export BUNDLE_PRIVATE_HEADERS_FOLDER_PATH\=PrivateHeaders
+2026-04-09T06:42:10.3216650Z     export BUNDLE_PUBLIC_HEADERS_FOLDER_PATH\=Headers
+2026-04-09T06:42:10.3217250Z     export CACHE_ROOT\=/var/folders/qm/fcgtnjr57d7bvztxwhtddp7m0000gn/C/com.apple.DeveloperTools/15.4-15F31d/Xcode
+2026-04-09T06:42:10.3218090Z     export CCHROOT\=/var/folders/qm/fcgtnjr57d7bvztxwhtddp7m0000gn/C/com.apple.DeveloperTools/15.4-15F31d/Xcode
+2026-04-09T06:42:10.3218550Z     export CHMOD\=/bin/chmod
+2026-04-09T06:42:10.3219430Z     export CHOWN\=/usr/sbin/chown
+2026-04-09T06:42:10.3219680Z     export CLANG_ANALYZER_NONNULL\=YES
+2026-04-09T06:42:10.3219980Z     export CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION\=YES_AGGRESSIVE
+2026-04-09T06:42:10.3220960Z     export CLANG_COMPILE_CACHE_PATH\=/Users/runner/work/_temp/DerivedData/CompilationCache.noindex
+2026-04-09T06:42:10.3222470Z     export CLANG_CXX_LANGUAGE_STANDARD\=gnu++14
+2026-04-09T06:42:10.3222910Z     export CLANG_CXX_LIBRARY\=libc++
+2026-04-09T06:42:10.3223280Z     export CLANG_ENABLE_EXPLICIT_MODULES\=NO
+2026-04-09T06:42:10.3224080Z     export CLANG_ENABLE_MODULES\=YES
+2026-04-09T06:42:10.3224380Z     export CLANG_ENABLE_OBJC_ARC\=YES
+2026-04-09T06:42:10.3224710Z     export CLANG_ENABLE_OBJC_WEAK\=YES
+2026-04-09T06:42:10.3225280Z     export CLANG_MODULES_BUILD_SESSION_FILE\=/Users/runner/work/_temp/DerivedData/ModuleCache.noindex/Session.modulevalidation
+2026-04-09T06:42:10.3225870Z     export CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING\=YES
+2026-04-09T06:42:10.3228240Z     export CLANG_WARN_BOOL_CONVERSION\=YES
+2026-04-09T06:42:10.3229680Z     export CLANG_WARN_COMMA\=YES
+2026-04-09T06:42:10.3229910Z     export CLANG_WARN_CONSTANT_CONVERSION\=YES
+2026-04-09T06:42:10.3231270Z     export CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS\=YES
+2026-04-09T06:42:10.3231810Z     export CLANG_WARN_DIRECT_OBJC_ISA_USAGE\=YES_ERROR
+2026-04-09T06:42:10.3232170Z     export CLANG_WARN_DOCUMENTATION_COMMENTS\=YES
+2026-04-09T06:42:10.3232690Z     export CLANG_WARN_EMPTY_BODY\=YES
+2026-04-09T06:42:10.3232990Z     export CLANG_WARN_ENUM_CONVERSION\=YES
+2026-04-09T06:42:10.3233290Z     export CLANG_WARN_INFINITE_RECURSION\=YES
+2026-04-09T06:42:10.3234100Z     export CLANG_WARN_INT_CONVERSION\=YES
+2026-04-09T06:42:10.3234540Z     export CLANG_WARN_NON_LITERAL_NULL_CONVERSION\=YES
+2026-04-09T06:42:10.3234850Z     export CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF\=YES
+2026-04-09T06:42:10.3235200Z     export CLANG_WARN_OBJC_LITERAL_CONVERSION\=YES
+2026-04-09T06:42:10.3235650Z     export CLANG_WARN_OBJC_ROOT_CLASS\=YES_ERROR
+2026-04-09T06:42:10.3236790Z     export CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER\=NO
+2026-04-09T06:42:10.3237180Z     export CLANG_WARN_RANGE_LOOP_ANALYSIS\=YES
+2026-04-09T06:42:10.3237630Z     export CLANG_WARN_STRICT_PROTOTYPES\=YES
+2026-04-09T06:42:10.3237970Z     export CLANG_WARN_SUSPICIOUS_MOVE\=YES
+2026-04-09T06:42:10.3238360Z     export CLANG_WARN_UNGUARDED_AVAILABILITY\=YES_AGGRESSIVE
+2026-04-09T06:42:10.3238840Z     export CLANG_WARN_UNREACHABLE_CODE\=YES
+2026-04-09T06:42:10.3239220Z     export CLANG_WARN__DUPLICATE_METHOD_MATCH\=YES
+2026-04-09T06:42:10.3240200Z     export CLASS_FILE_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/JavaClasses
+2026-04-09T06:42:10.3241030Z     export CLEAN_PRECOMPS\=YES
+2026-04-09T06:42:10.3241300Z     export CLONE_HEADERS\=NO
+2026-04-09T06:42:10.3241830Z     export CODESIGNING_FOLDER_PATH\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/GoRead.app
+2026-04-09T06:42:10.3242400Z     export CODE_SIGNING_ALLOWED\=NO
+2026-04-09T06:42:10.3242720Z     export CODE_SIGNING_REQUIRED\=NO
+2026-04-09T06:42:10.3243020Z     export CODE_SIGN_CONTEXT_CLASS\=XCiPhoneOSCodeSignContext
+2026-04-09T06:42:10.3243420Z     export CODE_SIGN_ENTITLEMENTS\=GoRead_iOS/GoRead_iOS.entitlements
+2026-04-09T06:42:10.3243770Z     export CODE_SIGN_INJECT_BASE_ENTITLEMENTS\=YES
+2026-04-09T06:42:10.3244110Z     export CODE_SIGN_STYLE\=Automatic
+2026-04-09T06:42:10.3244340Z     export COLOR_DIAGNOSTICS\=NO
+2026-04-09T06:42:10.3244550Z     export COMBINE_HIDPI_IMAGES\=NO
+2026-04-09T06:42:10.3244810Z     export COMPILATION_CACHE_KEEP_CAS_DIRECTORY\=YES
+2026-04-09T06:42:10.3245090Z     export COMPILER_INDEX_STORE_ENABLE\=Default
+2026-04-09T06:42:10.3245620Z     export COMPOSITE_SDK_DIRS\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/CompositeSDKs
+2026-04-09T06:42:10.3246090Z     export COMPRESS_PNG_FILES\=YES
+2026-04-09T06:42:10.3246360Z     export CONFIGURATION\=release
+2026-04-09T06:42:10.3246930Z     export CONFIGURATION_BUILD_DIR\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos
+2026-04-09T06:42:10.3247690Z     export CONFIGURATION_TEMP_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos
+2026-04-09T06:42:10.3248170Z     export CONTENTS_FOLDER_PATH\=GoRead.app
+2026-04-09T06:42:10.3248490Z     export CONTENTS_FOLDER_PATH_SHALLOW_BUNDLE_NO\=GoRead.app/Contents
+2026-04-09T06:42:10.3248980Z     export CONTENTS_FOLDER_PATH_SHALLOW_BUNDLE_YES\=GoRead.app
+2026-04-09T06:42:10.3249760Z     export COPYING_PRESERVES_HFS_DATA\=NO
+2026-04-09T06:42:10.3250060Z     export COPY_HEADERS_RUN_UNIFDEF\=NO
+2026-04-09T06:42:10.3250380Z     export COPY_PHASE_STRIP\=NO
+2026-04-09T06:42:10.3250980Z     export CORRESPONDING_SIMULATOR_PLATFORM_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform
+2026-04-09T06:42:10.3251580Z     export CORRESPONDING_SIMULATOR_PLATFORM_NAME\=iphonesimulator
+2026-04-09T06:42:10.3252340Z     export CORRESPONDING_SIMULATOR_SDK_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.5.sdk
+2026-04-09T06:42:10.3253050Z     export CORRESPONDING_SIMULATOR_SDK_NAME\=iphonesimulator17.5
+2026-04-09T06:42:10.3253570Z     export CP\=/bin/cp
+2026-04-09T06:42:10.3253840Z     export CREATE_INFOPLIST_SECTION_IN_BINARY\=NO
+2026-04-09T06:42:10.3254100Z     export CURRENT_ARCH\=undefined_arch
+2026-04-09T06:42:10.3254390Z     export CURRENT_VARIANT\=normal
+2026-04-09T06:42:10.3254700Z     export DEAD_CODE_STRIPPING\=YES
+2026-04-09T06:42:10.3254980Z     export DEBUGGING_SYMBOLS\=YES
+2026-04-09T06:42:10.3255300Z     export DEBUG_INFORMATION_FORMAT\=dwarf-with-dsym
+2026-04-09T06:42:10.3255690Z     export DEFAULT_COMPILER\=com.apple.compilers.llvm.clang.1_0
+2026-04-09T06:42:10.3256080Z     export DEFAULT_DEXT_INSTALL_PATH\=/System/Library/DriverExtensions
+2026-04-09T06:42:10.3256450Z     export DEFAULT_KEXT_INSTALL_PATH\=/System/Library/Extensions
+2026-04-09T06:42:10.3256700Z     export DEFINES_MODULE\=NO
+2026-04-09T06:42:10.3256960Z     export DEPLOYMENT_LOCATION\=NO
+2026-04-09T06:42:10.3257230Z     export DEPLOYMENT_POSTPROCESSING\=NO
+2026-04-09T06:42:10.3257550Z     export DEPLOYMENT_TARGET_SETTING_NAME\=IPHONEOS_DEPLOYMENT_TARGET
+2026-04-09T06:42:10.3258470Z     export DEPLOYMENT_TARGET_SUGGESTED_VALUES\=12.0\ 12.1\ 12.2\ 12.3\ 12.4\ 13.0\ 13.1\ 13.2\ 13.3\ 13.4\ 13.5\ 13.6\ 14.0\ 14.1\ 14.2\ 14.3\ 14.4\ 14.5\ 14.6\ 14.7\ 15.0\ 15.1\ 15.2\ 15.3\ 15.4\ 15.5\ 15.6\ 16.0\ 16.1\ 16.2\ 16.3\ 16.4\ 16.5\ 16.6\ 17.0\ 17.1\ 17.2\ 17.3\ 17.4\ 17.5
+2026-04-09T06:42:10.3259600Z     export DERIVED_FILES_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/DerivedSources
+2026-04-09T06:42:10.3260550Z     export DERIVED_FILE_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/DerivedSources
+2026-04-09T06:42:10.3261510Z     export DERIVED_SOURCES_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/DerivedSources
+2026-04-09T06:42:10.3262240Z     export DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER\=NO
+2026-04-09T06:42:10.3262750Z     export DEVELOPER_APPLICATIONS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Applications
+2026-04-09T06:42:10.3263320Z     export DEVELOPER_BIN_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/usr/bin
+2026-04-09T06:42:10.3263850Z     export DEVELOPER_DIR\=/Applications/Xcode_15.4.app/Contents/Developer
+2026-04-09T06:42:10.3264400Z     export DEVELOPER_FRAMEWORKS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Library/Frameworks
+2026-04-09T06:42:10.3265050Z     export DEVELOPER_FRAMEWORKS_DIR_QUOTED\=/Applications/Xcode_15.4.app/Contents/Developer/Library/Frameworks
+2026-04-09T06:42:10.3265700Z     export DEVELOPER_LIBRARY_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Library
+2026-04-09T06:42:10.3266390Z     export DEVELOPER_SDK_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
+2026-04-09T06:42:10.3266990Z     export DEVELOPER_TOOLS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Tools
+2026-04-09T06:42:10.3267450Z     export DEVELOPER_USR_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/usr
+2026-04-09T06:42:10.3267840Z     export DEVELOPMENT_LANGUAGE\=en
+2026-04-09T06:42:10.3268100Z     export DIFF\=/usr/bin/diff
+2026-04-09T06:42:10.3268460Z     export DOCUMENTATION_FOLDER_PATH\=GoRead.app/en.lproj/Documentation
+2026-04-09T06:42:10.3268960Z     export DONT_GENERATE_INFOPLIST_FILE\=NO
+2026-04-09T06:42:10.3269250Z     export DO_HEADER_SCANNING_IN_JAM\=NO
+2026-04-09T06:42:10.3269530Z     export DSTROOT\=/tmp/GoRead.dst
+2026-04-09T06:42:10.3270080Z     export DT_TOOLCHAIN_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+2026-04-09T06:42:10.3270560Z     export DWARF_DSYM_FILE_NAME\=GoRead.app.dSYM
+2026-04-09T06:42:10.3270850Z     export DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT\=NO
+2026-04-09T06:42:10.3271420Z     export DWARF_DSYM_FOLDER_PATH\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos
+2026-04-09T06:42:10.3271880Z     export DYNAMIC_LIBRARY_EXTENSION\=dylib
+2026-04-09T06:42:10.3272320Z     export EAGER_LINKING\=NO
+2026-04-09T06:42:10.3273090Z     export EFFECTIVE_PLATFORM_NAME\=-iphoneos
+2026-04-09T06:42:10.3273470Z     export EMBEDDED_CONTENT_CONTAINS_SWIFT\=NO
+2026-04-09T06:42:10.3273820Z     export EMBEDDED_PROFILE_NAME\=embedded.mobileprovision
+2026-04-09T06:42:10.3274270Z     export EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE\=NO
+2026-04-09T06:42:10.3274600Z     export ENABLE_APP_SANDBOX\=NO
+2026-04-09T06:42:10.3274850Z     export ENABLE_BITCODE\=NO
+2026-04-09T06:42:10.3275100Z     export ENABLE_CODE_COVERAGE\=YES
+2026-04-09T06:42:10.3275450Z     export ENABLE_DEFAULT_HEADER_SEARCH_PATHS\=YES
+2026-04-09T06:42:10.3275710Z     export ENABLE_DEFAULT_SEARCH_PATHS\=YES
+2026-04-09T06:42:10.3275950Z     export ENABLE_HARDENED_RUNTIME\=NO
+2026-04-09T06:42:10.3276180Z     export ENABLE_HEADER_DEPENDENCIES\=YES
+2026-04-09T06:42:10.3276400Z     export ENABLE_NS_ASSERTIONS\=NO
+2026-04-09T06:42:10.3276630Z     export ENABLE_ON_DEMAND_RESOURCES\=YES
+2026-04-09T06:42:10.3276850Z     export ENABLE_PREVIEWS\=NO
+2026-04-09T06:42:10.3277060Z     export ENABLE_STRICT_OBJC_MSGSEND\=YES
+2026-04-09T06:42:10.3277280Z     export ENABLE_TESTABILITY\=NO
+2026-04-09T06:42:10.3277500Z     export ENABLE_TESTING_SEARCH_PATHS\=NO
+2026-04-09T06:42:10.3277740Z     export ENABLE_USER_SCRIPT_SANDBOXING\=NO
+2026-04-09T06:42:10.3278030Z     export ENABLE_XOJIT_PREVIEWS\=NO
+2026-04-09T06:42:10.3278240Z     export ENTITLEMENTS_ALLOWED\=YES
+2026-04-09T06:42:10.3278480Z     export ENTITLEMENTS_DESTINATION\=Signature
+2026-04-09T06:42:10.3278720Z     export ENTITLEMENTS_REQUIRED\=NO
+2026-04-09T06:42:10.3278930Z     export EXCLUDED_ARCHS\=x86_64
+2026-04-09T06:42:10.3279280Z     export EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS\=.DS_Store\ .svn\ .git\ .hg\ CVS
+2026-04-09T06:42:10.3280040Z     export EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES\=\*.nib\ \*.lproj\ \*.framework\ \*.gch\ \*.xcode\*\ \*.xcassets\ \(\*\)\ .DS_Store\ CVS\ .svn\ .git\ .hg\ \*.pbproj\ \*.pbxproj
+2026-04-09T06:42:10.3280630Z     export EXECUTABLES_FOLDER_PATH\=GoRead.app/Executables
+2026-04-09T06:42:10.3280920Z     export EXECUTABLE_FOLDER_PATH\=GoRead.app
+2026-04-09T06:42:10.3281250Z     export EXECUTABLE_FOLDER_PATH_SHALLOW_BUNDLE_NO\=GoRead.app/MacOS
+2026-04-09T06:42:10.3281610Z     export EXECUTABLE_FOLDER_PATH_SHALLOW_BUNDLE_YES\=GoRead.app
+2026-04-09T06:42:10.3281890Z     export EXECUTABLE_NAME\=GoRead
+2026-04-09T06:42:10.3282130Z     export EXECUTABLE_PATH\=GoRead.app/GoRead
+2026-04-09T06:42:10.3282420Z     export EXTENSIONS_FOLDER_PATH\=GoRead.app/Extensions
+2026-04-09T06:42:10.3283090Z     export FILE_LIST\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects/LinkFileList
+2026-04-09T06:42:10.3283990Z     export FIXED_FILES_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/FixedFiles
+2026-04-09T06:42:10.3284540Z     export FRAMEWORKS_FOLDER_PATH\=GoRead.app/Frameworks
+2026-04-09T06:42:10.3284820Z     export FRAMEWORK_FLAG_PREFIX\=-framework
+2026-04-09T06:42:10.3285360Z     export FRAMEWORK_SEARCH_PATHS\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos\ \ \".\"\ \"../../src/pdfium/ios\"
+2026-04-09T06:42:10.3285820Z     export FRAMEWORK_VERSION\=A
+2026-04-09T06:42:10.3286210Z     export FULL_PRODUCT_NAME\=GoRead.app
+2026-04-09T06:42:10.3286430Z     export FUSE_BUILD_PHASES\=YES
+2026-04-09T06:42:10.3286640Z     export FUSE_BUILD_SCRIPT_PHASES\=NO
+2026-04-09T06:42:10.3286830Z     export GCC3_VERSION\=3.3
+2026-04-09T06:42:10.3287040Z     export GCC_C_LANGUAGE_STANDARD\=gnu11
+2026-04-09T06:42:10.3287260Z     export GCC_DYNAMIC_NO_PIC\=NO
+2026-04-09T06:42:10.3287490Z     export GCC_INLINES_ARE_PRIVATE_EXTERN\=YES
+2026-04-09T06:42:10.3287720Z     export GCC_NO_COMMON_BLOCKS\=YES
+2026-04-09T06:42:10.3288030Z     export GCC_PFE_FILE_C_DIALECTS\=c\ objective-c\ c++\ objective-c++
+2026-04-09T06:42:10.3288370Z     export GCC_PREPROCESSOR_DEFINITIONS\=\ COCOAPODS\=1
+2026-04-09T06:42:10.3288630Z     export GCC_SYMBOLS_PRIVATE_EXTERN\=YES
+2026-04-09T06:42:10.3291290Z     export GCC_THUMB_SUPPORT\=YES
+2026-04-09T06:42:10.3291510Z     export GCC_TREAT_WARNINGS_AS_ERRORS\=NO
+2026-04-09T06:42:10.3291810Z     export GCC_VERSION\=com.apple.compilers.llvm.clang.1_0
+2026-04-09T06:42:10.3292170Z     export GCC_VERSION_IDENTIFIER\=com_apple_compilers_llvm_clang_1_0
+2026-04-09T06:42:10.3292660Z     export GCC_WARN_64_TO_32_BIT_CONVERSION\=YES
+2026-04-09T06:42:10.3292960Z     export GCC_WARN_ABOUT_RETURN_TYPE\=YES_ERROR
+2026-04-09T06:42:10.3293220Z     export GCC_WARN_UNDECLARED_SELECTOR\=YES
+2026-04-09T06:42:10.3293500Z     export GCC_WARN_UNINITIALIZED_AUTOS\=YES_AGGRESSIVE
+2026-04-09T06:42:10.3293760Z     export GCC_WARN_UNUSED_FUNCTION\=YES
+2026-04-09T06:42:10.3293990Z     export GCC_WARN_UNUSED_VARIABLE\=YES
+2026-04-09T06:42:10.3294520Z     export GENERATED_MODULEMAP_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GeneratedModuleMaps-iphoneos
+2026-04-09T06:42:10.3294990Z     export GENERATE_INFOPLIST_FILE\=NO
+2026-04-09T06:42:10.3295260Z     export GENERATE_INTERMEDIATE_TEXT_BASED_STUBS\=YES
+2026-04-09T06:42:10.3295530Z     export GENERATE_MASTER_OBJECT_FILE\=NO
+2026-04-09T06:42:10.3295750Z     export GENERATE_PKGINFO_FILE\=YES
+2026-04-09T06:42:10.3295980Z     export GENERATE_PROFILING_CODE\=NO
+2026-04-09T06:42:10.3296210Z     export GENERATE_TEXT_BASED_STUBS\=NO
+2026-04-09T06:42:10.3296390Z     export GID\=20
+2026-04-09T06:42:10.3296530Z     export GROUP\=staff
+2026-04-09T06:42:10.3296810Z     export HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT\=YES
+2026-04-09T06:42:10.3297230Z     export HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES\=YES
+2026-04-09T06:42:10.3297610Z     export HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS\=YES
+2026-04-09T06:42:10.3297920Z     export HEADERMAP_INCLUDES_PROJECT_HEADERS\=YES
+2026-04-09T06:42:10.3298210Z     export HEADERMAP_USES_FRAMEWORK_PREFIX_ENTRIES\=YES
+2026-04-09T06:42:10.3298460Z     export HEADERMAP_USES_VFS\=NO
+2026-04-09T06:42:10.3298900Z     export HEADER_SEARCH_PATHS\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/include\ 
+2026-04-09T06:42:10.3299310Z     export HIDE_BITCODE_SYMBOLS\=YES
+2026-04-09T06:42:10.3299530Z     export HOME\=/Users/runner
+2026-04-09T06:42:10.3299700Z     export HOST_ARCH\=arm64
+2026-04-09T06:42:10.3299900Z     export HOST_PLATFORM\=macosx
+2026-04-09T06:42:10.3300100Z     export ICONV\=/usr/bin/iconv
+2026-04-09T06:42:10.3300350Z     export INFOPLIST_ENABLE_CFBUNDLEICONS_MERGE\=YES
+2026-04-09T06:42:10.3300660Z     export INFOPLIST_EXPAND_BUILD_SETTINGS\=YES
+2026-04-09T06:42:10.3300920Z     export INFOPLIST_FILE\=GoRead_iOS/Info.plist
+2026-04-09T06:42:10.3301170Z     export INFOPLIST_OUTPUT_FORMAT\=binary
+2026-04-09T06:42:10.3301430Z     export INFOPLIST_PATH\=GoRead.app/Info.plist
+2026-04-09T06:42:10.3301660Z     export INFOPLIST_PREPROCESS\=NO
+2026-04-09T06:42:10.3301960Z     export INFOSTRINGS_PATH\=GoRead.app/en.lproj/InfoPlist.strings
+2026-04-09T06:42:10.3302250Z     export INLINE_PRIVATE_FRAMEWORKS\=NO
+2026-04-09T06:42:10.3302480Z     export INSTALLHDRS_COPY_PHASE\=NO
+2026-04-09T06:42:10.3302710Z     export INSTALLHDRS_SCRIPT_PHASE\=NO
+2026-04-09T06:42:10.3302960Z     export INSTALL_DIR\=/tmp/GoRead.dst/Applications
+2026-04-09T06:42:10.3303370Z     export INSTALL_GROUP\=staff
+2026-04-09T06:42:10.3303710Z     export INSTALL_MODE_FLAG\=u+w,go-w,a+rX
+2026-04-09T06:42:10.3303960Z     export INSTALL_OWNER\=runner
+2026-04-09T06:42:10.3304190Z     export INSTALL_PATH\=/Applications
+2026-04-09T06:42:10.3304410Z     export INSTALL_ROOT\=/tmp/GoRead.dst
+2026-04-09T06:42:10.3304670Z     export IPHONEOS_DEPLOYMENT_TARGET\=14.0
+2026-04-09T06:42:10.3304940Z     export IS_UNOPTIMIZED_BUILD\=NO
+2026-04-09T06:42:10.3305360Z     export JAVAC_DEFAULT_FLAGS\=-J-Xms64m\ -J-XX:NewSize\=4M\ -J-Dfile.encoding\=UTF8
+2026-04-09T06:42:10.3306100Z     export JAVA_APP_STUB\=/System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub
+2026-04-09T06:42:10.3306550Z     export JAVA_ARCHIVE_CLASSES\=YES
+2026-04-09T06:42:10.3308940Z     export JAVA_ARCHIVE_TYPE\=JAR
+2026-04-09T06:42:10.3309570Z     export JAVA_COMPILER\=/usr/bin/javac
+2026-04-09T06:42:10.3310350Z     export JAVA_FOLDER_PATH\=GoRead.app/Java
+2026-04-09T06:42:10.3311200Z     export JAVA_FRAMEWORK_RESOURCES_DIRS\=Resources
+2026-04-09T06:42:10.3311820Z     export JAVA_JAR_FLAGS\=cv
+2026-04-09T06:42:10.3312340Z     export JAVA_SOURCE_SUBDIR\=.
+2026-04-09T06:42:10.3313230Z     export JAVA_USE_DEPENDENCIES\=YES
+2026-04-09T06:42:10.3313530Z     export JAVA_ZIP_FLAGS\=-urg
+2026-04-09T06:42:10.3314760Z     export JIKES_DEFAULT_FLAGS\=+E\ +OLDCSO
+2026-04-09T06:42:10.3315400Z     export KASAN_CFLAGS_CLASSIC\=-DKASAN\=1\ -DKASAN_CLASSIC\=1\ -fsanitize\=address\ -mllvm\ -asan-globals-live-support\ -mllvm\ -asan-force-dynamic-shadow
+2026-04-09T06:42:10.3317230Z     export KASAN_CFLAGS_TBI\=-DKASAN\=1\ -DKASAN_TBI\=1\ -fsanitize\=kernel-hwaddress\ -mllvm\ -hwasan-recover\=0\ -mllvm\ -hwasan-instrument-atomics\=0\ -mllvm\ -hwasan-instrument-stack\=1\ -mllvm\ -hwasan-generate-tags-with-calls\=1\ -mllvm\ -hwasan-instrument-with-calls\=1\ -mllvm\ -hwasan-use-short-granules\=0\ -mllvm\ -hwasan-memory-access-callback-prefix\=__asan_
+2026-04-09T06:42:10.3318770Z     export KASAN_DEFAULT_CFLAGS\=-DKASAN\=1\ -DKASAN_CLASSIC\=1\ -fsanitize\=address\ -mllvm\ -asan-globals-live-support\ -mllvm\ -asan-force-dynamic-shadow
+2026-04-09T06:42:10.3319430Z     export KEEP_PRIVATE_EXTERNS\=NO
+2026-04-09T06:42:10.3320200Z     export LD_DEPENDENCY_INFO_FILE\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects-normal/undefined_arch/GoRead_dependency_info.dat
+2026-04-09T06:42:10.3320860Z     export LD_EXPORT_SYMBOLS\=YES
+2026-04-09T06:42:10.3321070Z     export LD_GENERATE_MAP_FILE\=NO
+2026-04-09T06:42:10.3321750Z     export LD_MAP_FILE_PATH\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/GoRead-LinkMap-normal-undefined_arch.txt
+2026-04-09T06:42:10.3322320Z     export LD_NO_PIE\=NO
+2026-04-09T06:42:10.3322590Z     export LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER\=YES
+2026-04-09T06:42:10.3322940Z     export LD_RUNPATH_SEARCH_PATHS\=\ @executable_path/Frameworks
+2026-04-09T06:42:10.3323300Z     export LD_RUNPATH_SEARCH_PATHS_YES\=@loader_path/../Frameworks
+2026-04-09T06:42:10.3323880Z     export LEGACY_DEVELOPER_DIR\=/Applications/Xcode_15.4.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer
+2026-04-09T06:42:10.3324320Z     export LEX\=lex
+2026-04-09T06:42:10.3324570Z     export LIBRARY_DEXT_INSTALL_PATH\=/Library/DriverExtensions
+2026-04-09T06:42:10.3324850Z     export LIBRARY_FLAG_NOSPACE\=YES
+2026-04-09T06:42:10.3325070Z     export LIBRARY_FLAG_PREFIX\=-l
+2026-04-09T06:42:10.3325330Z     export LIBRARY_KEXT_INSTALL_PATH\=/Library/Extensions
+2026-04-09T06:42:10.3325790Z     export LIBRARY_SEARCH_PATHS\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos\ 
+2026-04-09T06:42:10.3326190Z     export LINKER_DISPLAYS_MANGLED_NAMES\=NO
+2026-04-09T06:42:10.3326980Z     export LINK_FILE_LIST_normal_arm64\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects-normal/arm64/GoRead.LinkFileList
+2026-04-09T06:42:10.3327620Z     export LINK_OBJC_RUNTIME\=YES
+2026-04-09T06:42:10.3328290Z     export LINK_WITH_STANDARD_LIBRARIES\=YES
+2026-04-09T06:42:10.3328560Z     export LLVM_TARGET_TRIPLE_OS_VERSION\=ios14.0
+2026-04-09T06:42:10.3328810Z     export LLVM_TARGET_TRIPLE_VENDOR\=apple
+2026-04-09T06:42:10.3329720Z     export LM_AUX_CONST_METADATA_LIST_PATH_normal_arm64\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects-normal/arm64/GoRead.SwiftConstValuesFileList
+2026-04-09T06:42:10.3330550Z     export LOCALIZATION_EXPORT_SUPPORTED\=YES
+2026-04-09T06:42:10.3330870Z     export LOCALIZATION_PREFERS_STRING_CATALOGS\=NO
+2026-04-09T06:42:10.3331300Z     export LOCALIZED_RESOURCES_FOLDER_PATH\=GoRead.app/en.lproj
+2026-04-09T06:42:10.3331990Z     export LOCALIZED_STRING_MACRO_NAMES\=NSLocalizedString\ CFCopyLocalizedString
+2026-04-09T06:42:10.3338420Z     export LOCALIZED_STRING_SWIFTUI_SUPPORT\=YES
+2026-04-09T06:42:10.3338760Z     export LOCAL_ADMIN_APPS_DIR\=/Applications/Utilities
+2026-04-09T06:42:10.3339040Z     export LOCAL_APPS_DIR\=/Applications
+2026-04-09T06:42:10.3339320Z     export LOCAL_DEVELOPER_DIR\=/Library/Developer
+2026-04-09T06:42:10.3339590Z     export LOCAL_LIBRARY_DIR\=/Library
+2026-04-09T06:42:10.3339910Z     export LOCROOT\=/Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:10.3340320Z     export LOCSYMROOT\=/Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:10.3340630Z     export MACH_O_TYPE\=mh_execute
+2026-04-09T06:42:10.3340870Z     export MAC_OS_X_PRODUCT_BUILD_VERSION\=23J423
+2026-04-09T06:42:10.3341120Z     export MAC_OS_X_VERSION_ACTUAL\=140805
+2026-04-09T06:42:10.3341350Z     export MAC_OS_X_VERSION_MAJOR\=140000
+2026-04-09T06:42:10.3341570Z     export MAC_OS_X_VERSION_MINOR\=140800
+2026-04-09T06:42:10.3341770Z     export MAKE_MERGEABLE\=NO
+2026-04-09T06:42:10.3341970Z     export MERGEABLE_LIBRARY\=NO
+2026-04-09T06:42:10.3342180Z     export MERGED_BINARY_TYPE\=none
+2026-04-09T06:42:10.3342400Z     export MERGE_LINKED_LIBRARIES\=NO
+2026-04-09T06:42:10.3342640Z     export METAL_LIBRARY_FILE_BASE\=default
+2026-04-09T06:42:10.3343120Z     export METAL_LIBRARY_OUTPUT_DIR\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/GoRead.app
+2026-04-09T06:42:10.3343590Z     export MODULES_FOLDER_PATH\=GoRead.app/Modules
+2026-04-09T06:42:10.3343980Z     export MODULE_CACHE_DIR\=/Users/runner/work/_temp/DerivedData/ModuleCache.noindex
+2026-04-09T06:42:10.3344320Z     export MTL_ENABLE_DEBUG_INFO\=NO
+2026-04-09T06:42:10.3344520Z     export MTL_FAST_MATH\=YES
+2026-04-09T06:42:10.3344710Z     export NATIVE_ARCH\=arm64
+2026-04-09T06:42:10.3344920Z     export NATIVE_ARCH_32_BIT\=arm
+2026-04-09T06:42:10.3345130Z     export NATIVE_ARCH_64_BIT\=arm64
+2026-04-09T06:42:10.3345350Z     export NATIVE_ARCH_ACTUAL\=arm64
+2026-04-09T06:42:10.3345530Z     export NO_COMMON\=YES
+2026-04-09T06:42:10.3346090Z     export OBJECT_FILE_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects
+2026-04-09T06:42:10.3347020Z     export OBJECT_FILE_DIR_normal\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects-normal
+2026-04-09T06:42:10.3347750Z     export OBJROOT\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex
+2026-04-09T06:42:10.3348080Z     export ONLY_ACTIVE_ARCH\=NO
+2026-04-09T06:42:10.3348250Z     export OS\=MACOS
+2026-04-09T06:42:10.3348440Z     export OSAC\=/usr/bin/osacompile
+2026-04-09T06:42:10.3348890Z     export OTHER_LDFLAGS\=\ -L/Users/runner/work/goread/goread/src-tauri/gen/apple/../../src/pdfium/ios
+2026-04-09T06:42:10.3349400Z     export PACKAGE_TYPE\=com.apple.package-type.wrapper.application
+2026-04-09T06:42:10.3349710Z     export PASCAL_STRINGS\=YES
+2026-04-09T06:42:10.3361550Z     export PATH\=/Applications/Xcode_15.4.app/Contents/SharedFrameworks/XCBuild.framework/Versions/A/PlugIns/XCBBuildService.bundle/Contents/PlugIns/XCBSpecifications.ideplugin/Contents/Resources:/Applications/Xcode_15.4.app/Contents/SharedFrameworks/XCBuild.framework/Versions/A/PlugIns/XCBBuildService.bundle/Contents/PlugIns/XCBSpecifications.ideplugin:/Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/appleinternal/bin:/Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/bin:/Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/bin:/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/appleinternal/bin:/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/usr/local/bin:/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/bin:/Applications/Xcode_15.4.app/Contents/Developer/usr/bin:/Applications/Xcode_15.4.app/Contents/Developer/usr/local/bin:/Users/runner/hostedtoolcache/node/20.20.2/arm64/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:/opt/homebrew/opt/ruby@3.3/bin:/Users/runner/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/runner/.cargo/bin:/usr/local/opt/curl/bin:/usr/local/bin:/usr/local/sbin:/Users/runner/bin:/Users/runner/.yarn/bin:/Users/runner/Library/Android/sdk/tools:/Users/runner/Library/Android/sdk/platform-tools:/Library/Frameworks/Python.framework/Versions/Current/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/bin:/bin:/usr/sbin:/sbin:/Users/runner/.dotnet/tools
+2026-04-09T06:42:10.3376550Z     export PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES\=/usr/include\ /usr/local/include\ /System/Library/Frameworks\ /System/Library/PrivateFrameworks\ /Applications/Xcode_15.4.app/Contents/Developer/Headers\ /Applications/Xcode_15.4.app/Contents/Developer/SDKs\ /Applications/Xcode_15.4.app/Contents/Developer/Platforms
+2026-04-09T06:42:10.3377660Z     export PBDEVELOPMENTPLIST_PATH\=GoRead.app/pbdevelopment.plist
+2026-04-09T06:42:10.3378450Z     export PER_ARCH_OBJECT_FILE_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects-normal/undefined_arch
+2026-04-09T06:42:10.3379450Z     export PER_VARIANT_OBJECT_FILE_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects-normal
+2026-04-09T06:42:10.3380370Z     export PKGINFO_FILE_PATH\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/PkgInfo
+2026-04-09T06:42:10.3381060Z     export PKGINFO_PATH\=GoRead.app/PkgInfo
+2026-04-09T06:42:10.3381660Z     export PLATFORM_DEVELOPER_APPLICATIONS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Applications
+2026-04-09T06:42:10.3382450Z     export PLATFORM_DEVELOPER_BIN_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
+2026-04-09T06:42:10.3383240Z     export PLATFORM_DEVELOPER_LIBRARY_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library
+2026-04-09T06:42:10.3384000Z     export PLATFORM_DEVELOPER_SDK_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
+2026-04-09T06:42:10.3384750Z     export PLATFORM_DEVELOPER_TOOLS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Tools
+2026-04-09T06:42:10.3385620Z     export PLATFORM_DEVELOPER_USR_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr
+2026-04-09T06:42:10.3386370Z     export PLATFORM_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform
+2026-04-09T06:42:10.3386780Z     export PLATFORM_DISPLAY_NAME\=iOS
+2026-04-09T06:42:10.3387020Z     export PLATFORM_FAMILY_NAME\=iOS
+2026-04-09T06:42:10.3387240Z     export PLATFORM_NAME\=iphoneos
+2026-04-09T06:42:10.3387770Z     export PLATFORM_PREFERRED_ARCH\=arm64
+2026-04-09T06:42:10.3388020Z     export PLATFORM_PRODUCT_BUILD_VERSION\=21F77
+2026-04-09T06:42:10.3388290Z     export PLIST_FILE_OUTPUT_FORMAT\=binary
+2026-04-09T06:42:10.3388550Z     export PLUGINS_FOLDER_PATH\=GoRead.app/PlugIns
+2026-04-09T06:42:10.3388910Z     export PODS_BUILD_DIR\=/Users/runner/work/_temp/DerivedData/Build/Products
+2026-04-09T06:42:10.3389460Z     export PODS_CONFIGURATION_BUILD_DIR\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos
+2026-04-09T06:42:10.3390000Z     export PODS_PODFILE_DIR_PATH\=/Users/runner/work/goread/goread/src-tauri/gen/apple/.
+2026-04-09T06:42:10.3390450Z     export PODS_ROOT\=/Users/runner/work/goread/goread/src-tauri/gen/apple/Pods
+2026-04-09T06:42:10.3391420Z     export PODS_XCFRAMEWORKS_BUILD_DIR\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/XCFrameworkIntermediates
+2026-04-09T06:42:10.3391970Z     export PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR\=YES
+2026-04-09T06:42:10.3392820Z     export PRECOMP_DESTINATION_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/PrefixHeaders
+2026-04-09T06:42:10.3393400Z     export PRESERVE_DEAD_CODE_INITS_AND_TERMS\=NO
+2026-04-09T06:42:10.3393720Z     export PRIVATE_HEADERS_FOLDER_PATH\=GoRead.app/PrivateHeaders
+2026-04-09T06:42:10.3394550Z     export PROCESSED_INFOPLIST_PATH\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects-normal/undefined_arch/Processed-Info.plist
+2026-04-09T06:42:10.3395270Z     export PRODUCT_BUNDLE_IDENTIFIER\=com.tauri-app.goread
+2026-04-09T06:42:10.3395560Z     export PRODUCT_BUNDLE_PACKAGE_TYPE\=APPL
+2026-04-09T06:42:10.3395800Z     export PRODUCT_MODULE_NAME\=GoRead
+2026-04-09T06:42:10.3396010Z     export PRODUCT_NAME\=GoRead
+2026-04-09T06:42:10.3396530Z     export PRODUCT_SETTINGS_PATH\=/Users/runner/work/goread/goread/src-tauri/gen/apple/GoRead_iOS/Info.plist
+2026-04-09T06:42:10.3397060Z     export PRODUCT_TYPE\=com.apple.product-type.application
+2026-04-09T06:42:10.3397320Z     export PROFILING_CODE\=NO
+2026-04-09T06:42:10.3397500Z     export PROJECT\=GoRead
+2026-04-09T06:42:10.3398000Z     export PROJECT_DERIVED_FILE_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/DerivedSources
+2026-04-09T06:42:10.3398560Z     export PROJECT_DIR\=/Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:10.3399070Z     export PROJECT_FILE_PATH\=/Users/runner/work/goread/goread/src-tauri/gen/apple/GoRead.xcodeproj
+2026-04-09T06:42:10.3399460Z     export PROJECT_NAME\=GoRead
+2026-04-09T06:42:10.3399870Z     export PROJECT_TEMP_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build
+2026-04-09T06:42:10.3400430Z     export PROJECT_TEMP_ROOT\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex
+2026-04-09T06:42:10.3400810Z     export PROVISIONING_PROFILE_REQUIRED\=YES
+2026-04-09T06:42:10.3401200Z     export PROVISIONING_PROFILE_REQUIRED_YES_YES\=YES
+2026-04-09T06:42:10.3401490Z     export PROVISIONING_PROFILE_SUPPORTED\=YES
+2026-04-09T06:42:10.3401780Z     export PUBLIC_HEADERS_FOLDER_PATH\=GoRead.app/Headers
+2026-04-09T06:42:10.3402090Z     export RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET\=12.5
+2026-04-09T06:42:10.3402380Z     export RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS\=YES
+2026-04-09T06:42:10.3402640Z     export REMOVE_CVS_FROM_RESOURCES\=YES
+2026-04-09T06:42:10.3402910Z     export REMOVE_GIT_FROM_RESOURCES\=YES
+2026-04-09T06:42:10.3403170Z     export REMOVE_HEADERS_FROM_EMBEDDED_BUNDLES\=YES
+2026-04-09T06:42:10.3403430Z     export REMOVE_HG_FROM_RESOURCES\=YES
+2026-04-09T06:42:10.3403720Z     export REMOVE_STATIC_EXECUTABLES_FROM_EMBEDDED_BUNDLES\=YES
+2026-04-09T06:42:10.3404000Z     export REMOVE_SVN_FROM_RESOURCES\=YES
+2026-04-09T06:42:10.3404650Z     export REZ_COLLECTOR_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/ResourceManagerResources
+2026-04-09T06:42:10.3405780Z     export REZ_OBJECTS_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/ResourceManagerResources/Objects
+2026-04-09T06:42:10.3406540Z     export REZ_SEARCH_PATHS\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos\ 
+2026-04-09T06:42:10.3406940Z     export SCAN_ALL_SOURCE_FILES_FOR_INCLUDES\=NO
+2026-04-09T06:42:10.3407220Z     export SCRIPTS_FOLDER_PATH\=GoRead.app/Scripts
+2026-04-09T06:42:10.3407470Z     export SCRIPT_INPUT_FILE_COUNT\=0
+2026-04-09T06:42:10.3407700Z     export SCRIPT_INPUT_FILE_LIST_COUNT\=0
+2026-04-09T06:42:10.3408180Z     export SCRIPT_OUTPUT_FILE_0\=/Users/runner/work/goread/goread/src-tauri/gen/apple/Externals/x86_64/release/libapp.a
+2026-04-09T06:42:10.3409000Z     export SCRIPT_OUTPUT_FILE_1\=/Users/runner/work/goread/goread/src-tauri/gen/apple/Externals/arm64/release/libapp.a
+2026-04-09T06:42:10.3409430Z     export SCRIPT_OUTPUT_FILE_COUNT\=2
+2026-04-09T06:42:10.3409670Z     export SCRIPT_OUTPUT_FILE_LIST_COUNT\=0
+2026-04-09T06:42:10.3410190Z     export SDKROOT\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk
+2026-04-09T06:42:10.3410920Z     export SDK_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk
+2026-04-09T06:42:10.3411680Z     export SDK_DIR_iphoneos\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk
+2026-04-09T06:42:10.3412490Z     export SDK_DIR_iphoneos17_5\=/Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk
+2026-04-09T06:42:10.3412970Z     export SDK_NAME\=iphoneos17.5
+2026-04-09T06:42:10.3413180Z     export SDK_NAMES\=iphoneos17.5
+2026-04-09T06:42:10.3413410Z     export SDK_PRODUCT_BUILD_VERSION\=21F77
+2026-04-09T06:42:10.3413730Z     export SDK_STAT_CACHE_DIR\=/Users/runner/work/_temp/DerivedData
+2026-04-09T06:42:10.3414030Z     export SDK_STAT_CACHE_ENABLE\=YES
+2026-04-09T06:42:10.3414640Z     export SDK_STAT_CACHE_PATH\=/Users/runner/work/_temp/DerivedData/SDKStatCaches.noindex/iphoneos17.5-21F77-f0fa7969d082b13145125136a829df3a.sdkstatcache
+2026-04-09T06:42:10.3415180Z     export SDK_VERSION\=17.5
+2026-04-09T06:42:10.3415390Z     export SDK_VERSION_ACTUAL\=170500
+2026-04-09T06:42:10.3415610Z     export SDK_VERSION_MAJOR\=170000
+2026-04-09T06:42:10.3415820Z     export SDK_VERSION_MINOR\=170500
+2026-04-09T06:42:10.3416010Z     export SED\=/usr/bin/sed
+2026-04-09T06:42:10.3416180Z     export SEPARATE_STRIP\=NO
+2026-04-09T06:42:10.3416380Z     export SEPARATE_SYMBOL_EDIT\=NO
+2026-04-09T06:42:10.3416600Z     export SET_DIR_MODE_OWNER_GROUP\=YES
+2026-04-09T06:42:10.3416840Z     export SET_FILE_MODE_OWNER_GROUP\=NO
+2026-04-09T06:42:10.3417060Z     export SHALLOW_BUNDLE\=YES
+2026-04-09T06:42:10.3419250Z     export SHALLOW_BUNDLE_TRIPLE\=ios
+2026-04-09T06:42:10.3419560Z     export SHALLOW_BUNDLE_ios_macabi\=NO
+2026-04-09T06:42:10.3419860Z     export SHALLOW_BUNDLE_macos\=NO
+2026-04-09T06:42:10.3420360Z     export SHARED_DERIVED_FILE_DIR\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/DerivedSources
+2026-04-09T06:42:10.3420890Z     export SHARED_FRAMEWORKS_FOLDER_PATH\=GoRead.app/SharedFrameworks
+2026-04-09T06:42:10.3421440Z     export SHARED_PRECOMPS_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders
+2026-04-09T06:42:10.3421950Z     export SHARED_SUPPORT_FOLDER_PATH\=GoRead.app/SharedSupport
+2026-04-09T06:42:10.3422210Z     export SKIP_INSTALL\=NO
+2026-04-09T06:42:10.3422510Z     export SOURCE_ROOT\=/Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:10.3422910Z     export SRCROOT\=/Users/runner/work/goread/goread/src-tauri/gen/apple
+2026-04-09T06:42:10.3423650Z     export STRINGSDATA_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects-normal/undefined_arch
+2026-04-09T06:42:10.3424780Z     export STRINGSDATA_ROOT\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build
+2026-04-09T06:42:10.3425300Z     export STRINGS_FILE_INFOPLIST_RENAME\=YES
+2026-04-09T06:42:10.3425560Z     export STRINGS_FILE_OUTPUT_ENCODING\=binary
+2026-04-09T06:42:10.3425830Z     export STRIP_BITCODE_FROM_COPIED_FILES\=YES
+2026-04-09T06:42:10.3426070Z     export STRIP_INSTALLED_PRODUCT\=YES
+2026-04-09T06:42:10.3426290Z     export STRIP_STYLE\=all
+2026-04-09T06:42:10.3426490Z     export STRIP_SWIFT_SYMBOLS\=YES
+2026-04-09T06:42:10.3426710Z     export SUPPORTED_DEVICE_FAMILIES\=1,2
+2026-04-09T06:42:10.3426990Z     export SUPPORTED_PLATFORMS\=iphoneos\ iphonesimulator
+2026-04-09T06:42:10.3427490Z     export SUPPORTS_MACCATALYST\=NO
+2026-04-09T06:42:10.3427750Z     export SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD\=YES
+2026-04-09T06:42:10.3428020Z     export SUPPORTS_ON_DEMAND_RESOURCES\=YES
+2026-04-09T06:42:10.3428250Z     export SUPPORTS_TEXT_BASED_API\=NO
+2026-04-09T06:42:10.3428520Z     export SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD\=YES
+2026-04-09T06:42:10.3428760Z     export SUPPRESS_WARNINGS\=NO
+2026-04-09T06:42:10.3428990Z     export SWIFT_COMPILATION_MODE\=wholemodule
+2026-04-09T06:42:10.3429230Z     export SWIFT_EMIT_LOC_STRINGS\=NO
+2026-04-09T06:42:10.3429450Z     export SWIFT_OPTIMIZATION_LEVEL\=-O
+2026-04-09T06:42:10.3429690Z     export SWIFT_PLATFORM_TARGET_PREFIX\=ios
+2026-04-09T06:42:10.3430460Z     export SWIFT_RESPONSE_FILE_PATH_normal_arm64\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Objects-normal/arm64/GoRead.SwiftFileList
+2026-04-09T06:42:10.3431170Z     export SWIFT_VERSION\=5.0
+2026-04-09T06:42:10.3431470Z     export SYMROOT\=/Users/runner/work/_temp/DerivedData/Build/Products
+2026-04-09T06:42:10.3431820Z     export SYSTEM_ADMIN_APPS_DIR\=/Applications/Utilities
+2026-04-09T06:42:10.3432090Z     export SYSTEM_APPS_DIR\=/Applications
+2026-04-09T06:42:10.3432400Z     export SYSTEM_CORE_SERVICES_DIR\=/System/Library/CoreServices
+2026-04-09T06:42:10.3432710Z     export SYSTEM_DEMOS_DIR\=/Applications/Extras
+2026-04-09T06:42:10.3433130Z     export SYSTEM_DEVELOPER_APPS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Applications
+2026-04-09T06:42:10.3433700Z     export SYSTEM_DEVELOPER_BIN_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/usr/bin
+2026-04-09T06:42:10.3434330Z     export SYSTEM_DEVELOPER_DEMOS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Applications/Utilities/Built\ Examples
+2026-04-09T06:42:10.3434890Z     export SYSTEM_DEVELOPER_DIR\=/Applications/Xcode_15.4.app/Contents/Developer
+2026-04-09T06:42:10.3435430Z     export SYSTEM_DEVELOPER_DOC_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/ADC\ Reference\ Library
+2026-04-09T06:42:10.3436100Z     export SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Applications/Graphics\ Tools
+2026-04-09T06:42:10.3436770Z     export SYSTEM_DEVELOPER_JAVA_TOOLS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Applications/Java\ Tools
+2026-04-09T06:42:10.3437500Z     export SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Applications/Performance\ Tools
+2026-04-09T06:42:10.3438240Z     export SYSTEM_DEVELOPER_RELEASENOTES_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/ADC\ Reference\ Library/releasenotes
+2026-04-09T06:42:10.3438840Z     export SYSTEM_DEVELOPER_TOOLS\=/Applications/Xcode_15.4.app/Contents/Developer/Tools
+2026-04-09T06:42:10.3439510Z     export SYSTEM_DEVELOPER_TOOLS_DOC_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/ADC\ Reference\ Library/documentation/DeveloperTools
+2026-04-09T06:42:10.3440360Z     export SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/ADC\ Reference\ Library/releasenotes/DeveloperTools
+2026-04-09T06:42:10.3441020Z     export SYSTEM_DEVELOPER_USR_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/usr
+2026-04-09T06:42:10.3441590Z     export SYSTEM_DEVELOPER_UTILITIES_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Applications/Utilities
+2026-04-09T06:42:10.3442200Z     export SYSTEM_DEXT_INSTALL_PATH\=/System/Library/DriverExtensions
+2026-04-09T06:42:10.3442560Z     export SYSTEM_DOCUMENTATION_DIR\=/Library/Documentation
+2026-04-09T06:42:10.3442930Z     export SYSTEM_EXTENSIONS_FOLDER_PATH\=GoRead.app/SystemExtensions
+2026-04-09T06:42:10.3443400Z     export SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_NO\=GoRead.app/Library/SystemExtensions
+2026-04-09T06:42:10.3443990Z     export SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_YES\=GoRead.app/SystemExtensions
+2026-04-09T06:42:10.3444410Z     export SYSTEM_KEXT_INSTALL_PATH\=/System/Library/Extensions
+2026-04-09T06:42:10.3444790Z     export SYSTEM_LIBRARY_DIR\=/System/Library
+2026-04-09T06:42:10.3445010Z     export TAPI_DEMANGLE\=YES
+2026-04-09T06:42:10.3445220Z     export TAPI_ENABLE_PROJECT_HEADERS\=NO
+2026-04-09T06:42:10.3445450Z     export TAPI_LANGUAGE\=objective-c
+2026-04-09T06:42:10.3445710Z     export TAPI_LANGUAGE_STANDARD\=compiler-default
+2026-04-09T06:42:10.3445960Z     export TAPI_USE_SRCROOT\=YES
+2026-04-09T06:42:10.3446200Z     export TAPI_VERIFY_MODE\=Pedantic
+2026-04-09T06:42:10.3446470Z     export TARGETED_DEVICE_FAMILY\=1,2
+2026-04-09T06:42:10.3446690Z     export TARGETNAME\=GoRead_iOS
+2026-04-09T06:42:10.3447080Z     export TARGET_BUILD_DIR\=/Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos
+2026-04-09T06:42:10.3447440Z     export TARGET_NAME\=GoRead_iOS
+2026-04-09T06:42:10.3448000Z     export TARGET_TEMP_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build
+2026-04-09T06:42:10.3448810Z     export TEMP_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build
+2026-04-09T06:42:10.3449600Z     export TEMP_FILES_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build
+2026-04-09T06:42:10.3450400Z     export TEMP_FILE_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build
+2026-04-09T06:42:10.3451010Z     export TEMP_ROOT\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex
+2026-04-09T06:42:10.3452170Z     export TEST_FRAMEWORK_SEARCH_PATHS\=\ /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks\ /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/Developer/Library/Frameworks
+2026-04-09T06:42:10.3453380Z     export TEST_LIBRARY_SEARCH_PATHS\=\ /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib
+2026-04-09T06:42:10.3453910Z     export TOOLCHAINS\=com.apple.dt.toolchain.XcodeDefault
+2026-04-09T06:42:10.3454410Z     export TOOLCHAIN_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+2026-04-09T06:42:10.3454850Z     export TREAT_MISSING_BASELINES_AS_TEST_FAILURES\=NO
+2026-04-09T06:42:10.3455070Z     export UID\=501
+2026-04-09T06:42:10.3455510Z     export UNINSTALLED_PRODUCTS_DIR\=/Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/UninstalledProducts
+2026-04-09T06:42:10.3455990Z     export UNLOCALIZED_RESOURCES_FOLDER_PATH\=GoRead.app
+2026-04-09T06:42:10.3456390Z     export UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_NO\=GoRead.app/Resources
+2026-04-09T06:42:10.3456830Z     export UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_YES\=GoRead.app
+2026-04-09T06:42:10.3457140Z     export UNSTRIPPED_PRODUCT\=NO
+2026-04-09T06:42:10.3457310Z     export USER\=runner
+2026-04-09T06:42:10.3457540Z     export USER_APPS_DIR\=/Users/runner/Applications
+2026-04-09T06:42:10.3457820Z     export USER_LIBRARY_DIR\=/Users/runner/Library
+2026-04-09T06:42:10.3458070Z     export USE_DYNAMIC_NO_PIC\=YES
+2026-04-09T06:42:10.3458250Z     export USE_HEADERMAP\=YES
+2026-04-09T06:42:10.3458450Z     export USE_HEADER_SYMLINKS\=NO
+2026-04-09T06:42:10.3458810Z     export USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES\=YES
+2026-04-09T06:42:10.3459120Z     export VALIDATE_DEVELOPMENT_ASSET_PATHS\=YES_ERROR
+2026-04-09T06:42:10.3459360Z     export VALIDATE_PRODUCT\=NO
+2026-04-09T06:42:10.3459540Z     export VALID_ARCHS\=arm64
+2026-04-09T06:42:10.3459710Z     export VERBOSE_PBXCP\=NO
+2026-04-09T06:42:10.3459950Z     export VERSIONPLIST_PATH\=GoRead.app/version.plist
+2026-04-09T06:42:10.3460210Z     export VERSION_INFO_BUILDER\=runner
+2026-04-09T06:42:10.3460440Z     export VERSION_INFO_FILE\=GoRead_vers.c
+2026-04-09T06:42:10.3460780Z     export VERSION_INFO_STRING\=\"@\(\#\)PROGRAM:GoRead\ \ PROJECT:GoRead-\"
+2026-04-09T06:42:10.3461080Z     export WRAPPER_EXTENSION\=app
+2026-04-09T06:42:10.3461290Z     export WRAPPER_NAME\=GoRead.app
+2026-04-09T06:42:10.3461560Z     export WRAPPER_SUFFIX\=.app
+2026-04-09T06:42:10.3461810Z     export WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES\=NO
+2026-04-09T06:42:10.3462230Z     export XCODE_APP_SUPPORT_DIR\=/Applications/Xcode_15.4.app/Contents/Developer/Library/Xcode
+2026-04-09T06:42:10.3462620Z     export XCODE_PRODUCT_BUILD_VERSION\=15F31d
+2026-04-09T06:42:10.3462860Z     export XCODE_VERSION_ACTUAL\=1540
+2026-04-09T06:42:10.3463080Z     export XCODE_VERSION_MAJOR\=1500
+2026-04-09T06:42:10.3463290Z     export XCODE_VERSION_MINOR\=1540
+2026-04-09T06:42:10.3463560Z     export XPCSERVICES_FOLDER_PATH\=GoRead.app/XPCServices
+2026-04-09T06:42:10.3463790Z     export YACC\=yacc
+2026-04-09T06:42:10.3464030Z     export _WRAPPER_CONTENTS_DIR_SHALLOW_BUNDLE_NO\=/Contents
+2026-04-09T06:42:10.3464350Z     export _WRAPPER_PARENT_PATH_SHALLOW_BUNDLE_NO\=/..
+2026-04-09T06:42:10.3464680Z     export _WRAPPER_RESOURCES_DIR_SHALLOW_BUNDLE_NO\=/Resources
+2026-04-09T06:42:10.3464950Z     export __IS_NOT_MACOS\=YES
+2026-04-09T06:42:10.3465150Z     export __IS_NOT_MACOS_macosx\=NO
+2026-04-09T06:42:10.3465370Z     export __IS_NOT_SIMULATOR\=YES
+2026-04-09T06:42:10.3465590Z     export __IS_NOT_SIMULATOR_simulator\=NO
+2026-04-09T06:42:10.3465810Z     export arch\=undefined_arch
+2026-04-09T06:42:10.3465990Z     export variant\=normal
+2026-04-09T06:42:10.3466590Z     /bin/sh -c /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-B98FC53D18C5C8150C41E6F7.sh
+2026-04-09T06:42:11.0487340Z ** BUILD FAILED **
+2026-04-09T06:42:11.0487610Z 
+2026-04-09T06:42:11.0595460Z 
+2026-04-09T06:42:11.0595870Z > GoRead@1.5.4 tauri
+2026-04-09T06:42:11.0719600Z 
+2026-04-09T06:42:11.0722530Z > tauri ios xcode-script -v --platform iOS --sdk-root /Applications/Xcode_15.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk --framework-search-paths /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos  "." "../../src/pdfium/ios" --header-search-paths /Users/runner/work/_temp/DerivedData/Build/Products/release-iphoneos/include  --gcc-preprocessor-definitions  COCOAPODS=1 --configuration release arm64
+2026-04-09T06:42:11.0854240Z The following build commands failed:
+2026-04-09T06:42:11.0854960Z 
+2026-04-09T06:42:11.0957930Z 	PhaseScriptExecution Build\ Rust\ Code /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-B98FC53D18C5C8150C41E6F7.sh (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:11.0961630Z        Debug [tauri_cli::helpers::app_paths] Found Tauri project inside /Users/runner/work/goread/goread/src-tauri on early lookup
+2026-04-09T06:42:11.0963370Z 
+2026-04-09T06:42:11.1056990Z (1 failure)
+2026-04-09T06:42:11.1064100Z thread '<unnamed>' panicked at crates/tauri-cli/src/mobile/mod.rs:419:59:
+2026-04-09T06:42:11.1165740Z failed to read missing addr file /var/folders/qm/fcgtnjr57d7bvztxwhtddp7m0000gn/T/com.tauri-app.goread-server-addr: No such file or directory (os error 2)
+2026-04-09T06:42:11.1267460Z note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+2026-04-09T06:42:11.1312850Z /Users/runner/work/_temp/DerivedData/Build/Intermediates.noindex/GoRead.build/release-iphoneos/GoRead_iOS.build/Script-B98FC53D18C5C8150C41E6F7.sh: line 2: 20182 Abort trap: 6           npm run -- tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths "${FRAMEWORK_SEARCH_PATHS:?}" --header-search-paths "${HEADER_SEARCH_PATHS:?}" --gcc-preprocessor-definitions "${GCC_PREPROCESSOR_DEFINITIONS:-}" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}
+2026-04-09T06:42:11.1419960Z Command PhaseScriptExecution failed with a nonzero exit code
+2026-04-09T06:42:11.1504640Z 
+2026-04-09T06:42:11.1563950Z note: Run script build phase 'Build Rust Code' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'GoRead_iOS' from project 'GoRead')
+2026-04-09T06:42:11.1638960Z ##[error]Process completed with exit code 65.

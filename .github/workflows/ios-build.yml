@@ -42,11 +42,26 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci
 
+      - name: Build frontend assets
+        run: npm run build
+
       - name: Install CocoaPods dependencies
         run: |
           set -euo pipefail
           cd "$IOS_PROJECT_DIR"
           pod install
+
+      - name: Build iOS Rust static library
+        run: |
+          set -euo pipefail
+          mkdir -p src-tauri/gen/apple/Externals/arm64/release
+          cargo build --manifest-path src-tauri/Cargo.toml --target aarch64-apple-ios --release
+          cp src-tauri/target/aarch64-apple-ios/release/libgoread_lib.a src-tauri/gen/apple/Externals/arm64/release/libapp.a
+
+      - name: Disable Tauri Xcode Rust build script
+        run: |
+          set -euo pipefail
+          sed -i '' 's#npm run -- tauri ios xcode-script[^"]*#echo Skipping tauri ios xcode-script in CI#' src-tauri/gen/apple/GoRead.xcodeproj/project.pbxproj
 
       - name: Build unsigned .app
         run: |

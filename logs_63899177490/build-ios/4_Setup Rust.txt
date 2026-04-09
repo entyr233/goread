@@ -1,0 +1,219 @@
+﻿2026-04-09T06:41:34.6243920Z ##[group]Run dtolnay/rust-toolchain@stable
+2026-04-09T06:41:34.6244160Z with:
+2026-04-09T06:41:34.6244320Z   targets: aarch64-apple-ios
+2026-04-09T06:41:34.6244500Z   toolchain: stable
+2026-04-09T06:41:34.6244650Z env:
+2026-04-09T06:41:34.6244790Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:34.6245010Z   NODE_VERSION: 20
+2026-04-09T06:41:34.6245150Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:34.6245350Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:34.6245580Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:34.6245760Z ##[endgroup]
+2026-04-09T06:41:34.6335060Z ##[group]Run : parse toolchain version
+2026-04-09T06:41:34.6335390Z [36;1m: parse toolchain version[0m
+2026-04-09T06:41:34.6335610Z [36;1mif [[ -z $toolchain ]]; then[0m
+2026-04-09T06:41:34.6336050Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+2026-04-09T06:41:34.6336470Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+2026-04-09T06:41:34.6336710Z [36;1m  exit 1[0m
+2026-04-09T06:41:34.6336980Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+2026-04-09T06:41:34.6337290Z [36;1m  if [[ macOS == macOS ]]; then[0m
+2026-04-09T06:41:34.6337710Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-04-09T06:41:34.6338450Z [36;1m  else[0m
+2026-04-09T06:41:34.6338760Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+2026-04-09T06:41:34.6339120Z [36;1m  fi[0m
+2026-04-09T06:41:34.6339340Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+2026-04-09T06:41:34.6339770Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+2026-04-09T06:41:34.6340130Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+2026-04-09T06:41:34.6340530Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+2026-04-09T06:41:34.6340920Z [36;1melse[0m
+2026-04-09T06:41:34.6341090Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+2026-04-09T06:41:34.6341320Z [36;1mfi[0m
+2026-04-09T06:41:34.6407010Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:34.6407320Z env:
+2026-04-09T06:41:34.6407570Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:34.6407790Z   NODE_VERSION: 20
+2026-04-09T06:41:34.6407940Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:34.6408160Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:34.6408430Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:34.6408630Z   toolchain: stable
+2026-04-09T06:41:34.6408770Z ##[endgroup]
+2026-04-09T06:41:34.6784710Z ##[group]Run : construct rustup command line
+2026-04-09T06:41:34.6785080Z [36;1m: construct rustup command line[0m
+2026-04-09T06:41:34.6785480Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+2026-04-09T06:41:34.6785970Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+2026-04-09T06:41:34.6786340Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+2026-04-09T06:41:34.6845110Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:34.6845400Z env:
+2026-04-09T06:41:34.6845570Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:34.6845770Z   NODE_VERSION: 20
+2026-04-09T06:41:34.6845970Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:34.6846200Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:34.6846440Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:34.6846700Z   targets: aarch64-apple-ios
+2026-04-09T06:41:34.6846880Z   components: 
+2026-04-09T06:41:34.6847020Z ##[endgroup]
+2026-04-09T06:41:34.7228230Z ##[group]Run : set $CARGO_HOME
+2026-04-09T06:41:34.7228520Z [36;1m: set $CARGO_HOME[0m
+2026-04-09T06:41:34.7229260Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV[0m
+2026-04-09T06:41:34.7283900Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:34.7284190Z env:
+2026-04-09T06:41:34.7284350Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:34.7284570Z   NODE_VERSION: 20
+2026-04-09T06:41:34.7284720Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:34.7284940Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:34.7285190Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:34.7285400Z ##[endgroup]
+2026-04-09T06:41:34.7632470Z ##[group]Run : install rustup if needed
+2026-04-09T06:41:34.7632860Z [36;1m: install rustup if needed[0m
+2026-04-09T06:41:34.7633090Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+2026-04-09T06:41:34.7633730Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y[0m
+2026-04-09T06:41:34.7634360Z [36;1m  echo "$CARGO_HOME/bin" >> $GITHUB_PATH[0m
+2026-04-09T06:41:34.7634570Z [36;1mfi[0m
+2026-04-09T06:41:34.7696660Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:34.7696970Z env:
+2026-04-09T06:41:34.7697140Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:34.7697680Z   NODE_VERSION: 20
+2026-04-09T06:41:34.7697830Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:34.7698060Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:34.7698800Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:34.7699040Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:34.7699250Z ##[endgroup]
+2026-04-09T06:41:34.8070320Z ##[group]Run rustup toolchain install stable --target aarch64-apple-ios --profile minimal --no-self-update
+2026-04-09T06:41:34.8071020Z [36;1mrustup toolchain install stable --target aarch64-apple-ios --profile minimal --no-self-update[0m
+2026-04-09T06:41:34.8124390Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:34.8124680Z env:
+2026-04-09T06:41:34.8124830Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:34.8125060Z   NODE_VERSION: 20
+2026-04-09T06:41:34.8125210Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:34.8125500Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:34.8125800Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:34.8126020Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:34.8126210Z   RUSTUP_PERMIT_COPY_RENAME: 1
+2026-04-09T06:41:34.8126380Z ##[endgroup]
+2026-04-09T06:41:35.2735310Z info: syncing channel updates for stable-aarch64-apple-darwin
+2026-04-09T06:41:35.3962080Z info: latest update on 2026-03-26 for version 1.94.1 (e408947bf 2026-03-25)
+2026-04-09T06:41:35.4087140Z info: downloading component rust-std
+2026-04-09T06:41:37.6038770Z 
+2026-04-09T06:41:37.6240790Z info: self-update is disabled for this build of rustup
+2026-04-09T06:41:37.6243010Z   stable-aarch64-apple-darwin updated - rustc 1.94.1 (e408947bf 2026-03-25) (from rustc 1.94.1 (e408947bf 2026-03-25))
+2026-04-09T06:41:37.6244300Z info: any updates to rustup will need to be fetched with your system package manager
+2026-04-09T06:41:37.6244610Z 
+2026-04-09T06:41:37.6312200Z ##[group]Run rustup default stable
+2026-04-09T06:41:37.6312510Z [36;1mrustup default stable[0m
+2026-04-09T06:41:37.6384100Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:37.6384380Z env:
+2026-04-09T06:41:37.6384600Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:37.6384850Z   NODE_VERSION: 20
+2026-04-09T06:41:37.6385080Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:37.6385290Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:37.6385530Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:37.6385740Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:37.6385920Z ##[endgroup]
+2026-04-09T06:41:37.7004670Z info: using existing install for stable-aarch64-apple-darwin
+2026-04-09T06:41:37.7036120Z info: default toolchain set to stable-aarch64-apple-darwin
+2026-04-09T06:41:37.7038020Z 
+2026-04-09T06:41:37.7135930Z   stable-aarch64-apple-darwin unchanged - rustc 1.94.1 (e408947bf 2026-03-25)
+2026-04-09T06:41:37.7140560Z 
+2026-04-09T06:41:37.7173940Z ##[group]Run : create cachekey
+2026-04-09T06:41:37.7174240Z [36;1m: create cachekey[0m
+2026-04-09T06:41:37.7174690Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+2026-04-09T06:41:37.7175230Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+2026-04-09T06:41:37.7175670Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+2026-04-09T06:41:37.7232810Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:37.7233120Z env:
+2026-04-09T06:41:37.7233350Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:37.7233580Z   NODE_VERSION: 20
+2026-04-09T06:41:37.7233730Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:37.7233940Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:37.7234240Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:37.7234520Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:37.7234690Z ##[endgroup]
+2026-04-09T06:41:37.8316100Z ##[group]Run : disable incremental compilation
+2026-04-09T06:41:37.8318590Z [36;1m: disable incremental compilation[0m
+2026-04-09T06:41:37.8318830Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+2026-04-09T06:41:37.8319130Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+2026-04-09T06:41:37.8319410Z [36;1mfi[0m
+2026-04-09T06:41:37.8372060Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:37.8372370Z env:
+2026-04-09T06:41:37.8372590Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:37.8372840Z   NODE_VERSION: 20
+2026-04-09T06:41:37.8373060Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:37.8373270Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:37.8373520Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:37.8373820Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:37.8374020Z ##[endgroup]
+2026-04-09T06:41:37.8716330Z ##[group]Run : enable colors in Cargo output
+2026-04-09T06:41:37.8716690Z [36;1m: enable colors in Cargo output[0m
+2026-04-09T06:41:37.8716930Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+2026-04-09T06:41:37.8718040Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+2026-04-09T06:41:37.8718250Z [36;1mfi[0m
+2026-04-09T06:41:37.8783400Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:37.8783700Z env:
+2026-04-09T06:41:37.8783870Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:37.8784080Z   NODE_VERSION: 20
+2026-04-09T06:41:37.8784240Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:37.8784450Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:37.8784710Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:37.8785270Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:37.8785460Z   CARGO_INCREMENTAL: 0
+2026-04-09T06:41:37.8785660Z ##[endgroup]
+2026-04-09T06:41:37.9174010Z ##[group]Run : enable Cargo sparse registry
+2026-04-09T06:41:37.9174360Z [36;1m: enable Cargo sparse registry[0m
+2026-04-09T06:41:37.9174630Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+2026-04-09T06:41:37.9175230Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/Users/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+2026-04-09T06:41:37.9175830Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+2026-04-09T06:41:37.9176290Z [36;1m    touch "/Users/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-04-09T06:41:37.9176700Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+2026-04-09T06:41:37.9177110Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+2026-04-09T06:41:37.9177900Z [36;1m    touch "/Users/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+2026-04-09T06:41:37.9178570Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+2026-04-09T06:41:37.9178850Z [36;1m  fi[0m
+2026-04-09T06:41:37.9178990Z [36;1mfi[0m
+2026-04-09T06:41:37.9237670Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:37.9237960Z env:
+2026-04-09T06:41:37.9238140Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:37.9238340Z   NODE_VERSION: 20
+2026-04-09T06:41:37.9238490Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:37.9238720Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:37.9238960Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:37.9239170Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:37.9239360Z   CARGO_INCREMENTAL: 0
+2026-04-09T06:41:37.9239570Z   CARGO_TERM_COLOR: always
+2026-04-09T06:41:37.9239760Z ##[endgroup]
+2026-04-09T06:41:38.0107870Z ##[group]Run : work around spurious network errors in curl 8.0
+2026-04-09T06:41:38.0108990Z [36;1m: work around spurious network errors in curl 8.0[0m
+2026-04-09T06:41:38.0109540Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+2026-04-09T06:41:38.0110020Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+2026-04-09T06:41:38.0110740Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+2026-04-09T06:41:38.0110990Z [36;1mfi[0m
+2026-04-09T06:41:38.0168040Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:38.0168310Z env:
+2026-04-09T06:41:38.0168480Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:38.0169890Z   NODE_VERSION: 20
+2026-04-09T06:41:38.0170060Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:38.0170290Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:38.0170540Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:38.0170760Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:38.0170950Z   CARGO_INCREMENTAL: 0
+2026-04-09T06:41:38.0171110Z   CARGO_TERM_COLOR: always
+2026-04-09T06:41:38.0171290Z ##[endgroup]
+2026-04-09T06:41:38.0903450Z ##[group]Run rustc +stable --version --verbose
+2026-04-09T06:41:38.0903930Z [36;1mrustc +stable --version --verbose[0m
+2026-04-09T06:41:38.0955600Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-04-09T06:41:38.0955920Z env:
+2026-04-09T06:41:38.0956090Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T06:41:38.0956300Z   NODE_VERSION: 20
+2026-04-09T06:41:38.0956450Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T06:41:38.0956670Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T06:41:38.0956930Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T06:41:38.0957140Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T06:41:38.0957340Z   CARGO_INCREMENTAL: 0
+2026-04-09T06:41:38.0957500Z   CARGO_TERM_COLOR: always
+2026-04-09T06:41:38.0957680Z ##[endgroup]
+2026-04-09T06:41:38.1436810Z rustc 1.94.1 (e408947bf 2026-03-25)
+2026-04-09T06:41:38.1438320Z binary: rustc
+2026-04-09T06:41:38.1438700Z commit-hash: e408947bfd200af42db322daf0fadfe7e26d3bd1
+2026-04-09T06:41:38.1439220Z commit-date: 2026-03-25
+2026-04-09T06:41:38.1439470Z host: aarch64-apple-darwin
+2026-04-09T06:41:38.1439660Z release: 1.94.1
+2026-04-09T06:41:38.1440100Z LLVM version: 21.1.8
