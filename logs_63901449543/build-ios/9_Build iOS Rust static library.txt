@@ -1,0 +1,966 @@
+﻿2026-04-09T07:04:18.9476630Z ##[group]Run set -euo pipefail
+2026-04-09T07:04:18.9476900Z [36;1mset -euo pipefail[0m
+2026-04-09T07:04:18.9477140Z [36;1mmkdir -p src-tauri/gen/apple/Externals/arm64/release[0m
+2026-04-09T07:04:18.9477600Z [36;1mmkdir -p src-tauri/gen/apple/Externals/x86_64/release[0m
+2026-04-09T07:04:18.9478110Z [36;1mcargo rustc --manifest-path src-tauri/Cargo.toml --lib --target aarch64-apple-ios --release -- --crate-type staticlib[0m
+2026-04-09T07:04:18.9478800Z [36;1mcp src-tauri/target/aarch64-apple-ios/release/libgoread_lib.a src-tauri/gen/apple/Externals/arm64/release/libapp.a[0m
+2026-04-09T07:04:18.9479450Z [36;1mcp src-tauri/target/aarch64-apple-ios/release/libgoread_lib.a src-tauri/gen/apple/Externals/x86_64/release/libapp.a[0m
+2026-04-09T07:04:18.9537370Z shell: /bin/bash -e {0}
+2026-04-09T07:04:18.9537560Z env:
+2026-04-09T07:04:18.9537720Z   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+2026-04-09T07:04:18.9537930Z   NODE_VERSION: 20
+2026-04-09T07:04:18.9538070Z   IOS_SCHEME: GoRead_iOS
+2026-04-09T07:04:18.9538370Z   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
+2026-04-09T07:04:18.9538700Z   IOS_PROJECT_DIR: src-tauri/gen/apple
+2026-04-09T07:04:18.9539060Z   CARGO_HOME: /Users/runner/.cargo
+2026-04-09T07:04:18.9539230Z   CARGO_INCREMENTAL: 0
+2026-04-09T07:04:18.9539470Z   CARGO_TERM_COLOR: always
+2026-04-09T07:04:18.9539660Z   CACHE_ON_FAILURE: false
+2026-04-09T07:04:18.9539810Z ##[endgroup]
+2026-04-09T07:04:19.3555600Z [1m[92m    Updating[0m crates.io index
+2026-04-09T07:04:20.9476390Z [1m[92m Downloading[0m crates ...
+2026-04-09T07:04:21.0236050Z [1m[92m  Downloaded[0m adler2 v2.0.1
+2026-04-09T07:04:21.1132040Z [1m[92m  Downloaded[0m objc2-core-data v0.3.2
+2026-04-09T07:04:21.1224210Z [1m[92m  Downloaded[0m alloc-no-stdlib v2.0.4
+2026-04-09T07:04:21.2596340Z [1m[92m  Downloaded[0m dyn-clone v1.0.20
+2026-04-09T07:04:21.3001710Z [1m[92m  Downloaded[0m ctor v0.2.9
+2026-04-09T07:04:21.3233600Z [1m[92m  Downloaded[0m open v5.3.2
+2026-04-09T07:04:21.4698550Z [1m[92m  Downloaded[0m core-graphics-types v0.2.0
+2026-04-09T07:04:21.4800190Z [1m[92m  Downloaded[0m crc-catalog v2.4.0
+2026-04-09T07:04:21.4902620Z [1m[92m  Downloaded[0m cpufeatures v0.2.17
+2026-04-09T07:04:21.4991270Z [1m[92m  Downloaded[0m phf_codegen v0.11.3
+2026-04-09T07:04:21.4991770Z [1m[92m  Downloaded[0m block-buffer v0.10.4
+2026-04-09T07:04:21.4992370Z [1m[92m  Downloaded[0m bit_field v0.10.3
+2026-04-09T07:04:21.4992940Z [1m[92m  Downloaded[0m atoi v2.0.0
+2026-04-09T07:04:21.5169260Z [1m[92m  Downloaded[0m atomic-waker v1.1.2
+2026-04-09T07:04:21.5226070Z [1m[92m  Downloaded[0m rand_pcg v0.2.1
+2026-04-09T07:04:21.5248960Z [1m[92m  Downloaded[0m dirs v6.0.0
+2026-04-09T07:04:21.5269780Z [1m[92m  Downloaded[0m piston-float v1.0.1
+2026-04-09T07:04:21.5322190Z [1m[92m  Downloaded[0m crypto-common v0.1.6
+2026-04-09T07:04:21.5340250Z [1m[92m  Downloaded[0m option-ext v0.2.0
+2026-04-09T07:04:21.5354130Z [1m[92m  Downloaded[0m foreign-types-macros v0.2.3
+2026-04-09T07:04:21.5368100Z [1m[92m  Downloaded[0m cargo-platform v0.1.9
+2026-04-09T07:04:21.5460170Z [1m[92m  Downloaded[0m dunce v1.0.5
+2026-04-09T07:04:21.5530030Z [1m[92m  Downloaded[0m parking v2.2.1
+2026-04-09T07:04:21.5560170Z [1m[92m  Downloaded[0m dpi v0.1.2
+2026-04-09T07:04:21.5577710Z [1m[92m  Downloaded[0m cssparser-macros v0.6.1
+2026-04-09T07:04:21.5623510Z [1m[92m  Downloaded[0m objc2-io-surface v0.3.2
+2026-04-09T07:04:21.5678710Z [1m[92m  Downloaded[0m dtoa-short v0.3.5
+2026-04-09T07:04:21.5690730Z [1m[92m  Downloaded[0m dispatch v0.2.0
+2026-04-09T07:04:21.5736390Z [1m[92m  Downloaded[0m pathdiff v0.2.3
+2026-04-09T07:04:21.5866470Z [1m[92m  Downloaded[0m crc v3.3.0
+2026-04-09T07:04:21.5967920Z [1m[92m  Downloaded[0m phf_shared v0.8.0
+2026-04-09T07:04:21.6069430Z [1m[92m  Downloaded[0m encoding-index-singlebyte v1.20141219.5
+2026-04-09T07:04:21.6171450Z [1m[92m  Downloaded[0m potential_utf v0.1.4
+2026-04-09T07:04:21.6273030Z [1m[92m  Downloaded[0m powerfmt v0.2.0
+2026-04-09T07:04:21.6375110Z [1m[92m  Downloaded[0m foreign-types v0.5.0
+2026-04-09T07:04:21.6378990Z [1m[92m  Downloaded[0m utf-8 v0.7.6
+2026-04-09T07:04:21.6379490Z [1m[92m  Downloaded[0m sha1 v0.10.6
+2026-04-09T07:04:21.6379970Z [1m[92m  Downloaded[0m siphasher v0.3.11
+2026-04-09T07:04:21.6380550Z [1m[92m  Downloaded[0m time-core v0.1.6
+2026-04-09T07:04:21.6381040Z [1m[92m  Downloaded[0m serde_repr v0.1.20
+2026-04-09T07:04:21.6381480Z [1m[92m  Downloaded[0m webpki-roots v0.26.11
+2026-04-09T07:04:21.6404590Z [1m[92m  Downloaded[0m tauri-plugin v2.5.1
+2026-04-09T07:04:21.6472500Z [1m[92m  Downloaded[0m http-body v1.0.1
+2026-04-09T07:04:21.6545860Z [1m[92m  Downloaded[0m nodrop v0.1.14
+2026-04-09T07:04:21.6608050Z [1m[92m  Downloaded[0m futures-macro v0.3.31
+2026-04-09T07:04:21.6666520Z [1m[92m  Downloaded[0m md-5 v0.10.6
+2026-04-09T07:04:21.6745910Z [1m[92m  Downloaded[0m utf8_iter v1.0.4
+2026-04-09T07:04:21.6800850Z [1m[92m  Downloaded[0m spin v0.9.8
+2026-04-09T07:04:21.6884290Z [1m[92m  Downloaded[0m sqlx-macros v0.8.6
+2026-04-09T07:04:21.6947370Z [1m[92m  Downloaded[0m serialize-to-javascript v0.1.2
+2026-04-09T07:04:21.7010070Z [1m[92m  Downloaded[0m serialize-to-javascript-impl v0.1.2
+2026-04-09T07:04:21.7073370Z [1m[92m  Downloaded[0m futures-task v0.3.31
+2026-04-09T07:04:21.7150240Z [1m[92m  Downloaded[0m tower-layer v0.3.3
+2026-04-09T07:04:21.7215680Z [1m[92m  Downloaded[0m tinyvec_macros v0.1.1
+2026-04-09T07:04:21.7246570Z [1m[92m  Downloaded[0m uuid v1.18.1
+2026-04-09T07:04:21.7347580Z [1m[92m  Downloaded[0m toml_writer v1.0.4
+2026-04-09T07:04:21.7461110Z [1m[92m  Downloaded[0m tokio-macros v2.6.0
+2026-04-09T07:04:21.7561040Z [1m[92m  Downloaded[0m tokio-stream v0.1.17
+2026-04-09T07:04:21.7706890Z [1m[92m  Downloaded[0m toml v0.9.8
+2026-04-09T07:04:21.7830540Z [1m[92m  Downloaded[0m zerocopy-derive v0.8.27
+2026-04-09T07:04:21.8001630Z [1m[92m  Downloaded[0m tower v0.5.2
+2026-04-09T07:04:21.8214020Z [1m[92m  Downloaded[0m tower-http v0.6.6
+2026-04-09T07:04:21.8392820Z [1m[92m  Downloaded[0m tauri-utils v2.8.0
+2026-04-09T07:04:21.8485950Z [1m[92m  Downloaded[0m tokio-util v0.7.16
+2026-04-09T07:04:21.8641250Z [1m[92m  Downloaded[0m zlib-rs v0.5.5
+2026-04-09T07:04:21.8754710Z [1m[92m  Downloaded[0m serde_with v3.15.1
+2026-04-09T07:04:21.8997570Z [1m[92m  Downloaded[0m wry v0.53.5
+2026-04-09T07:04:21.9145040Z [1m[92m  Downloaded[0m objc2-security v0.3.2
+2026-04-09T07:04:21.9317340Z [1m[92m  Downloaded[0m syn v1.0.109
+2026-04-09T07:04:21.9485780Z [1m[92m  Downloaded[0m zerocopy v0.8.27
+2026-04-09T07:04:21.9975410Z [1m[92m  Downloaded[0m tauri v2.9.2
+2026-04-09T07:04:22.0230200Z [1m[92m  Downloaded[0m syn v2.0.108
+2026-04-09T07:04:22.0419590Z [1m[92m  Downloaded[0m rustls v0.23.34
+2026-04-09T07:04:22.0629180Z [1m[92m  Downloaded[0m regex-syntax v0.8.8
+2026-04-09T07:04:22.0755160Z [1m[92m  Downloaded[0m rustix v1.1.2
+2026-04-09T07:04:22.1220220Z [1m[92m  Downloaded[0m objc2-foundation v0.3.2
+2026-04-09T07:04:22.1551120Z [1m[92m  Downloaded[0m tao v0.34.5
+2026-04-09T07:04:22.1747370Z [1m[92m  Downloaded[0m nix v0.30.1
+2026-04-09T07:04:22.1956420Z [1m[92m  Downloaded[0m objc2 v0.6.3
+2026-04-09T07:04:22.2139830Z [1m[92m  Downloaded[0m image v0.25.9
+2026-04-09T07:04:22.2301580Z [1m[92m  Downloaded[0m vcpkg v0.2.15
+2026-04-09T07:04:22.3126790Z [1m[92m  Downloaded[0m moka v0.12.11
+2026-04-09T07:04:22.3289670Z [1m[92m  Downloaded[0m objc2-app-kit v0.3.2
+2026-04-09T07:04:22.3718930Z [1m[92m  Downloaded[0m objc2-ui-kit v0.3.2
+2026-04-09T07:04:22.4307270Z [1m[92m  Downloaded[0m webpki-roots v1.0.4
+2026-04-09T07:04:22.4368220Z [1m[92m  Downloaded[0m quick-xml v0.38.3
+2026-04-09T07:04:22.4467970Z [1m[92m  Downloaded[0m regex-automata v0.4.13
+2026-04-09T07:04:22.4716370Z [1m[92m  Downloaded[0m unicode-normalization v0.1.25
+2026-04-09T07:04:22.4776120Z [1m[92m  Downloaded[0m sqlx v0.8.6
+2026-04-09T07:04:22.5010250Z [1m[92m  Downloaded[0m exr v1.74.0
+2026-04-09T07:04:22.5152630Z [1m[92m  Downloaded[0m chrono v0.4.42
+2026-04-09T07:04:22.5267710Z [1m[92m  Downloaded[0m jpeg-decoder v0.3.2
+2026-04-09T07:04:22.5373770Z [1m[92m  Downloaded[0m brotli v8.0.2
+2026-04-09T07:04:22.5609330Z [1m[92m  Downloaded[0m hyper v1.7.0
+2026-04-09T07:04:22.5723860Z [1m[92m  Downloaded[0m libm v0.2.15
+2026-04-09T07:04:22.6209510Z [1m[92m  Downloaded[0m hkdf v0.12.4
+2026-04-09T07:04:22.6254220Z [1m[92m  Downloaded[0m portable-atomic v1.11.1
+2026-04-09T07:04:22.6373620Z [1m[92m  Downloaded[0m libc v0.2.177
+2026-04-09T07:04:22.6790780Z [1m[92m  Downloaded[0m objc2-core-foundation v0.3.2
+2026-04-09T07:04:22.6929420Z [1m[92m  Downloaded[0m pxfm v0.1.25
+2026-04-09T07:04:22.7359650Z [1m[92m  Downloaded[0m tokio v1.48.0
+2026-04-09T07:04:22.8053270Z [1m[92m  Downloaded[0m icu_properties_data v2.1.1
+2026-04-09T07:04:22.8248850Z [1m[92m  Downloaded[0m moxcms v0.7.9
+2026-04-09T07:04:22.8423360Z [1m[92m  Downloaded[0m serde_json v1.0.145
+2026-04-09T07:04:22.8548730Z [1m[92m  Downloaded[0m itertools v0.14.0
+2026-04-09T07:04:22.8675300Z [1m[92m  Downloaded[0m futures-util v0.3.31
+2026-04-09T07:04:22.8925390Z [1m[92m  Downloaded[0m regex v1.12.2
+2026-04-09T07:04:22.9048060Z [1m[92m  Downloaded[0m rayon v1.11.0
+2026-04-09T07:04:22.9243400Z [1m[92m  Downloaded[0m objc2-web-kit v0.3.2
+2026-04-09T07:04:22.9567780Z [1m[92m  Downloaded[0m sqlx-postgres v0.8.6
+2026-04-09T07:04:22.9739700Z [1m[92m  Downloaded[0m num-bigint-dig v0.8.5
+2026-04-09T07:04:22.9835240Z [1m[92m  Downloaded[0m hashbrown v0.16.0
+2026-04-09T07:04:22.9922300Z [1m[92m  Downloaded[0m hashbrown v0.15.5
+2026-04-09T07:04:23.0022520Z [1m[92m  Downloaded[0m epub v2.1.5
+2026-04-09T07:04:23.0121020Z [1m[92m  Downloaded[0m iri-string v0.7.8
+2026-04-09T07:04:23.0265880Z [1m[92m  Downloaded[0m reqwest v0.12.24
+2026-04-09T07:04:23.0362960Z [1m[92m  Downloaded[0m brotli-decompressor v5.0.0
+2026-04-09T07:04:23.0462470Z [1m[92m  Downloaded[0m tauri-runtime-wry v2.9.1
+2026-04-09T07:04:23.0512680Z [1m[92m  Downloaded[0m hyper-util v0.1.17
+2026-04-09T07:04:23.0612970Z [1m[92m  Downloaded[0m sqlx-core v0.8.6
+2026-04-09T07:04:23.0751370Z [1m[92m  Downloaded[0m unicode-segmentation v1.12.0
+2026-04-09T07:04:23.0807730Z [1m[92m  Downloaded[0m http v1.3.1
+2026-04-09T07:04:23.0870360Z [1m[92m  Downloaded[0m winnow v0.7.13
+2026-04-09T07:04:23.1025960Z [1m[92m  Downloaded[0m tinyvec v1.10.0
+2026-04-09T07:04:23.1069520Z [1m[92m  Downloaded[0m zerotrie v0.2.3
+2026-04-09T07:04:23.1134630Z [1m[92m  Downloaded[0m tiff v0.9.1
+2026-04-09T07:04:23.1305200Z [1m[92m  Downloaded[0m encoding_rs v0.8.35
+2026-04-09T07:04:23.1619780Z [1m[92m  Downloaded[0m unicode-bidi v0.3.18
+2026-04-09T07:04:23.1665270Z [1m[92m  Downloaded[0m indexmap v2.12.0
+2026-04-09T07:04:23.1742920Z [1m[92m  Downloaded[0m icu_normalizer_data v2.1.1
+2026-04-09T07:04:23.1779890Z [1m[92m  Downloaded[0m icu_normalizer v2.1.1
+2026-04-09T07:04:23.1837010Z [1m[92m  Downloaded[0m window-vibrancy v0.6.0
+2026-04-09T07:04:23.1987500Z [1m[92m  Downloaded[0m icu_collections v2.1.1
+2026-04-09T07:04:23.2087830Z [1m[92m  Downloaded[0m ring v0.17.14
+2026-04-09T07:04:23.2732890Z [1m[92m  Downloaded[0m sqlx-sqlite v0.8.6
+2026-04-09T07:04:23.2817400Z [1m[92m  Downloaded[0m url v2.5.7
+2026-04-09T07:04:23.2869940Z [1m[92m  Downloaded[0m tauri-plugin-sql v2.3.1
+2026-04-09T07:04:23.2926010Z [1m[92m  Downloaded[0m zerovec v0.11.5
+2026-04-09T07:04:23.3018290Z [1m[92m  Downloaded[0m time v0.3.44
+2026-04-09T07:04:23.3155850Z [1m[92m  Downloaded[0m tauri-plugin-fs v2.4.4
+2026-04-09T07:04:23.3291590Z [1m[92m  Downloaded[0m idna v1.1.0
+2026-04-09T07:04:23.3351290Z [1m[92m  Downloaded[0m png v0.17.16
+2026-04-09T07:04:23.3424070Z [1m[92m  Downloaded[0m encoding-index-simpchinese v1.20141219.5
+2026-04-09T07:04:23.3453410Z [1m[92m  Downloaded[0m aho-corasick v1.1.4
+2026-04-09T07:04:23.3543860Z [1m[92m  Downloaded[0m tendril v0.4.3
+2026-04-09T07:04:23.3579810Z [1m[92m  Downloaded[0m tauri-winres v0.3.3
+2026-04-09T07:04:23.3610940Z [1m[92m  Downloaded[0m unicode-properties v0.1.4
+2026-04-09T07:04:23.3644570Z [1m[92m  Downloaded[0m toml_parser v1.0.4
+2026-04-09T07:04:23.3682870Z [1m[92m  Downloaded[0m ico v0.4.0
+2026-04-09T07:04:23.3737910Z [1m[92m  Downloaded[0m memchr v2.7.6
+2026-04-09T07:04:23.3826990Z [1m[92m  Downloaded[0m webp v0.3.1
+2026-04-09T07:04:23.3962210Z [1m[92m  Downloaded[0m tauri-plugin-os v2.3.2
+2026-04-09T07:04:23.4019820Z [1m[92m  Downloaded[0m muda v0.17.1
+2026-04-09T07:04:23.4106580Z [1m[92m  Downloaded[0m mio v1.1.0
+2026-04-09T07:04:23.4650570Z [1m[92m  Downloaded[0m html5ever v0.29.1
+2026-04-09T07:04:23.4708720Z [1m[92m  Downloaded[0m tauri-plugin-dialog v2.4.2
+2026-04-09T07:04:23.4782760Z [1m[92m  Downloaded[0m rand v0.7.3
+2026-04-09T07:04:23.4881370Z [1m[92m  Downloaded[0m objc2-core-text v0.3.2
+2026-04-09T07:04:23.4937520Z [1m[92m  Downloaded[0m objc2-core-graphics v0.3.2
+2026-04-09T07:04:23.5033150Z [1m[92m  Downloaded[0m thiserror v2.0.17
+2026-04-09T07:04:23.5148760Z [1m[92m  Downloaded[0m thiserror v1.0.69
+2026-04-09T07:04:23.5243750Z [1m[92m  Downloaded[0m getrandom v0.2.16
+2026-04-09T07:04:23.5298690Z [1m[92m  Downloaded[0m getrandom v0.1.16
+2026-04-09T07:04:23.5342250Z [1m[92m  Downloaded[0m zeroize v1.8.2
+2026-04-09T07:04:23.5368540Z [1m[92m  Downloaded[0m toml_datetime v0.7.3
+2026-04-09T07:04:23.5391340Z [1m[92m  Downloaded[0m unicode-ident v1.0.22
+2026-04-09T07:04:23.5437680Z [1m[92m  Downloaded[0m tauri-build v2.5.1
+2026-04-09T07:04:23.5464380Z [1m[92m  Downloaded[0m httparse v1.10.1
+2026-04-09T07:04:23.5504420Z [1m[92m  Downloaded[0m serde_with_macros v3.15.1
+2026-04-09T07:04:23.5542060Z [1m[92m  Downloaded[0m num-traits v0.2.19
+2026-04-09T07:04:23.5585850Z [1m[92m  Downloaded[0m icu_provider v2.1.1
+2026-04-09T07:04:23.5628220Z [1m[92m  Downloaded[0m icu_properties v2.1.1
+2026-04-09T07:04:23.5666850Z [1m[92m  Downloaded[0m sqlx-mysql v0.8.6
+2026-04-09T07:04:23.5768660Z [1m[92m  Downloaded[0m xml v1.2.1
+2026-04-09T07:04:23.5819690Z [1m[92m  Downloaded[0m futures-intrusive v0.5.0
+2026-04-09T07:04:23.5892350Z [1m[92m  Downloaded[0m typenum v1.19.0
+2026-04-09T07:04:23.5937160Z [1m[92m  Downloaded[0m tracing v0.1.41
+2026-04-09T07:04:23.6003590Z [1m[92m  Downloaded[0m hashbrown v0.12.3
+2026-04-09T07:04:23.6065250Z [1m[92m  Downloaded[0m serde v1.0.228
+2026-04-09T07:04:23.6123790Z [1m[92m  Downloaded[0m rand v0.8.5
+2026-04-09T07:04:23.6178280Z [1m[92m  Downloaded[0m objc2-core-image v0.3.2
+2026-04-09T07:04:23.6241640Z [1m[92m  Downloaded[0m encoding-index-tradchinese v1.20141219.5
+2026-04-09T07:04:23.6267590Z [1m[92m  Downloaded[0m generic-array v0.14.9
+2026-04-09T07:04:23.6300620Z [1m[92m  Downloaded[0m iana-time-zone v0.1.64
+2026-04-09T07:04:23.6349290Z [1m[92m  Downloaded[0m indexmap v1.9.3
+2026-04-09T07:04:23.6401100Z [1m[92m  Downloaded[0m stringprep v0.1.5
+2026-04-09T07:04:23.6423540Z [1m[92m  Downloaded[0m weezl v0.1.12
+2026-04-09T07:04:23.6469520Z [1m[92m  Downloaded[0m log v0.4.28
+2026-04-09T07:04:23.6508760Z [1m[92m  Downloaded[0m jsonptr v0.6.3
+2026-04-09T07:04:23.6551440Z [1m[92m  Downloaded[0m miniz_oxide v0.8.9
+2026-04-09T07:04:23.6596610Z [1m[92m  Downloaded[0m zopfli v0.8.3
+2026-04-09T07:04:23.6637710Z [1m[92m  Downloaded[0m zip v3.0.0
+2026-04-09T07:04:23.6704460Z [1m[92m  Downloaded[0m rsa v0.9.8
+2026-04-09T07:04:23.6794520Z [1m[92m  Downloaded[0m schemars v1.0.4
+2026-04-09T07:04:23.7078810Z [1m[92m  Downloaded[0m rustls-webpki v0.103.8
+2026-04-09T07:04:23.7134240Z [1m[92m  Downloaded[0m gethostname v1.1.0
+2026-04-09T07:04:23.7151300Z [1m[92m  Downloaded[0m zerofrom v0.1.6
+2026-04-09T07:04:23.7168080Z [1m[92m  Downloaded[0m yoke-derive v0.8.1
+2026-04-09T07:04:23.7185490Z [1m[92m  Downloaded[0m xml-rs v1.0.0
+2026-04-09T07:04:23.7197190Z [1m[92m  Downloaded[0m synstructure v0.13.2
+2026-04-09T07:04:23.7214070Z [1m[92m  Downloaded[0m sha2 v0.10.9
+2026-04-09T07:04:23.7257900Z [1m[92m  Downloaded[0m servo_arc v0.2.0
+2026-04-09T07:04:23.7271740Z [1m[92m  Downloaded[0m memmap2 v0.9.9
+2026-04-09T07:04:23.7303870Z [1m[92m  Downloaded[0m shlex v1.3.0
+2026-04-09T07:04:23.7325310Z [1m[92m  Downloaded[0m markup5ever v0.14.1
+2026-04-09T07:04:23.7352070Z [1m[92m  Downloaded[0m libz-rs-sys v0.5.5
+2026-04-09T07:04:23.7379690Z [1m[92m  Downloaded[0m tray-icon v0.21.2
+2026-04-09T07:04:23.7420300Z [1m[92m  Downloaded[0m qoi v0.4.1
+2026-04-09T07:04:23.7466090Z [1m[92m  Downloaded[0m der v0.7.10
+2026-04-09T07:04:23.7550360Z [1m[92m  Downloaded[0m fxhash v0.2.1
+2026-04-09T07:04:23.7562920Z [1m[92m  Downloaded[0m serde_derive_internals v0.29.1
+2026-04-09T07:04:23.7591390Z [1m[92m  Downloaded[0m swift-rs v1.0.7
+2026-04-09T07:04:23.7630910Z [1m[92m  Downloaded[0m string_cache v0.8.9
+2026-04-09T07:04:23.7655790Z [1m[92m  Downloaded[0m sqlx-macros-core v0.8.6
+2026-04-09T07:04:23.7693850Z [1m[92m  Downloaded[0m whoami v1.6.1
+2026-04-09T07:04:23.7724830Z [1m[92m  Downloaded[0m futures v0.3.31
+2026-04-09T07:04:23.7811030Z [1m[92m  Downloaded[0m socket2 v0.6.1
+2026-04-09T07:04:23.7838460Z [1m[92m  Downloaded[0m schemars v0.9.0
+2026-04-09T07:04:23.8079970Z [1m[92m  Downloaded[0m schemars v0.8.22
+2026-04-09T07:04:23.8314520Z [1m[92m  Downloaded[0m rustls-pki-types v1.13.0
+2026-04-09T07:04:23.8403330Z [1m[92m  Downloaded[0m rayon-core v1.13.0
+2026-04-09T07:04:23.8469860Z [1m[92m  Downloaded[0m plist v1.8.0
+2026-04-09T07:04:23.8513210Z [1m[92m  Downloaded[0m objc2-cloud-kit v0.3.2
+2026-04-09T07:04:23.8593650Z [1m[92m  Downloaded[0m encoding-index-korean v1.20141219.5
+2026-04-09T07:04:23.8627480Z [1m[92m  Downloaded[0m futf v0.1.5
+2026-04-09T07:04:23.8647600Z [1m[92m  Downloaded[0m form_urlencoded v1.2.2
+2026-04-09T07:04:23.8662940Z [1m[92m  Downloaded[0m tagptr v0.2.0
+2026-04-09T07:04:23.8686530Z [1m[92m  Downloaded[0m sys-locale v0.3.2
+2026-04-09T07:04:23.8708540Z [1m[92m  Downloaded[0m sync_wrapper v1.0.2
+2026-04-09T07:04:23.8722570Z [1m[92m  Downloaded[0m serde_spanned v1.0.3
+2026-04-09T07:04:23.8742230Z [1m[92m  Downloaded[0m pdfium-render v0.8.36
+2026-04-09T07:04:24.0183680Z [1m[92m  Downloaded[0m ipnet v2.11.0
+2026-04-09T07:04:24.0225400Z [1m[92m  Downloaded[0m infer v0.19.0
+2026-04-09T07:04:24.0284150Z [1m[92m  Downloaded[0m signal-hook-registry v1.4.6
+2026-04-09T07:04:24.0310140Z [1m[92m  Downloaded[0m writeable v0.6.2
+2026-04-09T07:04:24.0351340Z [1m[92m  Downloaded[0m lock_api v0.4.14
+2026-04-09T07:04:24.0370210Z [1m[92m  Downloaded[0m tracing-core v0.1.34
+2026-04-09T07:04:24.0417790Z [1m[92m  Downloaded[0m tauri-runtime v2.9.1
+2026-04-09T07:04:24.0453690Z [1m[92m  Downloaded[0m cfb v0.7.3
+2026-04-09T07:04:24.0522160Z [1m[92m  Downloaded[0m mac v0.1.1
+2026-04-09T07:04:24.0564330Z [1m[92m  Downloaded[0m keyboard-types v0.7.0
+2026-04-09T07:04:24.0616000Z [1m[92m  Downloaded[0m tauri-plugin-opener v2.5.2
+2026-04-09T07:04:24.0673740Z [1m[92m  Downloaded[0m half v2.7.1
+2026-04-09T07:04:24.0716820Z [1m[92m  Downloaded[0m getrandom v0.3.4
+2026-04-09T07:04:24.0793580Z [1m[92m  Downloaded[0m litemap v0.8.1
+2026-04-09T07:04:24.0859180Z [1m[92m  Downloaded[0m serde_core v1.0.228
+2026-04-09T07:04:24.0943910Z [1m[92m  Downloaded[0m serde_urlencoded v0.7.1
+2026-04-09T07:04:24.0980650Z [1m[92m  Downloaded[0m itoa v1.0.15
+2026-04-09T07:04:24.1006150Z [1m[92m  Downloaded[0m ident_case v1.0.1
+2026-04-09T07:04:24.1021560Z [1m[92m  Downloaded[0m subtle v2.6.1
+2026-04-09T07:04:24.1040640Z [1m[92m  Downloaded[0m strsim v0.11.1
+2026-04-09T07:04:24.1061720Z [1m[92m  Downloaded[0m string_cache_codegen v0.5.4
+2026-04-09T07:04:24.1075900Z [1m[92m  Downloaded[0m stable_deref_trait v1.2.1
+2026-04-09T07:04:24.1094890Z [1m[92m  Downloaded[0m version_check v0.9.5
+2026-04-09T07:04:24.1122630Z [1m[92m  Downloaded[0m utf16string v0.2.0
+2026-04-09T07:04:24.1147160Z [1m[92m  Downloaded[0m urlpattern v0.3.0
+2026-04-09T07:04:24.1177040Z [1m[92m  Downloaded[0m futures-channel v0.3.31
+2026-04-09T07:04:24.1205730Z [1m[92m  Downloaded[0m tracing-attributes v0.1.30
+2026-04-09T07:04:24.1254870Z [1m[92m  Downloaded[0m tauri-macros v2.5.0
+2026-04-09T07:04:24.1280870Z [1m[92m  Downloaded[0m heck v0.5.0
+2026-04-09T07:04:24.1300900Z [1m[92m  Downloaded[0m serde_derive v1.0.228
+2026-04-09T07:04:24.1355340Z [1m[92m  Downloaded[0m rfd v0.15.4
+2026-04-09T07:04:24.1439850Z [1m[92m  Downloaded[0m pkcs1 v0.7.5
+2026-04-09T07:04:24.1478120Z [1m[92m  Downloaded[0m once_cell v1.21.3
+2026-04-09T07:04:24.1524170Z [1m[92m  Downloaded[0m encoding-index-japanese v1.20141219.5
+2026-04-09T07:04:24.1626530Z [1m[92m  Downloaded[0m encoding v0.2.33
+2026-04-09T07:04:24.1665060Z [1m[92m  Downloaded[0m crossbeam-channel v0.5.15
+2026-04-09T07:04:24.1676020Z [1m[92m  Downloaded[0m cc v1.2.44
+2026-04-09T07:04:24.1726070Z [1m[92m  Downloaded[0m bumpalo v3.19.0
+2026-04-09T07:04:24.1767840Z [1m[92m  Downloaded[0m base64 v0.21.7
+2026-04-09T07:04:24.1827290Z [1m[92m  Downloaded[0m signature v2.2.0
+2026-04-09T07:04:24.1857620Z [1m[92m  Downloaded[0m kuchikiki v0.8.8-speedreader
+2026-04-09T07:04:24.1895280Z [1m[92m  Downloaded[0m json-patch v3.0.1
+2026-04-09T07:04:24.1928290Z [1m[92m  Downloaded[0m jobserver v0.1.34
+2026-04-09T07:04:24.1959440Z [1m[92m  Downloaded[0m tauri-codegen v2.5.0
+2026-04-09T07:04:24.1984300Z [1m[92m  Downloaded[0m proc-macro2 v1.0.103
+2026-04-09T07:04:24.2039500Z [1m[92m  Downloaded[0m smallvec v1.15.1
+2026-04-09T07:04:24.2083790Z [1m[92m  Downloaded[0m icu_locale_core v2.1.1
+2026-04-09T07:04:24.2196060Z [1m[92m  Downloaded[0m zune-jpeg v0.5.5
+2026-04-09T07:04:24.2249990Z [1m[92m  Downloaded[0m bytes v1.10.1
+2026-04-09T07:04:24.2323720Z [1m[92m  Downloaded[0m untrusted v0.9.0
+2026-04-09T07:04:24.2347520Z [1m[92m  Downloaded[0m maybe-owned v0.3.4
+2026-04-09T07:04:24.2366380Z [1m[92m  Downloaded[0m lebe v0.5.3
+2026-04-09T07:04:24.2389020Z [1m[92m  Downloaded[0m futures-executor v0.3.31
+2026-04-09T07:04:24.2411260Z [1m[92m  Downloaded[0m parking_lot v0.12.5
+2026-04-09T07:04:24.2475110Z [1m[92m  Downloaded[0m flume v0.11.1
+2026-04-09T07:04:24.2561840Z [1m[92m  Downloaded[0m flate2 v1.1.5
+2026-04-09T07:04:24.2767090Z [1m[92m  Downloaded[0m darling_core v0.21.3
+2026-04-09T07:04:24.2922080Z [1m[92m  Downloaded[0m lazy_static v1.5.0
+2026-04-09T07:04:24.2982030Z [1m[92m  Downloaded[0m futures-sink v0.3.31
+2026-04-09T07:04:24.2997370Z [1m[92m  Downloaded[0m unic-char-property v0.9.0
+2026-04-09T07:04:24.3036130Z [1m[92m  Downloaded[0m typeid v1.0.3
+2026-04-09T07:04:24.3060060Z [1m[92m  Downloaded[0m try-lock v0.2.5
+2026-04-09T07:04:24.3081740Z [1m[92m  Downloaded[0m hashlink v0.10.0
+2026-04-09T07:04:24.3115000Z [1m[92m  Downloaded[0m zune-core v0.5.0
+2026-04-09T07:04:24.3154730Z [1m[92m  Downloaded[0m hmac v0.12.1
+2026-04-09T07:04:24.3186780Z [1m[92m  Downloaded[0m selectors v0.24.0
+2026-04-09T07:04:24.3211990Z [1m[92m  Downloaded[0m ryu v1.0.20
+2026-04-09T07:04:24.3258540Z [1m[92m  Downloaded[0m objc2-javascript-core v0.3.2
+2026-04-09T07:04:24.3294530Z [1m[92m  Downloaded[0m crossbeam-utils v0.8.21
+2026-04-09T07:04:24.3340500Z [1m[92m  Downloaded[0m futures-io v0.3.31
+2026-04-09T07:04:24.3356850Z [1m[92m  Downloaded[0m futures-core v0.3.31
+2026-04-09T07:04:24.3380770Z [1m[92m  Downloaded[0m tower-service v0.3.3
+2026-04-09T07:04:24.3393430Z [1m[92m  Downloaded[0m num-iter v0.1.45
+2026-04-09T07:04:24.3409850Z [1m[92m  Downloaded[0m num-conv v0.1.0
+2026-04-09T07:04:24.3424170Z [1m[92m  Downloaded[0m tinystr v0.8.2
+2026-04-09T07:04:24.3457120Z [1m[92m  Downloaded[0m ppv-lite86 v0.2.21
+2026-04-09T07:04:24.3478470Z [1m[92m  Downloaded[0m objc2-core-video v0.3.2
+2026-04-09T07:04:24.3518470Z [1m[92m  Downloaded[0m event-listener v5.4.1
+2026-04-09T07:04:24.3547680Z [1m[92m  Downloaded[0m dispatch2 v0.3.0
+2026-04-09T07:04:24.3595360Z [1m[92m  Downloaded[0m derive_more v0.99.20
+2026-04-09T07:04:24.3678290Z [1m[92m  Downloaded[0m cssparser v0.29.6
+2026-04-09T07:04:24.3718120Z [1m[92m  Downloaded[0m core-foundation-sys v0.8.7
+2026-04-09T07:04:24.3774340Z [1m[92m  Downloaded[0m core-foundation v0.10.1
+2026-04-09T07:04:24.3811180Z [1m[92m  Downloaded[0m cookie v0.18.1
+2026-04-09T07:04:24.3850060Z [1m[92m  Downloaded[0m chardetng v0.1.17
+2026-04-09T07:04:24.3876360Z [1m[92m  Downloaded[0m bytemuck v1.24.0
+2026-04-09T07:04:24.3929650Z [1m[92m  Downloaded[0m anyhow v1.0.100
+2026-04-09T07:04:24.3999690Z [1m[92m  Downloaded[0m allocator-api2 v0.2.21
+2026-04-09T07:04:24.4043940Z [1m[92m  Downloaded[0m mime v0.3.17
+2026-04-09T07:04:24.4065530Z [1m[92m  Downloaded[0m memoffset v0.9.1
+2026-04-09T07:04:24.4087420Z [1m[92m  Downloaded[0m hex v0.4.3
+2026-04-09T07:04:24.4114010Z [1m[92m  Downloaded[0m zerovec-derive v0.11.2
+2026-04-09T07:04:24.4140130Z [1m[92m  Downloaded[0m libsqlite3-sys v0.30.1
+2026-04-09T07:04:24.4970490Z [1m[92m  Downloaded[0m walkdir v2.5.0
+2026-04-09T07:04:24.5004390Z [1m[92m  Downloaded[0m spki v0.7.3
+2026-04-09T07:04:24.5031620Z [1m[92m  Downloaded[0m slab v0.4.11
+2026-04-09T07:04:24.5053690Z [1m[92m  Downloaded[0m num-integer v0.1.46
+2026-04-09T07:04:24.5077220Z [1m[92m  Downloaded[0m mobi v0.4.3
+2026-04-09T07:04:24.5108530Z [1m[92m  Downloaded[0m http-body-util v0.1.3
+2026-04-09T07:04:24.5139050Z [1m[92m  Downloaded[0m libwebp-sys v0.9.6
+2026-04-09T07:04:24.5939880Z [1m[92m  Downloaded[0m gif v0.13.3
+2026-04-09T07:04:24.5969160Z [1m[92m  Downloaded[0m zune-inflate v0.2.54
+2026-04-09T07:04:24.5996300Z [1m[92m  Downloaded[0m quote v1.0.41
+2026-04-09T07:04:24.6039190Z [1m[92m  Downloaded[0m phf v0.11.3
+2026-04-09T07:04:24.6058310Z [1m[92m  Downloaded[0m crossbeam-epoch v0.9.18
+2026-04-09T07:04:24.6094420Z [1m[92m  Downloaded[0m const-oid v0.9.6
+2026-04-09T07:04:24.6122300Z [1m[92m  Downloaded[0m home v0.5.12
+2026-04-09T07:04:24.6140840Z [1m[92m  Downloaded[0m unic-ucd-version v0.9.0
+2026-04-09T07:04:24.6155140Z [1m[92m  Downloaded[0m unic-ucd-ident v0.9.0
+2026-04-09T07:04:24.6181070Z [1m[92m  Downloaded[0m time-macros v0.2.24
+2026-04-09T07:04:24.6282300Z [1m[92m  Downloaded[0m thiserror-impl v2.0.17
+2026-04-09T07:04:24.6291490Z [1m[92m  Downloaded[0m thiserror-impl v1.0.69
+2026-04-09T07:04:24.6291950Z [1m[92m  Downloaded[0m serde-untagged v0.1.9
+2026-04-09T07:04:24.6305480Z [1m[92m  Downloaded[0m parking_lot_core v0.9.12
+2026-04-09T07:04:24.6346800Z [1m[92m  Downloaded[0m objc2-quartz-core v0.3.2
+2026-04-09T07:04:24.6420640Z [1m[92m  Downloaded[0m dotenvy v0.15.7
+2026-04-09T07:04:24.6527100Z [1m[92m  Downloaded[0m darling v0.21.3
+2026-04-09T07:04:24.6631080Z [1m[92m  Downloaded[0m bitflags v2.10.0
+2026-04-09T07:04:24.6736810Z [1m[92m  Downloaded[0m base64 v0.22.1
+2026-04-09T07:04:24.6841310Z [1m[92m  Downloaded[0m async-lock v3.4.1
+2026-04-09T07:04:24.6957020Z [1m[92m  Downloaded[0m semver v1.0.27
+2026-04-09T07:04:24.7072130Z [1m[92m  Downloaded[0m schemars_derive v0.8.22
+2026-04-09T07:04:24.7173750Z [1m[92m  Downloaded[0m ref-cast-impl v1.0.25
+2026-04-09T07:04:24.7276770Z [1m[92m  Downloaded[0m raw-window-handle v0.6.2
+2026-04-09T07:04:24.7401230Z [1m[92m  Downloaded[0m rand_core v0.6.4
+2026-04-09T07:04:24.7535380Z [1m[92m  Downloaded[0m rand_core v0.5.1
+2026-04-09T07:04:24.7637050Z [1m[92m  Downloaded[0m rand_chacha v0.2.2
+2026-04-09T07:04:24.7739200Z [1m[92m  Downloaded[0m pkcs8 v0.10.2
+2026-04-09T07:04:24.8046540Z [1m[92m  Downloaded[0m pin-project-lite v0.2.16
+2026-04-09T07:04:24.8155230Z [1m[92m  Downloaded[0m phf_macros v0.11.3
+2026-04-09T07:04:24.8171610Z [1m[92m  Downloaded[0m pem-rfc7468 v0.7.0
+2026-04-09T07:04:24.8208970Z [1m[92m  Downloaded[0m objc2-encode v4.1.0
+2026-04-09T07:04:24.8228440Z [1m[92m  Downloaded[0m objc2-core-location v0.3.2
+2026-04-09T07:04:24.8274710Z [1m[92m  Downloaded[0m fdeflate v0.3.7
+2026-04-09T07:04:24.8306510Z [1m[92m  Downloaded[0m embed-resource v3.0.6
+2026-04-09T07:04:24.8330570Z [1m[92m  Downloaded[0m displaydoc v0.2.5
+2026-04-09T07:04:24.8377150Z [1m[92m  Downloaded[0m digest v0.10.7
+2026-04-09T07:04:24.8404320Z [1m[92m  Downloaded[0m crc32fast v1.5.0
+2026-04-09T07:04:24.8438900Z [1m[92m  Downloaded[0m block2 v0.6.2
+2026-04-09T07:04:24.8463690Z [1m[92m  Downloaded[0m want v0.3.1
+2026-04-09T07:04:24.8476680Z [1m[92m  Downloaded[0m unic-common v0.9.0
+2026-04-09T07:04:24.8487540Z [1m[92m  Downloaded[0m unic-char-range v0.9.0
+2026-04-09T07:04:24.8506670Z [1m[92m  Downloaded[0m siphasher v1.0.1
+2026-04-09T07:04:24.8525200Z [1m[92m  Downloaded[0m libloading v0.7.4
+2026-04-09T07:04:24.8567300Z [1m[92m  Downloaded[0m glob v0.3.3
+2026-04-09T07:04:24.8590800Z [1m[92m  Downloaded[0m camino v1.2.1
+2026-04-09T07:04:24.8620490Z [1m[92m  Downloaded[0m http-range v0.1.5
+2026-04-09T07:04:24.8635230Z [1m[92m  Downloaded[0m zerofrom-derive v0.1.6
+2026-04-09T07:04:24.8648130Z [1m[92m  Downloaded[0m yoke v0.8.1
+2026-04-09T07:04:24.8678670Z [1m[92m  Downloaded[0m vecmath v1.0.0
+2026-04-09T07:04:24.8692440Z [1m[92m  Downloaded[0m foldhash v0.1.5
+2026-04-09T07:04:24.8710170Z [1m[92m  Downloaded[0m dtoa v1.0.10
+2026-04-09T07:04:24.8732770Z [1m[92m  Downloaded[0m base64ct v1.8.0
+2026-04-09T07:04:24.8770300Z [1m[92m  Downloaded[0m autocfg v1.5.0
+2026-04-09T07:04:24.8809660Z [1m[92m  Downloaded[0m phf_shared v0.10.0
+2026-04-09T07:04:24.8814420Z [1m[92m  Downloaded[0m objc2-exception-helper v0.1.1
+2026-04-09T07:04:24.8829480Z [1m[92m  Downloaded[0m erased-serde v0.4.8
+2026-04-09T07:04:24.8867880Z [1m[92m  Downloaded[0m either v1.15.0
+2026-04-09T07:04:24.8891340Z [1m[92m  Downloaded[0m cargo_toml v0.22.3
+2026-04-09T07:04:24.8911750Z [1m[92m  Downloaded[0m simd-adler32 v0.3.7
+2026-04-09T07:04:24.8944130Z [1m[92m  Downloaded[0m proc-macro-hack v0.5.20+deprecated
+2026-04-09T07:04:24.8978150Z [1m[92m  Downloaded[0m pkg-config v0.3.32
+2026-04-09T07:04:24.9001310Z [1m[92m  Downloaded[0m os_info v3.14.0
+2026-04-09T07:04:24.9054290Z [1m[92m  Downloaded[0m find-msvc-tools v0.1.4
+2026-04-09T07:04:24.9076590Z [1m[92m  Downloaded[0m deranged v0.5.5
+2026-04-09T07:04:24.9102790Z [1m[92m  Downloaded[0m crossbeam-deque v0.8.6
+2026-04-09T07:04:24.9126570Z [1m[92m  Downloaded[0m core-graphics v0.24.0
+2026-04-09T07:04:24.9168950Z [1m[92m  Downloaded[0m concurrent-queue v2.5.0
+2026-04-09T07:04:24.9200410Z [1m[92m  Downloaded[0m cargo_metadata v0.19.2
+2026-04-09T07:04:24.9230850Z [1m[92m  Downloaded[0m byteorder v1.5.0
+2026-04-09T07:04:24.9258250Z [1m[92m  Downloaded[0m new_debug_unreachable v1.0.6
+2026-04-09T07:04:24.9277090Z [1m[92m  Downloaded[0m matches v0.1.10
+2026-04-09T07:04:24.9289600Z [1m[92m  Downloaded[0m match_token v0.1.0
+2026-04-09T07:04:24.9299230Z [1m[92m  Downloaded[0m idna_adapter v1.2.1
+2026-04-09T07:04:24.9313660Z [1m[92m  Downloaded[0m foreign-types-shared v0.3.1
+2026-04-09T07:04:24.9324690Z [1m[92m  Downloaded[0m scopeguard v1.2.0
+2026-04-09T07:04:24.9347420Z [1m[92m  Downloaded[0m same-file v1.0.6
+2026-04-09T07:04:24.9382660Z [1m[92m  Downloaded[0m rustc_version v0.4.1
+2026-04-09T07:04:24.9398910Z [1m[92m  Downloaded[0m rand_chacha v0.3.1
+2026-04-09T07:04:24.9419430Z [1m[92m  Downloaded[0m pin-utils v0.1.0
+2026-04-09T07:04:24.9438330Z [1m[92m  Downloaded[0m phf_shared v0.11.3
+2026-04-09T07:04:24.9452300Z [1m[92m  Downloaded[0m phf_generator v0.8.0
+2026-04-09T07:04:24.9468790Z [1m[92m  Downloaded[0m ref-cast v1.0.25
+2026-04-09T07:04:24.9519580Z [1m[92m  Downloaded[0m precomputed-hash v0.1.1
+2026-04-09T07:04:24.9527870Z [1m[92m  Downloaded[0m phf_macros v0.10.0
+2026-04-09T07:04:24.9536800Z [1m[92m  Downloaded[0m color_quant v1.1.0
+2026-04-09T07:04:24.9552280Z [1m[92m  Downloaded[0m embed_plist v1.2.2
+2026-04-09T07:04:24.9568170Z [1m[92m  Downloaded[0m dirs-sys v0.5.0
+2026-04-09T07:04:24.9586110Z [1m[92m  Downloaded[0m bitflags v1.3.2
+2026-04-09T07:04:24.9639890Z [1m[92m  Downloaded[0m phf_generator v0.10.0
+2026-04-09T07:04:24.9652950Z [1m[92m  Downloaded[0m fnv v1.0.7
+2026-04-09T07:04:24.9666000Z [1m[92m  Downloaded[0m errno v0.3.14
+2026-04-09T07:04:24.9688620Z [1m[92m  Downloaded[0m equivalent v1.0.2
+2026-04-09T07:04:24.9702620Z [1m[92m  Downloaded[0m encoding_index_tests v0.1.4
+2026-04-09T07:04:24.9711130Z [1m[92m  Downloaded[0m darling_macro v0.21.3
+2026-04-09T07:04:24.9720460Z [1m[92m  Downloaded[0m crossbeam-queue v0.3.12
+2026-04-09T07:04:24.9739400Z [1m[92m  Downloaded[0m cfg-if v1.0.4
+2026-04-09T07:04:24.9759120Z [1m[92m  Downloaded[0m byteorder-lite v0.1.0
+2026-04-09T07:04:24.9773450Z [1m[92m  Downloaded[0m convert_case v0.4.0
+2026-04-09T07:04:24.9784950Z [1m[92m  Downloaded[0m cfg_aliases v0.2.1
+2026-04-09T07:04:24.9797310Z [1m[92m  Downloaded[0m phf_generator v0.11.3
+2026-04-09T07:04:24.9813370Z [1m[92m  Downloaded[0m phf_codegen v0.8.0
+2026-04-09T07:04:24.9821530Z [1m[92m  Downloaded[0m phf v0.10.1
+2026-04-09T07:04:24.9836350Z [1m[92m  Downloaded[0m phf v0.8.0
+2026-04-09T07:04:24.9847900Z [1m[92m  Downloaded[0m percent-encoding v2.3.2
+2026-04-09T07:04:24.9860900Z [1m[92m  Downloaded[0m event-listener-strategy v0.5.4
+2026-04-09T07:04:24.9878290Z [1m[92m  Downloaded[0m alloc-stdlib v0.2.2
+2026-04-09T07:04:24.9897380Z [1m[92m  Downloaded[0m objc2-user-notifications v0.3.2
+2026-04-09T07:04:25.0297010Z [1m[92m  Downloaded[0m image v0.24.9
+2026-04-09T07:04:25.4214940Z [1m[92m   Compiling[0m proc-macro2 v1.0.103
+2026-04-09T07:04:25.4217190Z [1m[92m   Compiling[0m unicode-ident v1.0.22
+2026-04-09T07:04:25.4217700Z [1m[92m   Compiling[0m quote v1.0.41
+2026-04-09T07:04:26.1120220Z [1m[92m   Compiling[0m libc v0.2.177
+2026-04-09T07:04:28.2059210Z [1m[92m   Compiling[0m serde v1.0.228
+2026-04-09T07:04:28.3590060Z [1m[92m   Compiling[0m cfg-if v1.0.4
+2026-04-09T07:04:28.3976840Z [1m[92m   Compiling[0m serde_core v1.0.228
+2026-04-09T07:04:28.5708660Z [1m[92m   Compiling[0m jobserver v0.1.34
+2026-04-09T07:04:28.8739350Z [1m[92m   Compiling[0m shlex v1.3.0
+2026-04-09T07:04:28.9404170Z [1m[92m   Compiling[0m syn v2.0.108
+2026-04-09T07:04:28.9546760Z [1m[92m   Compiling[0m find-msvc-tools v0.1.4
+2026-04-09T07:04:29.0457070Z [1m[92m   Compiling[0m cc v1.2.44
+2026-04-09T07:04:30.0553310Z [1m[92m   Compiling[0m getrandom v0.2.16
+2026-04-09T07:04:30.1426940Z [1m[92m   Compiling[0m zerocopy v0.8.27
+2026-04-09T07:04:31.8574220Z [1m[92m   Compiling[0m synstructure v0.13.2
+2026-04-09T07:04:32.1564280Z [1m[92m   Compiling[0m icu_normalizer_data v2.1.1
+2026-04-09T07:04:32.2094510Z [1m[92m   Compiling[0m parking_lot_core v0.9.12
+2026-04-09T07:04:32.2700550Z [1m[92m   Compiling[0m icu_properties_data v2.1.1
+2026-04-09T07:04:32.3224760Z [1m[92m   Compiling[0m ppv-lite86 v0.2.21
+2026-04-09T07:04:32.3719040Z [1m[92m   Compiling[0m memchr v2.7.6
+2026-04-09T07:04:32.4518440Z [1m[92m   Compiling[0m autocfg v1.5.0
+2026-04-09T07:04:32.4850260Z [1m[92m   Compiling[0m serde_derive v1.0.228
+2026-04-09T07:04:32.6378130Z [1m[92m   Compiling[0m zerofrom-derive v0.1.6
+2026-04-09T07:04:32.6507060Z [1m[92m   Compiling[0m yoke-derive v0.8.1
+2026-04-09T07:04:33.2039200Z [1m[92m   Compiling[0m zerovec-derive v0.11.2
+2026-04-09T07:04:33.3586600Z [1m[92m   Compiling[0m displaydoc v0.2.5
+2026-04-09T07:04:33.7263950Z [1m[92m   Compiling[0m stable_deref_trait v1.2.1
+2026-04-09T07:04:33.7525720Z [1m[92m   Compiling[0m itoa v1.0.15
+2026-04-09T07:04:33.8358730Z [1m[92m   Compiling[0m rand_core v0.6.4
+2026-04-09T07:04:33.8560620Z [1m[92m   Compiling[0m zerofrom v0.1.6
+2026-04-09T07:04:33.9366930Z [1m[92m   Compiling[0m rand_chacha v0.3.1
+2026-04-09T07:04:33.9475740Z [1m[92m   Compiling[0m smallvec v1.15.1
+2026-04-09T07:04:34.0391550Z [1m[92m   Compiling[0m rand v0.8.5
+2026-04-09T07:04:34.1116800Z [1m[92m   Compiling[0m yoke v0.8.1
+2026-04-09T07:04:34.2389450Z [1m[92m   Compiling[0m zerovec v0.11.5
+2026-04-09T07:04:34.5628690Z [1m[92m   Compiling[0m ryu v1.0.20
+2026-04-09T07:04:34.5902840Z [1m[92m   Compiling[0m thiserror v2.0.17
+2026-04-09T07:04:34.6332430Z [1m[92m   Compiling[0m serde_json v1.0.145
+2026-04-09T07:04:34.8585420Z [1m[92m   Compiling[0m siphasher v1.0.1
+2026-04-09T07:04:35.0866160Z [1m[92m   Compiling[0m phf_shared v0.11.3
+2026-04-09T07:04:35.1092080Z [1m[92m   Compiling[0m thiserror-impl v2.0.17
+2026-04-09T07:04:35.1894230Z [1m[92m   Compiling[0m getrandom v0.3.4
+2026-04-09T07:04:35.3315250Z [1m[92m   Compiling[0m tinystr v0.8.2
+2026-04-09T07:04:35.4190390Z [1m[92m   Compiling[0m scopeguard v1.2.0
+2026-04-09T07:04:35.4478170Z [1m[92m   Compiling[0m litemap v0.8.1
+2026-04-09T07:04:35.5332920Z [1m[92m   Compiling[0m writeable v0.6.2
+2026-04-09T07:04:35.6119750Z [1m[92m   Compiling[0m icu_locale_core v2.1.1
+2026-04-09T07:04:35.6298050Z [1m[92m   Compiling[0m lock_api v0.4.14
+2026-04-09T07:04:35.7459960Z [1m[92m   Compiling[0m phf_generator v0.11.3
+2026-04-09T07:04:35.8110990Z [1m[92m   Compiling[0m potential_utf v0.1.4
+2026-04-09T07:04:35.8393020Z [1m[92m   Compiling[0m zerotrie v0.2.3
+2026-04-09T07:04:35.8736380Z [1m[92m   Compiling[0m siphasher v0.3.11
+2026-04-09T07:04:35.9607920Z [1m[92m   Compiling[0m icu_collections v2.1.1
+2026-04-09T07:04:36.0101610Z [1m[92m   Compiling[0m fnv v1.0.7
+2026-04-09T07:04:36.0390740Z [1m[92m   Compiling[0m getrandom v0.1.16
+2026-04-09T07:04:36.1395000Z [1m[92m   Compiling[0m icu_provider v2.1.1
+2026-04-09T07:04:36.3460200Z [1m[92m   Compiling[0m typeid v1.0.3
+2026-04-09T07:04:36.3952910Z [1m[92m   Compiling[0m icu_properties v2.1.1
+2026-04-09T07:04:36.4564040Z [1m[92m   Compiling[0m parking_lot v0.12.5
+2026-04-09T07:04:36.4744740Z [1m[92m   Compiling[0m icu_normalizer v2.1.1
+2026-04-09T07:04:36.7103760Z [1m[92m   Compiling[0m num-conv v0.1.0
+2026-04-09T07:04:36.7501080Z [1m[92m   Compiling[0m log v0.4.28
+2026-04-09T07:04:36.7702750Z [1m[92m   Compiling[0m equivalent v1.0.2
+2026-04-09T07:04:36.7963920Z [1m[92m   Compiling[0m percent-encoding v2.3.2
+2026-04-09T07:04:36.8304500Z [1m[92m   Compiling[0m time-core v0.1.6
+2026-04-09T07:04:36.8679580Z [1m[92m   Compiling[0m form_urlencoded v1.2.2
+2026-04-09T07:04:36.8912480Z [1m[92m   Compiling[0m time-macros v0.2.24
+2026-04-09T07:04:36.9358620Z [1m[92m   Compiling[0m rand_core v0.5.1
+2026-04-09T07:04:37.0172960Z [1m[92m   Compiling[0m idna_adapter v1.2.1
+2026-04-09T07:04:37.0608000Z [1m[92m   Compiling[0m syn v1.0.109
+2026-04-09T07:04:37.0800800Z [1m[92m   Compiling[0m strsim v0.11.1
+2026-04-09T07:04:37.1910500Z [1m[92m   Compiling[0m erased-serde v0.4.8
+2026-04-09T07:04:37.2409740Z [1m[92m   Compiling[0m utf8_iter v1.0.4
+2026-04-09T07:04:37.3056370Z [1m[92m   Compiling[0m thiserror v1.0.69
+2026-04-09T07:04:37.3103460Z [1m[92m   Compiling[0m ident_case v1.0.1
+2026-04-09T07:04:37.3512280Z [1m[92m   Compiling[0m darling_core v0.21.3
+2026-04-09T07:04:37.4489770Z [1m[92m   Compiling[0m idna v1.1.0
+2026-04-09T07:04:37.5934040Z [1m[92m   Compiling[0m phf_macros v0.11.3
+2026-04-09T07:04:37.8729870Z [1m[92m   Compiling[0m hashbrown v0.16.0
+2026-04-09T07:04:37.9840280Z [1m[92m   Compiling[0m bytes v1.10.1
+2026-04-09T07:04:38.2504530Z [1m[92m   Compiling[0m indexmap v2.12.0
+2026-04-09T07:04:38.3610250Z [1m[92m   Compiling[0m url v2.5.7
+2026-04-09T07:04:38.9115150Z [1m[92m   Compiling[0m rand_pcg v0.2.1
+2026-04-09T07:04:38.9742680Z [1m[92m   Compiling[0m rand_chacha v0.2.2
+2026-04-09T07:04:39.0546600Z [1m[92m   Compiling[0m phf_shared v0.8.0
+2026-04-09T07:04:39.1865380Z [1m[92m   Compiling[0m thiserror-impl v1.0.69
+2026-04-09T07:04:39.5506090Z [1m[92m   Compiling[0m darling_macro v0.21.3
+2026-04-09T07:04:39.8816120Z [1m[92m   Compiling[0m version_check v0.9.5
+2026-04-09T07:04:40.0937000Z [1m[92m   Compiling[0m proc-macro-hack v0.5.20+deprecated
+2026-04-09T07:04:40.2392360Z [1m[92m   Compiling[0m anyhow v1.0.100
+2026-04-09T07:04:40.2835090Z [1m[92m   Compiling[0m darling v0.21.3
+2026-04-09T07:04:40.3382780Z [1m[92m   Compiling[0m rand v0.7.3
+2026-04-09T07:04:40.3971330Z [1m[92m   Compiling[0m phf_shared v0.10.0
+2026-04-09T07:04:40.5986260Z [1m[92m   Compiling[0m new_debug_unreachable v1.0.6
+2026-04-09T07:04:40.6296430Z [1m[92m   Compiling[0m byteorder v1.5.0
+2026-04-09T07:04:40.7440780Z [1m[92m   Compiling[0m phf_generator v0.8.0
+2026-04-09T07:04:40.7844240Z [1m[92m   Compiling[0m phf_generator v0.10.0
+2026-04-09T07:04:40.8046060Z [1m[92m   Compiling[0m serde_with_macros v3.15.1
+2026-04-09T07:04:41.1588560Z [1m[92m   Compiling[0m string_cache_codegen v0.5.4
+2026-04-09T07:04:41.3592730Z [1m[92m   Compiling[0m phf_codegen v0.11.3
+2026-04-09T07:04:41.3862530Z [1m[92m   Compiling[0m winnow v0.7.13
+2026-04-09T07:04:41.4044030Z [1m[92m   Compiling[0m mac v0.1.1
+2026-04-09T07:04:41.4287950Z [1m[92m   Compiling[0m precomputed-hash v0.1.1
+2026-04-09T07:04:41.4525370Z [1m[92m   Compiling[0m futf v0.1.5
+2026-04-09T07:04:41.5007050Z [1m[92m   Compiling[0m markup5ever v0.14.1
+2026-04-09T07:04:41.7787320Z [1m[92m   Compiling[0m phf_codegen v0.8.0
+2026-04-09T07:04:41.8141960Z [1m[92m   Compiling[0m semver v1.0.27
+2026-04-09T07:04:41.9682330Z [1m[92m   Compiling[0m cssparser v0.29.6
+2026-04-09T07:04:41.9741750Z [1m[92m   Compiling[0m phf_macros v0.10.0
+2026-04-09T07:04:42.2868360Z [1m[92m   Compiling[0m toml_parser v1.0.4
+2026-04-09T07:04:42.3463850Z [1m[92m   Compiling[0m toml_datetime v0.7.3
+2026-04-09T07:04:42.4792810Z [1m[92m   Compiling[0m serde_spanned v1.0.3
+2026-04-09T07:04:42.6478070Z [1m[92m   Compiling[0m utf-8 v0.7.6
+2026-04-09T07:04:42.6952620Z [1m[92m   Compiling[0m toml_writer v1.0.4
+2026-04-09T07:04:42.7107100Z [1m[92m   Compiling[0m glob v0.3.3
+2026-04-09T07:04:42.7906830Z [1m[92m   Compiling[0m bitflags v1.3.2
+2026-04-09T07:04:42.8132630Z [1m[92m   Compiling[0m dtoa v1.0.10
+2026-04-09T07:04:42.8779390Z [1m[92m   Compiling[0m dtoa-short v0.3.5
+2026-04-09T07:04:42.8901710Z [1m[92m   Compiling[0m toml v0.9.8
+2026-04-09T07:04:42.9194860Z [1m[92m   Compiling[0m tendril v0.4.3
+2026-04-09T07:04:43.0342370Z [1m[92m   Compiling[0m phf v0.10.1
+2026-04-09T07:04:43.0968060Z [1m[92m   Compiling[0m selectors v0.24.0
+2026-04-09T07:04:43.1351370Z [1m[92m   Compiling[0m uuid v1.18.1
+2026-04-09T07:04:43.3435840Z [1m[92m   Compiling[0m string_cache v0.8.9
+2026-04-09T07:04:43.4236630Z [1m[92m   Compiling[0m phf v0.11.3
+2026-04-09T07:04:43.4948080Z [1m[92m   Compiling[0m indexmap v1.9.3
+2026-04-09T07:04:43.5075520Z [1m[92m   Compiling[0m aho-corasick v1.1.4
+2026-04-09T07:04:43.5951110Z [1m[92m   Compiling[0m cssparser-macros v0.6.1
+2026-04-09T07:04:43.6941490Z [1m[92m   Compiling[0m ctor v0.2.9
+2026-04-09T07:04:43.7749480Z [1m[92m   Compiling[0m unic-char-range v0.9.0
+2026-04-09T07:04:43.8144370Z [1m[92m   Compiling[0m alloc-no-stdlib v2.0.4
+2026-04-09T07:04:43.8534190Z [1m[92m   Compiling[0m matches v0.1.10
+2026-04-09T07:04:43.8981960Z [1m[92m   Compiling[0m convert_case v0.4.0
+2026-04-09T07:04:43.9282900Z [1m[92m   Compiling[0m camino v1.2.1
+2026-04-09T07:04:44.0673280Z [1m[92m   Compiling[0m unic-common v0.9.0
+2026-04-09T07:04:44.0752210Z [1m[92m   Compiling[0m powerfmt v0.2.0
+2026-04-09T07:04:44.1027520Z [1m[92m   Compiling[0m nodrop v0.1.14
+2026-04-09T07:04:44.1331900Z [1m[92m   Compiling[0m regex-syntax v0.8.8
+2026-04-09T07:04:44.1635480Z [1m[92m   Compiling[0m deranged v0.5.5
+2026-04-09T07:04:44.4553370Z [1m[92m   Compiling[0m servo_arc v0.2.0
+2026-04-09T07:04:44.5280850Z [1m[92m   Compiling[0m unic-ucd-version v0.9.0
+2026-04-09T07:04:44.5499320Z [1m[92m   Compiling[0m derive_more v0.99.20
+2026-04-09T07:04:45.1429740Z [1m[92m   Compiling[0m regex-automata v0.4.13
+2026-04-09T07:04:45.5297230Z [1m[92m   Compiling[0m alloc-stdlib v0.2.2
+2026-04-09T07:04:45.5697860Z [1m[92m   Compiling[0m unic-char-property v0.9.0
+2026-04-09T07:04:45.9993370Z [1m[92m   Compiling[0m fxhash v0.2.1
+2026-04-09T07:04:46.0469080Z [1m[92m   Compiling[0m phf v0.8.0
+2026-04-09T07:04:46.1406270Z [1m[92m   Compiling[0m swift-rs v1.0.7
+2026-04-09T07:04:46.2021310Z [1m[92m   Compiling[0m match_token v0.1.0
+2026-04-09T07:04:46.4469860Z [1m[92m   Compiling[0m serde_derive_internals v0.29.1
+2026-04-09T07:04:46.4516980Z [1m[92m   Compiling[0m schemars v0.8.22
+2026-04-09T07:04:46.5550450Z [1m[92m   Compiling[0m typenum v1.19.0
+2026-04-09T07:04:46.7253300Z [1m[92m   Compiling[0m hashbrown v0.12.3
+2026-04-09T07:04:46.9613710Z [1m[92m   Compiling[0m schemars_derive v0.8.22
+2026-04-09T07:04:47.1786420Z [1m[92m   Compiling[0m html5ever v0.29.1
+2026-04-09T07:04:47.1914340Z [1m[92m   Compiling[0m regex v1.12.2
+2026-04-09T07:04:47.6584820Z [1m[92m   Compiling[0m unic-ucd-ident v0.9.0
+2026-04-09T07:04:47.7013030Z [1m[92m   Compiling[0m brotli-decompressor v5.0.0
+2026-04-09T07:04:47.9770700Z [1m[92m   Compiling[0m time v0.3.44
+2026-04-09T07:04:48.0021370Z [1m[92m   Compiling[0m cfb v0.7.3
+2026-04-09T07:04:48.3935060Z [1m[92m   Compiling[0m jsonptr v0.6.3
+2026-04-09T07:04:48.4525590Z [1m[92m   Compiling[0m cargo-platform v0.1.9
+2026-04-09T07:04:48.5620660Z [1m[92m   Compiling[0m objc2-exception-helper v0.1.1
+2026-04-09T07:04:48.6129550Z [1m[92m   Compiling[0m same-file v1.0.6
+2026-04-09T07:04:48.6766320Z [1m[92m   Compiling[0m dyn-clone v1.0.20
+2026-04-09T07:04:48.6920540Z [1m[92m   Compiling[0m base64 v0.22.1
+2026-04-09T07:04:48.7212390Z [1m[92m   Compiling[0m base64 v0.21.7
+2026-04-09T07:04:48.8559850Z [1m[92m   Compiling[0m bitflags v2.10.0
+2026-04-09T07:04:48.8745770Z [1m[92m   Compiling[0m crossbeam-utils v0.8.21
+2026-04-09T07:04:49.2859100Z [1m[92m   Compiling[0m walkdir v2.5.0
+2026-04-09T07:04:49.4512480Z [1m[92m   Compiling[0m json-patch v3.0.1
+2026-04-09T07:04:49.7506230Z [1m[92m   Compiling[0m cargo_metadata v0.19.2
+2026-04-09T07:04:50.3813480Z [1m[92m   Compiling[0m infer v0.19.0
+2026-04-09T07:04:50.6111060Z [1m[92m   Compiling[0m brotli v8.0.2
+2026-04-09T07:04:50.6427100Z [1m[92m   Compiling[0m kuchikiki v0.8.8-speedreader
+2026-04-09T07:04:50.9447670Z [1m[92m   Compiling[0m urlpattern v0.3.0
+2026-04-09T07:04:51.4677440Z [1m[92m   Compiling[0m serde-untagged v0.1.9
+2026-04-09T07:04:51.5850170Z [1m[92m   Compiling[0m serde_with v3.15.1
+2026-04-09T07:04:51.6836670Z [1m[92m   Compiling[0m generic-array v0.14.9
+2026-04-09T07:04:51.8205540Z [1m[92m   Compiling[0m http v1.3.1
+2026-04-09T07:04:52.3762500Z [1m[92m   Compiling[0m dunce v1.0.5
+2026-04-09T07:04:52.6383770Z [1m[92m   Compiling[0m tauri-utils v2.8.0
+2026-04-09T07:04:52.7888080Z [1m[92m   Compiling[0m pin-project-lite v0.2.16
+2026-04-09T07:04:52.8075630Z [1m[92m   Compiling[0m objc2 v0.6.3
+2026-04-09T07:04:52.9185170Z [1m[92m   Compiling[0m objc2-encode v4.1.0
+2026-04-09T07:04:53.2668860Z [1m[92m   Compiling[0m futures-core v0.3.31
+2026-04-09T07:04:53.4501110Z [1m[92m   Compiling[0m quick-xml v0.38.3
+2026-04-09T07:04:54.3214370Z [1m[92m   Compiling[0m plist v1.8.0
+2026-04-09T07:04:55.0544220Z [1m[92m   Compiling[0m crc32fast v1.5.0
+2026-04-09T07:04:55.3904300Z [1m[92m   Compiling[0m objc2-core-foundation v0.3.2
+2026-04-09T07:04:55.7881130Z [1m[92m   Compiling[0m futures-sink v0.3.31
+2026-04-09T07:04:55.9333450Z [1m[92m   Compiling[0m heck v0.5.0
+2026-04-09T07:04:56.2914340Z [1m[92m   Compiling[0m block2 v0.6.2
+2026-04-09T07:04:57.3089010Z [1m[92m   Compiling[0m rustc_version v0.4.1
+2026-04-09T07:04:57.4512760Z [1m[92m   Compiling[0m option-ext v0.2.0
+2026-04-09T07:04:57.5106230Z [1m[92m   Compiling[0m dirs-sys v0.5.0
+2026-04-09T07:04:57.5482770Z [1m[92m   Compiling[0m embed-resource v3.0.6
+2026-04-09T07:04:57.7175880Z [1m[92m   Compiling[0m tauri-plugin v2.5.1
+2026-04-09T07:04:57.9534230Z [1m[92m   Compiling[0m objc2-foundation v0.3.2
+2026-04-09T07:04:57.9855100Z [1m[92m   Compiling[0m futures-channel v0.3.31
+2026-04-09T07:04:58.5983630Z [1m[92m   Compiling[0m pin-utils v0.1.0
+2026-04-09T07:05:00.5411700Z [1m[92m   Compiling[0m tauri-winres v0.3.3
+2026-04-09T07:05:00.7683560Z [1m[92m   Compiling[0m dirs v6.0.0
+2026-04-09T07:05:00.8352250Z [1m[92m   Compiling[0m cargo_toml v0.22.3
+2026-04-09T07:05:02.3719170Z [1m[92m   Compiling[0m tracing-attributes v0.1.30
+2026-04-09T07:05:02.9309240Z [1m[92m   Compiling[0m futures-macro v0.3.31
+2026-04-09T07:05:03.3028410Z [1m[92m   Compiling[0m tokio-macros v2.6.0
+2026-04-09T07:05:03.4059000Z [1m[92m   Compiling[0m socket2 v0.6.1
+2026-04-09T07:05:03.6808470Z [1m[92m   Compiling[0m mio v1.1.0
+2026-04-09T07:05:03.8439870Z [1m[92m   Compiling[0m signal-hook-registry v1.4.6
+2026-04-09T07:05:04.1466200Z [1m[92m   Compiling[0m ring v0.17.14
+2026-04-09T07:05:04.1575320Z [1m[92m   Compiling[0m slab v0.4.11
+2026-04-09T07:05:04.2391510Z [1m[92m   Compiling[0m futures-task v0.3.31
+2026-04-09T07:05:04.3176970Z [1m[92m   Compiling[0m once_cell v1.21.3
+2026-04-09T07:05:04.4322000Z [1m[92m   Compiling[0m futures-io v0.3.31
+2026-04-09T07:05:04.4549920Z [1m[92m   Compiling[0m tokio v1.48.0
+2026-04-09T07:05:04.5035510Z [1m[92m   Compiling[0m futures-util v0.3.31
+2026-04-09T07:05:06.1220960Z [1m[92m   Compiling[0m tauri-build v2.5.1
+2026-04-09T07:05:10.9840250Z [1m[92m   Compiling[0m crypto-common v0.1.6
+2026-04-09T07:05:11.0862060Z [1m[92m   Compiling[0m block-buffer v0.10.4
+2026-04-09T07:05:11.4139720Z [1m[92m   Compiling[0m digest v0.10.7
+2026-04-09T07:05:11.5445330Z [1m[92m   Compiling[0m tauri v2.9.2
+2026-04-09T07:05:12.1324050Z [1m[92m   Compiling[0m cpufeatures v0.2.17
+2026-04-09T07:05:14.2857160Z [1m[92m   Compiling[0m sha2 v0.10.9
+2026-04-09T07:05:17.1529040Z [1m[92m   Compiling[0m simd-adler32 v0.3.7
+2026-04-09T07:05:18.9888690Z [1m[92m   Compiling[0m tracing-core v0.1.34
+2026-04-09T07:05:19.6495530Z [1m[92m   Compiling[0m num-traits v0.2.19
+2026-04-09T07:05:19.8917580Z [1m[92m   Compiling[0m adler2 v2.0.1
+2026-04-09T07:05:20.0294620Z [1m[92m   Compiling[0m miniz_oxide v0.8.9
+2026-04-09T07:05:20.6431680Z [1m[92m   Compiling[0m tracing v0.1.41
+2026-04-09T07:05:21.2808660Z [1m[92m   Compiling[0m http-body v1.0.1
+2026-04-09T07:05:21.3372890Z [1m[92m   Compiling[0m objc2-user-notifications v0.3.2
+2026-04-09T07:05:21.4261150Z [1m[92m   Compiling[0m objc2-core-data v0.3.2
+2026-04-09T07:05:21.6030070Z [1m[92m   Compiling[0m objc2-core-location v0.3.2
+2026-04-09T07:05:21.7151100Z [1m[92m   Compiling[0m objc2-cloud-kit v0.3.2
+2026-04-09T07:05:22.0032210Z [1m[92m   Compiling[0m objc2-core-image v0.3.2
+2026-04-09T07:05:22.2882720Z [1m[92m   Compiling[0m objc2-quartz-core v0.3.2
+2026-04-09T07:05:22.8628650Z [1m[92m   Compiling[0m objc2-core-graphics v0.3.2
+2026-04-09T07:05:23.1714360Z [1m[92m   Compiling[0m objc2-core-text v0.3.2
+2026-04-09T07:05:23.3506440Z [1m[92m   Compiling[0m cookie v0.18.1
+2026-04-09T07:05:23.5376770Z [1m[92m   Compiling[0m rustls v0.23.34
+2026-04-09T07:05:24.1560180Z [1m[92m   Compiling[0m httparse v1.10.1
+2026-04-09T07:05:25.0844470Z [1m[92m   Compiling[0m objc2-ui-kit v0.3.2
+2026-04-09T07:05:25.1045820Z [1m[92m   Compiling[0m flate2 v1.1.5
+2026-04-09T07:05:27.8385730Z [1m[92m   Compiling[0m fdeflate v0.3.7
+2026-04-09T07:05:28.7624990Z [1m[92m   Compiling[0m dpi v0.1.2
+2026-04-09T07:05:29.3552290Z [1m[92m   Compiling[0m try-lock v0.2.5
+2026-04-09T07:05:29.4161320Z [1m[92m   Compiling[0m tower-service v0.3.3
+2026-04-09T07:05:29.5091440Z [1m[92m   Compiling[0m raw-window-handle v0.6.2
+2026-04-09T07:05:29.6379730Z [1m[92m   Compiling[0m pkg-config v0.3.32
+2026-04-09T07:05:30.0581110Z [1m[92m   Compiling[0m vcpkg v0.2.15
+2026-04-09T07:05:30.1487530Z [1m[92m   Compiling[0m zeroize v1.8.2
+2026-04-09T07:05:30.2724550Z [1m[92m   Compiling[0m rustls-pki-types v1.13.0
+2026-04-09T07:05:30.5439590Z [1m[92m   Compiling[0m libsqlite3-sys v0.30.1
+2026-04-09T07:05:31.3889300Z [1m[92m   Compiling[0m want v0.3.1
+2026-04-09T07:05:32.9031460Z [1m[92m   Compiling[0m png v0.17.16
+2026-04-09T07:05:37.0909620Z [1m[92m   Compiling[0m serde_urlencoded v0.7.1
+2026-04-09T07:05:37.2212960Z [1m[92m   Compiling[0m sync_wrapper v1.0.2
+2026-04-09T07:05:37.2837680Z [1m[92m   Compiling[0m crossbeam-channel v0.5.15
+2026-04-09T07:05:38.8004710Z [1m[92m   Compiling[0m either v1.15.0
+2026-04-09T07:05:39.2350360Z [1m[92m   Compiling[0m wry v0.53.5
+2026-04-09T07:05:39.4381490Z [1m[92m   Compiling[0m atomic-waker v1.1.2
+2026-04-09T07:05:39.9355570Z [1m[92m   Compiling[0m tower-layer v0.3.3
+2026-04-09T07:05:40.0086240Z [1m[92m   Compiling[0m tauri-runtime v2.9.1
+2026-04-09T07:05:40.1569680Z [1m[92m   Compiling[0m tower v0.5.2
+2026-04-09T07:05:41.0927550Z [1m[92m   Compiling[0m hyper v1.7.0
+2026-04-09T07:05:43.3047660Z [1m[92m   Compiling[0m ico v0.4.0
+2026-04-09T07:05:44.1397010Z [1m[92m   Compiling[0m objc2-web-kit v0.3.2
+2026-04-09T07:05:44.9849490Z [1m[92m   Compiling[0m untrusted v0.9.0
+2026-04-09T07:05:45.1138810Z [1m[92m   Compiling[0m ipnet v2.11.0
+2026-04-09T07:05:46.0130060Z [1m[92m   Compiling[0m lazy_static v1.5.0
+2026-04-09T07:05:46.0655580Z [1m[92m   Compiling[0m iri-string v0.7.8
+2026-04-09T07:05:47.5675090Z [1m[92m   Compiling[0m tauri-runtime-wry v2.9.1
+2026-04-09T07:05:47.7445140Z [1m[92m   Compiling[0m tower-http v0.6.6
+2026-04-09T07:05:48.2989900Z [1m[92m   Compiling[0m tao v0.34.5
+2026-04-09T07:05:50.4752120Z [1m[92m   Compiling[0m hyper-util v0.1.17
+2026-04-09T07:05:55.8414110Z [1m[92m   Compiling[0m tauri-codegen v2.5.0
+2026-04-09T07:05:56.5676940Z [1m[92m   Compiling[0m http-body-util v0.1.3
+2026-04-09T07:05:56.6981500Z [1m[92m   Compiling[0m tokio-util v0.7.16
+2026-04-09T07:05:57.6560710Z [1m[92m   Compiling[0m concurrent-queue v2.5.0
+2026-04-09T07:05:57.8539970Z [1m[92m   Compiling[0m crossbeam-epoch v0.9.18
+2026-04-09T07:05:58.1725820Z [1m[92m   Compiling[0m serialize-to-javascript-impl v0.1.2
+2026-04-09T07:05:58.5228490Z [1m[92m   Compiling[0m parking v2.2.1
+2026-04-09T07:05:58.8756080Z [1m[92m   Compiling[0m allocator-api2 v0.2.21
+2026-04-09T07:05:58.8858810Z [1m[92m   Compiling[0m foldhash v0.1.5
+2026-04-09T07:05:59.0817870Z [1m[92m   Compiling[0m hashbrown v0.15.5
+2026-04-09T07:06:02.2293950Z [1m[92m   Compiling[0m event-listener v5.4.1
+2026-04-09T07:06:02.3838740Z [1m[92m   Compiling[0m serialize-to-javascript v0.1.2
+2026-04-09T07:06:02.6843670Z [1m[92m   Compiling[0m tauri-macros v2.5.0
+2026-04-09T07:06:02.7434640Z [1m[92m   Compiling[0m reqwest v0.12.24
+2026-04-09T07:06:03.8776760Z [1m[92m   Compiling[0m rustls-webpki v0.103.8
+2026-04-09T07:06:04.5767880Z [1m[92m   Compiling[0m webpki-roots v1.0.4
+2026-04-09T07:06:04.6475020Z [1m[92m   Compiling[0m serde_repr v0.1.20
+2026-04-09T07:06:04.7349790Z [1m[92m   Compiling[0m http-range v0.1.5
+2026-04-09T07:06:04.9908710Z [1m[92m   Compiling[0m rayon-core v1.13.0
+2026-04-09T07:06:05.1446980Z [1m[92m   Compiling[0m subtle v2.6.1
+2026-04-09T07:06:05.6240210Z [1m[92m   Compiling[0m zlib-rs v0.5.5
+2026-04-09T07:06:05.6686070Z [1m[92m   Compiling[0m mime v0.3.17
+2026-04-09T07:06:05.9028380Z [1m[92m   Compiling[0m crc-catalog v2.4.0
+2026-04-09T07:06:05.9411080Z [1m[92m   Compiling[0m encoding_index_tests v0.1.4
+2026-04-09T07:06:05.9679840Z [1m[92m   Compiling[0m crc v3.3.0
+2026-04-09T07:06:07.8033100Z [1m[92m   Compiling[0m libz-rs-sys v0.5.5
+2026-04-09T07:06:10.6712050Z [1m[92m   Compiling[0m webpki-roots v0.26.11
+2026-04-09T07:06:11.0434310Z [1m[92m   Compiling[0m tokio-stream v0.1.17
+2026-04-09T07:06:11.2332060Z [1m[92m   Compiling[0m hashlink v0.10.0
+2026-04-09T07:06:11.2753150Z [1m[92m   Compiling[0m crossbeam-deque v0.8.6
+2026-04-09T07:06:11.3840040Z [1m[92m   Compiling[0m crossbeam-queue v0.3.12
+2026-04-09T07:06:11.4268560Z [1m[92m   Compiling[0m futures-intrusive v0.5.0
+2026-04-09T07:06:11.4624100Z [1m[92m   Compiling[0m spin v0.9.8
+2026-04-09T07:06:11.8185570Z [1m[92m   Compiling[0m sqlx-core v0.8.6
+2026-04-09T07:06:12.3304400Z [1m[92m   Compiling[0m flume v0.11.1
+2026-04-09T07:06:13.2218280Z [1m[92m   Compiling[0m atoi v2.0.0
+2026-04-09T07:06:13.5966760Z [1m[92m   Compiling[0m futures-executor v0.3.31
+2026-04-09T07:06:13.7864830Z [1m[92m   Compiling[0m tauri-plugin-fs v2.4.4
+2026-04-09T07:06:14.0911180Z [1m[92m   Compiling[0m bytemuck v1.24.0
+2026-04-09T07:06:14.8271800Z [1m[92m   Compiling[0m sqlx-sqlite v0.8.6
+2026-04-09T07:06:17.4509540Z [1m[92m   Compiling[0m pxfm v0.1.25
+2026-04-09T07:06:24.4905660Z [1m[92m   Compiling[0m zerocopy-derive v0.8.27
+2026-04-09T07:06:24.5443720Z [1m[92m   Compiling[0m rustix v1.1.2
+2026-04-09T07:06:24.7714330Z [1m[92m   Compiling[0m zune-core v0.5.0
+2026-04-09T07:06:24.9387630Z [1m[92m   Compiling[0m hex v0.4.3
+2026-04-09T07:06:25.0703550Z [1m[92m   Compiling[0m dotenvy v0.15.7
+2026-04-09T07:06:25.2371640Z [1m[92m   Compiling[0m sqlx-macros-core v0.8.6
+2026-04-09T07:06:26.1712530Z [1m[92m   Compiling[0m zune-jpeg v0.5.5
+2026-04-09T07:06:27.0468590Z [1m[92m   Compiling[0m moxcms v0.7.9
+2026-04-09T07:06:28.7557050Z [1m[92m   Compiling[0m rayon v1.11.0
+2026-04-09T07:06:29.7424760Z [1m[92m   Compiling[0m tauri-plugin-sql v2.3.1
+2026-04-09T07:06:30.0706210Z [1m[92m   Compiling[0m tauri-plugin-opener v2.5.2
+2026-04-09T07:06:30.0806780Z [1m[92m   Compiling[0m tauri-plugin-os v2.3.2
+2026-04-09T07:06:30.4597090Z [1m[92m   Compiling[0m tauri-plugin-native-tts v0.1.0 (/Users/runner/work/goread/goread/src-tauri/plugins/tauri-plugin-native-tts)
+2026-04-09T07:06:30.5137940Z [1m[92m   Compiling[0m tauri-plugin-dialog v2.4.2
+2026-04-09T07:06:30.7696310Z [1m[92m   Compiling[0m libwebp-sys v0.9.6
+2026-04-09T07:06:30.8747950Z [1m[92m   Compiling[0m errno v0.3.14
+2026-04-09T07:06:30.9441670Z [1m[92m   Compiling[0m core-foundation-sys v0.8.7
+2026-04-09T07:06:30.9536000Z [1m[92m   Compiling[0m bumpalo v3.19.0
+2026-04-09T07:06:31.0375240Z [1m[92m   Compiling[0m weezl v0.1.12
+2026-04-09T07:06:31.0889080Z [1m[92m   Compiling[0m portable-atomic v1.11.1
+2026-04-09T07:06:31.3170420Z [1m[92m   Compiling[0m byteorder-lite v0.1.0
+2026-04-09T07:06:31.4413540Z [1m[92m   Compiling[0m image v0.25.9
+2026-04-09T07:06:31.5432860Z [1m[92m   Compiling[0m zopfli v0.8.3
+2026-04-09T07:06:32.2665330Z [1m[92m   Compiling[0m iana-time-zone v0.1.64
+2026-04-09T07:06:48.0480900Z [1m[92m   Compiling[0m jpeg-decoder v0.3.2
+2026-04-09T07:06:49.6440750Z [1m[92m   Compiling[0m half v2.7.1
+2026-04-09T07:06:49.9649920Z [1m[92m   Compiling[0m sqlx-macros v0.8.6
+2026-04-09T07:06:50.6091550Z [1m[92m   Compiling[0m encoding-index-korean v1.20141219.5
+2026-04-09T07:06:50.7028730Z [1m[92m   Compiling[0m encoding-index-singlebyte v1.20141219.5
+2026-04-09T07:06:50.7844570Z [1m[92m   Compiling[0m encoding-index-tradchinese v1.20141219.5
+2026-04-09T07:06:50.9040890Z [1m[92m   Compiling[0m encoding-index-japanese v1.20141219.5
+2026-04-09T07:06:51.0101560Z [1m[92m   Compiling[0m encoding-index-simpchinese v1.20141219.5
+2026-04-09T07:06:51.1011150Z [1m[92m   Compiling[0m event-listener-strategy v0.5.4
+2026-04-09T07:06:51.1549540Z [1m[92m   Compiling[0m zune-inflate v0.2.54
+2026-04-09T07:06:51.8694640Z [1m[92m   Compiling[0m bit_field v0.10.3
+2026-04-09T07:06:51.9236110Z [1m[92m   Compiling[0m color_quant v1.1.0
+2026-04-09T07:06:52.0546010Z [1m[92m   Compiling[0m moka v0.12.11
+2026-04-09T07:06:52.1600470Z [1m[92m   Compiling[0m xml v1.2.1
+2026-04-09T07:06:53.3215900Z [1m[92m   Compiling[0m piston-float v1.0.1
+2026-04-09T07:06:53.3539270Z [1m[92m   Compiling[0m pathdiff v0.2.3
+2026-04-09T07:06:53.3842570Z [1m[92m   Compiling[0m lebe v0.5.3
+2026-04-09T07:06:53.4717850Z [1m[92m   Compiling[0m pdfium-render v0.8.36
+2026-04-09T07:06:53.5857180Z [1m[92m   Compiling[0m exr v1.74.0
+2026-04-09T07:06:53.6216560Z [1m[92m   Compiling[0m open v5.3.2
+2026-04-09T07:06:53.6946340Z [1m[92m   Compiling[0m vecmath v1.0.0
+2026-04-09T07:06:53.9565850Z [1m[92m   Compiling[0m xml-rs v1.0.0
+2026-04-09T07:06:55.1929580Z [1m[92m   Compiling[0m gif v0.13.3
+2026-04-09T07:06:55.3652140Z [1m[92m   Compiling[0m async-lock v3.4.1
+2026-04-09T07:06:55.8090630Z [1m[92m   Compiling[0m encoding v0.2.33
+2026-04-09T07:06:55.9836310Z [1m[92m   Compiling[0m sqlx v0.8.6
+2026-04-09T07:06:56.1190590Z [1m[92m   Compiling[0m tiff v0.9.1
+2026-04-09T07:06:56.8348880Z [1m[92m   Compiling[0m gethostname v1.1.0
+2026-04-09T07:06:56.8863280Z [1m[92m   Compiling[0m chrono v0.4.42
+2026-04-09T07:06:56.9065630Z [1m[92m   Compiling[0m zip v3.0.0
+2026-04-09T07:06:57.8207980Z [1m[92m   Compiling[0m qoi v0.4.1
+2026-04-09T07:06:57.9369370Z [1m[92m   Compiling[0m os_info v3.14.0
+2026-04-09T07:06:58.2393830Z [1m[92m   Compiling[0m itertools v0.14.0
+2026-04-09T07:06:58.2796150Z [1m[92m   Compiling[0m utf16string v0.2.0
+2026-04-09T07:06:58.4024040Z [1m[92m   Compiling[0m GoRead v1.5.4 (/Users/runner/work/goread/goread/src-tauri)
+2026-04-09T07:06:58.7881860Z [1m[92m   Compiling[0m libloading v0.7.4
+2026-04-09T07:06:58.8830900Z [1m[92m   Compiling[0m encoding_rs v0.8.35
+2026-04-09T07:06:58.9042940Z [1m[92m   Compiling[0m tagptr v0.2.0
+2026-04-09T07:06:58.9724150Z [1m[92m   Compiling[0m maybe-owned v0.3.4
+2026-04-09T07:06:59.0616170Z [1m[92m   Compiling[0m sys-locale v0.3.2
+2026-04-09T07:07:00.1154130Z [1m[92m   Compiling[0m chardetng v0.1.17
+2026-04-09T07:07:01.2014210Z [1m[92m   Compiling[0m image v0.24.9
+2026-04-09T07:07:01.8616720Z [1m[92m   Compiling[0m epub v2.1.5
+2026-04-09T07:07:02.9920170Z [1m[92m   Compiling[0m mobi v0.4.3
+2026-04-09T07:07:03.3760550Z [1m[92m   Compiling[0m webp v0.3.1
+2026-04-09T07:07:04.1972560Z [1m[92m   Compiling[0m futures v0.3.31
+2026-04-09T07:07:04.2402810Z [1m[92m   Compiling[0m memmap2 v0.9.9
+2026-04-09T07:08:28.8816150Z [1m[91merror[0m[1m: linking with `cc` failed: exit status: 1[0m
+2026-04-09T07:08:28.8816930Z   [1m[94m|[0m
+2026-04-09T07:08:28.8863070Z   [1m[94m= [0m[1mnote[0m:  "cc" "-Wl,-exported_symbols_list" "-Wl,/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/rustcbgZYxu/list" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/rustcbgZYxu/symbols.o" "<2 object files omitted>" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/{libtauri_plugin_opener-b28dcb6532058c5e,libopen-cba015052757b6da,libtauri_plugin_dialog-d5e90c763f0361a4,libtauri_plugin_fs-c2b1699e7e931446,libtauri_plugin_sql-2fc73146a08fbec3,libtauri_plugin_native_tts-7ab01013ce27e453,libwebp-1aab2e15d849aaa5,liblibwebp_sys-6aa703bda01e6923,libimage-a5699daeb610dbd9,libqoi-91b61ec210f9939a,libpng-8542c8bd6a094496,libbitflags-8f92c0f19ab89c55,libfdeflate-edf105db360bdd85,libexr-982470ec45c017f7,libminiz_oxide-e12ea7fc686c5ed6,libzune_inflate-dc5be96965adc9d2,libbit_field-b2973d6259594905,liblebe-7e7d422f3628c44d,libhalf-64e9328b7d76ca14,libzerocopy-62dbb46d8fe39dce,libgif-9200fd1422e21859,libcolor_quant-63399883497d46dd,libtiff-64db2d591f12eec6,libweezl-e396c51eeb52f2b1,libjpeg_decoder-ed8e8540d9281be6,librayon-982e28c0f76ed319,librayon_core-54486f90806d7de1,libcrossbeam_deque-189e68e1a1b6421d,libpdfium_render-b12c97a6572f4f6f}.rlib" "<sysroot>/lib/rustlib/aarch64-apple-ios/lib/libpanic_abort-*.rlib" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/{libutf16string-b2f080544370ea71,libitertools-b8d14b3d209c93c7,libvecmath-a33e39485d1de9db,libfloat-4bcdae93e88435ca,libimage-473f57063115d2e0,libbytemuck-2cb1cc915d9cdce7,libbyteorder_lite-76cc126cc89ad828,libmoxcms-98936d4965d345fa,libpxfm-330311c005697c15,libzune_jpeg-476ed33fade36004,libzune_core-e96f5bd675db7340,liblibloading-cb8f827f4a4ecf6b,libmoka-aacc94da57e0161b,libportable_atomic-55faffaae4bd9cce,libtagptr-ac59e2b4d56de357,libcrossbeam_epoch-b2d78b184ae658a4,libasync_lock-2e63699365c7987f,libevent_listener_strategy-bf58182d31ba8a54,libmobi-3827c5211f52c10c,libencoding-7895f34b17efe6e3,libencoding_index_tradchinese-2505356d601c27c1,libencoding_index_simpchinese-e7465735f6e26142,libencoding_index_japanese-64b42171421b3376,libencoding_index_korean-847b9b6f40a52f1b,libencoding_index_singlebyte-59ec4da52c2a30e5,libmemmap2-7e8444b87fc46b02,libchardetng-b645f4fbd425ae67,libencoding_rs-acfc5fa3e161ff31,libepub-3deda725e2d50a17,libzip-325a94cf8440b670,libzopfli-bcf51986942b6f2e,libsimd_adler32-74164a35950d875c,libbumpalo-eaa6b0c893d6f827,libflate2-e7c2c3a806203a47,liblibz_rs_sys-d32d48be36d04059,libzlib_rs-ffff5116fdd28141,libcrc32fast-2b253f59ee6940f0,libxml-dce23e774f6df682,libxml-d637be74b91bb945,libchrono-e0b1f9cc54d9adfc,libiana_time_zone-832a0219a6c3eb05,libcore_foundation_sys-b0cb29e092406065,libfutures-f361afc681530a7e,libtauri-222e7e60d804b8b5,libheck-e2fdbc9ccb24c94f,libreqwest-4a53e1211585eae2,libtower_http-7fce30e8b7064428,libiri_string-14ba8d3201d0aab0,libtower-d8f9ef79109634de,libtower_layer-2441305b3a9138e2,libhyper_util-18b67936819813ee,libipnet-46de633cc2b97c0e,libtower_service-c00a1cad8c2e3f4b,libhyper-fe23d5b1692ee81e,libwant-60955927dd2bfdc7,libtry_lock-d3e5dce13179a2c4,libhttparse-bb60dc507de58718,libatomic_waker-9cb9ae153eb83a82,libtokio_util-3488d7f3423342d0,libhttp_body_util-41f77f46a4127839,libhttp_body-d2e75626cd4a5b41,libsync_wrapper-b977cae3e246221e,libmime-310467f90578fbf1,libtauri_runtime_wry-cccfc6953a1585d5,libwry-296eb04a59324c31,libdirs-4ae45d2faebbd5f6,libdirs_sys-7f28c08f67982a29,liboption_ext-a8db12e3e907a74a,libobjc2_web_kit-d18644b77830e5df,libtao-c75ae99b44b78118,libcrossbeam_channel-f097b7030b435f79,liblazy_static-a90aa7896bd277dc,libhttp_range-a2e3a72e4bef7fcf,libtauri_runtime-d42926217c55413a,libobjc2_ui_kit-eae1bd842d61057f,libobjc2_user_notifications-aaab41601cc2ef99,libobjc2_core_data-7a9683914a5d6716,libobjc2_core_location-a3d3a384e85e77bb,libobjc2_core_text-e6ec8a4c1ba8414a,libobjc2_core_image-50dced0a7bc09b47,libobjc2_cloud_kit-2fa20b02ab859b93,libobjc2_quartz_core-d7da9a203380d759,libobjc2_core_graphics-e56600b1b68ebe58,libobjc2_foundation-0fb8a07c19491e3f,libobjc2_core_foundation-a6a426326853146a,libbitflags-1ea645250524d741,libblock2-e61744d241555c80,libobjc2-6a901965ee0830c1,libobjc2_exception_helper-26423233eb1a4d40,libobjc2_encode-cc3aee5914ea6325,libcookie-116cb837e6cdb3ea,libdpi-de13b57f184bbaff,libserialize_to_javascript-54eb3ea085c4e7d4,libraw_window_handle-08c34b03fc0671cc,libtauri_utils-4564c03e42cf010f,libdunce-1d312a97715c3ecc,libinfer-80bbc6e349bd3d8c,libcfb-28d8578fded0961a,libbyteorder-c87c2f67300a88b1,libuuid-20100841ef7e1330,libgetrandom-001157d0ee28be8b,libbrotli-c3a84dee6131c8dc,libbrotli_decompressor-646cc0b53c7147cb,liballoc_stdlib-5cf723804d22bbd2,liballoc_no_stdlib-3248c3d186a22a52,liburlpattern-29d5cf85c40ecf7c,libunic_ucd_ident-22a85cbcccb1315a,libunic_ucd_version-2047583e54b826d2,libunic_common-f23c2848c1d7254a,libunic_char_property-0f824699f290b142,libunic_char_range-40126c68cc5793b6,libregex-cbd559db5e338bd6,libregex_automata-359ee61916dfbee9,libaho_corasick-e2730bb2e819a77c,libregex_syntax-cb6b91de869d79ab,libglob-831adc47693af39b,libwalkdir-531e1b1e4d4017b3,libsame_file-898e35394f88ff5f,libjson_patch-9e5a0c305ab8411e,libthiserror-414c1e4c38efd8e4,libjsonptr-4b80d03b199a5c44,libserde_with-cab3a13fa541d380,libhttp-c4a582c14fd39f2f,libfnv-9a7286d498696339,libphf-4be9e3a8d681036a,libphf_shared-fdedeb3676c95035,libsiphasher-9ef36bda34114ba3,libtoml-d4682009542fc691,libtoml_writer-ef0d811ad73cfaac,libtoml_parser-2b8d7c1b190663c7,libwinnow-f134f7867db6b84b,libserde_spanned-06e37159ffbb547a,libtoml_datetime-ca34df4e942f7d4c,libserde_untagged-730afbfa5914b7e8,liberased_serde-3d8a567fed5e23fa,libtypeid-e8d937ef5cd45f65,libanyhow-86149f183d59796a,libsemver-9761da7a057457ed,libswift_rs-a5d59447f1eff51c,libsqlx-b5ecbf4b63c0fc62,libsqlx_sqlite-7b99df64345b74a4,libfutures_executor-e36c326514ade6c9,libflume-e83a5f5ec9309f7b,libspin-01696419983de97d,libserde_urlencoded-5fbd90742b729332,libfutures_intrusive-93d5455373ed5200,liblibsqlite3_sys-9a99c725522eff7c,libatoi-77ac97654134b775,libnum_traits-f0bb96ccb39b6d8a,libsqlx_core-5c13e3eaeb4b2471,libwebpki_roots-ca87311af94c71a6,libwebpki_roots-a68e37983994e371,libthiserror-7b6a4ab90ae022b4,libindexmap-d31a3226b200fa35,libhashbrown-c03392a0eb990c53,libbase64-797c8fc94c8725ea,libsha2-5b841f852e4767b4,libdigest-157c7fda7e6085b4,libblock_buffer-eedabf3a539dc59d,libcrypto_common-e14d735d80063492,libgeneric_array-ba3edaa8b0103330,libtypenum-fd59f944929ccd8a,librustls-abbe92dcef316b59,libsubtle-dbcd56c547d3b126,libwebpki-a60f8f92f87865a6,libring-eccd35f85d0334d3,libgetrandom-7b9663fee89efe80,libuntrusted-a89fb0526235a047,librustls_pki_types-b35e854fd0154d1a,libzeroize-8e32458a4a0f6546,libtokio-00c3eccae65156bf,libsignal_hook_registry-b2e2656c1fddbb64,libsocket2-c0419fd126563482,libmio-7bfe12cc1bd1f452,libparking_lot-bd42f2490ebdc3e8,libparking_lot_core-740cefd6ac8eb8a0,liblibc-630f504f84cdf4e9,libcfg_if-5d6d663b65b8d10c,liblock_api-197bcf59a4f3c792,libscopeguard-2c2a599e6a722983,libbytes-cd6ff8d906ebc933,libhashlink-d05afdf1b9a234b2,libhashbrown-cf82b229ff3d4c01,libfoldhash-7b3c1668fbf44bc0,libequivalent-2f44699081533b86,liballocator_api2-cace8992ea6720aa,libtime-a0590a0ac8275841,libtime_core-c28c7ce082ab3087,libnum_conv-7db341a9fb60b95b,libderanged-dc12bd551f527898,libpowerfmt-1b080ffeaf5b58f9,libserde_json-95114c816b669c24,libitoa-bbdc6a0ea91338e8,libryu-d585a8b6816e9c4a,liburl-4be599b2bf40fbee,libidna-e4ee8d819fd51e38,libutf8_iter-622c36c16b625177,libidna_adapter-4f99771b8d096a16,libicu_properties-e7b0251a28f03c8b,libicu_properties_data-a70ce611c032e784,libicu_normalizer-dccea7fc41ca2bc7,libsmallvec-c6ae41115b350866,libicu_normalizer_data-2707b84133490c66,libicu_collections-031a53edc28ad54f,libpotential_utf-c1555992a67f9265,libicu_provider-1f94e6ad2bdce653,libicu_locale_core-665099284d99092a,libtinystr-a480354f5b7a0a18,liblitemap-59ebea74f3534835,libwriteable-08c040e70afa5678,libzerovec-a5c78cb366302ca2,libzerotrie-3e064d2de49d41da,libyoke-463ef71cc1388555,libstable_deref_trait-b7890ea6bbbb5b30,libzerofrom-83a0e5d0169a31af,libform_urlencoded-e72462e4b55938e1,libpercent_encoding-e0d89090328384b4,libtracing-88c0cf10dce38cba,liblog-27698595d0152c15,libtracing_core-d8ee5d4e5e52da5c,libonce_cell-2cfff0f6873cc874,libcrossbeam_queue-e2b6113c5944a8df,libcrossbeam_utils-24da6bddff0f54f5,libeither-de6f82156ecb7f1a,libserde-bf3ab71ee0c807ba,libserde_core-3c2ddfd7b4f0769c,libevent_listener-267f06f767a407fa,libparking-8d22d369bb1384ef,libfutures_util-85d4c1d31868abff,libmemchr-620e3b81075aad0a,libfutures_io-6f24f7cf8b021066,libslab-d745228ed53e115b,libfutures_channel-26531542f2e17019,libpin_project_lite-9e937f9d087d1286,libfutures_sink-44fd7435705a426c,libfutures_task-3b0a319d49c4f910,libpin_utils-9a83918292facd03,libfutures_core-008ed1656f4b8384}.rlib" "<sysroot>/lib/rustlib/aarch64-apple-ios/lib/{libstd-*,libobject-*,libmemchr-*,libaddr2line-*,libgimli-*,libcfg_if-*,librustc_demangle-*,libstd_detect-*,libhashbrown-*,librustc_std_workspace_alloc-*,libminiz_oxide-*,libadler2-*,libunwind-*,liblibc-*,librustc_std_workspace_core-*,liballoc-*,libcore-*,libcompiler_builtins-*}.rlib" "-lclang_rt.ios" "-lclang_rt.ios" "-framework" "CoreFoundation" "-lclang_rt.ios" "-framework" "WebKit" "-framework" "WebKit" "-framework" "UIKit" "-framework" "CoreFoundation" "-framework" "UIKit" "-framework" "UserNotifications" "-framework" "CoreData" "-framework" "CoreLocation" "-framework" "CoreText" "-framework" "CoreImage" "-framework" "CloudKit" "-framework" "QuartzCore" "-framework" "CoreGraphics" "-framework" "Foundation" "-framework" "CoreFoundation" "-lobjc" "-framework" "Foundation" "-liconv" "-lSystem" "-lc" "-lm" "-target" "arm64-apple-ios14.0.0" "-L" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/build/ring-026af7ad9c6184cf/out" "-L" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/build/libsqlite3-sys-a7c94c29d5c56a48/out" "-L" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/build/tauri-c5467ab541f7405e/out/swift-rs/Tauri/arm64-apple-macosx/release" "-L" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/build/objc2-exception-helper-a6b63f98a609d9c2/out" "-L" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/build/tauri-plugin-dialog-b8fe75102c0f6d62/out/swift-rs/tauri-plugin-dialog/arm64-apple-macosx/release" "-L" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/build/tauri-plugin-opener-9015314a2b0ef14a/out/swift-rs/tauri-plugin-opener/arm64-apple-macosx/release" "-L" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/build/libwebp-sys-723cc766930d11a2/out" "-L" "/Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos" "-L" "/usr/lib/swift" "-L" "/Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/lib/darwin" "-o" "/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libgoread_lib.dylib" "-Wl,-dead_strip" "-dynamiclib" "-nodefaultlibs"
+2026-04-09T07:08:28.8912240Z   [1m[94m= [0m[1mnote[0m: some arguments are omitted. use `--verbose` to show all linker arguments
+2026-04-09T07:08:28.8912970Z   [1m[94m= [0m[1mnote[0m: ld: warning: ignoring duplicate libraries: '-lclang_rt.ios'
+2026-04-09T07:08:28.8914070Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[4](ba9ae331e1c03d63-sharpyuv.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8915850Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[5](ba9ae331e1c03d63-sharpyuv_cpu.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8917630Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[6](ba9ae331e1c03d63-sharpyuv_csp.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8919410Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[7](ba9ae331e1c03d63-sharpyuv_dsp.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8920940Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[8](ba9ae331e1c03d63-sharpyuv_gamma.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8922460Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[9](ba9ae331e1c03d63-sharpyuv_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8923970Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[11](89142eb2371e4544-alpha_dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8925500Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[12](89142eb2371e4544-buffer_dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8926970Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[13](89142eb2371e4544-frame_dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8928560Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[15](89142eb2371e4544-io_dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8931050Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[16](89142eb2371e4544-quant_dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8932620Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[17](89142eb2371e4544-tree_dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8934230Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[18](89142eb2371e4544-vp8_dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8936010Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[19](89142eb2371e4544-vp8l_dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8937790Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[20](89142eb2371e4544-webp_dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8939370Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[21](59869f3beea225dc-anim_decode.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8941180Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[22](59869f3beea225dc-demux.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8942880Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[23](3837fcc86d364de3-alpha_processing.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8944490Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[25](3837fcc86d364de3-alpha_processing_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8946040Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[28](3837fcc86d364de3-cost.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8947630Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[31](3837fcc86d364de3-cost_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8949280Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[33](3837fcc86d364de3-cpu.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8950900Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[34](3837fcc86d364de3-dec.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8952470Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[35](3837fcc86d364de3-dec_clip_tables.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8954010Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[39](3837fcc86d364de3-dec_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8955540Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[42](3837fcc86d364de3-enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8957160Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[46](3837fcc86d364de3-enc_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8958950Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[49](3837fcc86d364de3-filters.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8960470Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[52](3837fcc86d364de3-filters_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8961990Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[54](3837fcc86d364de3-lossless.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8963480Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[55](3837fcc86d364de3-lossless_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8964970Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[59](3837fcc86d364de3-lossless_enc_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8966740Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[64](3837fcc86d364de3-lossless_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8968220Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[67](3837fcc86d364de3-rescaler.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8969760Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[71](3837fcc86d364de3-rescaler_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8971220Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[73](3837fcc86d364de3-ssim.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8972680Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[75](3837fcc86d364de3-upsampling.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8974240Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[78](3837fcc86d364de3-upsampling_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8975720Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[81](3837fcc86d364de3-yuv.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8977200Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[84](3837fcc86d364de3-yuv_neon.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8979090Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[87](3da13b085afb116c-alpha_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8980690Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[88](3da13b085afb116c-analysis_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8982720Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[89](3da13b085afb116c-backward_references_cost_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8984340Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[90](3da13b085afb116c-backward_references_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8985910Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[91](3da13b085afb116c-config_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8987390Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[92](3da13b085afb116c-cost_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8989090Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[93](3da13b085afb116c-filter_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8990590Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[94](3da13b085afb116c-frame_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8992130Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[95](3da13b085afb116c-histogram_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8993670Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[96](3da13b085afb116c-iterator_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8995180Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[97](3da13b085afb116c-near_lossless_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8996740Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[98](3da13b085afb116c-picture_csp_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8998290Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[99](3da13b085afb116c-picture_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.8999870Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[101](3da13b085afb116c-picture_rescale_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9001410Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[102](3da13b085afb116c-picture_tools_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9002920Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[103](3da13b085afb116c-predictor_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9004650Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[104](3da13b085afb116c-quant_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9006190Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[105](3da13b085afb116c-syntax_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9007690Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[106](3da13b085afb116c-token_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9009200Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[107](3da13b085afb116c-tree_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9011010Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[108](3da13b085afb116c-vp8l_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9012460Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[109](3da13b085afb116c-webp_enc.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9014050Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[110](826256bc21c603ca-anim_encode.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9015560Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[111](826256bc21c603ca-muxedit.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9017120Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[112](826256bc21c603ca-muxinternal.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9018780Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[113](826256bc21c603ca-muxread.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9020370Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[114](a2a4113ee633e098-bit_reader_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9021930Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[115](a2a4113ee633e098-bit_writer_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9023590Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[116](a2a4113ee633e098-color_cache_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9025320Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[117](a2a4113ee633e098-filters_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9027140Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[118](a2a4113ee633e098-huffman_encode_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9028800Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[119](a2a4113ee633e098-huffman_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9030520Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[120](a2a4113ee633e098-palette.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9032160Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[121](a2a4113ee633e098-quant_levels_dec_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9034010Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[122](a2a4113ee633e098-quant_levels_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9035650Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[123](a2a4113ee633e098-random_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9037470Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[124](a2a4113ee633e098-rescaler_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9039190Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[125](a2a4113ee633e098-thread_utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9040850Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibwebp_sys-6aa703bda01e6923.rlib[126](a2a4113ee633e098-utils.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9042440Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libobjc2_exception_helper-26423233eb1a4d40.rlib[4](dce005d523844fc4-try_catch.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9044090Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/liblibsqlite3_sys-9a99c725522eff7c.rlib[4](c877a2978823c39d-sqlite3.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9045640Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[4](25ac62e5b3c53843-curve25519.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9047180Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[5](0bbbd18bda93c05b-aes_nohw.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9048700Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[6](00c879ee3285a50d-montgomery.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9050210Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[7](00c879ee3285a50d-montgomery_inv.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9051970Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[8](a0330e891e733f4e-ecp_nistz.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9053490Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[10](a0330e891e733f4e-gfp_p384.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9055070Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[12](aaa1ba3e455ee2e1-limbs.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9056650Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[13](a4019cc0736b0423-mem.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9058640Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[14](d5a9841f3dc6e253-poly1305.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9060330Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[15](a0330e891e733f4e-p256-nistz.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9061960Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[16](c322a0bcc369f531-chacha-armv8-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9063770Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[17](c322a0bcc369f531-chacha20_poly1305_armv8-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9065520Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[18](c322a0bcc369f531-aesv8-armx-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9067280Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[19](c322a0bcc369f531-aesv8-gcm-armv8-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9068980Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[20](c322a0bcc369f531-ghash-neon-armv8-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9070600Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[21](c322a0bcc369f531-ghashv8-armx-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9072240Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[22](c322a0bcc369f531-vpaes-armv8-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9073850Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[23](c322a0bcc369f531-armv8-mont-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9075680Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[24](c322a0bcc369f531-p256-armv8-asm-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9077400Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[25](c322a0bcc369f531-sha512-armv8-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9079010Z           ld: warning: object file (/Users/runner/work/goread/goread/src-tauri/target/aarch64-apple-ios/release/deps/libring-eccd35f85d0334d3.rlib[26](c322a0bcc369f531-sha256-armv8-ios64.o)) was built for newer 'iOS' version (17.5) than being linked (14.0)
+2026-04-09T07:08:28.9080200Z           ld: warning: Could not find or use auto-linked framework 'CoreAudioTypes': framework 'CoreAudioTypes' not found
+2026-04-09T07:08:28.9080710Z           Undefined symbols for architecture arm64:
+2026-04-09T07:08:28.9081280Z             "_init_plugin_native_tts", referenced from:
+2026-04-09T07:08:28.9082970Z                 tauri_plugin_native_tts::mobile::init_plugin_native_tts::h178c20e0cf12e3a3 in libtauri_plugin_native_tts-7ab01013ce27e453.rlib[3](tauri_plugin_native_tts-7ab01013ce27e453.tauri_plugin_native_tts.d42fe2c76421c0e7-cgu.0.rcgu.o)
+2026-04-09T07:08:28.9083930Z           ld: symbol(s) not found for architecture arm64
+2026-04-09T07:08:28.9084410Z           clang: error: linker command failed with exit code 1 (use -v to see invocation)
+2026-04-09T07:08:28.9084830Z           
+2026-04-09T07:08:28.9084900Z 
+2026-04-09T07:08:28.9085870Z [1m[91merror[0m: could not compile `GoRead` (lib) due to 1 previous error
+2026-04-09T07:08:29.1086520Z ##[error]Process completed with exit code 101.

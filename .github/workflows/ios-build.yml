@@ -56,7 +56,10 @@ jobs:
           set -euo pipefail
           mkdir -p src-tauri/gen/apple/Externals/arm64/release
           mkdir -p src-tauri/gen/apple/Externals/x86_64/release
-          cargo rustc --manifest-path src-tauri/Cargo.toml --lib --target aarch64-apple-ios --release -- --crate-type staticlib
+          # Force iOS CI build to produce staticlib only, so mobile plugin symbols
+          # resolved by Xcode are not required during a Rust cdylib link step.
+          sed -i '' 's/crate-type = \["staticlib", "cdylib", "rlib"\]/crate-type = ["staticlib"]/g' src-tauri/Cargo.toml
+          cargo build --manifest-path src-tauri/Cargo.toml --lib --target aarch64-apple-ios --release
           cp src-tauri/target/aarch64-apple-ios/release/libgoread_lib.a src-tauri/gen/apple/Externals/arm64/release/libapp.a
           cp src-tauri/target/aarch64-apple-ios/release/libgoread_lib.a src-tauri/gen/apple/Externals/x86_64/release/libapp.a
 
