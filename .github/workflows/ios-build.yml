@@ -9,6 +9,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true # 关键修复：允许拉取 Git LFS 的真实大文件（图片、动态库等）
 
       - name: Setup Node
         uses: actions/setup-node@v4
