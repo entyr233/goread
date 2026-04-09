@@ -54,9 +54,9 @@ jobs:
             exit 1
           fi
 
-      # 3. 执行构建，并再次在命令行级别注入免签参数，上“双保险”
+      # 3. 执行构建
       - name: Build iOS (Force Unsigned)
-        run: npx tauri ios build -- -- -sdk iphoneos CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM=""
+        run: npx tauri ios build
 
       # 4. 手动打包成 .ipa 格式
       - name: Package IPA
