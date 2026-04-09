@@ -45,6 +45,18 @@ jobs:
       - name: Build frontend assets
         run: npm run build
 
+      - name: Sync frontend assets into iOS bundle resources
+        run: |
+          set -euo pipefail
+          IOS_ASSETS_DIR="src-tauri/gen/apple/assets"
+          rm -rf "$IOS_ASSETS_DIR"
+          mkdir -p "$IOS_ASSETS_DIR"
+          cp -R dist/. "$IOS_ASSETS_DIR/"
+          if [ ! -f "$IOS_ASSETS_DIR/index.html" ]; then
+            echo "::error::index.html was not copied into iOS assets."
+            exit 1
+          fi
+
       - name: Install CocoaPods dependencies
         run: |
           set -euo pipefail
