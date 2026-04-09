@@ -14,30 +14,58 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+          cache: 'npm'
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: aarch64-apple-ios
 
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+
       - name: Install Dependencies
         run: npm install
 
-      - name: Build iOS (Force Unsigned)
-        # 核心逻辑：通过参数强制跳过签名校验
-        run: |
-          npx tauri ios init
-          npx tauri ios build -- -- -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+      # 1. 先进行初始化，生成 macOS 下的 Xcode 原生工程
+      - name: Init iOS Project
+        run: npx tauri ios init
 
+      # 2. 核心大招：在构建前，用脚本强行篡改 Xcode 工程配置，剥离所有签名要求
+      - name: Patch Xcode Project for Unsigned Build
+        run: |
+          # 动态寻找 pbxproj 文件，避免写死应用名称
+          PROJECT_FILE=$(find src-tauri/gen/apple -name "project.pbxproj" | head -n 1)
+          
+          if [ -n "$PROJECT_FILE" ] && [ -f "$PROJECT_FILE" ]; then
+            echo "正在给 $PROJECT_FILE 打补丁以禁用自动签名..."
+            # 清空 Team ID
+            sed -i '' -E 's/DEVELOPMENT_TEAM = [^;]+;/DEVELOPMENT_TEAM = "";/g' "$PROJECT_FILE"
+            # 将签名模式从 Automatic 改为 Manual
+            sed -i '' -E 's/ProvisioningStyle = Automatic;/ProvisioningStyle = Manual;/g' "$PROJECT_FILE"
+            sed -i '' -E 's/CODE_SIGN_STYLE = Automatic;/CODE_SIGN_STYLE = Manual;/g' "$PROJECT_FILE"
+            # 清空签名证书名称
+            sed -i '' -E 's/CODE_SIGN_IDENTITY = "[^"]+";/CODE_SIGN_IDENTITY = "";/g' "$PROJECT_FILE"
+            echo "补丁打入完毕！"
+          else
+            echo "错误：未找到 project.pbxproj 文件，请确认 tauri ios init 是否成功。"
+            exit 1
+          fi
+
+      # 3. 执行构建，并再次在命令行级别注入免签参数，上“双保险”
+      - name: Build iOS (Force Unsigned)
+        run: npx tauri ios build -- -- -sdk iphoneos CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM=""
+
+      # 4. 手动打包成 .ipa 格式
       - name: Package IPA
-        # 核心逻辑：iOS 的 .ipa 其实就是放进 Payload 文件夹后的压缩包
         run: |
           mkdir -p Payload
-          # 寻找编译生成的 .app 文件并移动到 Payload 目录
-          # 路径通常在 src-tauri/gen/apple/build 下，使用通配符匹配
           find src-tauri/gen/apple/build -name "*.app" -exec cp -r {} Payload/ \;
           zip -r unsigned_project.ipa Payload
         
+      # 5. 上传供下载
       - name: Upload IPA Artifact
         uses: actions/upload-artifact@v4
         with:
