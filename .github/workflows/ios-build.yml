@@ -10,8 +10,6 @@ env:
   IOS_SCHEME: GoRead_iOS
   IOS_WORKSPACE: src-tauri/gen/apple/GoRead.xcworkspace
   IOS_PROJECT_DIR: src-tauri/gen/apple
-  IOS_DERIVED_DATA: ${{ runner.temp }}/DerivedData
-  IOS_EXPORT_DIR: ${{ github.workspace }}/build/ios
 
 jobs:
   build-ios:
@@ -53,6 +51,9 @@ jobs:
       - name: Build unsigned .app
         run: |
           set -euo pipefail
+          IOS_DERIVED_DATA="$RUNNER_TEMP/DerivedData"
+          IOS_EXPORT_DIR="$GITHUB_WORKSPACE/build/ios"
+          IOS_LOG_PATH="$IOS_EXPORT_DIR/xcode-build.log"
           mkdir -p "$IOS_EXPORT_DIR"
 
           xcodebuild \
@@ -68,11 +69,13 @@ jobs:
             DEVELOPMENT_TEAM="" \
             PROVISIONING_PROFILE_SPECIFIER="" \
             clean build \
-            | tee "$RUNNER_TEMP/xcode-build.log"
+            | tee "$IOS_LOG_PATH"
 
       - name: Package unsigned IPA
         run: |
           set -euo pipefail
+          IOS_DERIVED_DATA="$RUNNER_TEMP/DerivedData"
+          IOS_EXPORT_DIR="$GITHUB_WORKSPACE/build/ios"
 
           APP_PATH=$(find "$IOS_DERIVED_DATA/Build/Products/Release-iphoneos" -maxdepth 1 -name "*.app" -print -quit)
           if [ -z "${APP_PATH:-}" ]; then
@@ -91,13 +94,11 @@ jobs:
           cd "$RUNNER_TEMP"
           ditto -c -k --sequesterRsrc --keepParent Payload "$IPA_PATH"
 
-          echo "UNSIGNED_IPA_PATH=$IPA_PATH" >> "$GITHUB_ENV"
-
       - name: Upload unsigned IPA artifact
         uses: actions/upload-artifact@v4
         with:
           name: goread-ios-unsigned-ipa
-          path: ${{ env.UNSIGNED_IPA_PATH }}
+          path: build/ios/*.ipa
           if-no-files-found: error
 
       - name: Upload Xcode logs on failure
@@ -105,5 +106,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: goread-ios-build-logs
-          path: ${{ runner.temp }}/xcode-build.log
+          path: build/ios/xcode-build.log
           if-no-files-found: warn
