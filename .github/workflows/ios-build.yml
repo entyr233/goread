@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          lfs: true # 关键修复：允许拉取 Git LFS 的真实大文件（图片、动态库等）
+          lfs: true 
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -31,39 +31,48 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # 1. 先进行初始化，生成 macOS 下的 Xcode 原生工程
+      # 1. 生成 iOS 原生工程
       - name: Init iOS Project
         run: npx tauri ios init
 
-      # 2. 核心大招：在构建前，用脚本强行篡改 Xcode 工程配置，剥离所有签名要求
+      # 2. 注入免签补丁
       - name: Patch Xcode Project for Unsigned Build
         run: |
-          # 动态寻找 pbxproj 文件，避免写死应用名称
           PROJECT_FILE=$(find src-tauri/gen/apple -name "project.pbxproj" | head -n 1)
           
           if [ -n "$PROJECT_FILE" ] && [ -f "$PROJECT_FILE" ]; then
             echo "正在给 $PROJECT_FILE 打补丁以禁用自动签名..."
-            # 清空 Team ID
             sed -i '' -E 's/DEVELOPMENT_TEAM = [^;]+;/DEVELOPMENT_TEAM = "";/g' "$PROJECT_FILE"
-            # 将签名模式从 Automatic 改为 Manual
             sed -i '' -E 's/ProvisioningStyle = Automatic;/ProvisioningStyle = Manual;/g' "$PROJECT_FILE"
             sed -i '' -E 's/CODE_SIGN_STYLE = Automatic;/CODE_SIGN_STYLE = Manual;/g' "$PROJECT_FILE"
-            # 清空签名证书名称
             sed -i '' -E 's/CODE_SIGN_IDENTITY = "[^"]+";/CODE_SIGN_IDENTITY = "";/g' "$PROJECT_FILE"
             echo "补丁打入完毕！"
           else
-            echo "错误：未找到 project.pbxproj 文件，请确认 tauri ios init 是否成功。"
+            echo "错误：未找到 project.pbxproj 文件"
             exit 1
           fi
 
-      # 3. 执行构建
-      - name: Build iOS (Force Unsigned)
-        run: npx tauri ios build
+      # 3. 核心修改：弃用 tauri ios build，直接使用底层 xcodebuild 进行纯编译
+      - name: Build iOS using pure xcodebuild
+        run: |
+          cd src-tauri/gen/apple
+          # 指定 SYMROOT 将编译产物强制输出到当前 build 目录下，并彻底关闭签名
+          xcodebuild -workspace GoRead.xcworkspace \
+            -scheme GoRead_iOS \
+            -configuration release \
+            -sdk iphoneos \
+            SYMROOT="$(PWD)/build" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            DEVELOPMENT_TEAM="" \
+            build
 
-      # 4. 手动打包成 .ipa 格式
+      # 4. 手动抓取生成的 .app 并打包为 .ipa
       - name: Package IPA
         run: |
           mkdir -p Payload
+          # 从 xcodebuild 指定的 build 目录中寻找生成的 .app 文件
           find src-tauri/gen/apple/build -name "*.app" -exec cp -r {} Payload/ \;
           zip -r unsigned_project.ipa Payload
         
